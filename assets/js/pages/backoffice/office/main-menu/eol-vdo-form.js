@@ -8,12 +8,7 @@ const mainMenuFormBackUrl = `${mainMenuFormListUrl}?page=${encodeURIComponent(ma
 document.getElementById('office-topic-back-link').href = mainMenuFormBackUrl;
 
 if (window.CKEDITOR) {
-    CKEDITOR.replace('topic_detail', {
-        filebrowserBrowseUrl: '/assets/js/ckeditor/filemanager/index.html',
-        filebrowserImageBrowseUrl: '/assets/js/ckeditor/filemanager/index.html?type=Images',
-        filebrowserUploadUrl: '/assets/js/ckeditor/filemanager/connectors/php/filemanager.php?command=QuickUpload&type=Files',
-        filebrowserImageUploadUrl: '/assets/js/ckeditor/filemanager/connectors/php/filemanager.php?command=QuickUpload&type=Images'
-    })
+    CKEDITOR.replace('topic_detail')
 }
 
 fetch(`/api/backoffice/office/topics/01-09/${encodeURIComponent(mainMenuFormTopicId)}`, {
