@@ -49,3 +49,22 @@ assets/event/member-club-half-year-2023/
 assets/event/open-house-eol-2023/
 assets/event/summer-course-2023/
 
+# === Event assets (DB-referenced kept on disk, code-referenced tracked) ===
+assets/event/*
+!assets/event/1yearscourse/
+!assets/event/Corporate/
+!assets/event/corporate-platform-2023/
+!assets/event/EOL 19th/
+!assets/event/EOL Corporate Package 2022/
+!assets/event/EOL Corporate Package 2023/
+!assets/event/EOL Personal Package 2022/
+!assets/event/EOL Personal Package 2024/
+!assets/event/EOL-Member-Club/
+!assets/event/EOL-Member-Club-2023/
+!assets/event/EOL-Member-Club-2024/
+!assets/event/EOL-SYSTEM-2024/
+!assets/event/GPS_Test_2024/
+!assets/event/Intelligence2024/
+!assets/event/QR Payment/
+!assets/event/TEOC10/
+
