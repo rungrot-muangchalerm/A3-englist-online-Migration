@@ -9,3 +9,43 @@ tools/event-cleanup/
 tools/image-cleanup/
 assets/files/sound/
 assets/event/_archive_2026_08_09
+
+# === DB-referenced event assets (kept on disk, untracked by git) ===
+assets/event/1yearscourse/
+assets/event/Business-Partner-TEOC8/
+assets/event/EOL Corporate Package 2023/
+assets/event/EOL-Camp-2024/
+assets/event/EOL-Individual-Tutorial/
+assets/event/EOL-Member-Club/
+assets/event/EOL-Member-Club-2023/
+assets/event/English-Camp-2023/
+assets/event/GPS_Test_2024/
+assets/event/Intelligence2020/
+assets/event/Intelligence2021/
+assets/event/Intelligence2024/
+assets/event/Lets_celebate/
+assets/event/Newyears2020/
+assets/event/Newyears2021/
+assets/event/Newyears2022/
+assets/event/Newyears2023/
+assets/event/Newyears2024/
+assets/event/OPEN_HOUSE_2024/
+assets/event/Package-against-Covid/
+assets/event/QR Payment/
+assets/event/Seminar2019/
+assets/event/Summer64/
+assets/event/Summer_Oct2019/
+assets/event/TEOC10/
+assets/event/TEOC5/
+assets/event/TEOC6/
+assets/event/TEOC7/
+assets/event/TEOC8/
+assets/event/activities-2023/
+assets/event/course_basic_2024/
+assets/event/course_intermediate_2024/
+assets/event/effective-writing/
+assets/event/korpor-course-2023/
+assets/event/member-club-half-year-2023/
+assets/event/open-house-eol-2023/
+assets/event/summer-course-2023/
+
