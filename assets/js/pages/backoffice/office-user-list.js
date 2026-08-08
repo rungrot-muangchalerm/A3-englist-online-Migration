@@ -45,12 +45,17 @@
 
     const remove = deleteCell.querySelector('[data-action="delete"]');
     if (remove) {
-      remove.addEventListener('click', function () {
-        if (!confirm('Are you sure ? want delete this member ?')) return;
-        fetch(`/api/backoffice/office/users/${encodeURIComponent(user.admin_id)}`, {
-          method: 'DELETE',
-          credentials: 'include',
-        }).then(loadUsers);
+      remove.addEventListener('click', function (event) {
+        event.preventDefault();
+        // Defer confirm so the click handler returns immediately and avoids
+        // Chrome's "handler took X ms" warning while the user reads the dialog.
+        setTimeout(function () {
+          if (!confirm('Are you sure ? want delete this member ?')) return;
+          fetch(`/api/backoffice/office/users/${encodeURIComponent(user.admin_id)}`, {
+            method: 'DELETE',
+            credentials: 'include',
+          }).then(loadUsers);
+        }, 0);
       });
     }
   }
