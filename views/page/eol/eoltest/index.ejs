@@ -218,7 +218,7 @@
                 <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
               </td>
               <td align=left>
-                <input type='password' size=15 name='add_pass' id='master-add-pass' placeholder='&nbsp;Password' required>
+                <input type='password' size=15 name='add_pass' id='master-add-pass' placeholder='&nbsp;Password' autocomplete='new-password' required>
                 <font face=tahoma size=2 color=brown>* 8-20 Characters long</font>
               </td>
             </tr>
@@ -233,7 +233,7 @@
                 <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
               </td>
               <td align=left>
-                <input type='password' size=15 name='add_re' id='master-add-re' placeholder='&nbsp;Re - Password' required>
+                <input type='password' size=15 name='add_re' id='master-add-re' placeholder='&nbsp;Re - Password' autocomplete='new-password' required>
                 <font face=tahoma size=2 color=brown>* Same as Password</font>
               </td>
             </tr>
@@ -356,8 +356,8 @@
     <form id='edit-sub-form' onsubmit='event.preventDefault();'>
       <b>New Username :</b> <input type="text" name="rename-subAcc" id="rename-subAcc" style="width:195px; height:25px; border:1px solid #666;margin-left:16px;padding-left:5px;">
       <input type="text" name="idre-sub" id="idre-sub" readonly style="border:none;color:#fff;width:70px;" class="txt_rename"><br><br>
-      <b>New Password :</b><input type="password" name="pass" id="pass" style="width:200px; height:25px; border:1px  solid #666;margin-left:22px;"><br><br>
-      <b>Re-New password :</b><input type="password" name="re-pass" id="re-pass" style="width:200px; height:25px; border:1px  solid #666;"><br><br><br>
+      <b>New Password :</b><input type="password" name="pass" id="pass" autocomplete="new-password" style="width:200px; height:25px; border:1px  solid #666;margin-left:22px;"><br><br>
+      <b>Re-New password :</b><input type="password" name="re-pass" id="re-pass" autocomplete="new-password" style="width:200px; height:25px; border:1px  solid #666;"><br><br><br>
       <div id="imgload" style="display:none; margin-top:10px; margin-left:130px;"> <img src="/assets/images/image2/eol system/loading2.gif" /></div>
       <div id="editerror" style="margin-top:-20px;float:right;height:30px;width:250px;"></div>
       <input type="submit" id="btn_rename_sub" value="Save" class="btntest btn-save" style="cursor:pointer;margin-left:130px;" />
