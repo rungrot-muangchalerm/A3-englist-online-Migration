@@ -11,48 +11,86 @@
         <form name="userForm" id="office-user-form" onsubmit="event.preventDefault();" style="width:90%;">
           <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0">
             <tr height="25">
-              <td width="20%" align="right"><font size="2" face="tahoma" color="#cccccc"><b>Admin ID</b></font></td>
-              <td width="5%" align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
-              <td width="80%" align="left"><font size="2" face="tahoma" color="#cccccc"><b><span id="office-user-admin-id"></span></b></font></td>
+              <td width="20%" align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Admin ID</b></font>
+              </td>
+              <td width="5%" align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
+              <td width="80%" align="left">
+                <font size="2" face="tahoma" color="#cccccc"><b><span id="office-user-admin-id"></span></b></font>
+              </td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Prefix</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Prefix</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="text" size="10" name="prefix" autocomplete="honorific-prefix" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Firstname</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Firstname</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="text" size="20" name="fname" autocomplete="given-name" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Lastname</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Lastname</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="text" size="20" name="lname" autocomplete="family-name" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Email</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Email</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="text" size="30" name="email" autocomplete="email" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Nickname</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Nickname</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="text" size="20" name="nickname" autocomplete="nickname" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Username</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Username</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left" id="office-user-username-cell"></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Password</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Password</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="password" size="20" name="pass" autocomplete="new-password" required></td>
             </tr>
             <tr height="25">
-              <td align="right"><font size="2" face="tahoma" color="#cccccc"><b>Active</b></font></td>
-              <td align="center"><font size="2" face="tahoma" color="#cccccc"><b>:</b></font></td>
+              <td align="right">
+                <font size="2" face="tahoma" color="#cccccc"><b>Active</b></font>
+              </td>
+              <td align="center">
+                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              </td>
               <td align="left"><input type="checkbox" name="is_active" value="1"> Active</td>
             </tr>
             <tr height="15"></tr>
@@ -71,9 +109,13 @@
             <tr>
               <td align="center" colspan="3">
                 <br><br>
-                <div align="center"><font size="2" color="#77ff77" face="tahoma"><b>After Set New Permission Some Effect Is Activate After Next Login</b></font></div><br><br>
+                <div align="center">
+                  <font size="2" color="#77ff77" face="tahoma"><b>After Set New Permission Some Effect Is Activate After Next Login</b></font>
+                </div><br><br>
                 <div align="center"><input class="edit-personal" type="submit" id="office-user-submit" value=""></div>
-                <div align="center"><font size="2" color="red" face="tahoma"><b><span id="office-user-message"></span></b></font></div>
+                <div align="center">
+                  <font size="2" color="red" face="tahoma"><b><span id="office-user-message"></span></b></font>
+                </div>
               </td>
             </tr>
           </table>
@@ -84,7 +126,9 @@
 
   <br>
   <div align="center">
-    <a href="/backoffice/mainoffice/office/user"><font size="2" face="tahoma"><b>&lt;&lt; Back to User List</b></font></a>
+    <a href="/backoffice/mainoffice/office/user">
+      <font size="2" face="tahoma"><b>&lt;&lt; Back to User List</b></font>
+    </a>
   </div>
   <br><br>
 </div>
