@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    <%= typeof title !=='undefined' ? title : 'EOL System' %>
+  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/eol-icon.png">
+  <link rel="stylesheet" href="/assets/bootstrap/css/tabbar.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/mainpage.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/eoltest.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/systemtest.css">
+  <link rel="stylesheet" href="/assets/calendar/epoch_styles.css">
+  <script src="/assets/calendar/epoch_classes.js"></script>
+  <style>
+    .welcome {
+      position: absolute;
+      right: 35px;
+      font-size: 2rem;
+      font-weight: 600;
+      font-family: fantasy;
+      top: 28px;
+    }
+
+    .edit-profile {
+      position: absolute;
+      left: 140px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: fantasy;
+      top: 48px;
+    }
+
+    .sub-member,
+    .personal {
+      position: absolute;
+      left: 166px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      font-family: monospace;
+      top: 390px;
+    }
+
+    .table-admin {
+      width: 95%;
+      max-width: 95%;
+      border-radius: 5px;
+      background: #67686847;
+    }
+
+    #container {
+      width: 1024px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Keep only helpers not covered by mainpage.css */
+    #pic_profile img {
+      width: 100px;
+      height: 100px;
+    }
+
+    #content-div {
+      position: relative;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <a href="/">
+        <img src="/assets/images/image2/logo/logo-02.png" width="270" height="118" style="float:left;margin-left:20px; margin-top: 175px;" />
+      </a>
+
+      <div id="info_user"></div>
+    </div>
+
+    <div id="system-menu"></div>
+
+    <div id="content">
+      <div id="pic_border">
+        <img src="/assets/images/image2/eol system/head-box-02.png" width="1024" />
+      </div>
+      <div id="content-div">
+        <%- body %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <center style="margin-bottom:10px; margin-top:-3px;">
+      <b>Copyright © 2024 By English Online Co.,Ltd. All rights reserved.</b>
+    </center>
+  </div>
+
+  <script src="/assets/js/layout/system.header.js"></script>
+  <script>
+    const tabs = document.querySelectorAll('[data-tab-target]');
+    const tabContents = document.querySelectorAll('[data-tab-content]');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget);
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        target.classList.add('active');
+      });
+    });
+  </script>
+  <% if (typeof script !== 'undefined' && script) { %>
+    <script src="<%= script %>"></script>
+  <% } %>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<div id="test-app" class="f-thai">
+  <style>
+    #test-app {
+      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
+    }
+
+    #test-app .timer-box {
+      width: 250px;
+      margin: 10px auto;
+      background: #eeeeee;
+      border-radius: 5px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    #test-app .question-table {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    #test-app .question-table td {
+      padding: 5px;
+    }
+
+    #test-app .answer-row label {
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    #test-app .number-pad {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    #test-app .number-pad button {
+      border: 0;
+      background: #ffffff;
+      font-weight: bold;
+      padding: 5px;
+      margin: 1px;
+      cursor: pointer;
+      border-radius: 2px;
+      min-width: 32px;
+    }
+
+    #test-app .number-pad button.answered {
+      color: green;
+    }
+
+    #test-app .number-pad button.unanswered {
+      color: red;
+    }
+
+    #test-app .nav-buttons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    #test-app .nav-buttons img {
+      height: 40px;
+    }
+
+    #test-app .finish-btn {
+      cursor: pointer;
+      height: 45px;
+    }
+
+    #test-app .media-box {
+      text-align: center;
+      margin: 10px 0;
+    }
+  </style>
+
+  <div class="timer-box">
+    <div id="timer-display"></div>
+  </div>
+  <table class="question-table" cellpadding="0" cellspacing="0" border="0">
+    <tr height="30">
+      <td width="90%" colspan="2">
+        <font size="3" face="tahoma" color="gray"><b>Skill : <span id="question-skill"></span></b></font><br><br>
+        <font size="3" face="tahoma"><b>No. <span id="question-number"></span></b></font>
+      </td>
+      <td width="10%" align="right">&nbsp;</td>
+    </tr>
+    <tr id="media-row" style="display:none;">
+      <td colspan="3">
+        <div id="media-content" class="media-box"></div>
+      </td>
+    </tr>
+    <tr height="10">
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <font size="3" face="verdana"><b id="question-text"></b></font>
+      </td>
+    </tr>
+    <tr height="10">
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <form id="answer-form">
+          <input type="hidden" id="time-left-input" name="time_left">
+          <div id="answers-list"></div>
+          <div style="margin-top:10px;">
+            <input type="submit" value=" Record your answer " class="record_answer">
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr height="30">
+      <td colspan="3" align="center" style="background-color:#fdb83d; border-radius:4px;">
+        <font size="2" face="tahoma" color="black"><b>Question Number</b></font>
+      </td>
+    </tr>
+    <tr height="10">
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">
+        <div id="number-pad" class="number-pad"></div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td width="10%" align="left"><button id="back-btn"><img src="/assets/images/image2/test/back.png"></button></td>
+            <td width="80%" align="center">
+              <font size="2" face="tahoma" color="red">Red : Unanswer</font>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <font size="2" face="tahoma" color="green">Green : Answered</font>
+            </td>
+            <td width="10%" align="right"><button id="next-btn"><img src="/assets/images/image2/test/next.png"></button></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr height="10">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="1" bgcolor="#aaaaaa">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="10">
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">
+        <button id="finish-btn"><img src="/assets/images/image2/test/finish.png" class="finish-btn"></button>
+      </td>
+    </tr>
+  </table>
+  <br>&nbsp;
+</div>

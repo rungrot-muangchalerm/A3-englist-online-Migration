@@ -1,0 +1,269 @@
+<div class="container shadow_side" style="width:1150px !important; background:#ffffff; padding-bottom:20px;">
+
+  <!-- Slide -->
+  <div class="row">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="min-height:250px;">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <a href="/forum/detail?type_id=02-02&&topic_id=5177">
+            <img src="/images/image2/24.jpg" alt="GEPOT 19 Banner" style="width:100%;">
+          </a>
+        </div>
+        <div class="item">
+          <a href="/forum/detail?type_id=02-02&&topic_id=5178">
+            <img src="/images/image2/22.jpg" alt="Franchise Banner" style="width:100%;">
+          </a>
+        </div>
+        <div class="item">
+          <a href="/forum/detail?type_id=02-02&&topic_id=5179">
+            <img src="/images/image2/19.jpg" alt="Banner" style="width:100%;">
+          </a>
+        </div>
+        <div class="item">
+          <a href="/forum/detail?type_id=02-02&&topic_id=5176">
+            <img src="/images/FRBAN.jpg" alt="Banner1" style="width:100%;">
+          </a>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="row row-eq-height">
+    <!-- ซ้าย -->
+    <div class="col-xs-8">
+      <!-- GEPOT 19 -->
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-gift"></i> GEPOT 19</div>
+          <div class="content_section kanit" style="border-radius:15px;">
+            <a href="/forum/detail?type_id=02-02&&topic_id=5180">
+              <img src="/event/GPS_Test_2024/21.jpg" style="width:100%;max-height:550px;border-radius:10px;">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity + News -->
+      <div class="row row-eq-height">
+        <div class="col-xs-6">
+          <div class="title_section"><i class="fa fa-image"></i> 543 Active Learning</div>
+          <div class="content_section kanit" style="border-radius:15px;">
+            <template id="activity-row-template">
+              <tr valign="top">
+                <td style="width:100px !important;">
+                  <a class="over_a activity-link" href="#" target="_blank" style="color:#333;">
+                    <img class="activity_img activity-img" src="" style="width:100px;height:80px;border-radius:50%;">
+                  </a>
+                </td>
+                <td class="kanit activity-text-cell" style="font-size:16px;padding-left:10px;padding-top:4px;line-height:20px;">
+                  <a class="over_a activity-link-text" href="#" target="_blank" style="color:#333;"></a>
+                </td>
+              </tr>
+              <tr valign="top">
+                <td colspan="2" style="height:5px;"></td>
+              </tr>
+            </template>
+            <table id="activity-container" style="width:100%;" cellpadding="0" cellspacing="0" border="0">
+              <!-- activity-row-template จะ render ไว้ตรงนี้ เพราะ table ไม่อนุญาติให้เอาอะไรมาไส่นอกจาก tr แต่สิ่งที่ครอบอยู่คือ template ตัว table จะแตะทิ้ง -->
+            </table>
+            <br>
+            <center>
+              <a href="/forum/e-eng?type_id=02-01">
+                <button class="btn" id="activity" style="color:#ffffff;background:#f7941d;">All Gallery</button>
+              </a>
+            </center>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="title_section"><i class="fa fa-newspaper-o"></i> NEWS, GALLERY & EVENTS</div>
+          <div class="content_section kanit" style="border-radius:15px;">
+            <template id="news-events-row-template">
+              <tr valign="top">
+                <td style="width:100px !important;">
+                  <a class="over_a news-events-link" href="#" target="_blank" style="color:#333;">
+                    <img class="news_events_img news-events-img" src="" style="width:100px;height:80px;border-radius:50%;">
+                  </a>
+                </td>
+                <td class="kanit news-events-text-cell" style="font-size:16px;padding-left:10px;padding-top:4px;line-height:20px;">
+                  <a class="over_a news-events-link-text" href="#" target="_blank" style="color:#333;"></a>
+                </td>
+              </tr>
+              <tr valign="top">
+                <td colspan="2" style="height:5px;"></td>
+              </tr>
+            </template>
+            <table id="news-events-container" style="width:100%;" cellpadding="0" cellspacing="0" border="0">
+              <!-- rows render here -->
+            </table>
+            <br>
+            <center>
+              <a href="/forum/e-eng?type_id=02-02">
+                <button class="btn" id="news_events" style="color:#ffffff;background:#f7941d;">All News & Events</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <!-- Magazine -->
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-book"></i> EOL MAGAZINE ONLINE SHOWCASE</div>
+          <div class="content_section kanit" style="border-radius:15px; min-height:250px;">
+            <div id="magazine-showcase">
+              <div class="row">
+                <div class="col-xs-4">
+                  <a id="magazine-link" href="#" target="_blank">
+                    <img id="magazine-img" src="" style="width:100%;max-height:220px;border-radius:10px;">
+                  </a>
+                </div>
+                <div class="col-xs-8">
+                  <a id="magazine-link-text" href="#" target="_blank" style="color:#333;">
+                    <h3 class="kanit" id="magazine-name" style="margin-top:0;"></h3>
+                    <p class="prompt" id="magazine-headline" style="font-size:16px;"></p>
+                  </a>
+                  <p class="font-tahoma text-muted" style="font-size:12px;">
+                    โดย <span id="magazine-author"></span> | อ่าน <span id="magazine-view"></span> ครั้ง
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ขวา -->
+    <div class="col-xs-4">
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-thumbs-o-up"></i> 20th Anniversary</div>
+          <div class="content_section" style="border-radius:15px;height:220px;text-align:center;">
+            <a href="/forum/detail?type_id=02-02&&topic_id=5141">
+              <img src="/event/EOL 19th/c2.png" style="max-width:220px;max-height:220px;">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-video-camera"></i> EOL Presentation</div>
+          <div class="content_section" style="border-radius:15px;">
+            <iframe width="100%" height="161" src="https://www.youtube.com/embed/cqOrP317QoI" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-qrcode"></i> QR Payment EOL</div>
+          <div class="content_section" style="border-radius:15px;text-align:center;height:236px;">
+            <a href="/event/QR Payment/promptpay.png" target="_blank">
+              <img src="/event/QR Payment/promptpay.png" style="max-width:450px;height:200px;border-radius:15px;">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row row-eq-height">
+        <div class="col-xs-12">
+          <div class="title_section"><i class="fa fa-youtube"></i> EOL CHANNEL</div>
+          <div class="content_section" style="border-radius:15px;height:220px;">
+            <iframe width="100%" height="92%" src="https://www.youtube.com/embed/9HIctmTKW_4" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 quick links -->
+  <div class="row row-eq-height" style="padding-top:10px;">
+    <div class="col-xs-4">
+      <a href="/forum/other?type=school" class="over_a">
+        <div class="title_3_menu" style="background:grey;border-radius:15px;">
+          <i class="fa fa-list-alt"></i> รายชื่อลูกค้าที่ใช้บริการ EOL
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-4">
+      <a href="/forum/other?type=feedback" class="over_a">
+        <div class="title_3_menu" style="background:grey;border-radius:15px;">
+          <i class="fa fa-comments-o"></i> ความคิดเห็นของผู้ใช้บริการ EOL
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-4">
+      <a href="/forum/other?type=advertise" class="over_a">
+        <div class="title_3_menu" style="background:grey;border-radius:15px;">
+          <i class="fa fa-briefcase"></i> ติดต่อลงโฆษณากับเรา
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- EOL English Room -->
+  <div class="row row-eq-height">
+    <div class="col-xs-12">
+      <div class="title_section"><i class="fa fa-th"></i>&nbsp;EOL ENGLISH ROOM</div>
+    </div>
+  </div>
+
+  <!-- English Room Template -->
+  <div id="english-room-container" class="english-room-grid">
+    <template id="english-room-card-template">
+      <div class="english-room-card">
+        <div class="content_section" style="text-align:center;padding:0px;border-radius:15px;">
+          <a class="over_a english-room-category-link" href="#" style="position:relative;display:block;">
+            <div style="position:absolute;top:135px;left:0;right:0;display:flex;justify-content:center;">
+              <div class="icon_circle"><i class="fa english-room-icon" style="font-size:30px;padding:16px 0px;color:#ffffff;"></i></div>
+            </div>
+            <div class="english-room-new-badge" style="position:absolute;top:5px;left:16px;"><img src="/assets/images/index/icon_new.gif"></div>
+          </a>
+          <div>
+            <a class="over_a english-room-category-link" href="#">
+              <img class="english-room-image" src="" style="width:99.5%;height:160px;margin-top:1px;border-radius:15px;">
+            </a>
+          </div>
+          <a class="over_a english-room-category-link" href="#">
+            <div class="title_english_room english-room-title"></div>
+          </a>
+          <hr style="width:80%;border-top:1px solid #f7941d;margin:5px auto;">
+          <div class="english-room-content" style="padding:10px;">
+            <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr valign="top">
+                <td>
+                  <i class="fa fa-gift text-red"></i>
+                  <a class="over_a kanit text-blue english-room-topic-link" href="#" target="_blank" style="font-size:14px;">
+                    <b class="english-room-topic-name"></b>
+                  </a>
+                  <br>
+                  <a class="over_a kanit text-black english-room-topic-link2" href="#" target="_blank" style="font-size:12px;">
+                    <i class="fa fa-book"></i>&nbsp;<span class="english-room-topic-headline"></span>
+                    <div class="row text-grey" style="font-size:12px !important;border:0px solid blue;margin:0px;">
+                      <div class="col-xs-4 no-space english-room-date" style="font-size:12px !important;margin:0px;"><i class="fa fa-calendar-check-o"></i>&nbsp;</div>
+                      <div class="col-xs-4 no-space text-center english-room-author" style="font-size:12px !important;margin:0px;"><i class="fa fa-id-card-o"></i>&nbsp;</div>
+                      <div class="col-xs-4 no-space text-center" style="font-size:12px !important;margin:0px;"><i class="fa fa-eye"></i>&nbsp;View&nbsp;<span class="english-room-view"></span></div>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+
+</div>
+

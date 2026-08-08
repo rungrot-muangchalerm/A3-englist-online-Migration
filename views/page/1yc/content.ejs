@@ -1,0 +1,91 @@
+<div class="pjblock" align="center" style="position:relative; width: 1050px; margin: 0px auto;">
+  <table style="font-size:10pt;">
+    <tr>
+      <td>
+        <br><br>
+        <table width=90% align=center style='z-index:500;'>
+          <tr>
+            <td style='padding:10px;'>
+              <div align=left
+                style='background:#fff;padding:10px;width:1020px;min-height:300px;height:auto;-moz-box-shadow: 0px 5px 18px #333;margin-top:77px;
+                       -webkit-box-shadow:  0px 5px 18px #333;
+                       box-shadow:0px 5px 18px #333; border-radius: 8px;'>
+                <table width=80% align=center style='z-index:500;'>
+                  <tr>
+                    <td>
+                      <div style="position:relative; width: 1050px;margin: 0px auto; top: 60px;">
+                        <img id="yc-content-title" src="/assets/images/image2/1year/font(lessons).png"
+                          style="float:left;margin-left:30%;margin-top:50px;">
+                        <a href="/1yc/lessons">
+                          <img src="/assets/images/image2/1year/button/back.png" style="position:absolute;float:left;margin-left:50px;margin-top:90px;z-index:200;">
+                        </a>
+                        <img src="/assets/images/image2/1year/logo 1 year.png" style="float:right;">
+                      </div>
+                      <div id="yc-content-body" style="padding-top:120px; min-height:300px;">
+                        <p align="center">Loading content...</p>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <br><br>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- FAQ list form -->
+<div style="display:none;">
+  <form id="faq-form" onsubmit="event.preventDefault();">
+    <textarea id="faq-topic" class="tx" maxlength="500"></textarea>
+    <button type="button" id="btn-post-faq">Post</button>
+    <button type="reset">Cancel</button>
+  </form>
+</div>
+
+<!-- FAQ list template -->
+<template id="faq-item-template">
+  <div class="listfaq">
+    <p><b class="faq-name"></b></p>
+    <div class="txtcontent">
+      <p><b>Question : </b></p>
+      <a class="faq-topic-link" href="#"><p class="faq-topic"></p></a>
+      <p class="faq-date" align="right"></p>
+      <div class="faq-delete delete" style="display:none;">
+        <a class="faq-delete-link" href="#">ลบ</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- FAQ answer form template / detail -->
+<template id="faq-answer-form-template">
+  <div class="divfaq" style="margin-top:50px;">
+    <form id="faq-answer-form" onsubmit="event.preventDefault();">
+      ตอบกลับ : <br><br>
+      <textarea id="faq-answer-detail" class="tx" maxlength="500"></textarea><br><br>
+      <button type="button" id="btn-post-answer">Post</button>
+      <button type="reset">Cancel</button>
+    </form>
+    <br>
+    <img id="faq-answer-loading" src="/assets/images/image2/eol system/loading2.gif" style="display:none; margin-left:100px;"><br>
+  </div>
+</template>
+
+<!-- FAQ answer item template -->
+<template id="faq-answer-item-template">
+  <div class="txtcontentsub" style="margin-left:20px;">
+    <p><b>Answer :</b></p>
+    <p class="answer-detail"></p>
+    <font style="float:left;" class="answer-name"></font>
+    <font style="float:right;" class="answer-date"></font>
+    <div class="answer-delete delete" style="display:none;">
+      <a class="answer-delete-link" href="#">ลบ</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</template>
+

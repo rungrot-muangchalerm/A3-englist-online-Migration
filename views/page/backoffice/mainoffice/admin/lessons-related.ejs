@@ -1,0 +1,74 @@
+<div class="main-academic" id="admin-lessons-related-app" data-skill-path="<%= typeof skillPath !== 'undefined' ? skillPath : '' %>">
+  <br><br>
+  <div align="center" class="f-thai">
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+    <br><br><br>
+    <hr>
+  </div>
+
+  <br>
+  <div align="center" class="f-thai">
+    <a href="/backoffice/mainoffice/admin/lessons-related/reading">[ Reading ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/listening">[ Listening ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/semi-speaking">[ Semi-Speaking ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/semi-writing">[ Semi-Writing ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/grammatical">[ Grammatical ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/integrated-skill">[ Integrated Skill ]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related/vocabulary">[ Vocabulary ]</a>
+  </div>
+  <br><br>
+
+  <div id="admin-lessons-related-panel" style="display:none;">
+    <div align="center" class="f-thai">
+      <font color="green" size="4"><b id="admin-lessons-related-skill-name"></b></font><br>&nbsp;
+    </div>
+
+    <div id="admin-lessons-related-list">
+      <template id="admin-lessons-related-template">
+        <table align="center" width="100%" cellpadding="5" cellspacing="0" border="0" class="f-thai">
+          <tr height="25" bgcolor="#f0f0f0">
+            <td width="8%" align="center" rowspan="2"><font size="2"><b data-role="no"></b></font></td>
+            <td align="left" width="80%"><font size="2"><b> Reason Detail : [<span data-role="reason-id"></span>] <span data-role="reason-name"></span> </b></font></td>
+            <td align="center" width="12%" rowspan="2"><font size="2" color="red"><b> &laquo; Delete &raquo; </b></font></td>
+          </tr>
+          <tr height="25" bgcolor="#f0f0f0">
+            <td align="left"><font size="2"><b> Elearning Topic : [<span data-role="topic-id"></span>] <span data-role="topic-name"></span> </b></font></td>
+          </tr>
+          <tr height="10" bgcolor="white"><td colspan="3"></td></tr>
+        </table>
+      </template>
+    </div>
+
+    <div align="center" class="f-thai" id="admin-lessons-related-empty" style="display:none;">
+      <br><br><font size="3" color="red"><b>[ No Relate Reason with Elearning in this Skill ]</b></font><br><br>&nbsp;
+    </div>
+
+    <br>
+    <form class="f-thai">
+      <table align="center" width="60%" bgcolor="#f0f0f0" border="0" class="f-thai" style="margin: 0 auto; padding: 0 10px;">
+        <tr height="70">
+          <td width="15%" align="right"><font size="2"><b>Reason ID</b></font></td>
+          <td width="10%" align="center"><font size="2"><b> : </b></font></td>
+          <td width="15%" align="left"><input type="number" size="5" disabled></td>
+          <td width="15%" align="right"><font size="2"><b>Topic ID</b></font></td>
+          <td width="10%" align="center"><font size="2"><b> : </b></font></td>
+          <td width="15%" align="left"><input type="number" size="5" disabled></td>
+          <td width="20%" align="center"><input type="button" value=" Add Relation " class="btn-add" disabled></td>
+        </tr>
+      </table>
+    </form><br>&nbsp;
+  </div>
+</div>
+

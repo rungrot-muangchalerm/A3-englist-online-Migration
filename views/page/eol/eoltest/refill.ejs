@@ -1,0 +1,208 @@
+<div id="view-refill" class="eol-view">
+  <div class='welcome'>
+    <p>Welcome To EOL System Program</p>
+  </div>
+  <br><br>
+  <center>
+    <h1 style='margin-top: 55px;'>Refill Form</h1>
+  </center>
+
+  <div id='refillMsg' align=center style='display:none;margin-top: 45px;'></div>
+
+  <form id='refillForm' onsubmit='event.preventDefault();'>
+    <input type='hidden' name='verifyToken' id='refill-verify-token' value=''>
+    <table id='refill_form' align=center width=45% cellpadding=0 cellspacing=0 border=0>
+      <tr height=5 valign=middle>
+        <td align=left colspan=2>
+          <a href='/info/refill_card' target='_blank'>วิธีการ refill</a>
+          <hr>
+        </td>
+        <td align=right>
+          <a href='/shop/product-personal' target='_blank'>สั่งซื้อ Refill Card</a>
+          <hr>
+        </td>
+      </tr>
+      <tr height=15>
+        <td colspan=3></td>
+      </tr>
+      <tr>
+        <td align=center width=35%%>
+          <font size=3 face=tahoma color=black><b>Code</b></font>
+        </td>
+        <td align=center width=5%%>
+          <font size=2 face=tahoma color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left width=60%%><input type=text size=22 name=code placeholder='Please Enter Your Code' style='border:1px solid #ccc; padding:10px 15px; border-radius:5px' required></td>
+      </tr>
+      <tr height=10>
+        <td colspan=3></td>
+      </tr>
+      <tr>
+        <td align=center>
+          <font size=3 face=tahoma color=black><b>PIN</b></font>
+        </td>
+        <td align=center>
+          <font size=2 face=tahoma color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left><input type=text size=22 name=pin placeholder='Please Enter Your Pin' style='border:1px solid #ccc; padding:10px 15px; border-radius:5px' required></td>
+      </tr>
+      <tr height=15>
+        <td colspan=3></td>
+      </tr>
+      <tr>
+        <td align=center>
+          <font size=2 face=tahoma color=black><b>Verify Code</b></font>
+        </td>
+        <td align=center>
+          <font size=2 face=tahoma color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left>
+          <font size=2 face=tahoma color=black><b>
+              <span id='refill-challenge-label'></span>
+              <input type=text size=7 name=verifly maxlength=2 required placeholder='Result' style='padding:3px 0px 3px 10px;border:1px solid #ccc; border-radius:5px'>
+            </b></font>
+        </td>
+      </tr>
+      <tr height=20>
+        <td colspan=3></td>
+      </tr>
+      <tr>
+        <td align=center></td>
+        <td align=center></td>
+        <td align=left><button type='button' class='refill_account' id='refill-account-btn'>&nbsp; Refill Account &nbsp;</button></td>
+      </tr>
+      <tr height=20>
+        <td colspan=3></td>
+      </tr>
+      <tr height=0 valign=middle>
+        <td align=center colspan=3>
+          <hr>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <table id='refill_history_header_a' align=center width=45% cellpadding=5 cellspacing=0 border=0>
+    <tr height=10>
+      <td><input type='button' value='Refill History' class='refill_history' onclick="document.getElementById('refill_history').style.display='';"></td>
+    </tr>
+  </table>
+
+  <div id='refill_history' style='display:none;'></div>
+
+  <template id="refill-history-table-template">
+    <table align=center width=70% cellpadding=0 cellspacing=0 border=1 style='border-radius:2px;' bgcolor='#ccc'>
+      <tbody data-role="body"></tbody>
+      <tr height=15 align='center'>
+        <td><a href='#' class='button button-gray refill-history-hide'>Hide</a></td>
+      </tr>
+    </table>
+  </template>
+
+  <template id="refill-history-personal-header-template">
+    <tr height=25>
+      <td align=center>
+        <font size=2 face=tahoma color='black'><b>Refill Date</b></font>
+      </td>
+      <td align=center colspan=3>
+        <font size=2 face=tahoma color='black'><b>EOL Refill Card List</b></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-empty4-template">
+    <tr height=50 bgcolor='white'>
+      <td align=center colspan=4>
+        <font size=3 face=tahoma color=red>Didn't find any Refill History</font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-card-row-template">
+    <tr height=25 bgcolor='white'>
+      <td align=center>
+        <font size=2 face=tahoma color=brown data-role="date"></font>
+      </td>
+      <td align=left colspan=3>
+        <font size=2 face=tahoma color=blue>&nbsp; <span data-role="label"></span></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-main-header-template">
+    <tr height=5>
+      <td align=center width=20% rowspan=2>
+        <font size=2 face=tahoma color=black><b>Refill Date</b></font>
+      </td>
+      <td align=center width=40% rowspan=2>
+        <font size=2 face=tahoma color=black><b>Refill List</b></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-main-header-personal-template">
+    <tr height=5>
+      <td align=center width=20% rowspan=2>
+        <font size=2 face=tahoma color=black><b>Refill Date</b></font>
+      </td>
+      <td align=center width=40% rowspan=2>
+        <font size=2 face=tahoma color=black><b>Refill List</b></font>
+      </td>
+      <td align=center width=40% colspan=2>
+        <font size=2 face=tahoma color=black><b>Available Time</b></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-main-subheader-template">
+    <tr height=25>
+      <td align=center width=20%>
+        <font size=2 face=tahoma color=green><b>From</b></font>
+      </td>
+      <td align=center width=20%>
+        <font size=2 face=tahoma color=red><b>Until</b></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-main-row-corporate-template">
+    <tr height=15 bgcolor='white'>
+      <td align=center>
+        <font size=2 face=tahoma color=brown data-role="date"></font>
+      </td>
+      <td align=left>
+        <font size=2 face=tahoma color=blue>&nbsp; <span data-role="label"></span></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-main-row-personal-template">
+    <tr height=15 bgcolor='white'>
+      <td align=center>
+        <font size=2 face=tahoma color=brown data-role="date"></font>
+      </td>
+      <td align=left>
+        <font size=2 face=tahoma color=blue>&nbsp; <span data-role="label"></span></font>
+      </td>
+      <td align=center>
+        <font size=2 face=tahoma color=green data-role="start"></font>
+      </td>
+      <td align=center>
+        <font size=2 face=tahoma color=red data-role="stop"></font>
+      </td>
+    </tr>
+  </template>
+
+  <template id="refill-history-empty2-template">
+    <tr height=35 bgcolor='white'>
+      <td align=center colspan=2>
+        <font size=3 face=tahoma color=red>Didn't find any Refill History</font>
+      </td>
+    </tr>
+  </template>
+
+  <br>&nbsp;
+</div>
+
+
+<script src='/assets/js/pages/eol/eoltest/refill.js'></script>

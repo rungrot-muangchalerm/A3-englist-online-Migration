@@ -1,0 +1,53 @@
+<div>
+  <div id="loginWrap">
+    <div class="row form-login">
+      <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top f-thai">
+          <div class="form-top-left f-thai">
+            <h3>Administrator Login Form</h3>
+            <p>Enter your username and password to log on:</p>
+            <p id="loginMsg" style="display:none;"></p>
+          </div>
+          <div class="form-top-right" style="margin-top: 60px;">
+            <i class="fa fa-key"></i>
+          </div>
+        </div>
+        <div class="form-bottom f-thai">
+          <form id="loginForm" onsubmit="event.preventDefault();" class="login-form">
+            <div class="form-group">
+              <label class="sr-only" for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="Username..." class="form-username form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Password..." class="form-password form-control" required>
+            </div>
+            <button type="button" class="btn" onclick="submitLogin()">LOGIN</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function submitLogin() {
+    const form = document.getElementById('loginForm');
+    const msg = document.getElementById('loginMsg');
+    msg.style.display = 'none';
+    fetch('/api/backoffice/login?section=office', {
+      method: 'POST',
+      credentials: 'include',
+      body: new URLSearchParams(new FormData(form))
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          window.location.href = '/backoffice/mainoffice/office/dashboard';
+        } else {
+          msg.style.display = '';
+          msg.innerHTML = `<font size="2" color="red"><b>${data.message || 'Login failed'}</b></font>`;
+        }
+      });
+  }
+</script>

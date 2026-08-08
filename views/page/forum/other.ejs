@@ -1,0 +1,197 @@
+<style>
+  .tb-school {
+    background-color: #ccc !important;
+    border-radius: 10px;
+    padding-top: 5px;
+  }
+
+  .main {
+    background-color: #ffc112 !important;
+    border-radius: 10px;
+    padding: 40px 0 40px 0;
+  }
+
+  .even {
+    background-color: #ffa502d6 !important;
+    border-radius: 10px;
+    padding: 15px 5px 15px 22px;
+  }
+
+  .odd {
+    background-color: #ffe5b5 !important;
+    border-radius: 10px;
+    padding: 15px 5px 15px 22px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .bold-text {
+    font-weight: bold;
+  }
+
+  .discount_tag {
+    position: absolute;
+    top: 15px;
+    left: 80px;
+    border: 0px solid blue;
+    font-size: 22px;
+    font-weight: bolder;
+    color: red;
+  }
+</style>
+
+<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:45px;">
+  <div class="row kanit">
+    <div class="col-xs-12" style="padding:10px 50px;">
+      <div id="other-content" style="height:auto;font-size:13px;">
+
+        <div id="school-content" style="display:none;">
+          <hr><h2><center id="school-title"></center></h2><hr>
+          <div class="main" id="school-main"></div>
+          <hr>
+        </div>
+
+        <div id="feedback-content" style="display:none;">
+          <hr><h2><center id="feedback-title"></center></h2><hr>
+          <div class="main">
+            <table align="center" class="tb-feedback" width="90%" cellpadding="0" cellspacing="0" border="0">
+              <tbody id="feedback-body"></tbody>
+            </table>
+          </div>
+          <hr>
+        </div>
+
+        <div id="advertise-content" style="display:none;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- School Category Template -->
+<template id="school-category-template">
+  <table align="center" class="tb-school" width="90%" cellpadding="0" cellspacing="0" border="0">
+    <tr height="55">
+      <td width="5%"></td>
+      <td colspan="4"><font size="5" face="tahoma" color="black"><b class="school-category-title"></b></font></td>
+    </tr>
+    <tbody class="school-category-body"></tbody>
+    <tr><td colspan="4">&nbsp;</td></tr>
+  </table>
+  <br>
+</template>
+
+<!-- School Row Template (2 items per row) -->
+<template id="school-row-template">
+  <tr height="35" align="middle" class="school-data-row">
+    <td width="5%"></td>
+    <td width="35%" align="left" class="school-name-1" style="white-space:pre-line;"></td>
+    <td width="5%"></td>
+    <td width="35%" align="left" class="school-name-2" style="white-space:pre-line;"></td>
+  </tr>
+  <tr valign="middle" height="10" class="school-spacer-row"><td></td></tr>
+</template>
+
+<!-- Feedback Row Template -->
+<template id="feedback-row-template">
+  <tr height="50" align="left" class="sub-tb-feedback">
+    <td width="82%" class="feedback-detail" style="white-space:pre-line;"></td>
+  </tr>
+</template>
+
+<!-- Advertise Template -->
+<template id="advertise-template">
+  <div style="font-size:36px;width:100%;">
+    <center><b>ตำแหน่งในการลงโฆษณา</b></center>
+    <center><b style="color:#ed1b25;">ADS ZONE</b></center>
+    <hr style="width:10%;border:2px solid #f78c22;">
+    <a href="/images/image/sponser/ads_zone.jpg" target="_blank"><img src="/images/image/sponser/ads_zone_thumbnail.jpg" style="width:100%;padding-top:10px;"></a>
+    <br><br>
+  </div>
+  <div style="font-size:24px;width:100%;">
+    <center><b>อัตราค่าโฆษณา (หน้าแรกของเว็บไซต์)</b></center><br>
+    <table style="font-size:18px;width:95%;" border="1" bordercolor="grey">
+      <tr style="background:#f3f3f3;">
+        <td class="center bold-text" rowspan="2">Banner</td>
+        <td class="center bold-text" rowspan="2">1 เดือน</td>
+        <td class="center bold-text" colspan="3">Promotion ลงระยะยาว</td>
+        <td class="center bold-text" rowspan="2">ประเภท</td>
+      </tr>
+      <tr style="background:#f3f3f3;">
+        <td class="center bold-text">3 เดือน</td>
+        <td class="center bold-text">6 เดือน</td>
+        <td class="center bold-text">12 เดือน</td>
+      </tr>
+      <tr style="height:75px;line-height: 20px;">
+        <td class="center bold" rowspan="2" style="background:#ed1b25;color:#FFF;"><span style="font-size:24px;">150x150</span><br>pixel</td>
+        <td class="center bold-text" rowspan="2">20,000.-</td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>10%</div>
+          </div>
+        </td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>15%</div>
+          </div>
+        </td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>20%</div>
+          </div>
+        </td>
+        <td class="center" rowspan="2">Fixed banner</td>
+      </tr>
+      <tr>
+        <td class="center" style="background:#ed1b25;color:#FFF;">เดือนละ 18,000.-</td>
+        <td class="center" style="background:#ed1b25;color:#FFF;">เดือนละ 17,000.-</td>
+        <td class="center" style="background:#ed1b25;color:#FFF;">เดือนละ 16,000.-</td>
+      </tr>
+      <tr style="height:75px;line-height: 20px;">
+        <td class="center bold-text" rowspan="2" style="background:#f78c22;color:#fff;"><span style="font-size:24px;">150x100</span><br>pixel</td>
+        <td class="center bold-text" rowspan="2">15,000.-</td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>10%</div>
+          </div>
+        </td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>15%</div>
+          </div>
+        </td>
+        <td class="center">
+          <div style="width:100%;border:0px solid blue;position:relative;">
+            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" style="width:100px;">
+            <div class="discount_tag">ลด<br>20%</div>
+          </div>
+        </td>
+        <td class="center" rowspan="2">Fixed banner</td>
+      </tr>
+      <tr>
+        <td class="center" style="background:#f78c22;color:#fff;">เดือนละ 13,500.-</td>
+        <td class="center" style="background:#f78c22;color:#fff;">เดือนละ 12,750.-</td>
+        <td class="center" style="background:#f78c22;color:#fff;">เดือนละ 12,000.-</td>
+      </tr>
+    </table>
+    <br>
+    <div style="font-size:16px;">
+      *เงื่อนไขในการลงโฆษณา<br>
+      - ไม่รับลงโฆษณาทุกประเภทที่ไม่เหมาะสำหรับเยาวชน<br>
+      - ไม่รับลงโฆษณาประเภทผิดกฎหมายแพ่ง อาญา กฎหมายลิขสิทธิ์ ศีลธรรม ของไทย<br>
+    </div>
+  </div>
+  <br><br>
+  <div style="width:100%;background:red;color:#fff;font-size:24px;text-align:center;padding:10px;border-radius:8px">
+    สนใจติดต่อสอบถาม 02 170 8725, 066 115 2916, 066 115 2454, 066 115 2545
+  </div>
+  <br>
+</template>
+

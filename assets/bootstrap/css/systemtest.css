@@ -1,0 +1,80 @@
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.next_back {
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    color: blue;
+    font-size: 10pt;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+.bt_red {
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: red;
+    font-size: 10pt;
+    font-family: tahoma;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.bt_green {
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: green;
+    font-size: 10pt;
+    font-family: tahoma;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.table-form-create .create-test,
+.create-test,
+.record_answer {
+    background: #008000cc;
+    border-radius: 5px;
+    color: white;
+    border: 1px;
+    padding: 4px 12px;
+    height: 30px;
+    width: auto;
+    border: 1px solid #008000cc;
+    font-weight: bold;
+}
+
+.table-form-create .create-test:hover,
+.create-test:hover,
+.record_answer:hover {
+    background: #008000;
+    color: #000;
+    cursor: pointer;
+}

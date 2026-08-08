@@ -1,0 +1,84 @@
+<div class="main" data-type-id="<%= typeof typeId !== 'undefined' ? typeId : '' %>" data-topic-id="<%= topicId %>">
+  <br><br>
+  <form id="office-topic-form" onsubmit="event.preventDefault();">
+    <table class="add-topic-form" align="center" width="95%" cellpadding="0" cellspacing="0" border="1" bordercolor="white" bgcolor="white">
+      <tr height="40">
+        <td width="85%" align="center">
+          <font size="4" face="tahoma" color="orange"><b>Edit Topic Form</b></font>
+        </td>
+      </tr>
+      <tr>
+        <td><br>
+          <table class="topic-detail" align="center" width="95%" cellpadding="0" cellspacing="0" border="0" bordercolor="white">
+            <tr height="25" valign="top">
+              <td width="17.5%" align="right">
+                <font size="2" face="tahoma" color="black"><b>Topic Name</b></font>
+              </td>
+              <td width="2.5%" align="center">
+                <font size="2" face="tahoma" color="black"><b>:</b></font>
+              </td>
+              <td width="80%" align="left">
+                <input type="text" name="topic_name" size="90" value="" style="padding:4px; margin:1px;" required>
+              </td>
+            </tr>
+            <tr id="office-topic-headline-form-row" height="25" valign="top">
+              <td width="17.5%" align="right">
+                <font size="2" face="tahoma" color="black"><b>Topic Headline</b></font>
+              </td>
+              <td width="2.5%" align="center">
+                <font size="2" face="tahoma" color="black"><b>:</b></font>
+              </td>
+              <td width="80%" align="left">
+                <textarea name="topic_headline" cols="88" rows="1" style="padding:4px; margin:1px;" required></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td width="17.5%" align="right">
+                <font size="2" face="tahoma" color="black"><b>Topic Detail</b></font>
+              </td>
+              <td width="2.5%" align="center">
+                <font size="2" face="tahoma" color="black"><b>:</b></font>
+              </td>
+              <td width="80%" align="left"></td>
+            </tr>
+            <tr>
+              <td width="17.5%" align="left"></td>
+              <td width="2.5%" align="left"></td>
+              <td width="80%" align="left">
+                <font color="red" size="2"><i><u>หมายเหตุ</u></i></font><br>
+                <font color="blue" align="left" size="2">
+                  1. บทเรียนหรือเนื้อหาที่จะใส่ต้องอยู่ในรูปแบบของไฟล์ .word<br>
+                  2. รูปภาพหรือไฟล์เสียงที่จะใส่ควรเป็นชื่อภาษาอังกฤษ
+                </font>
+              </td>
+            </tr>
+            <tr bgcolor="white">
+              <td colspan="3" width="90%">
+                <textarea id="topic_detail" name="topic_detail" class="form-control" placeholder="" rows="20"></textarea>
+              </td>
+            </tr>
+            <tr height="25">
+              <td colspan="3"></td>
+            </tr>
+            <tr height="25">
+              <td width="80%" align="center" colspan="3">
+                <input title="Edit Topic" type="submit" value="Edit Topic" style="padding:8px 24px;">
+              </td>
+            </tr>
+            <tr height="25">
+              <td width="80%" align="center" colspan="3">
+                <font size="2" color="red" face="tahoma"><b><span id="office-topic-form-message"></span></b></font>
+              </td>
+            </tr>
+          </table>
+          <br>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <br>
+  <div align="center">
+    <a id="office-topic-back-link" href="#"><font size="2" face="tahoma"><b>&lt;&lt; Back to Topic List</b></font></a>
+  </div>
+  <br><br>
+</div>

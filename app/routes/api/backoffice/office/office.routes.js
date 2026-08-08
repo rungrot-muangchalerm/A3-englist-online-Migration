@@ -1,0 +1,30 @@
+const express = require('express');
+const router = express.Router();
+const topicController = require('../../../../controller/backoffice/mainoffice/office/topic/topic.controller');
+const feedbackController = require('../../../../controller/backoffice/mainoffice/office/feedback/feedback.controller');
+const userController = require('../../../../controller/backoffice/mainoffice/office/user/user.controller');
+const contestExamController = require('../../../../controller/backoffice/mainoffice/office/eol-contest-exam/eol-contest-exam.controller');
+const jwtMiddleware = require('../../../../middleware/jwt.middleware');
+
+router.get('/topics/:typeId', topicController.list);
+router.get('/topics/:typeId/:topicId', topicController.detail);
+router.put('/topics/:typeId/:topicId', topicController.update);
+router.post('/topics/:typeId/:topicId/toggle-active', topicController.toggleActive);
+router.delete('/topics/:typeId/:topicId', topicController.remove);
+router.get('/feedback', feedbackController.list);
+router.post('/feedback', feedbackController.add);
+router.post('/feedback/:menu/:id/toggle-active', feedbackController.toggle);
+router.delete('/feedback/:menu/:id', feedbackController.remove);
+router.get('/eol-contest-exams', contestExamController.list);
+router.get('/eol-contest-exams/:examId', contestExamController.detail);
+router.put('/eol-contest-exams/:examId', contestExamController.update);
+router.delete('/eol-contest-exams/:examId', contestExamController.remove);
+router.get('/users', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.list);
+router.get('/users/create', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.createForm);
+router.get('/users/:id', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.editForm);
+router.post('/users', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.create);
+router.put('/users/:id', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.update);
+router.post('/users/:id/toggle-active', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.toggleActive);
+router.delete('/users/:id', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_office'), userController.remove);
+
+module.exports = router;

@@ -1,0 +1,292 @@
+<style>
+    .thumbnail_icon {
+        display: inline-block;
+        border: 0px solid orange;
+        width: 110px;
+        text-align: center;
+        font-family: Kanit;
+        height: 135px;
+    }
+
+    .modified_text {
+        min-width: 100px;
+        display: inline-block;
+    }
+
+    .icon_circle {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        background: #565656;
+    }
+
+    .icon_circle.active {
+        background: #f7941d;
+    }
+
+    .icon_circle:hover {
+        transform: translateY(-2px);
+        box-shadow: 3px 10px 20px rgba(0, 0, 0, .3);
+    }
+
+    .title_english_room {
+        font-size: 13px;
+        padding-top: 10px;
+        color: black !important;
+    }
+
+    .title_english_room.active {
+        color: #f7941d !important;
+    }
+
+    .title_english_room:hover {
+        color: #f7941d !important;
+    }
+
+    .img_hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 3px 10px 20px rgba(0, 0, 0, .3);
+    }
+
+    .img_hover {
+        border-radius: 230px;
+    }
+
+    .over_a.alink:hover {
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .over_b:hover {
+        color: black;
+    }
+
+    .headline:hover {
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .forum-pagination a {
+        color: #9F3ED5;
+        font-weight: bold;
+        margin: 0 3px;
+    }
+
+    .forum-pagination b {
+        margin: 0 3px;
+    }
+</style>
+
+<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
+    <div class="row kanit">
+        <div class="col-xs-12" style="padding:0px 0px;">
+            <div id="apDiv68" style="border-top:1px solid #d27f19;border-bottom:4px solid #f7941d">
+                <center>
+                    <div id="apdiv3menubar" style="background:#f3f3f3;">
+                        <div class="row kanit">
+                            <div class="col-xs-12" id="forum-menu-icons">
+                                <% const activeClass = (id) => activeTypeId === id ? 'active' : ''; %>
+                                <div class="thumbnail_icon <%= activeClass('03-01') %>" data-type-id="03-01" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-01" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-01') %>">
+                                                    <i class="fa fa-calendar-check-o" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-01') %>">One day One sentence</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-12') %>" data-type-id="03-12" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-12" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-12') %>">
+                                                    <i class="fa fa-newspaper-o" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-12') %>">English for News</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-10') %>" data-type-id="03-10" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-10" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-10') %>">
+                                                    <i class="fa fa-child" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-10') %>">Easy English</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-11') %>" data-type-id="03-11" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-11" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-11') %>">
+                                                    <i class="fa fa-heart" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-11') %>">Comprehensive Listening</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-03') %>" data-type-id="03-03" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-03" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-03') %>">
+                                                    <i class="fa fa-text-width" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-03') %>">Communicative English</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-15') %>" data-type-id="03-15" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-15" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-15') %>">
+                                                    <i class="fa fa-leanpub" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-15') %>">Grammar & Writing</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-08') %>" data-type-id="03-08" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-08" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-08') %>">
+                                                    <i class="fa fa-briefcase" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-08') %>">Pronunciation & Phonetic</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-07') %>" data-type-id="03-07" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-07" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-07') %>">
+                                                    <i class="fa fa-music" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-07') %>">Song of Souls</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="thumbnail_icon <%= activeClass('03-05') %>" data-type-id="03-05" style="vertical-align: top;">
+                                    <a href="/forum/e-eng?type_id=03-05" class="over_a">
+                                        <div style="width:100%;border:0px solid blue;margin-top:15px;">
+                                            <center>
+                                                <div class="icon_circle <%= activeClass('03-05') %>">
+                                                    <i class="fa fa-film" style="font-size:30px;padding:15px 0px;color:#ffffff;"></i>
+                                                </div>
+                                                <div class="title_english_room <%= activeClass('03-05') %>">Movie World</div>
+                                            </center>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div id="apDiv69">
+        <br>
+        <center>
+            <h3>
+                <font color="orange" id="forum-type-name">One day One sentence</font>
+            </h3>
+        </center>
+        <br>
+
+        <table width="98%" height="80" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tbody id="forum-topic-list">
+                <!-- JS จะเติมรายการ topic -->
+            </tbody>
+        </table>
+
+        <p align="center" id="forum-pagination" class="forum-pagination">
+            <!-- JS จะเติม pagination -->
+        </p>
+    </div>
+</div>
+
+<template id="forum-empty-template">
+    <tr valign="top">
+        <td align="center" colspan="2">ไม่พบข้อมูล</td>
+    </tr>
+</template>
+
+<template id="forum-topic-template">
+    <tr valign="top">
+        <td width="15%" rowspan="3" align="center">
+            <div class="imgborder">
+                <a class="topic-image-link" href="#" target="_blank">
+                    <img class="img_hover topic-image" src="" width="84" height="84" onerror="this.src='/assets/images/image2/logo/logo-02.ico'" />
+                </a>
+            </div>
+        </td>
+        <td width="85%" align="center">
+            <div align="left" class="alink1">
+                <font size="2" face="tahoma"><b>
+                        <a class="over_a alink topic-name-link" href="#" target="_blank">
+                            <span class="topic-name"></span>
+                        </a>
+                        <span class="new-badge"></span>
+                    </b>
+                </font>
+            </div>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td align="center" style="padding-right:5px;">
+            <div align="left" class="alink">
+                <font size="2" color="#3333" face="tahoma"><b>
+                        <a class="over_b headline topic-headline-link" href="#" target="_blank">
+                            <span class="topic-headline"></span>
+                        </a>
+                    </b>
+                </font>
+            </div>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td align="center">
+            <div align="left">
+                <font size="2" color="#0000" face="tahoma"><b>
+                        <div class="text-grey" style="font-size:14px !important;border:0px solid blue;margin:0px;">
+                            <div class="modified_text" style="font-size:12px !important;margin:0px;">
+                                <i class="fa fa-calendar-check-o"></i>&nbsp;<span class="topic-date"></span>
+                            </div>
+                            <div class="modified_text" style="font-size:12px !important;margin:0px;">
+                                <i class="fa fa-user-circle-o"></i>&nbsp;<span class="topic-author"></span>
+                            </div>
+                            <div class="modified_text" style="font-size:12px !important;margin:0px;">
+                                <i class="fa fa-eye"></i>&nbsp;View&nbsp;<span class="topic-view"></span>
+                            </div>
+                        </div>
+                    </b>
+                </font>
+            </div>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td height="1" colspan="2" align="center">
+            <hr width="1000" align="right" style="margin-right:20px;color:black;" />
+        </td>
+    </tr>
+</template>

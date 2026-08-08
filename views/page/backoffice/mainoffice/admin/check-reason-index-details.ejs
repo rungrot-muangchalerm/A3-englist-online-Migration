@@ -1,0 +1,159 @@
+<div class="main-academic" id="admin-reason-app" data-page-mode="<%= pageMode %>" data-skill-path="<%= typeof skillPath !== 'undefined' ? skillPath : '' %>" data-detail-id="<%= typeof detailId !== 'undefined' ? detailId : '' %>" data-quiz-id="<%= typeof quizId !== 'undefined' ? quizId : '' %>">
+      <br><br>
+      <div align="center" class="f-thai">
+        <br><br>
+        <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+        <br><br>
+        <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+        <br><br>
+        <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+        <br><br><br>
+        <hr>
+      </div>
+
+      <div align="center" class="f-thai reason-skill-menu">
+        <br><br>
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/reading">[Reading]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/listening">[Listening]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/semi-speaking">[Semi-Speaking]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/semi-writing">[Semi-Writing]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/grammartic">[Grammartic]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/cloze-test">[Cloze Test]</a>&nbsp;&nbsp;
+        <a href="/backoffice/mainoffice/admin/check-reason-index-details/vocab">[Vocab]</a>&nbsp;&nbsp;
+      </div>
+
+      <div id="admin-reason-skill-title" align="center" class="f-thai reason-title" style="display:none;">
+        <br><h3><font color="red" id="admin-reason-skill-name"></font></h3>
+      </div>
+      <div id="admin-reason-detail-title" align="center" class="f-thai reason-title" style="display:none;">
+        <br><font size="3"><b id="admin-reason-detail-heading"></b></font><br>&nbsp;
+      </div>
+
+      <table id="admin-reason-list-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" bordercolor="gray" class="f-thai">
+        <thead>
+          <tr bgcolor="#DDDDDD" height="45">
+            <td align="center" colspan="6"><font color="black" size="3">Reason Amounts : <span id="admin-reason-list-amount"></span></font></td>
+          </tr>
+          <tr bgcolor="#EEEEEE" height="40">
+            <td align="center"><font color="black" size="2">&nbsp;No.&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;DETAIL_ID&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;SSKILL_ID&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;SSKILL_NAME&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;DETAIL_CODE&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;DETAIL_NAME&nbsp;</font></td>
+          </tr>
+        </thead>
+        <tbody id="admin-reason-list">
+          <template id="admin-reason-list-template">
+            <tr height="35" valign="top">
+              <td align="center"><font color="black" size="2" data-role="no"></font></td>
+              <td align="center"><font color="black" size="2" data-role="detail-id"></font></td>
+              <td align="center"><font color="black" size="2" data-role="sskill-id"></font></td>
+              <td align="left" width="20%"><font color="black" size="2" data-role="sskill-name"></font></td>
+              <td align="center"><font color="black" size="2" data-role="detail-code"></font></td>
+              <td align="left" width="60%"><a href="#" target="_blank" data-role="detail-link"><font color="black" size="2" data-role="detail-name"></font></a></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+
+      <table id="admin-reason-skill-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" bordercolor="gray" class="f-thai" style="display:none;">
+        <thead>
+          <tr bgcolor="#DDDDDD" height="45">
+            <td align="center" colspan="10"><font color="black" size="3">Reason Amounts : <span id="admin-reason-skill-amount"></span></font></td>
+          </tr>
+          <tr bgcolor="#EEEEEE" height="40">
+            <td align="center"><font color="black" size="2">&nbsp;No.&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;DETAIL_ID&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;SSKILL_ID&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;SSKILL_NAME&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;DETAIL_NAME&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;B&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;L&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;I&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;U&nbsp;</font></td>
+            <td align="center"><font color="black" size="2">&nbsp;A&nbsp;</font></td>
+          </tr>
+        </thead>
+        <tbody id="admin-reason-skill-list">
+          <template id="admin-reason-skill-template">
+            <tr height="35" valign="top">
+              <td align="center" width="3%"><font color="black" size="2" data-role="no"></font></td>
+              <td align="center" width="6%"><font color="black" size="2" data-role="detail-id"></font></td>
+              <td align="center" width="6%"><font color="black" size="2" data-role="sskill-id"></font></td>
+              <td align="left" width="10%"><font color="black" size="2" data-role="sskill-name"></font></td>
+              <td align="left" width="40%"><a href="#" target="_blank" data-role="detail-link"><font color="black" size="2" data-role="detail-name"></font></a></td>
+              <td align="center" width="7%"><font color="black" size="2" data-role="level-1"></font></td>
+              <td align="center" width="7%"><font color="black" size="2" data-role="level-2"></font></td>
+              <td align="center" width="7%"><font color="black" size="2" data-role="level-3"></font></td>
+              <td align="center" width="7%"><font color="black" size="2" data-role="level-4"></font></td>
+              <td align="center" width="7%"><font color="black" size="2" data-role="level-5"></font></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+
+      <table id="admin-reason-detail-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" class="f-thai" style="display:none;">
+        <thead>
+          <tr height="45" bgcolor="#eeeeee">
+            <td width="5%" align="center"><font size="2" color="black"><b>No.</b></font></td>
+            <td width="5%" align="center"><font size="2" color="black"><b>Quiz ID</b></font></td>
+            <td width="10%" align="center"><font size="2" color="black"><b>Test</b></font></td>
+            <td width="15%" align="center"><font size="2" color="black"><b>Level</b></font></td>
+            <td width="5%" align="center"><font size="2" color="black"><b>Skill ID</b></font></td>
+            <td width="15%" align="center"><font size="2" color="black"><b>Skill Name</b></font></td>
+            <td width="5%" align="center"><font size="2" color="black"><b>SSkill ID</b></font></td>
+            <td width="30%" align="center"><font size="2" color="black"><b>SSkill Name</b></font></td>
+          </tr>
+        </thead>
+        <tbody id="admin-reason-detail-list">
+          <template id="admin-reason-detail-template">
+            <tr height="35">
+              <td width="5%" align="center"><font size="2" color="black" data-role="no"></font></td>
+              <td width="5%" align="center"><a href="#" target="_blank" data-role="quiz-link"><font size="2" color="black" data-role="question-id"></font></a></td>
+              <td width="10%" align="center"><font size="2" color="black" data-role="test-name"></font></td>
+              <td width="15%" align="center"><font size="2" color="black" data-role="level-name"></font></td>
+              <td width="5%" align="center"><font size="2" color="black" data-role="skill-id"></font></td>
+              <td width="15%" align="center"><font size="2" color="black" data-role="skill-name"></font></td>
+              <td width="5%" align="center"><font size="2" color="black" data-role="sskill-id"></font></td>
+              <td width="30%" align="center"><font size="2" color="black" data-role="sskill-name"></font></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+
+      <table id="admin-reason-quiz-table" align="center" width="100%" border="1" class="f-thai" style="display:none;">
+        <tbody>
+          <tr align="middle">
+            <td align="left"><font size="2" face="tahoma" color="brown">&nbsp;<span id="admin-reason-quiz-path"></span></font></td>
+          </tr>
+          <tr valign="top">
+            <td>&nbsp;[<span id="admin-reason-quiz-id"></span>] <span id="admin-reason-quiz-text"></span></td>
+          </tr>
+          <tr>
+            <td align="left" width="90%" id="admin-reason-answer-list">
+              <template id="admin-reason-answer-template">
+                <div>
+                  &nbsp;&nbsp; [<span data-role="answer-id"></span>] : <span data-role="correct"></span> : <span data-role="answer-text"></span>
+                </div>
+              </template>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <font size="2"><b>&nbsp;Description : <br></b></font>
+              <font size="2" color="blue" id="admin-reason-description"></font>
+              <div align="center" id="admin-reason-no-description" style="display:none;"><font size="2" color="red"><b> - None Description - </b></font></div><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

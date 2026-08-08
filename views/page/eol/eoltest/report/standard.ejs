@@ -1,0 +1,426 @@
+<div id="view-report-standard" class="eol-view">
+    <div id="report-app">
+        <div id="report-focus-bar" class="report-focus-bar">
+            <template id="report-focus-bar-template">
+                <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:5px">
+                    <tr height="30">
+                        <td align="right" width="15%">
+                            <font size="2" face="tahoma" color="brown"><b>Focus On &nbsp; : &nbsp; </b></font>
+                        </td>
+                        <td align="left" width="85%">
+                            <font size="2" face="tahoma" color="brown"><b class="focus-name"></b></font>
+                        </td>
+                    </tr>
+                </table><br>
+                <div class="report-section-back-wrap">
+                    <a class="back-link" href="/eol/eoltest/report<%= memberIdQuery %>">
+                        <font size="2" face="tahoma" color="blue"><b>&laquo; Back to Report Menu</b></font>
+                    </a>
+                </div>
+            </template>
+        </div>
+
+        <div id="report-standard-layout" class="report-section">
+            <map name="BackStandard" id="BackStandard">
+                <area shape="rect" coords="720,286,978,377" class="back-area" href="/eol/eoltest/report<%= memberIdQuery %>" target="_self" />
+            </map>
+            <img src="/assets/images/image2/eol system/Report/report-standard-test.png" width="100%" usemap="#BackStandard" style="border-radius:10px;">
+            <br>
+            <table align="center" width="60%" bgcolor="#827f7beb" cellpadding="0" cellspacing="0" border="0" style="border-radius: 10px;">
+                <tr height="50" valign="middle">
+                    <td align="right" width="13%">
+                        <font size="2" face="tahoma" color="black"><b>From &nbsp; : &nbsp;</b></font>
+                    </td>
+                    <td align="left" width="27%">&nbsp;<input id="popup_eolstandard_a" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae;"></td>
+                    <td align="right" width="13%">
+                        <font size="2" face="tahoma" color="black"><b>Until &nbsp; : &nbsp;</b></font>
+                    </td>
+                    <td align="left" width="27%">&nbsp;<input id="popup_eolstandard_b" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae;"></td>
+                    <td align="left" width="15%"><button type="button" class="btn-view btn-view-standard">&nbsp; View &nbsp;</button></td>
+                </tr>
+                <tr height="25">
+                    <td align="center" colspan="5">
+                        <font size="2" face="tahoma" color="red"><b>Format Date : Ex. 2010-12-31 </b></font>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br>
+            <div id="standard-items-wrap">
+                <template id="report-standard-empty-template">
+                    <table width="80%" align="center" cellpadding="5" cellspacing="0" border="0" style="background:#f0f0f0; border-radius:10px;">
+                        <tr height="50">
+                            <td align="center">
+                                <font size="2" face="tahoma" color="red"><b> - Didn't find any EOL Standard Test result - </b></font>
+                            </td>
+                        </tr>
+                    </table><br><br>&nbsp;
+                </template>
+                <template id="report-standard-list-table-template">
+                    <table width="80%" align="center" cellpadding="5" cellspacing="0" border="0" style="background: #f0f0f0;border-radius: 10px;">
+                        <tr height="25">
+                            <td align="left" colspan="6"></td>
+                        </tr>
+                        <tbody class="items-body"></tbody>
+                        <tr height="25" bgcolor="#f0f0f0">
+                            <td align="left" colspan="6"></td>
+                        </tr>
+                    </table><br><br>&nbsp;
+                </template>
+                <template id="report-standard-row-template">
+                    <tr height="25">
+                        <td width="7%" align="right">
+                            <font size="2" face="tahoma" color="black">&bull;&nbsp;</font>
+                        </td>
+                        <td width="15%" align="left">
+                            <font size="2" face="tahoma" color="black"><b>ทำการทดสอบเมื่อ</b></font>
+                        </td>
+                        <td width="44%" align="left">
+                            <font size="2" face="tahoma" color="black"><b class="std-date"></b></font>
+                        </td>
+                        <td width="20%" align="left">
+                            <font size="2" face="tahoma" color="black"><b>คิดเป็น&nbsp;&nbsp;<span class="std-percent"></span>&nbsp;&nbsp;%</b></font>
+                        </td>
+                        <td width="14%" align="center">
+                            <a class="std-link" target="_blank" href="#">
+                                <font size="2" face="tahoma" color="blue"><b>[ดูรายละเอียด]&nbsp;&nbsp;</b></font>
+                            </a>
+                        </td>
+                    </tr>
+                </template>
+            </div>
+        </div>
+
+        <div id="report-standard-detail" class="report-section" style="display:none;">
+            <div class="report-section-back-wrap">
+                <a class="back-link" href="/eol/eoltest/report/standard<%= memberIdQuery %>">
+                    <font size="2" face="tahoma" color="blue"><b>&laquo; Back to EOL Standard Report</b></font>
+                </a>
+            </div>
+            <table align="center" width="89%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f7f7f7">
+                <tr height="25">
+                    <td colspan="4">
+                        <center><img src="/assets/images/image2/eol system/Report/EST_head_report.png" width="90%"><br><br></center>
+                    </td>
+                </tr>
+                <tr height="25">
+                    <td width="10%" rowspan="4" bgcolor="#e7e7e7" align="center">
+                        <img class="detail-avatar" src="" height="" onerror="this.onerror=null;this.src='/assets/2010/member_images/icon_user_01.jpg'">
+                    </td>
+                    <td width="20%" align="right">
+                        <font size="2" face="tahoma" color="black"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></font>
+                    </td>
+                    <td width="70%" align="left" colspan="3">
+                        <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-fname"></span> &nbsp; &nbsp; <span class="detail-lname"></span> </b></font>
+                    </td>
+                </tr>
+                <tr height="25">
+                    <td align="right">
+                        <font size="2" face="tahoma" color="black"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></font>
+                    </td>
+                    <td align="left" colspan="3">
+                        <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-date"></span> </b></font>
+                    </td>
+                </tr>
+                <tr height="25">
+                    <td align="right">
+                        <font size="2" face="tahoma" color="black"><b>ประเภทการทดสอบ &nbsp; : &nbsp;</b></font>
+                    </td>
+                    <td align="left" colspan="3">
+                        <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-test-type"></span></b></font>
+                    </td>
+                </tr>
+                <tr height="25">
+                    <td align="right">
+                        <font size="2" face="tahoma" color="black"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></font>
+                    </td>
+                    <td align="left" colspan="3">
+                        <font size="2" face="tahoma" color="black"><b>&nbsp; ตอบถูก <span class="detail-pass"></span> ข้อ &nbsp; &nbsp; ตอบผิด <span class="detail-wrong"></span> ข้อ &nbsp; &nbsp; ไม่ได้ตอบ <span class="detail-unans"></span> ข้อ &nbsp; &nbsp; คิดเป็น <span class="detail-percent"></span> %</b></font>
+                    </td>
+                </tr>
+            </table><br>
+            <table id="standard-skills-table" align="center" width="90%" cellpadding="5" cellspacing="2" border="0" class="standard-skills-table">
+                <tr height="25">
+                    <td align="center" width="20%" bgcolor="#aaaaaa">
+                        <font size="2" face="tahoma" color="#ffffff"><b>ทักษะ ( Skill )</b></font>
+                    </td>
+                    <td align="center" width="45%" bgcolor="#aaaaaa" colspan="3">
+                        <font size="2" face="tahoma" color="#ffffff"><b>คะแนน ( Score )</b></font>
+                    </td>
+                    <td align="center" width="35%" bgcolor="#aaaaaa">
+                        <font size="2" face="tahoma" color="#ffffff"><b>ระดับความสามารถ ( Level )</b></font>
+                    </td>
+                </tr>
+
+                <template id="report-standard-skill-template">
+                    <tr height="25">
+                        <td align="center" bgcolor="#e0e0e0" rowspan="2">
+                            <font size="2" face="tahoma"><b class="skill-label"></b></font>
+                        </td>
+                        <td align="center" bgcolor="#e0e0e0">
+                            <font size="2" face="tahoma">ตอบถูก <span class="skill-correct"></span> ข้อ </font>
+                        </td>
+                        <td align="center" bgcolor="#e0e0e0">
+                            <font size="2" face="tahoma">ตอบผิด <span class="skill-wrong"></span> ข้อ </font>
+                        </td>
+                        <td align="center" bgcolor="#e0e0e0">
+                            <font size="2" face="tahoma">ไม่ได้ตอบ <span class="skill-unans"></span> ข้อ </font>
+                        </td>
+                        <td align="center" width="40%" bgcolor="#e0e0e0" rowspan="2">
+                            <font size="2" face="tahoma" class="skill-level"></font>
+                        </td>
+                    </tr>
+                    <tr height="25">
+                        <td align="center" bgcolor="#e0e0e0" colspan="3">
+                            <font size="2" face="tahoma"><b>คิดเป็น <span class="skill-score"></span> / <span class="skill-total"></span> คะแนน </b></font>
+                        </td>
+                    </tr>
+                </template>
+            </table>
+            <div id="score-comparison-wrap">
+                <template id="report-score-comparison-template">
+                    <table align="center" width="90%" cellpadding="5" cellspacing="2" border="0" class="score-comparison-table">
+                        <tr height="25">
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>EOL Standard Test</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>TOEIC</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>CU-TEP</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>TOEFL ITP</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>TOEFL IBT</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>IELTS</b></font>
+                            </td>
+                            <td align="center" bgcolor="#aaaaaa">
+                                <font size="2" face="tahoma" color="#ffffff"><b>CEFR</b></font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" rowspan="2" class="score-g-1">
+                                <font size="3" face="tahoma"><b>1 - 15</b></font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-m-1">
+                                <font size="2" face="tahoma">0 - 250</font>
+                            </td>
+                            <td align="center" class="score-c-1">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-1">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-1">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-1">
+                                <font size="2" face="tahoma">0 - 1</font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-cc-1">
+                                <font size="2" face="tahoma">A1</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" class="score-c-2">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-2">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-2">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-2">
+                                <font size="2" face="tahoma">1 - 1.5</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" rowspan="2" class="score-g-2">
+                                <font size="3" face="tahoma"><b>16 - 35</b></font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-m-2">
+                                <font size="2" face="tahoma">255 - 400</font>
+                            </td>
+                            <td align="center" class="score-c-3">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-3">
+                                <font size="2" face="tahoma">347 - 393</font>
+                            </td>
+                            <td align="center" class="score-c-3">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-3">
+                                <font size="2" face="tahoma">2 - 2.5</font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-cc-2">
+                                <font size="2" face="tahoma">A2</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" class="score-c-4">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-4">
+                                <font size="2" face="tahoma">397 - 433</font>
+                            </td>
+                            <td align="center" class="score-c-4">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-4">
+                                <font size="2" face="tahoma">3 - 3.5</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" rowspan="2" class="score-g-3">
+                                <font size="3" face="tahoma"><b>36 - 60</b></font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-m-3">
+                                <font size="2" face="tahoma">405 - 600</font>
+                            </td>
+                            <td align="center" class="score-c-5">
+                                <font size="2" face="tahoma"> - </font>
+                            </td>
+                            <td align="center" class="score-c-5">
+                                <font size="2" face="tahoma">437 - 473</font>
+                            </td>
+                            <td align="center" class="score-c-5">
+                                <font size="2" face="tahoma">41 - 52</font>
+                            </td>
+                            <td align="center" class="score-c-5">
+                                <font size="2" face="tahoma">4</font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-cc-3">
+                                <font size="2" face="tahoma">B1</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" class="score-c-6">
+                                <font size="2" face="tahoma"> 60 </font>
+                            </td>
+                            <td align="center" class="score-c-6">
+                                <font size="2" face="tahoma">477 - 510</font>
+                            </td>
+                            <td align="center" class="score-c-6">
+                                <font size="2" face="tahoma">53 - 64</font>
+                            </td>
+                            <td align="center" class="score-c-6">
+                                <font size="2" face="tahoma">4.5 - 5</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" rowspan="2" class="score-g-4">
+                                <font size="3" face="tahoma"><b>61 - 80</b></font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-m-4">
+                                <font size="2" face="tahoma">605 - 780</font>
+                            </td>
+                            <td align="center" class="score-c-7">
+                                <font size="2" face="tahoma"> 75 </font>
+                            </td>
+                            <td align="center" class="score-c-7">
+                                <font size="2" face="tahoma">513 - 547</font>
+                            </td>
+                            <td align="center" class="score-c-7">
+                                <font size="2" face="tahoma">65 - 78</font>
+                            </td>
+                            <td align="center" class="score-c-7">
+                                <font size="2" face="tahoma">5.5 - 6</font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-cc-4">
+                                <font size="2" face="tahoma">B2</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" class="score-c-8">
+                                <font size="2" face="tahoma"> 90 </font>
+                            </td>
+                            <td align="center" class="score-c-8">
+                                <font size="2" face="tahoma">550 - 587</font>
+                            </td>
+                            <td align="center" class="score-c-8">
+                                <font size="2" face="tahoma">79 - 95</font>
+                            </td>
+                            <td align="center" class="score-c-8">
+                                <font size="2" face="tahoma"> 6.5 - 7 </font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" rowspan="2" class="score-g-5">
+                                <font size="3" face="tahoma"><b>81 - 99</b></font>
+                            </td>
+                            <td align="center" class="score-m-5">
+                                <font size="2" face="tahoma">785 - 900</font>
+                            </td>
+                            <td align="center" class="score-c-9">
+                                <font size="2" face="tahoma"> 100 </font>
+                            </td>
+                            <td align="center" class="score-c-9">
+                                <font size="2" face="tahoma">590 - 637</font>
+                            </td>
+                            <td align="center" class="score-c-9">
+                                <font size="2" face="tahoma">96 - 110</font>
+                            </td>
+                            <td align="center" class="score-c-9">
+                                <font size="2" face="tahoma">7.5 - 8</font>
+                            </td>
+                            <td align="center" rowspan="2" class="score-cc-5">
+                                <font size="2" face="tahoma">C1</font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" class="score-m-6">
+                                <font size="2" face="tahoma">905 - 989</font>
+                            </td>
+                            <td align="center" class="score-c-10">
+                                <font size="2" face="tahoma">119</font>
+                            </td>
+                            <td align="center" class="score-c-10">
+                                <font size="2" face="tahoma">640 - 676</font>
+                            </td>
+                            <td align="center" class="score-c-10">
+                                <font size="2" face="tahoma">111 - 119</font>
+                            </td>
+                            <td align="center" class="score-c-10">
+                                <font size="2" face="tahoma">8.5</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="7" class="score-top">
+                                <font size="3" face="tahoma"><b> TOP SCORE </b></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="score-c-11">
+                                <font size="3" face="tahoma"><b>100</b></font>
+                            </td>
+                            <td align="center" class="score-m-7">
+                                <font size="2" face="tahoma">990</font>
+                            </td>
+                            <td align="center" class="score-c-11">
+                                <font size="2" face="tahoma">120</font>
+                            </td>
+                            <td align="center" class="score-c-11">
+                                <font size="2" face="tahoma">677</font>
+                            </td>
+                            <td align="center" class="score-c-11">
+                                <font size="2" face="tahoma">120</font>
+                            </td>
+                            <td align="center" class="score-c-11">
+                                <font size="2" face="tahoma">9</font>
+                            </td>
+                            <td align="center" class="score-cc-6">
+                                <font size="2" face="tahoma">C2</font>
+                            </td>
+                        </tr>
+                    </table><br><br>&nbsp;
+                </template>
+            </div>
+        </div>
+    </div>
+</div>

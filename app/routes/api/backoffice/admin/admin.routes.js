@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+const adminQuestionController = require('../../../../controller/backoffice/mainoffice/admin/question.controller');
+const adminQuestionListController = require('../../../../controller/backoffice/mainoffice/admin/question-list.controller');
+const adminExtraTestController = require('../../../../controller/backoffice/mainoffice/admin/extra-test.controller');
+const adminAnalyzeQuizController = require('../../../../controller/backoffice/mainoffice/admin/analyze-quiz.controller');
+const adminQuizCommentController = require('../../../../controller/backoffice/mainoffice/admin/quiz-comment.controller');
+const adminMonthlyReportController = require('../../../../controller/backoffice/mainoffice/admin/monthly-report.controller');
+const adminGepotReportController = require('../../../../controller/backoffice/mainoffice/admin/gepot-report.controller');
+const jwtMiddleware = require('../../../../middleware/jwt.middleware');
+
+router.get('/questions/amount', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionController.amount);
+router.use('/reasons', require('./reason/reason.api.routes'));
+router.get('/questions/list/show', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionListController.showQuestions);
+router.get('/questions/list/hidden', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionListController.hiddenQuestions);
+router.get('/questions/search', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionListController.search);
+router.get('/questions/related/show', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionListController.showRelated);
+router.get('/questions/related/hidden', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuestionListController.hiddenRelated);
+router.get('/extra-tests', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminExtraTestController.list);
+router.get('/extra-tests/:testId', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminExtraTestController.detail);
+router.get('/analyze-quiz', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminAnalyzeQuizController.list);
+router.get('/quiz-comments', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuizCommentController.list);
+router.get('/quiz-comments/:quizId', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminQuizCommentController.detail);
+router.use('/lessons-related', require('./lesson-related/lesson-related.api.routes'));
+router.get('/monthly-report', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminMonthlyReportController.list);
+router.get('/export-report-gepot-excel', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminGepotReportController.excel);
+router.post('/export-report-gepot-excel/full', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminGepotReportController.fullExcel);
+router.post('/export-report-gepot-excel/summary', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminGepotReportController.summaryExcel);
+router.get('/export-report-gepot-pdf', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminGepotReportController.pdf);
+router.post('/export-report-gepot-pdf', jwtMiddleware.authenticate, jwtMiddleware.requireRoleApi('backoffice_admin'), adminGepotReportController.printPdf);
+
+module.exports = router;

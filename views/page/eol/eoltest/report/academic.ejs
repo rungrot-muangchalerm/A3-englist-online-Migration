@@ -1,0 +1,423 @@
+<div id="view-report-academic" class="eol-view">
+    <div id="report-app">
+        <div id="report-focus-bar" class="report-focus-bar">
+            <template id="report-focus-bar-template">
+                <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:5px">
+                    <tr height="30">
+                        <td align="right" width="15%">
+                            <font size="2" face="tahoma" color="brown"><b>Focus On &nbsp; : &nbsp; </b></font>
+                        </td>
+                        <td align="left" width="85%">
+                            <font size="2" face="tahoma" color="brown"><b class="focus-name"></b></font>
+                        </td>
+                    </tr>
+                </table><br>
+                <div class="report-section-back-wrap">
+                    <a class="back-link" href="/eol/eoltest/report<%= memberIdQuery %>">
+                        <font size="2" face="tahoma" color="blue"><b>&laquo; Back to Report Menu</b></font>
+                    </a>
+                </div>
+            </template>
+        </div>
+
+        <div id="report-academic-layout" class="report-section">
+
+            <img src="/assets/images/image2/eol system/Report/report-test-evo.png" usemap="#MapAcademic" border="0" width="100%" style="border-radius:10px">
+            <map name="MapAcademic" id="MapAcademic">
+                <area shape="rect" coords="670,292,955,369" class="back-area" href="/eol/eoltest/report<%= memberIdQuery %>" target="_self" />
+            </map>
+            <table width="80%" align="center" cellpadding="0" cellspacing="1" border="0" style="margin-top:-220px;position:relative;">
+                <tr height="30">
+                    <td bgcolor="#FEBC13" width="15%" align="right">
+                        <font size="2" face="tahoma" color="white"><b>Multiple Skills&nbsp;</b></font>
+                    </td>
+                    <td bgcolor="#FCEFD9" width="85%">&nbsp;
+                        <a class="multiple-skills-link" href="/eol/eoltest/report/academic?skill_id=10<%= memberIdParam %>">
+                            <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Multiple Skills </b></font>
+                        </a>
+                    </td>
+                </tr>
+                <tr height="30">
+                    <td bgcolor="#FEBC13" width="15%" align="right">
+                        <font size="2" face="tahoma" color="white"><b>Single Skill&nbsp;</b></font>
+                    </td>
+                    <td bgcolor="#FCEFD9" width="85%">
+                        <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr height="25">
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="1" href="/eol/eoltest/report/academic?skill_id=1<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Reading Comprehension </b></font>
+                                    </a>
+                                </td>
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="3" href="/eol/eoltest/report/academic?skill_id=3<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Semi-Speaking </b></font>
+                                    </a>
+                                </td>
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="5" href="/eol/eoltest/report/academic?skill_id=5<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Grammar </b></font>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr height="25">
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="2" href="/eol/eoltest/report/academic?skill_id=2<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Listening Comprehension </b></font>
+                                    </a>
+                                </td>
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="4" href="/eol/eoltest/report/academic?skill_id=4<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Semi-Writing </b></font>
+                                    </a>
+                                </td>
+                                <td width="33%">&nbsp;
+                                    <a class="skill-link" data-skill-id="7" href="/eol/eoltest/report/academic?skill_id=7<%= memberIdParam %>">
+                                        <font size="2" face="tahoma" color="black"><b><img src="/assets/images/icon/arrow.gif"> Vocabulary </b></font>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="report-academic-list" class="report-section" style="display:none;">
+            <div id="academic-list-filter">
+                <template id="report-academic-filter-template">
+                    <br>
+                    <table align="center" width="80%" bgcolor="#FEBC13" cellpadding="0" cellspacing="0" style="border-radius:10px;">
+                        <tr height="40">
+                            <td align="center">
+                                <font size="3" face="tahoma" color="green"><b> Report : <span class="skill-name"></span></b></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table align="center" width="60%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" style="border-radius:10px;">
+                        <tr height="50" valign="middle">
+                            <td align="right" width="13%">
+                                <font size="2" face="tahoma" color="black"><b>From &nbsp; : &nbsp;</b></font>
+                            </td>
+                            <td align="left" width="27%">&nbsp;<input id="popup_container_a" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae"></td>
+                            <td align="right" width="13%">
+                                <font size="2" face="tahoma" color="black"><b>Until &nbsp; : &nbsp;</b></font>
+                            </td>
+                            <td align="left" width="27%">&nbsp;<input id="popup_container_b" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae"></td>
+                            <td align="left" width="15%"><button type="button" class="btn-view btn-view-academic">&nbsp; View &nbsp;</button></td>
+                        </tr>
+                        <tr height="25">
+                            <td align="center" colspan="5">
+                                <font size="2" face="tahoma" color="red"><b>Format Date : Ex. 2010-12-31 </b></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </template>
+            </div>
+            <div id="academic-list-levels">
+                <template id="report-empty-template">
+                    <table align="center" width="90%" height="25" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                        <tr>
+                            <td align="center"><br>
+                                <font size="2" face="tahoma" color="red"><b>&nbsp;- No Data -</b></font><br>&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </template>
+                <template id="report-academic-level-template">
+                    <br>
+                    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0">
+                        <tr height="50">
+                            <td align="left" colspan="4">
+                                <font size="3" face="tahoma" class="level-title" color=""><b>&nbsp; <span class="level-name"></span></b></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" class="items-table"></table>
+                    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0">
+                        <tr height="10">
+                            <td colspan="4"></td>
+                        </tr>
+                        <tr height="30">
+                            <td>&nbsp;</td>
+                            <td colspan="3">
+                                <table align="center" width="100%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:10px">
+                                    <tr height="25">
+                                        <td align="right" width="15%">
+                                            <font size="2" face="tahoma" color="blue"><b>Min&nbsp;:&nbsp;</b></font>
+                                        </td>
+                                        <td align="left" width="20%">
+                                            <font size="2" face="tahoma" color="blue"><b class="level-min"></b></font>
+                                        </td>
+                                        <td align="right" width="15%">
+                                            <font size="2" face="tahoma" color="red"><b>Max&nbsp;:&nbsp;</b></font>
+                                        </td>
+                                        <td align="left" width="20%">
+                                            <font size="2" face="tahoma" color="red"><b class="level-max"></b></font>
+                                        </td>
+                                        <td align="right" width="15%">
+                                            <font size="2" face="tahoma" color="green"><b>Average&nbsp;:&nbsp;</b></font>
+                                        </td>
+                                        <td align="left" width="15%">
+                                            <font size="2" face="tahoma" color="green"><b class="level-average"></b></font>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </template>
+                <template id="report-academic-item-template">
+                    <tr height="30">
+                        <td align="left" width="20%" bgcolor="#f0f0f0">
+                            <a class="item-link" target="_blank" href="#">
+                                <font size="2" face="tahoma" color="brown"><b>&nbsp; <span class="item-date"></span></b></font>
+                            </a>
+                        </td>
+                        <td width="10%" align="right" bgcolor="#d7d7d7">
+                            <font size="2" face="tahoma" color="black"><b><span class="item-correct"></span> / <span class="item-total"></span>&nbsp;&nbsp;</b></font>
+                        </td>
+                        <td width="60%" align="left" bgcolor="#f0f0f0">&nbsp;<img class="item-bar" src="" width="" height="25" style="border-radius:5px;margin-top:2.5px;"></td>
+                        <td width="10%" align="right" bgcolor="#d7d7d7">
+                            <font size="2" face="tahoma" color="blue"><b><span class="item-percent"></span> % &nbsp; </b></font>
+                        </td>
+                    </tr>
+                    <tr height="1">
+                        <td colspan="4"></td>
+                    </tr>
+                </template>
+            </div>
+        </div>
+
+        <div id="report-academic-detail" class="report-section" style="display:none;">
+            <div id="academic-detail-header">
+                <template id="report-detail-header-template">
+
+                    <table align="center" width="90%" cellpadding="5" cellspacing="0" border="0" bgcolor="#fff" style="border-radius:10px">
+                        <tr height="25">
+                            <td width="11%" rowspan="4" bgcolor="#e7e7e7" align="center"><img class="detail-avatar" src="" height="" onerror="this.onerror=null;this.src='/assets/2010/member_images/icon_user_01.jpg'"></td>
+                            <td width="22%" align="right">
+                                <font size="2" face="tahoma" color="black"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></font>
+                            </td>
+                            <td width="50%" align="left">
+                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-fname"></span> &nbsp; &nbsp; <span class="detail-lname"></span> </b></font>
+                            </td>
+                            <td width="17%" rowspan="4"></td>
+                        </tr>
+                        <tr height="25">
+                            <td align="right">
+                                <font size="2" face="tahoma" color="black"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></font>
+                            </td>
+                            <td align="left">
+                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-date"></span> </b></font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="right">
+                                <font size="2" face="tahoma" color="black"><b>ประเภทการทดสอบ &nbsp; : &nbsp; </b></font>
+                            </td>
+                            <td align="left">
+                                <font size="2" face="tahoma" color="black"><b> <span class="detail-section"></span> </b></font>
+                            </td>
+                        </tr>
+                        <tr height="25">
+                            <td align="right">
+                                <font size="2" face="tahoma" color="black"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></font>
+                            </td>
+                            <td align="left">
+                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-amount"></span> / <span class="detail-total"></span> &nbsp; คะแนน &nbsp;&nbsp;&nbsp; คิดเป็น &nbsp; <span class="detail-percent"></span> %</b></font>
+                            </td>
+                        </tr>
+                    </table><br>
+                </template>
+
+                <template id="report-type-tabs-template">
+                    <table align="center" width="90%" cellpadding="2" cellspacing="0" border="0">
+                        <tr height="30">
+                            <td width="15%" align="center"><a class="tab-link-1" href="#"><img src="/assets/images/icon/summary-01.png" border="0"></a></td>
+                            <td width="15%" align="center"><a class="tab-link-2" href="#"><img src="/assets/images/icon/check your answer-01.png" border="0"></a></td>
+                            <td width="15%" align="center"><a class="tab-link-3" href="#"><img src="/assets/images/icon/ranking-01.png" border="0"></a></td>
+                            <td width="70%" align="left" colspan="2">&nbsp;</td>
+                        </tr>
+                    </table><br>
+                </template>
+            </div>
+
+            <div id="academic-detail-summary">
+                <template id="report-chart-bar-row-template">
+                    <table align="center" width="90%" cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                        <tr height="40" valign="middle">
+                            <td width="20%" align="right">
+                                <font size="2" face="tahoma"><b><span class="bar-skill"></span></b></font>
+                            </td>
+                            <td width="1%" align="center">
+                                <font size="2" face="tahoma">&nbsp;:&nbsp;</font>
+                            </td>
+                            <td width="15%" align="right" bgcolor="eeeeee">
+                                <font size="2" face="tahoma">&nbsp; <span class="bar-percent"></span>% [<span class="bar-correct"></span>/<span class="bar-total"></span>]&nbsp;</font>
+                            </td>
+                            <td width="64%" align="left" bgcolor="eeeeee">
+                                <img src="" class="bar-image" height="25" width="" style="border-radius:5px;">
+                            </td>
+                        </tr>
+                    </table>
+                </template>
+                <template id="report-chart-bar-avg-template">
+                    <table align="center" width="90%" cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                        <tr height="40" valign="middle">
+                            <td width="20%" align="right">
+                                <font size="2" face="tahoma"><b>Average</b></font>
+                            </td>
+                            <td width="1%" align="center">
+                                <font size="2" face="tahoma">&nbsp;:&nbsp;</font>
+                            </td>
+                            <td width="15%" align="right" bgcolor="eeeeee">
+                                <font size="2" face="tahoma"><b>&nbsp; <span class="avg-percent"></span>% [<span class="avg-correct"></span>/<span class="avg-total"></span>]&nbsp;</font>
+                            </td>
+                            <td width="64%" align="left" bgcolor="eeeeee">
+                                <img src="/assets/2010/temp_images/icon_bar/bar_08.png" height="25" class="avg-bar" width="" style="border-radius:5px">
+                            </td>
+                        </tr>
+                    </table>
+                </template>
+                <template id="report-weak-point-template">
+                    <div class="weak-point-skills"></div>
+                </template>
+                <template id="report-weak-point-skill-template">
+                    <table align="center" name="tb_topic_test" width="90%" height="25" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                        <tr>
+                            <td><br>
+                                <font size="2" face="tahoma" color="gray"><b>&nbsp;The Following Skills are recommended for your future practice</b></font><br>&nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </template>
+                <template id="report-weak-point-skill-group-template">
+                    <table align="center" width="90%" height="25" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+                        <tr>
+                            <td>
+                                <font size="2" face="tahoma">&nbsp;<b class="skill-name"></b></font>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="skill-items"></div>
+                    <br>
+                </template>
+                <template id="report-weak-point-item-template">
+                    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-bottom-right-radius:5px;border-bottom-left-radius:5px">
+                        <tr valign="top">
+                            <td align="left" width="30%">&nbsp;<font size="2" color="gray" face="tahoma"><b class="sskill-name"></b></font>
+                            </td>
+                            <td align="center">
+                                <font size="2" color="gray" face="tahoma"><b>&nbsp;:&nbsp;&nbsp;</b></font>
+                            </td>
+                            <td align="left" width="70%">
+                                <a class="detail-link" target="_blank" href="#">
+                                    <font size="2" color="red" face="tahoma"><b class="detail-name"></b></font>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </template>
+            </div>
+
+            <div id="academic-detail-answers">
+                <template id="report-test-question-template">
+                    <table width="90%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBDBDB" style="border-radius: 10px;">
+                        <tr height="10">
+                            <td rowspan="6">&nbsp;&nbsp;</td>
+                            <td colspan="2"></td>
+                            <td rowspan="5">&nbsp;&nbsp;</td>
+                        </tr>
+                        <tr class="relate-row" style="display:none;">
+                            <td width="100%" colspan="2" align="left" class="relate-cell"></td>
+                        </tr>
+                        <tr valign="top" height="25">
+                            <td width="5%" rowspan="3" align="center">
+                                <font size="2" face="Verdana"><b class="q-no"></b></font>
+                            </td>
+                            <td width="95%">
+                                <font size="2" face="Verdana" class="q-text"></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="75%">
+                                            <font size="2" face="Verdana">
+                                                <div class="answers"></div>
+                                                <br><b>
+                                                    <font color="blue" size="2" class="msg-a"></font>&nbsp;<span class="msg-b"></span>
+                                                </b>
+                                            </font>
+                                        </td>
+                                        <td width="25%" align="center" class="icon-cell"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                        <td align="left" width="80%">
+                                            <font face="Verdana" color="brown" size="2"><b>Tip : <span class="reason-name"></span></font></b>
+                                        </td>
+                                        <td align="center" width="20%">
+                                            <a class="lesson-link" target="_blank" href="#">
+                                                <b>
+                                                    <font face="verdana" color="green" size="2">&raquo; Go to Lessons &laquo;</font>
+                                                </b>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr class="description-row" style="display:none;">
+                                        <td align="left" width="80%">
+                                            <font face="Verdana" color="#e400e0" size="2"><b>Description : </font></b>
+                                        </td>
+                                        <td align="right" width="20%">&nbsp;</td>
+                                    </tr>
+                                    <tr class="description-row" style="display:none;">
+                                        <td colspan="2" width="100%">
+                                            <font size="2" face="tahoma" color="#e400e0" class="description-text"></font>
+                                        </td>
+                                    </tr>
+                                    <tr height="25">
+                                        <td colspan="2" align="center"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr height="10">
+                            <td></td>
+                        </tr>
+                    </table><br>
+                </template>
+                <template id="report-test-relate-text-template">
+                    <span class="relate-text"></span><br>&nbsp;
+                </template>
+                <template id="report-test-relate-image-template">
+                    <img src="" width="300" border="5" style="border-color:eeeeee"><br>&nbsp;
+                </template>
+                <template id="report-test-relate-audio-template">
+                    <audio controls="controls" preload="none">
+                        <source src="">
+                    </audio><br>&nbsp;
+                </template>
+                <template id="report-test-answer-template">
+                    <font size="2" face="Verdana" class="answer-text"></font><br>
+                </template>
+                <template id="report-test-icon-template">
+                    <img src="" border="0" style="border-radius:10px;margin-left:35px;">
+                </template>
+                <template id="report-test-msg-template">
+                    <font size="2" color="" class="msg-text"></font>
+                </template>
+            </div>
+
+        </div>
+    </div>

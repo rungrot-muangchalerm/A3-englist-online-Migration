@@ -1,0 +1,12 @@
+/* 
+Title:      Toggle Switch
+URL:        http://github.com/jamiebicknell/Toggle-Switch
+Author:     Jamie Bicknell
+Twitter:    @jamiebicknell
+*/
+
+/* IE PNG Overlay Fix */
+.switch .overlay {
+    background:none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./overlay.png', sizingMethod='crop');
+}

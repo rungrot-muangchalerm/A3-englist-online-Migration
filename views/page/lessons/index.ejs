@@ -1,0 +1,253 @@
+<div id="elearning-app">
+  <link rel="stylesheet" href="/assets/bootstrap/css/form-search-lesson-topic.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/pagination.css">
+  <style>
+    #elearning-app .afooter {
+      color: #FFFF99;
+      text-decoration: none;
+    }
+
+    #elearning-app #view-main,
+    #elearning-app #view-list,
+    #elearning-app #view-detail {
+      position: relative;
+      min-height: 200px;
+    }
+
+    #elearning-app #view-main img.bg-main {
+      border-radius: 10px;
+      width: 980px;
+    }
+
+    #elearning-app .skill-link {
+      position: absolute;
+      z-index: 100;
+    }
+
+    #elearning-app .skill-link img {
+      border: 0;
+    }
+
+    #elearning-app .skill-link:hover img {
+      opacity: 0.85;
+    }
+
+    #elearning-app .bg-list,
+    #elearning-app .bg-detail {
+      border-radius: 10px;
+    }
+
+    #elearning-app .lesson-search {
+      width: 40%;
+      margin: 0 auto 30px auto;
+      position: relative;
+      right: -260px;
+    }
+
+    #elearning-app .topic-row {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    #elearning-app .topic-row a {
+      text-decoration: none;
+    }
+
+    #elearning-app .topic-row a:hover {
+      text-decoration: underline;
+    }
+
+    #elearning-app .no-data {
+      color: red;
+      text-align: center;
+    }
+
+    #elearning-app .privilege-msg {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    #elearning-app .privilege-msg a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    #elearning-app #detail-content {
+      padding: 10px 30px;
+      text-align: left;
+    }
+
+    #elearning-app #related-topics {
+      margin-top: 30px;
+    }
+
+    #elearning-app #related-topics a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    #elearning-app #related-topics a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <div id="view-main" style="display:none;">
+    <table align="center" width="98%" cellpadding="0" cellspacing="0" border="0">
+      <tr valign="top">
+        <td width="100%" align="center" style="position:relative;">
+          <img src="/assets/images/image2/eol system/Lessons/bg-eol-lessons.png" class="bg-main" border="0" alt="E-Learning">
+          <div class="skill-link" style="top:675px;left:55%;margin-left:150px;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=1" title="Reading Comprehension">
+              <img src="/assets/images/image2/eol system/Lessons/reading.png" border="0" alt="Reading">
+            </a>
+          </div>
+          <div class="skill-link" style="top:310px;left:43%;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=2" title="Listening Comprehension">
+              <img src="/assets/images/image2/eol system/Lessons/Listening.png" border="0" alt="Listening">
+            </a>
+          </div>
+          <div class="skill-link" style="top:625px;left:10%;margin-left:10px;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=3" title="Semi - Speaking">
+              <img src="/assets/images/image2/eol system/Lessons/semi-speaking.png" border="0" alt="Speaking">
+            </a>
+          </div>
+          <div class="skill-link" style="top:180px;left:30px;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=4" title="Semi - Writing">
+              <img src="/assets/images/image2/eol system/Lessons/semi-writing.png" border="0" alt="Writing">
+            </a>
+          </div>
+          <div class="skill-link" style="top:230px;left:78%;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=5" title="Grammar">
+              <img src="/assets/images/image2/eol system/Lessons/grammar.png" border="0" alt="Grammar">
+            </a>
+          </div>
+          <div class="skill-link" style="top:40px;left:20%;">
+            <a href="/lessons/elearning?section=elearning&amp;skill_id=7" title="Vocabulary Items">
+              <img src="/assets/images/image2/eol system/Lessons/vocabulary.png" border="0" alt="Vocabulary">
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="view-list" style="display:none;">
+    <img id="list-bg" src="" usemap="#list-map" class="bg-list" alt="">
+    <map name="list-map">
+      <area shape="rect" coords="380,24,562,68" alt="Home" href="/lessons/elearning">
+      <area id="list-map-list" shape="rect" coords="385,83,563,130" alt="List" href="">
+    </map>
+
+    <div class="lesson-search">
+      <form id="search-form" onsubmit="event.preventDefault();">
+        <div class="input-group">
+          <input id="search-input" name="search" type="text" class="form-control" placeholder="Search lesson topic" value="">
+          <div class="input-group-append">
+            <button id="search-btn" class="btn btn-secondary" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <table align="center" width="950" cellpadding="0" cellspacing="0" border="0" style="position:relative;top:10px;left:50%;margin-left:-500px;">
+      <tr valign="top">
+        <td width="5%">&nbsp;</td>
+        <td width="90%" align="center"></td>
+        <td width="5%">&nbsp;</td>
+      </tr>
+      <tr height="100%" valign="top">
+        <td>&nbsp;</td>
+        <td align="center">
+          <div id="topic-list"></div>
+          <div id="topic-pagination" class="pagination-wrapper"></div>
+          <div id="topic-empty" class="no-data" style="display:none;">
+            <table align="center" width="95%" cellpadding="0" cellspacing="0" border="0">
+              <tr valign="top" height="30" align="center">
+                <td align="center" width="95%"><font size="3" face="tahoma" color="red"><b>Sorry!!! Not Found Data </b></font></td>
+              </tr>
+              <tr valign="top" height="30" align="center">
+                <td align="center" width="95%"><font size="3" face="tahoma" color="red"> Please try again </font></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <template id="topic-row-template">
+      <table align="center" width="95%" cellpadding="0" cellspacing="0" border="0" class="topic-row">
+        <tr valign="top" height="30">
+          <td align="center" width="5%"><font size="3" face="tahoma" color="black"><b data-role="index"></b></font></td>
+          <td align="left" width="80%">
+            <a href="" data-role="link">
+              <font size="3" face="tahoma" color="black"><b data-role="name"></b></font>
+            </a>
+          </td>
+          <td align="center" width="15%"><font size="3" face="tahoma" color="black"><b>&nbsp;</b></font></td>
+        </tr>
+      </table>
+    </template>
+
+    <template id="pagination-item-template">
+      <li><a href="" data-role="link"><font size="2" face="tahoma" data-role="label"></font></a></li>
+    </template>
+  </div>
+
+  <div id="view-detail" style="display:none;">
+    <img id="detail-bg" src="" usemap="#detail-map" class="bg-detail" alt="">
+    <map name="detail-map">
+      <area shape="rect" coords="380,24,562,68" alt="Home" href="/lessons/elearning">
+      <area id="detail-map-list" shape="rect" coords="385,83,563,130" alt="List" href="">
+    </map>
+
+    <table align="center" width="950" cellpadding="0" cellspacing="0" border="0">
+      <tr valign="top">
+        <td width="5%">&nbsp;</td>
+        <td width="90%" align="center"></td>
+        <td width="5%">&nbsp;</td>
+      </tr>
+      <tr height="100%" valign="top">
+        <td>&nbsp;</td>
+        <td align="center">
+          <div id="detail-privilege" class="privilege-msg" style="display:none;">
+            <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr height="200">
+                <td align="center">
+                  <br><br>
+                  <font size="2" face="tahoma" color="red">Sorry , EOL E-Learning is limited for privileged members only. </font>
+                  <br><br>
+                  <a target="_blank" href="/shop/product-personal">
+                    <font size="2" face="tahoma">&raquo; Click here to get EOL product details &laquo;</font>
+                  </a>
+                  <br><br>
+                  <font size="2" face="tahoma" color="green">More Details Contact us : engtest_eol@hotmail.com, englishonline.eol@gmail.com or 02-1708725-6 </font>
+                  <br><br>&nbsp;
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="detail-content"></div>
+          <div id="related-topics"></div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <template id="related-topic-template">
+      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr height="25">
+          <td align="left" width="100%">
+            <br><br><br>
+            <a target="_blank" href="" data-role="link">
+              <font size="2" face="tahoma" color="blue"><b>&raquo; <span data-role="name"></span></b></font>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </template>
+  </div>
+
+</div>

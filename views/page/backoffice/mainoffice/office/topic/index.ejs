@@ -1,0 +1,89 @@
+<div class="main" data-type-id="<%= typeof typeId !== 'undefined' ? typeId : '' %>">
+  <br><br>
+  <table align="left" width="85%" cellpadding="0" cellspacing="0" border="0" bgcolor="#6E6E6E" style="margin-left:48px; margin-top:20px;">
+    <tr height="30">
+      <td align="left" width="85%">
+        &nbsp;<font size="2" face="tahoma" color="ffffff"><b>Welcome to Web Admin System :
+          <font size="2" face="tahoma" color="orange"><b><span id="office-admin-name"></span></b></font>
+        </b></font>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <a href="/backoffice/mainoffice/office/dashboard" style="height:40px;">
+    <img src="/assets/2010/temp_images/temp/button/bt_to_main.png" style="height:50px;margin-top:-10px;margin-bottom:10px;" title="Back to Main">
+  </a>
+
+  <table class="list-topic" width="90%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
+    <tr height="40">
+      <td align="center" style="border-radius:5px;"><font size="3" face="tahoma" color="yellow"><b><span id="office-topic-type-name"></span></b></font></td>
+    </tr>
+  </table>
+
+  <table class="list-page" width="90%" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr height="40">
+      <td align="left">
+        <font size="2" face="tahoma" color="white"><b><br>&nbsp;&nbsp;Page : &nbsp;<span id="office-topic-pages">
+          <template id="office-topic-page-template">
+            <a data-role="page-link" href="#"><font data-role="page-number" size="2" face="tahoma"></font></a>
+          </template>
+          <template id="office-topic-page-break-template">
+            <br>
+          </template>
+        </span><br>&nbsp;</b></font>
+      </td>
+    </tr>
+  </table>
+
+  <table class="list-topic row-topic" width="90%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
+    <thead id="office-topic-head"></thead>
+    <tbody id="office-topic-list">
+      <template id="office-topic-head-template">
+        <tr height="25">
+          <td data-role="topic-id-head" width="10%" align="center" rowspan="2" style="border-radius:5px;"><font size="2" face="tahoma" color="yellow"><b> Topic ID </b></font></td>
+          <td data-role="topic-name-head" align="center" rowspan="2" style="border-radius:5px;"><font size="2" face="tahoma" color="yellow"><b> Topic Name </b></font></td>
+          <td data-role="management-head" align="center" style="border-radius:5px;"><font size="2" face="tahoma" color="yellow"><b> Management </b></font></td>
+        </tr>
+        <tr height="25">
+          <td align="center" width="13.3%" style="border-radius:5px;"><font size="2" face="tahoma" color="white"><b>Display</b></font></td>
+          <td align="center" width="13.3%" style="border-radius:5px;"><font size="2" face="tahoma" color="white"><b>Edit</b></font></td>
+          <td data-role="delete-head" align="center" width="13.3%" style="border-radius:5px;"><font size="2" face="tahoma" color="white"><b>Delete</b></font></td>
+        </tr>
+      </template>
+      <template id="office-topic-row-template">
+        <tr height="25">
+          <td width="10%" align="center"><b><font size="2" color="white" face="tahoma"><span data-role="topic-id"></span></font></b></td>
+          <td width="50%" align="left">
+            <a class="topic-name" data-role="detail-link" href="#">
+              <b><font size="2" face="tahoma">&nbsp;[<span data-role="admin-name"></span>] &nbsp; <span data-role="topic-name"></span></font></b>
+            </a>
+          </td>
+          <td width="10%" align="center">
+            <a href="#" data-role="toggle-link"><b><font data-role="active-text" size="2" face="tahoma"></font></b></a>
+          </td>
+          <td width="10%" align="center">
+            <a href="#" data-role="edit-link"><b><font size="2" color="aaaaff" face="tahoma">Edit</font></b></a>
+          </td>
+          <td data-role="delete-cell" width="10%" align="center">
+            <a style="cursor:pointer;" data-role="delete-link"><font size="2" face="tahoma" color="red"><b>Delete</b></font></a>
+          </td>
+        </tr>
+      </template>
+      <template id="office-topic-empty-template">
+        <tr height="25">
+          <td data-role="empty-cell" align="center"><font size="2" color="white" face="tahoma"><b> - Didn't Find Data List - </b></font></td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
+
+  <br>
+  <table class="add-new-topic" width="90%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
+    <tr height="25">
+      <td width="100%" align="center" style="border-radius:5px;">
+        <a id="office-topic-add-link" href="#"><font size="4" face="tahoma"><b> Add New Topic </b></font></a>
+      </td>
+    </tr>
+  </table>
+</div>

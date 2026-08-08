@@ -1,0 +1,15 @@
+﻿#pic_profile{
+ position:relative;
+  border:1px solid #999;
+  top:-2px;
+ 	width:100px;
+	height:100px;
+	padding:3px;
+	background:#fff;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	 -moz-box-shadow: 0 8px 6px -6px black;
+	 box-shadow: 0 8px 6px -6px black;
+}
+
+
+

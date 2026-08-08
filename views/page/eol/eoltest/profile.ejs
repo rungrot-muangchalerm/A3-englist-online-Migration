@@ -1,0 +1,285 @@
+<div id="view-edit-profile" class="eol-view">
+  <br>
+  <div class='edit-profile'>
+    <p>Welcome to EngTest.net</p>
+  </div>
+
+  <form id='profileForm' enctype='multipart/form-data' onsubmit='event.preventDefault();'>
+    <table align=center width=85% cellpadding=0 cellspacing=0 border=0>
+      <tr height=60>
+        <td align=center colspan=6 style='border-top-right-radius:10px;border-top-left-radius:10px; background:#3BB9FF;'>
+          <font size=3 face=tahoma color=white><b>Profile</b></font>
+        </td>
+      </tr>
+      <tr height=75 bgcolor='#fff'>
+        <td align=center colspan=6>
+          <font face=tahoma size=2 color=blue>
+            สามารถใส่ข้อมูลส่วนตัวด้วยภาษาไทยได้และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย <font face=tahoma size=2 color=red>*</font>
+            <br> การกด Save Profile จะแก้ไขเพียง Profile เท่านั้น จะไม่แก้ไข Password แต่อย่างใด
+          </font>
+        </td>
+      </tr>
+      <tr height=5 bgcolor='#fff'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black>
+            <b>
+              <font face=tahoma size=2 color=red>*</font>&nbsp; First Name
+            </b>
+          </font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left>
+          <input type=text class='inputstyle' name='fname' id='profile-fname' value='' style='width:83%' required>
+        </td>
+        <td width=11% align=right>
+          <font face=tahoma size=2 color=black><b>
+              <font face=tahoma size=2 color=red>*</font>&nbsp; Last Name
+            </b></font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=15% align=left>
+          <input type=text size=21 class='inputstyle' name='lname' id='profile-lname' value='' required>
+        </td>
+      </tr>
+      <tr height=10 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#fff'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black>
+            <font face=tahoma size=2 color=red>*</font>&nbsp;<b> Gender </b>
+          </font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left>
+          <font face=tahoma size=2 color=black><b>
+              <input type=radio name='gender' id='profile-gender-m' value='1'>&nbsp;Male
+              <input type=radio name='gender' id='profile-gender-f' value='2'>&nbsp;Female
+            </b></font>
+        </td>
+        <td width=10% align=right>
+          <font face=tahoma size=2 color=red>*</font>&nbsp;<b>Date of Birth</b>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=11% align=left>
+          <input class='inputstyle' id='popup_container' type=text name='birth' id='profile-birth' value='' size=21 required>
+        </td>
+      </tr>
+      <tr height=10 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#fff'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black>
+            <font face=tahoma size=2 color=red>*</font>&nbsp;<b> Education </b>
+          </font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left>
+          <select name='education_a' id='profile-education-a' style='height:32px'>
+            <option value='0'>- Select your education level -</option>
+          </select>
+        </td>
+        <td width=11% align=right>
+          <font face=tahoma size=2 color=black><b> School Name </b></font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left><input class='inputstyle' type=text size=21 name='education_b' id='profile-education-b' value=''></td>
+      </tr>
+      <tr height=10 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#fff'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black><b> Address </b></font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left colspan=4>
+          <textarea name='address' id='profile-address' style='width:91.6%' rows=3></textarea>
+        </td>
+      </tr>
+      <tr height=10 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=5 bgcolor='#fff'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black>
+            <font face=tahoma size=2 color=red>*</font>&nbsp;<b> E-mail </b>
+          </font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left>
+          <input class='inputstyle' type=text name='email' id='profile-email' value='' style='width:83%' required>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td width=11% align=right>
+          <font face=tahoma size=2 color=black><b> Tel. </b></font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td width=10% align=left><input class='inputstyle' type=number name='tel' id='profile-tel' value='' style='width:73%'></td>
+      </tr>
+      <tr height=10 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#fff'>
+        <td align=right>
+          <font face=tahoma size=2 color=black><b> Display Image </b></font>
+        </td>
+        <td align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left colspan=4>
+          <table align=center width=100% cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td rowspan=2 align=center id='profile-avatar-cell'>
+              </td>
+              <td width=100%%>&nbsp;&nbsp;&nbsp;<input class='inputstyle' name='image' type='file' style='width:31%'></td>
+            </tr>
+            <tr>
+              <td width=100%%>
+                <font size=2 face=tahoma color=blue>&nbsp;&nbsp;&nbsp;Image Type : .jpg &nbsp; Image Size : Less than 100 KB &nbsp; Width : 100 px &nbsp; Height : 100 px</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height=20 bgcolor='#fff' style='display:none;' id='profileMsgRow'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=20 bgcolor='#fff' style='display:none;' id='profileMsgRow2'>
+        <td width=15% align=right>
+          <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+        </td>
+        <td width=5% align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+        </td>
+        <td align=left colspan=4>
+          <div id='profileMsg'></div>
+        </td>
+      </tr>
+      <tr height=20 bgcolor='#fff'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#fff'>
+        <td align=right>
+          <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+        </td>
+        <td align=center>
+          <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+        </td>
+        <td align=left colspan=4>
+          <button type='button' id='reg_submit' class='myButton'> Save Profile </button>
+        </td>
+      </tr>
+      <tr height=20>
+        <td colspan=6 style='border-bottom-right-radius:10px;border-bottom-left-radius:10px; background:#fff;'></td>
+      </tr>
+    </table>
+  </form>
+
+  <br>&nbsp;
+
+  <div id='pass_msg' align=center style='cursor:pointer' onclick="document.getElementById('passForm').style.display=''; document.getElementById('pass_msg').style.display='none';">
+    <font size=2 face=tahoma color='blue'><b>หากต้องการเปลี่ยน Password โปรดคลิ๊กที่นี่ [Change Password : Click Here]</b></font>
+  </div>
+
+  <form id='passForm' onsubmit='event.preventDefault();' style='display:none;'>
+    <table align=center width=70% cellpadding=0 cellspacing=0 border=0>
+      <tr height=50>
+        <td align=center colspan=6 style='border-top-right-radius:10px;border-top-left-radius:10px; background:#0096ce;'>
+          <font size=3 face=tahoma color=white><b>Edit Password</b></font>
+        </td>
+      </tr>
+      <tr height=75 bgcolor='#d4f6fc'>
+        <td align=center colspan=6>
+          <font face=tahoma size=2 color=blue>
+            Password ใหม่ต้องยาว 8-20 ตัวอักษรและต้องเป็น a-z , A-Z หรือ 0-9 เท่านั้น <br> การกด Edit Password จะแก้ไขเพียง Password เท่านั้น จะไม่แก้ไข Profile แต่อย่างใด
+          </font>
+        </td>
+      </tr>
+      <tr height=25 bgcolor='#d4f6fc'>
+        <td align=right width=20%%>
+          <font size=2 face=tahoma><b>Username</b></font>
+        </td>
+        <td align=center width=3%%>
+          <font size=2 face=tahoma><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left width=20%%>
+          <font size=2 face=tahoma><b id='profile-username'></b></font>
+        </td>
+        <td align=right width=20%%>
+          <font size=2 face=tahoma><b>Old Password</b></font>
+        </td>
+        <td align=center width=3%%>
+          <font size=2 face=tahoma><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left width=24%%><input type='password' size='18' name='old' placeholder='&nbsp;Old Password' required></td>
+      </tr>
+      <tr height=10 bgcolor='#d4f6fc'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#d4f6fc'>
+        <td align=right width=20%%>
+          <font size=2 face=tahoma><b>New Password</b></font>
+        </td>
+        <td align=center>
+          <font size=2 face=tahoma><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left width=22%%><input type='password' size='16' name='new_a' placeholder='&nbsp;New Password' required></td>
+        <td align=right width=20%%>
+          <font size=2 face=tahoma><b>Re - New Password</b></font>
+        </td>
+        <td align=center>
+          <font size=2 face=tahoma><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align=left width=24%%><input type='password' size='18' name='new_b' placeholder='&nbsp;Re - New Password' required></td>
+      </tr>
+      <tr height=20 bgcolor='#d4f6fc' style='display:none;' id='passwordMsgSpacer'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=20 bgcolor='#d4f6fc' style='display:none;' id='passwordMsgRow'>
+        <td width=100% align=center colspan=6>
+          <div id='passwordMsg'></div>
+        </td>
+      </tr>
+      <tr height=20 bgcolor='#d4f6fc'>
+        <td colspan=6></td>
+      </tr>
+      <tr height=25 bgcolor='#d4f6fc'>
+        <td colspan=6 align=center><button type='button' class='btn-edit-pass' id='password-save-btn'>&nbsp; Edit Password &nbsp;</button></td>
+      </tr>
+      <tr height=20>
+        <td colspan=6 style='border-bottom-right-radius:10px;border-bottom-left-radius:10px; background:#d4f6fc;'></td>
+      </tr>
+    </table>
+  </form>
+
+  <br>&nbsp;
+
+  <template id="profile-education-option-template">
+    <option value=''></option>
+  </template>
+  <template id="profile-avatar-template">
+    <img src='' style='border-radius: 6px;'><br>
+  </template>
+</div>
+
+
+<script src='/assets/js/pages/eol/eoltest/profile.js'></script>

@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "app/controller/api/",
+    "app/controller/api/**",
+    "app/controller/backoffice/backoffice/",
+    "app/controller/backoffice/backoffice/**"
+  ],
+  "watchOptions": {
+    "followSymlinks": false,
+    "ignorePermissionErrors": true
+  }
+}

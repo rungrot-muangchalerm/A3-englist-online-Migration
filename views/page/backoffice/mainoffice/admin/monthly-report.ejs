@@ -1,0 +1,44 @@
+<div class="main-academic" id="admin-monthly-report-app">
+  <br><br>
+  <div align="center" class="f-thai">
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+    <br><br><br>
+    <hr>
+  </div>
+
+  <br><br>
+  <table align="center" width="75%" cellpadding="0" cellspacing="0" border="1" style="margin: 0 auto;" class="f-thai">
+    <thead>
+      <tr bgcolor="#e0e0e0" height="25">
+        <td width="20%" align="center"><font size="2" color="black"><b>Date</b></font></td>
+        <td width="20%" align="center"><font size="2" color="brown"><b>all Test (ครั้ง)</b></font></td>
+        <td width="20%" align="center"><font size="2" color="blue"><b>Evaluation Test (ครั้ง)</b></font></td>
+        <td width="20%" align="center"><font size="2" color="red"><b>EOL Contest (ครั้ง)</b></font></td>
+        <td width="20%" align="center"><font size="2" color="green"><b>Member (คน)</b></font></td>
+      </tr>
+    </thead>
+    <tbody id="admin-monthly-report-list"></tbody>
+  </table>
+  <template id="admin-monthly-report-row-template">
+    <tr height="25">
+      <td width="20%" align="center"><font size="2" color="black" data-role="date"></font></td>
+      <td width="20%" align="center"><font size="2" color="brown" data-role="all-test"></font></td>
+      <td width="20%" align="center"><font size="2" color="blue" data-role="evaluation"></font></td>
+      <td width="20%" align="center"><font size="2" color="red" data-role="contest"></font></td>
+      <td width="20%" align="center"><font size="2" color="green" data-role="members"></font></td>
+    </tr>
+  </template>
+</div>
+

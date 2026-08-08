@@ -1,0 +1,65 @@
+<div class="main-academic" id="admin-analyze-quiz-app">
+    <br><br>
+    <div align="center" class="f-thai">
+      <br><br>
+      <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+      <br><br>
+      <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+      <br><br>
+      <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+      <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+      <br><br><br>
+      <hr>
+    </div>
+
+    <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-analyze-pages"></span>
+    <br><br>
+
+    <div id="admin-analyze-list">
+      <template id="admin-analyze-row-template">
+        <table align="center" cellpadding="0" cellspacing="0" width="100%" class="f-thai">
+          <tr height="25">
+            <td rowspan="2" width="10%" align="center" bgcolor="#aaaaaa"><font size="2" color="white"><b data-role="no"></b></font></td>
+            <td rowspan="2" width="10%" align="center" bgcolor="#f0f0f0">
+              <font size="2" color="blue">Quiz ID<br><br>[ <span data-role="question-id"></span> ]</font><br><br>
+              <a data-role="detail-link" target="_blank"><button type="button" class="btn-set-relate">&nbsp;Details&nbsp;</button></a>
+            </td>
+            <td width="80%" align="left" data-role="summary-cell">&nbsp;<font size="2" color="brown">[Answer Correct ID : <span data-role="correct-answer-id"></span>] - [All Answer : <span data-role="total-answers"></span>]</font></td>
+          </tr>
+          <tr data-role="answer-panel">
+            <td>
+              <div data-role="answers"></div>
+              <table align="center" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="30%" align="left">&nbsp;&nbsp;<font size="2" color="green">Unanswered</font></td>
+                  <td width="30%" align="left">&nbsp;&nbsp;<font size="2" color="green">Amount : <span data-role="unanswered-amount"></span></font></td>
+                  <td width="40%" align="left">&nbsp;&nbsp;<font size="2" color="green">Percent : <span data-role="unanswered-percent"></span> %</font></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </template>
+      <template id="admin-analyze-answer-template">
+        <table align="center" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td width="30%" align="left">&nbsp;&nbsp;<font size="2" data-role="answer-id"></font></td>
+            <td width="30%" align="left">&nbsp;&nbsp;<font size="2" data-role="amount"></font></td>
+            <td width="40%" align="left">&nbsp;&nbsp;<font size="2" data-role="percent"></font></td>
+          </tr>
+        </table>
+      </template>
+    </div>
+
+    <div align="center" class="f-thai">
+      <a href="#"><font size="2" color="blue">Go to Top</font></a>
+    </div>
+</div>
+

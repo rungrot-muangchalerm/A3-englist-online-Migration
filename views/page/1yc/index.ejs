@@ -1,0 +1,125 @@
+<div style='position:relative;'>
+  <center>
+    <img src="/assets/images/image2/1year/status.png" style="position:absolute;z-index:200;left:50%;margin-left:-680px;">
+  </center>
+  <img src="/assets/images/image2/1year/bg-01.jpg" style="position:absolute;left:50%;margin-left:-680px;">
+  <a href="/1yc/faq" title="กระดานถาม ตอบ" style="position:absolute;z-index:230;left:50%;margin-left:300px;top:100px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+    <img src="/assets/images/image2/1year/button/button webboard.png" width="151" height="127">
+  </a>
+  <a href="/1yc/logtime" title="ประวัติการใช้งาน" style="position:absolute;z-index:230;left:50%;margin-left:230px;top:250px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+    <img src="/assets/images/image2/1year/button/button history.png" width="150">
+  </a>
+  <a href="/1yc/lessons" title="เข้าสู่บทเรียน" style="position:absolute;z-index:230;left:50%;margin-left:330px;top:390px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+    <img src="/assets/images/image2/1year/button/button EnterLessons.png" width="200">
+  </a>
+  <a href="#" id="yc-edit-profile-btn" title="Edit profile" data-toggle="modal" data-target="#modalFormEditProfile">
+    <img src="/assets/images/image2/1year/button/edit.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:350px;top:7px;">
+  </a>
+  <a id="yc-logout-link" href="#" title="logout">
+    <img src="/assets/images/image2/1year/button/log-out.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:420px;top:7px;">
+  </a>
+  <a href="#" id="yc-edit-pass-btn" title="Edit Username and Password" data-toggle="modal" data-target="#modalFormEditUserPass">
+    <img src="/assets/images/image2/1year/button/edit-pass.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:490px;top:7px;">
+  </a>
+  <a id="yc-management-link" href="/1yc/content?section=management" title="manage user" style="display:none;">
+    <img src="/assets/images/image2/1year/button/management.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:555px;top:7px;">
+  </a>
+  <div style="position:absolute;z-index:200;left:50%;margin-left:-466px; top:15px;font-weight:bold;width:100%;">
+    Welcome : <span id="yc-user-name">...</span>
+  </div>
+  <center>
+    <div style="position:absolute;left:50%;z-index:200;top:660px;margin-left:270px;">
+      <table width="353" border="0" cellpadding="2" cellspacing="1">
+        <tr>
+          <td width="115" rowspan="4">
+            <span class="style1">
+              <div id="server_time" style="color:#FFFFFF;font-size:40px;">&nbsp;</div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="mount" style="color:#FFFFFF;font-weight:bold;">&nbsp;</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="year" style="color:#FFFFFF;font-size:18px;font-weight:bold;">&nbsp;</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+</div>
+
+<!-- Modal Edit Profile-->
+<div class="modal fade" id="modalFormEditProfile" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
+      </div>
+      <div class="modal-body">
+        <p class="statusMsg" id="profile-status"></p>
+        <form role="form">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" placeholder="Enter your Firstname">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" placeholder="Enter your Lastname">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submitBtn" id="btn-edit-profile">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit User Password-->
+<div class="modal fade" id="modalFormEditUserPass" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Edit Username and Password</h4>
+      </div>
+      <div class="modal-body">
+        <p class="statusMsg" id="account-status"></p>
+        <form role="form">
+          <div class="form-group">
+            <label for="user">Username</label>
+            <input type="text" class="form-control" id="user" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="pass">New Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="New Password">
+          </div>
+          <div class="form-group">
+            <label for="repass">Re-New Password</label>
+            <input type="password" class="form-control" id="repass" placeholder="Re-New Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submitBtn" id="btn-edit-account">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

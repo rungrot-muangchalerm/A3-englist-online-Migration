@@ -1,0 +1,48 @@
+<style>
+  .text-red { color: red; }
+</style>
+
+<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
+  <div class="row kanit">
+    <div class="col-xs-12" style="padding:30px 50px;">
+      <center>
+        <div class="kanit" style="padding-top:20px;">
+          <h2><strong>ลืมรหัสผ่าน</strong></h2>
+          <span style="font-size:24px;color:#707070;">กรุณากรอก email address ที่ใช้สมัครสมาชิก</span>
+          <hr style="width:100px;border:2px solid #f7941d" />
+        </div>
+      </center>
+
+      <div class="row">
+        <div class="col-xs-12" id="form-forgot">
+          <form id="forgot-form" method="post" action="/api/auth/forgot">
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3">
+                <div class="row">
+                  <div class="col-xs-4">E-mail<b class="text-red"> *</b></div>
+                  <div class="col-xs-8">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <br>
+                <button type="submit" id="btn-forgot" class="btn btn-lg btn-info" style="border:0px; background:orange !important">Submit Email</button>
+                <br><br>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

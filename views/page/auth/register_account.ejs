@@ -1,0 +1,115 @@
+<style>
+  .text-red { color: red; }
+  .title_font_color { color: #fb921d; font-weight: bold; }
+  #form_register div.row { padding: 5px; min-height: 45px; }
+  .terms-box { width: 100%; height: 150px; font-size: 14px; }
+</style>
+
+<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
+  <div class="row kanit">
+    <div class="col-xs-12" style="padding:30px 50px;">
+      <center>
+        <div class="kanit" style="padding-top:20px;">
+          <h2><strong>REGISTER</strong><br>
+            <span style="font-size:24px;color:#707070;">แบบฟอร์มสมาชิกใหม่</span>
+          </h2>
+          <hr style="width:100px;border:2px solid #f7941d" />
+        </div>
+      </center>
+
+      <p class="text-red text-center bold" style="font-size:14px;">
+        Username และ Password จะต้องเป็น a-z, A-Z, 0-9 ความยาว 8-20 ตัวอักษรเท่านั้น<br>
+        และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย *
+      </p>
+
+      <div class="row">
+        <div class="col-xs-12" id="form_register">
+          <form id="register-form" method="post" action="/api/auth/register">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4">Firstname<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="text" name="fname" class="form-control" placeholder="Firstname" required></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Lastname<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="text" name="lname" class="form-control" placeholder="Lastname" required></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Gender <b class="text-red"> *</b></div>
+                  <div class="col-xs-8">
+                    <input type="radio" name="gender" id="chkbox_male" value="1" checked /> <label for="chkbox_male" id="chkbox_male_text" style="cursor:pointer;font-weight:normal;">Male</label>
+                    &emsp;&emsp;&emsp;&emsp;
+                    <input type="radio" name="gender" id="chkbox_female" value="2" /> <label for="chkbox_female" id="chkbox_female_text" style="cursor:pointer;font-weight:normal;">Female</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Phone<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="text" name="tel" class="form-control" required placeholder="Phone" maxlength="15"></div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4">Username<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="text" name="user" class="form-control" maxlength="20" placeholder="Username" required></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Password<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="password" name="pass" class="form-control" maxlength="20" placeholder="Password" required></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">Date of Birth </div>
+                  <div class="col-xs-8"><input type="date" name="datebirth" class="form-control" required></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4">E-mail<b class="text-red"> *</b></div>
+                  <div class="col-xs-8"><input type="email" name="email" class="form-control" placeholder="email@example.com" required></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <br>ข้อกำหนดในการใช้งานระบบ<br>
+                <textarea class="terms-box form-control" readonly>
+1. การทดสอบในระบบ EOL System เป็นการทดสอบออนไลน์ จัดทำโดยบริษัทอิงลิชออนไลน์ จำกัด บริษัทจึงมีข้อตกลงเบื้องต้นขึ้น เพื่อท่านสมาชิกหรือท่านที่จะขอใช้บริการ โดยหลังจากที่อ่านจบแล้วให้ท่านกดปุ่ม "ยอมรับ" เพื่อเข้าสู่ขั้นตอนกรอกแบบฟอร์มสมาชิกใหม่ ขอให้ท่านอ่านและทำความเข้าใจโดยละเอียด เพื่อรักษาสิทธิประโยชน์ในการใช้บริการของส่วนรวม และส่วนตัวท่านเอง ในขั้นตอนการกรอกแบบฟอร์มใบสมัครนั้น สมาชิกจะต้องกรอกข้อมูลต่างๆ ตามความเป็นจริง
+2. สมาชิกจะต้องซื้อผลิตภัณฑ์กับทางบริษัทฯ เพื่อเพิ่มวันใช้งานในระบบ ให้สามารถเข้าใช้งานได้ และสมาชิกจะต้องจัดหาอุปกรณ์ในการติดต่อเข้าใช้ระบบอินเตอร์เน็ต และรับผิดชอบค่าใช้จ่ายส่วนอื่นๆ ด้วยตัวเอง
+3. การกำหนดรหัสผ่าน ทางบริษัทขอสงวนสิทธิ์ไม่ให้ใช้คำเหล่านี้ได้แก่ "webmaster", "hostmaster", "admin", "administrator", "postmaster" หรือคำอื่นๆที่ระบุว่าเป็นผู้ดูแลระบบ เป็นชื่อติดต่อบริการ (username, password, login name)
+4. ชื่อผู้ติดต่อบริการ (username) และรหัสผ่าน (password) ต้องใช้ภาษาอังกฤษเท่านั้น และจะต้องรักษา username และ password เป็นความลับ ซึ่งถ้าเกิดเหตุอันมิพึงประสงค์กับการทดสอบของท่าน บริษัทจะไม่รับผิดชอบใดๆ ทั้งสิ้น อันเนื่องมาจากการที่ท่านได้ให้ username และ password แก่บุคคลอื่นที่ไม่เกี่ยวข้อง
+5. ทางบริษัทฯ ถือว่าความเป็นส่วนตัวเป็นเรื่องที่สำคัญมากสำหรับการใช้งาน ดังนั้น บริษัทฯจะไม่เข้าไปยุ่งกับข้อมูลของท่าน นอกเหนือจากข้อกำหนดที่ได้ตกลง
+6. สมาชิกจะได้รับข่าวสารจากทางบริษัทอย่างต่อเนื่อง โดยสมาชิกติดตามข้อสารได้ทางเว็บของทางบริษัทฯ และทางจดหมายอิเล็กทรอนิคส์ (E-Mail)
+7. ห้ามใช้ข้อความที่ไม่สุภาพ หรือเป็นการหมิ่นประมาทผู้อื่นในการสื่อสาร ไม่ว่ากรณีใดๆทั้งสิ้น ทั้งนี้เพื่อสร้างวัฒนธรรมที่ดีในการใช้ระบบของบริษัทฯ
+8. บริษัทไม่ขอรับประกันความเสียหายของข้อมูลการเข้าใช้งานระบบการทดสอบออนไลน์ การใช้บริการของสมาชิก ซึ่งอาจไม่สามารถให้บริการได้ตลอด 24 ชั่วโมง เพราะเครื่องเซิร์ฟเวอร์ของหน่วยงานอาจจะเกิดการเสียหายขึ้นได้โดยอุบัติเหตุที่ไม่คาดคิด แต่อย่างไรก็ดีระบบที่บริษัทฯ เลือกมาให้บริการกับท่านเป็นระบบที่ดีและมีความปลอดภัย ซึ่งในภาวะการทำงานปกติจะไม่เกิดความเสียหายใดๆ
+9. ข้อความ ข้อสอบ ที่อยู่ในการทดสอบในระบบ EOL System ถือเป็นทรัพย์สินของบริษัทฯ ขอสงวนลิขสิทธิ์ ในข้อความ ข้อสอบ เสียง ภาพเหล่านี้ ห้ามมิให้สมาชิกนำไปเผยแพร่ ดัดแปลง แก้ไขใดๆ ทั้งสิ้น
+10. หากมีการเปลี่ยนแปลงข้อตกลงการใช้บริการ การทดสอบในระบบ EOL System ในการให้บริการของบริษัทฯ จะแจ้งให้สมาชิกทราบ โดยขึ้นที่หน้าจอ “ข้อตกลงในการใช้บริการ”
+11. หากบริษัทฯ พบว่าสมาชิกท่านใด ละเมิดข้อตกลงที่ตั้งไว้ บริษัทฯขอสงวนสิทธิ์ในการระงับการให้บริการกับสมาชิกท่านนั้นโดยมิต้องแจ้งให้ทราบล่วงหน้า
+                </textarea>
+                <br><br>
+                <input type="checkbox" id="check_accept" name="check_accept" />
+                <label for="check_accept" id="check_accept_text" style="cursor:pointer;font-weight:normal;">
+                  &emsp;<font style="color:red;">ข้าพเจ้ายอมรับเงื่อนไขในการใช้ระบบ (I accept the EOL terms of use)</font>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-12 text-center">
+                <br>
+                <button type="submit" id="btnregister" disabled class="btn btn-lg btn-info" style="border:0px; background:orange !important">Register</button>
+                <br><br>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

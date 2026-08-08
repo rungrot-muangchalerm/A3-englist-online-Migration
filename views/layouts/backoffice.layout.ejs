@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    <%= typeof title !=='undefined' ? title : 'EOL Backoffice' %>
+  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/eol-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/assets/bootstrap/fontawesome/css/all.min.css">
+
+  <!-- Backoffice CSS -->
+  <link rel="stylesheet" href="/assets/bootstrap/css/backoffice.css">
+
+  <!-- CKEditor -->
+  <script type="text/javascript" src="/assets/js/ckeditor/ckeditor.js"></script>
+  <script type="text/javascript" src="/assets/js/ckeditor/plugins/emojione/libs/emojione/emojione.min.js"></script>
+</head>
+
+<body>
+  <%- include('../partials/backoffice/navbar', { showLogout: typeof showLogout !=='undefined' ? showLogout : false }) %>
+    <%- body %>
+      <%- include('../partials/backoffice/footer') %>
+
+        <!-- jQuery (for legacy backoffice plugins and gradual migration) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+          function logout() {
+            fetch('/api/backoffice/logout', {
+              method: 'POST',
+              credentials: 'include'
+            })
+              .then(() => {
+                const isAdmin = window.location.pathname.includes('/backoffice/mainoffice/admin');
+                window.location.href = isAdmin ? '/backoffice/mainoffice/admin' : '/backoffice/mainoffice/office';
+              });
+          }
+        </script>
+        <% if (typeof script !== 'undefined' && script) { %>
+          <script src="<%= script %>"></script>
+        <% } %>
+</body>
+
+</html>

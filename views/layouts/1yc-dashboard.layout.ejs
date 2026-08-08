@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= typeof title !== 'undefined' ? title : 'หลักสูตรเรียนภาษาอังกฤษออนไลน์ 1 ปี' %></title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/1year/1 year icon.ico">
+  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      background-color: #000000;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <%- body %>
+
+  <script src="/assets/bootstrap/js/jquery.min.js"></script>
+  <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+  <% if (typeof script !== 'undefined' && script) { %>
+    <script src="<%= script %>"></script>
+  <% } %>
+</body>
+
+</html>

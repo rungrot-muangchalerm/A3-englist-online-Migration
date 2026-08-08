@@ -1,0 +1,65 @@
+<div class="main">
+  <style>
+    .office-user-list-table td {
+      background-color: inherit !important;
+    }
+  </style>
+  <br><br>
+  <table align="left" width="85%" cellpadding="0" cellspacing="0" border="0" bgcolor="#6E6E6E" style="margin-left:48px; margin-top:20px;">
+    <tr height="30">
+      <td align="left" width="85%">
+        &nbsp;<font size="2" face="tahoma" color="ffffff"><b>Welcome to Web Admin System :
+          <font size="2" face="tahoma" color="orange"><b><span id="office-user-current-admin"></span></b></font>
+        </b></font>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <a href="/backoffice/mainoffice/office/dashboard" style="height:40px;">
+    <img src="/assets/2010/temp_images/temp/button/bt_to_main.png" style="height:50px;margin-top:-10px;margin-bottom:10px;" title="Back to Main">
+  </a>
+
+  <table class="head-list" align="center" width="90%" bgcolor="#C7C7C7" cellpadding="0" cellspacing="0" border="0">
+    <tr height="25">
+      <td width="10%" align="center" rowspan="2"><font size="2" face="tahoma" color="black"><b>Admin ID</b></font></td>
+      <td width="60%" align="center" rowspan="2"><font size="2" face="tahoma" color="black"><b>Admin Name</b></font></td>
+      <td width="30%" align="center" colspan="3"><font size="2" face="tahoma" color="black"><b>Management</b></font></td>
+    </tr>
+    <tr height="25">
+      <td width="10%" align="center"><font size="2" face="tahoma" color="green"><b>Active</b></font></td>
+      <td width="10%" align="center"><font size="2" face="tahoma" color="#48A7F0"><b>Edit</b></font></td>
+      <td width="10%" align="center"><font size="2" face="tahoma" color="red"><b>Delete</b></font></td>
+    </tr>
+  </table>
+
+  <div id="office-user-list"></div>
+
+  <template id="office-user-row-template">
+    <table class="listuser office-user-list-table" align="center" cellpadding="0" cellspacing="0" border="0" width="90%">
+      <tr height="25">
+        <td width="10%" align="center"><font size="2" face="tahoma" color="black"><b data-role="admin-id"></b></font></td>
+        <td width="60%" align="center">
+          <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td width="40%" align="left"><font size="2" face="tahoma" color="black"><b>&nbsp; <span data-role="name-left"></span></b></font></td>
+              <td width="35%" align="left"><font size="2" face="tahoma" color="black"><b>&nbsp; <span data-role="name-middle"></span></b></font></td>
+              <td width="25%" align="left"><font size="2" face="tahoma" color="black"><b><span data-role="nickname"></span> &nbsp;</b></font></td>
+            </tr>
+          </table>
+        </td>
+        <td width="10%" align="center" data-role="active-cell"></td>
+        <td width="10%" align="center" data-role="edit-cell"></td>
+        <td width="10%" align="center" data-role="delete-cell"></td>
+      </tr>
+    </table>
+  </template>
+
+  <table class="tb-add-new-user" align="center" cellpadding="0" cellspacing="0" border="1" width="90%">
+    <tr height="30">
+      <td colspan="5" align="center">
+        <a href="/backoffice/mainoffice/office/user/add"><font size="4" face="tahoma"><b>&nbsp; - Add New User - </b></font></a>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,179 @@
+:focus { outline: 0; }
+#listexam {
+    float: none;
+    margin-right: 20px;
+    width: 500px;
+    height: 350px;
+    font-weight: normal;
+    background-color: white;
+    border: 1px solid #E3E3E3;
+    margin-bottom: 20px;
+}
+table.exam {border-spacing: 0; } 
+table.exam  a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+table.exam  a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+table.exam  a:active,
+table.exam  a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+table.exam  {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	width:100%;
+	font-size:12px;
+	/* text-shadow: 1px 1px 0px #fff; */
+	background:#eaebec;
+	/*margin:20px;
+	border:#ccc 1px solid;*/
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+table.exam  th {
+	padding:21px 25px 22px 25px;
+	border:none;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+	
+	color:#000;
+	/* text-shadow: 1px 1px 1px #333; */
+	background: #3FC8FA;
+    font-size: 15px;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#D9D9D9), to(#EDEDED));
+	background: -moz-linear-gradient(top,  #D9D9D9,  #EDEDED);*/
+    font-family: 'Kanit' !important;
+}
+
+table.exam  th:first-child{
+	text-align: left;
+	padding-left:20px;
+}
+table.exam  tr:first-child th:first-child{
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+table.exam  tr:first-child th:last-child{
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+table.exam  tr{
+	text-align: center;
+	padding-left:20px;
+}
+table.exam  tr td:first-child{
+	text-align: left;
+	width:55%;
+	padding-left:20px;
+	border-left: 0;
+}
+table.exam tr td {
+	padding:15px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	/* font-family: 'Oswald' !important; */
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table.exam  tr.even td{
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table.exam  tr:last-child td{
+	border-bottom:0;
+}
+table.exam  tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+table.exam  tr:last-child td:last-child{
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+table.exam  tr:hover td{
+cursor:pointer;
+	background: #E5F3FA;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E5F3FA), to(#E1EEF5));
+	background: -moz-linear-gradient(top,  #E5F3FA,  #E1EEF5);	
+}
+table.exam  tr.selected td {
+cursor:pointer;
+	background: #E5F3FA;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E5F3FA), to(#E1EEF5));
+	background: -moz-linear-gradient(top,  #E5F3FA,  #E1EEF5);	
+}
+.bnt-etest {
+ height:28px;
+  width:auto;
+  /* margin: 0px;
+    border-radius: 4px; */
+  margin-left:15px;
+  padding-left:5px;
+  padding-right:5px;
+  margin-bottom:10px;
+  font-weight:bold;
+  color:#ffffff;
+  cursor:pointer;
+  border:1px solid #147CCC;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+   border-radius: 2px;
+  background:#1685DB;
+  -webkit-box-shadow: 1px 1px 1px #D9D9D9;
+ -moz-box-shadow:  1px 1px 1px #D9D9D9;
+   box-shadow:  1px 1px 1px #D9D9D9;
+}
+ .bnt-etest:hover{
+   border:1px solid #116BB0;
+   background:#1273BD;
+  -webkit-box-shadow: no;
+   -moz-box-shadow:  no;
+   box-shadow:  no;
+   font-size: 16px;
+ }
+ .gray {
+    border: 1px solid #ccc;
+    background: #ccc;
+}
+
+.gray:hover {
+    border: 1px solid #ccc;
+    background: #ccc;
+}
+.bnt-test,
+button[disabled=""] {
+    cursor: not-allowed;
+}
+
+.bnt-test,
+button[disabled=false] {
+    cursor: pointer;
+}
+.oswald {
+    font-family: 'Oswald' !important;
+}
+
+.kanit {
+    font-family: 'Kanit' !important;
+}

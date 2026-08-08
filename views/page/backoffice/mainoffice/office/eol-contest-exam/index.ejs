@@ -1,0 +1,357 @@
+<div class="main" id="contest-exam-app" data-api-url="/api/backoffice/office/eol-contest-exams">
+  <a href="/backoffice/mainoffice/office/dashboard" style="height:40px;">
+    <img src="/assets/2010/temp_images/temp/button/bt_to_main.png" style="height:50px;margin-top:-10px;margin-bottom:10px;" title="Back to Main">
+  </a>
+
+  <div id="contest-exam-wrap">
+    <div style="width:100%;height:45px;">
+      <a href="/backoffice/mainoffice/office/eol-contest-exam/exam?action=create_customize">
+        <button id="add-custom-exam" class="bnt-etest setright"> + สร้างชุดข้อสอบแบบกำหนดเอง </button>
+      </a>
+      <a href="/backoffice/mainoffice/office/eol-contest-exam/exam?action=create">
+        <button id="add-system-exam" class="bnt-etest setright"> + สร้างชุดข้อสอบจากระบบ</button>
+      </a>
+    </div>
+
+    <div style="width:600px; height:auto; background:#ffffff;border:1px solid #FF9900;float:left; border-radius:5px;">
+      <table cellspacing="0" class="exam">
+        <tr>
+          <th width="48%">รายละเอียดชุดข้อสอบ</th>
+          <th width="26%">ชื่อผู้สร้าง</th>
+          <th width="13.5%">จำนวนข้อ</th>
+          <th width="13%" align="left">เวลาสอบ</th>
+          <th width="20%" align="left">สถานะการใช้งาน</th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="examlist" class="nano" style="width:600px; height:502px; background:#ffffff; border:1px solid #E3E3E3; float:left; border-radius:5px;">
+      <div class="content">
+        <table cellspacing="0" class="exam">
+          <tbody id="contest-exam-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="contest-exam-detail"></div>
+    <div style="clear:both;"></div>
+    <center>
+      <ul class="pagination" id="contest-exam-pages"></ul>
+    </center>
+    <div style="clear:both;"></div>
+  </div>
+
+  <template id="contest-exam-row-template">
+    <tr>
+      <td><a href="#" data-role="select"></a></td>
+      <td data-role="creator"></td>
+      <td><a href="#" title="View" data-role="amount"></a></td>
+      <td data-role="time"></td>
+      <td><b data-role="active"></b></td>
+    </tr>
+  </template>
+
+  <template id="contest-exam-detail-template">
+    <div id="detailexam">
+      <form id="contest-exam-form">
+        <table border="0" class="detailform">
+          <input type="hidden" name="exam_id" data-role="exam-id">
+          <tr>
+            <td>ชุดข้อสอบ </td>
+            <td><input type="text" name="exam_name" data-role="exam-name" class="txtdetail" style="width:240px;"></td>
+          </tr>
+          <tr><td>วันที่ </td><td data-role="create-date"></td></tr>
+          <tr><td>จำนวนข้อ  </td><td data-role="amount"></td></tr>
+          <tr>
+            <td>เวลาสอบ   </td>
+            <td><input type="text" name="testtime" data-role="testtime" class="txtdetail" style="width:50px;" maxlength="3"> นาที</td>
+          </tr>
+          <tr>
+            <td>รูปแบบการทดสอบ   </td>
+            <td>
+              <input type="radio" name="test_type" value="1"> สอบเก็บคะแนน<br>
+              <input type="radio" name="test_type" value="2"> การแข่งขัน
+            </td>
+          </tr>
+          <tr>
+            <td>เปิดใช้งาน </td>
+            <td>
+              <button type="button" class="legacy-toggle" data-role="active-toggle" aria-pressed="false">
+                <span data-role="active-toggle-label">OFF</span>
+              </button>
+              <input type="checkbox" name="active" id="opt1" value="1" class="toggleswitch" data-role="active" style="display:none;">
+            </td>
+          </tr>
+        </table>
+        เลือกกลุ่มที่สอบ
+        <div id="listgroup_name" class="nano">
+          <div class="content" data-role="groups" style="padding-left:10px; padding-top:10px; line-height:1.8;"></div>
+        </div>
+        <input type="submit" name="save" id="save" class="bnt-etest setright" value="บันทึก" style="width:50px;">
+      </form>
+      <button id="edit-custom-exam" class="btn-edit setright" style="display:none;">แก้ไขข้อสอบ</button>
+      <button id="delete-contest-exam" class="bnt-delete setright" data-role="delete"> ลบชุดข้อสอบ</button>
+      <div id="alert-error">
+        <font color="red" data-role="message"></font>
+      </div>
+    </div>
+  </template>
+
+  <template id="contest-empty-template">
+    <tr>
+      <td colspan="5" style="text-align:center;">- Didn't Find Data List -</td>
+    </tr>
+  </template>
+</div>
+
+<style type="text/css">
+  :focus { outline: 0; }
+  #contest-exam-wrap {
+    position: relative;
+    width: 960px;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+    padding: 5px;
+    padding-top: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  table.exam { border-spacing: 0; }
+  table.exam a:link {
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  table.exam a:visited {
+    color: #999999;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  table.exam a:active,
+  table.exam a:hover {
+    color: #bd5a35;
+    text-decoration: underline;
+  }
+  table.exam {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    width: 100%;
+    font-size: 12px;
+    text-shadow: 1px 1px 0px #fff;
+    background: #eaebec;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px #d1d1d1;
+  }
+  table.exam th {
+    padding: 10px 15px 12px 15px;
+    border: none;
+    border-top: 1px solid #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #333;
+    background: #FF9900;
+  }
+  table.exam th:first-child {
+    text-align: left;
+    padding-left: 20px;
+  }
+  table.exam tr {
+    text-align: center;
+    padding-left: 20px;
+  }
+  table.exam tr td:first-child {
+    text-align: left;
+    width: 43%;
+    padding-left: 20px;
+    border-left: 0;
+  }
+  table.exam tr td {
+    padding: 15px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    background: #fafafa;
+    background: linear-gradient(to bottom, #fbfbfb, #fafafa);
+  }
+  table.exam tr.even td {
+    background: #f6f6f6;
+    background: linear-gradient(to bottom, #f8f8f8, #f6f6f6);
+  }
+  table.exam tr:hover td,
+  table.exam tr.selected td {
+    cursor: pointer;
+    background: #E5F3FA;
+    background: linear-gradient(to bottom, #E5F3FA, #E1EEF5);
+  }
+  .btn-edit {
+    height: 28px;
+    width: auto;
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #F08411;
+    border-radius: 4px;
+    background: #F08411;
+    box-shadow: 1px 1px 1px #D9D9D9;
+  }
+  .bnt-delete {
+    height: 28px;
+    width: auto;
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #EA1919;
+    border-radius: 4px;
+    background: #EA1919 !important;
+    box-shadow: 1px 1px 1px #D9D9D9;
+  }
+  .bnt-etest {
+    height: 28px;
+    width: auto;
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid #147CCC;
+    border-radius: 4px;
+    background: #1685DB;
+    box-shadow: 1px 1px 1px #D9D9D9;
+  }
+  .bnt-etest:hover {
+    border: 1px solid #116BB0;
+    background: #1273BD;
+    font-size: 15px;
+  }
+  .setright { float: right; }
+  #examlist {
+    overflow: auto;
+  }
+  #examlist .content {
+    min-height: 100%;
+  }
+  table.detailform tr td { padding: 5px; }
+  #detailexam {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 335px;
+    height: 575px;
+    background: #ffffff;
+    border: 1px solid #E3E3E3;
+    float: left;
+    margin-top: -73px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #detailexam input.txtdetail {
+    border: 1px solid #e0e0e0;
+    padding-left: 5px;
+    height: 28px;
+    width: 180px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  #detailexam input.txtdetail:hover {
+    border: 1px solid #3FC8FA;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+  }
+  #detailexam input.txtdetail:focus { border: 1px solid #1273BD; }
+  .legacy-toggle {
+    position: relative;
+    width: 68px;
+    height: 26px;
+    padding: 0 9px 0 28px;
+    border: 1px solid #aaa;
+    border-radius: 13px;
+    background: #ededed;
+    color: #777;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: left;
+    text-shadow: 1px 1px 0 #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.25), 1px 1px 1px #d9d9d9;
+  }
+  .legacy-toggle:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.35);
+  }
+  .legacy-toggle.is-on {
+    padding-left: 10px;
+    padding-right: 27px;
+    border-color: #147CCC;
+    background: #1685DB;
+    color: #fff;
+    text-align: right;
+    text-shadow: 1px 1px 1px #333;
+  }
+  .legacy-toggle.is-on:before {
+    left: 43px;
+  }
+  #listgroup_name {
+    width: auto;
+    height: 250px;
+    font-weight: normal;
+    margin-top: 5px;
+    border: 1px solid #E3E3E3;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: auto;
+  }
+  #listgroup_name input.checkbok_group {
+    height: 15px;
+    width: 15px;
+  }
+  .pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  .pagination > li {
+    display: inline;
+  }
+  .pagination > li > a {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  .pagination > .active > a {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+  }
+</style>
+

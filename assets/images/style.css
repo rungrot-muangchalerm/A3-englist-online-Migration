@@ -1,0 +1,150 @@
+.body {
+	SCROLLBAR-FACE-COLOR: #dee3e7; BACKGROUND-IMAGE: url(../images/bgmain.jpg); SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #dee3e7; SCROLLBAR-3DLIGHT-COLOR: #d1d7dc; SCROLLBAR-ARROW-COLOR: #339933; SCROLLBAR-TRACK-COLOR: #efefef; BACKGROUND-REPEAT: repeat-x; SCROLLBAR-DARKSHADOW-COLOR: #98aab1; BACKGROUND-COLOR: #308aac
+}
+.backx {
+	BACKGROUND-REPEAT: repeat-x
+}
+.backy {
+	BACKGROUND-REPEAT: repeat-y
+}
+INPUT {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+SMALL {
+	FONT-SIZE: 10pt; COLOR: #333333; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+TABLE {
+	FONT-SIZE: 10pt; COLOR: #333333; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: #333333; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.Bfont {
+	FONT-SIZE: 12pt; COLOR: #333333; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.sfont {
+	FONT-SIZE: 9pt; COLOR: #333333; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+A {
+	FONT-SIZE: 10pt; COLOR: #000033; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 10pt; COLOR: #000033; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 10pt; COLOR: #ff0000; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+.small {
+	FONT-SIZE: 9pt; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.fade {
+	FILTER: alpha(opacity=70); CURSOR: hand; moz-opacity: 0.2
+}
+.border {
+	BORDER-RIGHT: #9abbe0 thin dotted
+}
+.input {
+	CLEAR: none; BORDER-RIGHT: #0000ff 1px solid; PADDING-RIGHT: 1px; BACKGROUND-POSITION: left center; BORDER-TOP: #0000ff 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 14px; FLOAT: none; PADDING-BOTTOM: 1px; MARGIN: 0px; WORD-SPACING: normal; VERTICAL-ALIGN: middle; BORDER-LEFT: #0000ff 1px solid; WIDTH: auto; COLOR: #ffffff; PADDING-TOP: 1px; BORDER-BOTTOM: #0000ff 1px solid; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; WHITE-SPACE: pre; LETTER-SPACING: normal; HEIGHT: auto; BACKGROUND-COLOR: #000000; TEXT-ALIGN: left
+}
+TD.menu {
+	FONT-SIZE: 10pt; COLOR: #000033; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+TD.menu A {
+	FONT-SIZE: 10pt; WIDTH: 100%; COLOR: #000033; LINE-HEIGHT: 15px; TEXT-DECORATION: none
+}
+TD.menu A:hover {
+	FONT-SIZE: 10pt; COLOR: #ff0000; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+TD.menu A:visited {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; TEXT-DECORATION: none
+}
+.borderstyle {
+	BORDER-RIGHT: #d7eadf 1px dotted; BORDER-TOP: #d7eadf 1px dotted; BORDER-LEFT: #d7eadf 1px dotted; BORDER-BOTTOM: #d7eadf 1px dotted
+}
+.TextBox {
+	BORDER-RIGHT: #666666 1px inset; BORDER-TOP: #000000 1px inset; FONT-SIZE: 12px; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(../images/bgstyle.gif); BORDER-LEFT: #000000 1px inset; COLOR: #000000; BORDER-BOTTOM: #666666 1px inset; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; BACKGROUND-COLOR: #ffffff
+}
+.boxform {
+	BORDER-RIGHT: #cccccc 1px dotted; BORDER-TOP: #cccccc 1px dotted; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px dotted; COLOR: #000000; BORDER-BOTTOM: #cccccc 1px dotted; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"; BACKGROUND-COLOR: #fefdf7
+}
+.submit {
+	BORDER-RIGHT: rgb(0,0,0) 1px solid; BORDER-TOP: rgb(0,0,0) 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: #0033ff; BORDER-LEFT: rgb(0,0,0) 1px solid; COLOR: #ffffff; BORDER-BOTTOM: rgb(0,0,0) 1px solid; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.cancle {
+	BORDER-RIGHT: rgb(0,0,0) 1px solid; BORDER-TOP: rgb(0,0,0) 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: #ff0000; BORDER-LEFT: rgb(0,0,0) 1px solid; COLOR: #ffffff; BORDER-BOTTOM: rgb(0,0,0) 1px solid; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.select {
+	BORDER-RIGHT: rgb(0,0,0) 1px solid; BORDER-TOP: rgb(0,0,0) 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: #fef5e9; BORDER-LEFT: rgb(0,0,0) 1px solid; COLOR: #000000; BORDER-BOTTOM: rgb(0,0,0) 1px solid; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.border_top {
+	BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: #000000 1px double; BORDER-LEFT: #ffffff 1px double; BORDER-TOP-COLOR: #ffffff; BORDER-BOTTOM: #000000 0px double
+}
+.border_middle {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #000000 1px double; BORDER-LEFT: #ffffff 1px double; BORDER-TOP-COLOR: #ffffff; BORDER-BOTTOM: #000000 0px double
+}
+.border_bottom {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #000000 1px double; BORDER-LEFT: #ffffff 1px double; BORDER-TOP-COLOR: #ffffff; BORDER-BOTTOM: #000000 1px double
+}
+.headmenu {
+	BORDER-RIGHT: #c5c7cf 0px solid; BORDER-TOP: #c5c7cf 0px solid; FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#E1E2E6,,endcolorstr=#F8F8F8); BORDER-LEFT: #c5c7cf 0px solid; BORDER-BOTTOM: #c5c7cf 0px solid
+}
+.bordertable {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #bebebe 1px solid; BORDER-LEFT: #bebebe 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.underborder {
+	BORDER-RIGHT: #d8d8d8 1px solid; BORDER-TOP: #000000 0px solid; FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#FCFBFF,,endcolorstr=#D7D7D7); BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #d8d8d8 1px solid
+}
+.borderdot {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 1px dotted; BORDER-LEFT: #000000 1px dotted; BORDER-BOTTOM: #000000 1px dotted
+}
+.backbordertable {
+	BORDER-RIGHT: #e6e6e6 1px solid; BORDER-TOP: #000066 1px solid; BORDER-LEFT: #000066 1px solid; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.gradian_up {
+	FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#FCFBFF,,endcolorstr=#D7D7D7)
+}
+.gradian_article {
+	FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#A9FCFC,,endcolorstr=#68A0FD)
+}
+.gradian_down {
+	FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#D7D7D7,,endcolorstr=#FCFBFF)
+}
+.gradian_menu_blue {
+	FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#004080,,endcolorstr=#47A8E2)
+}
+.gradian_menu {
+	PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.gradian_menu_over {
+	PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BACKGROUND-COLOR: #ffffff
+}
+.gradian_footer {
+	FILTER: progid:dximagetransform.microsoft.gradient(gradienttype=0,startcolorstr=#0B6ECF,,endcolorstr=#37B2DC)
+}
+.line1 {
+	FONT-SIZE: 10pt; BORDER-BOTTOM: #ff0000 2px solid; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.line2 {
+	FONT-SIZE: 10pt; BORDER-BOTTOM: #ff0000 5px double; FONT-FAMILY: Tahoma, "Microsoft Sans Serif"
+}
+.borderstyle {
+	BORDER-RIGHT: #cccccc 1px dotted; BORDER-TOP: #cccccc 1px dotted; BORDER-LEFT: #cccccc 1px dotted; BORDER-BOTTOM: #cccccc 1px dotted
+}
+.style1 {
+	COLOR: #333333
+}
+.bgmenucolor {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 1px dotted; BORDER-LEFT: #000000 1px dotted; CURSOR: hand; BORDER-BOTTOM: #000000 1px dotted; BACKGROUND-COLOR: #99ccff
+}
+.bgmenucolor_over {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 1px dotted; BORDER-LEFT: #000000 1px dotted; CURSOR: hand; BORDER-BOTTOM: #000000 1px dotted; BACKGROUND-COLOR: #e1f0ff
+}
+.dot {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM: #a1a1a1 1px dotted
+}
+.divpadding {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px
+}
+.fade {
+	FILTER: alpha(opacity=90); CURSOR: hand; moz-opacity: 0.2
+}

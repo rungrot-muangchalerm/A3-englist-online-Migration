@@ -1,0 +1,273 @@
+img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background-color: #9EF0DE;
+    margin: 0 auto;
+    padding: 0;
+    width: 88%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.table-admin {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    background: #67686847;
+}
+
+.noborder {
+    border: none;
+    padding: 5px;
+    border-spacing: 0;
+}
+
+.noborder,
+.noborder tr,
+.noborder th,
+.noborder td {
+    border: none;
+    padding: 5px;
+    border-spacing: 0;
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* Specific to this particular image */
+    img.bg {
+        width: auto;
+    }
+}
+
+a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #9999CC;
+    text-decoration: n one;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.head {
+    background-color: #8e8a8a;
+    height: 60px;
+    width: auto;
+    margin-left: -140px;
+    margin-right: -250px;
+}
+
+/*---------------------div faq --------------------*/
+.divfaq {
+    margin-top: 10px;
+    height: 200px;
+    width: 700px;
+}
+
+.divfaq textarea.tx {
+    width: 700px;
+    height: 80px;
+    border: 1px solid rgb(255, 124, 17);
+    border-radius: 3px;
+}
+
+.divfaq textarea.tx:focus {
+    outline: 0;
+    border: 1px solid rgb(255, 124, 17);
+    -moz-box-shadow: 0px 0px 5px rgb(251, 229, 64);
+    -webkit-box-shadow: 0px 0px 5px rgb(251, 229, 64);
+    box-shadow: 0px 0px 5px rgb(251, 229,
+
+            64);
+}
+
+.divfaq input.btn {
+    float: right;
+    margin-left: 20px;
+    font-size: 14px;
+    height: 27px;
+    width: 70px;
+    color: #666;
+    border: 1px solid #999;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.divfaq input.btn:hover {
+    color: #333;
+    border: 1px solid #333;
+}
+
+.page {
+    text-align: right;
+    margin-right: 100px;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.delete {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.delete a {
+    color: red;
+    text-decoration: none;
+}
+
+.delete a:link {
+    color: red;
+    text-decoration: none;
+}
+
+/*---------------------div show --------------------------*/
+.divshowfaq {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 150px;
+    height: auto;
+    width: 700px;
+}
+
+.listfaq {
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 10px;
+    height: auto;
+    width: 700px;
+    background-image: linear-gradient(bottom, rgb(255, 124, 17) 6%, rgb(251, 229, 64) 79%);
+    background-image: -o-linear-gradient(bottom, rgb(255, 124, 17) 6%, rgb(251, 229, 64) 79%);
+    background-image: -moz-linear-gradient(bottom, rgb(255, 124, 17) 6%, rgb(251, 229, 64) 79%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255, 124, 17) 6%, rgb(251, 229, 64) 79%);
+    background-image: -ms-linear-gradient(bottom, rgb(255, 124, 17) 6%, rgb(251, 229, 64) 79%);
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.06, rgb(255, 124, 17)),
+            color-stop(0.79, rgb(251, 229, 64)));
+}
+
+.txtcontent,
+.txtcontentsub {
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 8px;
+    color: #000000;
+    width: 690px;
+    height: auto;
+    background-color: #ccc;
+}
+
+.clear {
+    clear: both;
+}
+
+
+.txtcontentsub {
+    width: 670px;
+    background-color: #fff;
+}
+
+.txtcontent p,
+.txtcontentsub p {
+    color: #000000;
+    padding-left: 2px;
+}
+
+.modal1 {
+    background-color: #FFF;
+    background-image: url('../images/icon/notebook_edit.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    display: none;
+    width: 570px;
+    min-height: 150px;
+    height: auto;
+    text-align: left;
+    border: 1px solid #3B2314;
+    padding: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+.overlaycontent {
+    width: 500px;
+    height: auto;
+}
+
+.tblclass td,
+th {
+    border-spacing: 0px;
+    border: 1px solid #3B2314;
+}
+
+.tblclass th {
+    background-color: #3B2314;
+    color: white;
+}
+
+.modal1 h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 10px 0 10px 0px;
+    font-size: 18px;
+}
+
+.modal1 input {
+    border-radius: 8px;
+}
+
+.modal1 .btn-cancel:hover {
+    color: black;
+}
+
+.modal1 .btn-save:hover {
+    color: black;
+}
+
+.btn-save {
+    background: #008000cc;
+    border-radius: 5px;
+    color: white;
+    border: 1px;
+    padding: 3px 12px;
+    height: 28px;
+    width: auto;
+    border: 0px solid #008000cc;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    background: #ff0000e8;
+    border-radius: 5px;
+    color: white;
+    border: 1px;
+    padding: 3px 12px;
+    height: 28px;
+    width: auto;
+    border: 0px solid #ff0000e8;
+    font-weight: bold;
+}
