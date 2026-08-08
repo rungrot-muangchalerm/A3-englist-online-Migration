@@ -5,3 +5,7 @@ server.log
 assets/2010/member_images/
 assets/2010/user_images/
 cookie.txt
+tools/event-cleanup/
+tools/image-cleanup/
+assets/files/sound/
+assets/event/_archive_2026_08_09
