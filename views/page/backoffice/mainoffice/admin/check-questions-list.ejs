@@ -1,129 +1,157 @@
 <div class="main-academic" id="admin-question-list-app" data-page-mode="<%= pageMode %>">
+  <br><br>
+  <div align="center" class="f-thai">
     <br><br>
-    <div align="center" class="f-thai">
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
-      <br><br><br>
-      <hr>
-    </div>
-
+    <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
     <br><br><br>
-    <div align="center" class="f-thai">
-      <a href="/backoffice/mainoffice/admin/check-questions-list/search">[Search List]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/add-question">[Add Questions]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/add-related-item">[Add Related Item]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/show-questions">[Show Question List]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/hidden-questions">[Hidden Question List]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/show-related">[Show Related List]</a>&nbsp;&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list/hidden-related">[Hidden Related List]</a>
-    </div>
-    <br><br>
+    <hr>
+  </div>
 
-    <table id="admin-question-search-panel" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#dddddd" class="f-thai" style="display:none;">
-      <tr height="40">
-        <td align="center" width="30%"><font size="2">
+  <br><br><br>
+  <div align="center" class="f-thai">
+    <a href="/backoffice/mainoffice/admin/check-questions-list/search">[Search List]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/add-question">[Add Questions]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/add-related-item">[Add Related Item]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/show-questions">[Show Question List]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/hidden-questions">[Hidden Question List]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/show-related">[Show Related List]</a>&nbsp;&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list/hidden-related">[Hidden Related List]</a>
+  </div>
+  <br><br>
+
+  <table id="admin-question-search-panel" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#dddddd" class="f-thai" style="display:none;">
+    <tr height="40">
+      <td align="center" width="30%">
+        <font size="2">
           <input type="radio" name="mode" value="question" checked> &raquo; Question
           <input type="radio" name="mode" value="relation" disabled> &raquo; Relation
           <input type="radio" name="mode" value="answer" disabled> &raquo; Answer
-        </font></td>
-        <td align="left" width="55%"><font size="2">
+        </font>
+      </td>
+      <td align="left" width="55%">
+        <font size="2">
           &nbsp; By ID : &nbsp;<input type="text" id="admin-question-search-id" size="5">
           &nbsp; By Keyword : &nbsp;<input type="text" id="admin-question-search-keyword" size="35">
-        </font></td>
-        <td align="center" width="15%">
-          <button type="button" id="admin-question-search-button" class="btn-set-relate">&nbsp;&nbsp; Search &nbsp;&nbsp;</button>
-        </td>
-      </tr>
-      <tr height="25">
-        <td align="center" colspan="3"><font size="2" color="red">
+        </font>
+      </td>
+      <td align="center" width="15%">
+        <button type="button" id="admin-question-search-button" class="btn-set-relate">&nbsp;&nbsp; Search &nbsp;&nbsp;</button>
+      </td>
+    </tr>
+    <tr height="25">
+      <td align="center" colspan="3">
+        <font size="2" color="red">
           Tips Search : Relation &raquo; by Keyword , It's going to find only in Passage Section [Sounds & Pictures haven't any Keywords]
-        </font></td>
-      </tr>
-    </table>
+        </font>
+      </td>
+    </tr>
+  </table>
 
-    <div id="admin-related-type-menu" align="center" class="f-thai" style="display:none;">
+  <div id="admin-related-type-menu" align="center" class="f-thai" style="display:none;">
+    <br>
+    <a data-role="related-type" data-type-id="1" href="#">Passage</a>&nbsp;&nbsp;&nbsp;
+    <a data-role="related-type" data-type-id="2" href="#">Picture</a>&nbsp;&nbsp;&nbsp;
+    <a data-role="related-type" data-type-id="3" href="#">Sound</a>
+  </div>
+
+  <div id="admin-question-list-title" align="center" class="f-thai"></div>
+  <table id="admin-question-pages-table" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" class="f-thai" style="display:none;">
+    <tr valign="top">
+      <td width="7%" align="right">
+        <font size="2">Page : </font>
+      </td>
+      <td align="left" width="93%" id="admin-question-pages"></td>
+    </tr>
+  </table>
+
+  <div id="admin-question-list">
+    <template id="admin-question-template">
+      <table align="center" width="100%" border="1" style="margin: 0 auto;" class="f-thai show-quiz">
+        <tr align="middle">
+          <td colspan="2" align="left">
+            <font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td align="center" rowspan="3" width="10%">
+            <span data-role="question-id"></span>
+            <br><br><br>
+            <span data-role="active-action"></span><br><br><b data-role="no"></b>
+          </td>
+          <td align="left" width="90%">
+            <font color="green">None Relate File or Passage</font>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" width="100%" bgcolor="#dddddd">
+            <font size="2" data-role="question-text"></font><br>&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td align="left" width="90%"><br>
+            <div data-role="answers"></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <font size="2"><b>&nbsp;Description : <br></b></font>
+            <font size="2" color="blue" data-role="description"></font>
+            <div align="center" data-role="no-description" style="display:none;">
+              <font size="2" color="red"><b> - None Description - </b></font>
+            </div><br>
+          </td>
+        </tr>
+      </table>
       <br>
-      <a data-role="related-type" data-type-id="1" href="#">Passage</a>&nbsp;&nbsp;&nbsp;
-      <a data-role="related-type" data-type-id="2" href="#">Picture</a>&nbsp;&nbsp;&nbsp;
-      <a data-role="related-type" data-type-id="3" href="#">Sound</a>
-    </div>
+    </template>
+    <template id="admin-answer-template">
+      <div>&nbsp;&nbsp; <span data-role="answer-id"></span> : <span data-role="correct"></span> : <span data-role="answer-text"></span></div>
+    </template>
+  </div>
 
-    <div id="admin-question-list-title" align="center" class="f-thai"></div>
-    <table id="admin-question-pages-table" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" class="f-thai" style="display:none;">
-      <tr valign="top">
-        <td width="7%" align="right"><font size="2">Page : </font></td>
-        <td align="left" width="93%" id="admin-question-pages"></td>
-      </tr>
-    </table>
+  <div id="admin-related-list">
+    <template id="admin-related-template">
+      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="1" class="f-thai show-relate" style="margin: 0 auto;">
+        <tr height="40">
+          <td width="20%" align="center">
+            <font size="2">Data ID : <span data-role="related-id"></span></font>
+          </td>
+          <td width="20%" align="center">
+            <font size="2">Type : <span data-role="type-name"></span></font>
+          </td>
+          <td width="60%" align="left">&nbsp; <font size="2">Reference Name <span data-role="reference-name"></span></font>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" align="left" colspan="3"><br>
+            <font size="2" data-role="related-text"></font><br>&nbsp;
+          </td>
+        </tr>
+        <tr height="50">
+          <td width="100%" align="center" colspan="3"><span data-role="active-action"></span> Relate Question List</td>
+        </tr>
+        <tr height="20">
+          <td width="100%" align="left" colspan="3">
+            <font size="2">&nbsp;&nbsp;<span data-role="question-ids"></span></font>
+          </td>
+        </tr>
+      </table>
+      <br>
+    </template>
+  </div>
 
-    <div id="admin-question-list">
-      <template id="admin-question-template">
-        <table align="center" width="100%" border="1" style="margin: 0 auto;" class="f-thai show-quiz">
-          <tr align="middle">
-            <td colspan="2" align="left"><font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font></td>
-          </tr>
-          <tr valign="top">
-            <td align="center" rowspan="3" width="10%">
-              <span data-role="question-id"></span>
-              <br><br><br>
-              <span data-role="active-action"></span><br><br><b data-role="no"></b>
-            </td>
-            <td align="left" width="90%"><font color="green">None Relate File or Passage</font></td>
-          </tr>
-          <tr>
-            <td align="left" width="100%" bgcolor="#dddddd"><font size="2" data-role="question-text"></font><br>&nbsp;</td>
-          </tr>
-          <tr>
-            <td align="left" width="90%"><br><div data-role="answers"></div></td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <font size="2"><b>&nbsp;Description : <br></b></font>
-              <font size="2" color="blue" data-role="description"></font>
-              <div align="center" data-role="no-description" style="display:none;"><font size="2" color="red"><b> - None Description - </b></font></div><br>
-            </td>
-          </tr>
-        </table>
-        <br>
-      </template>
-      <template id="admin-answer-template">
-        <div>&nbsp;&nbsp; <span data-role="answer-id"></span> : <span data-role="correct"></span> : <span data-role="answer-text"></span></div>
-      </template>
-    </div>
-
-    <div id="admin-related-list">
-      <template id="admin-related-template">
-        <table align="center" width="100%" cellpadding="0" cellspacing="0" border="1" class="f-thai show-relate" style="margin: 0 auto;">
-          <tr height="40">
-            <td width="20%" align="center"><font size="2">Data ID : <span data-role="related-id"></span></font></td>
-            <td width="20%" align="center"><font size="2">Type : <span data-role="type-name"></span></font></td>
-            <td width="60%" align="left">&nbsp; <font size="2">Reference Name <span data-role="reference-name"></span></font></td>
-          </tr>
-          <tr>
-            <td width="100%" align="left" colspan="3"><br><font size="2" data-role="related-text"></font><br>&nbsp;</td>
-          </tr>
-          <tr height="50">
-            <td width="100%" align="center" colspan="3"><span data-role="active-action"></span> Relate Question List</td>
-          </tr>
-          <tr height="20">
-            <td width="100%" align="left" colspan="3"><font size="2">&nbsp;&nbsp;<span data-role="question-ids"></span></font></td>
-          </tr>
-        </table>
-        <br>
-      </template>
-    </div>
-
-    <div id="admin-question-empty" align="center" class="f-thai" style="display:none;"><font color="red" size="3"><br><br><b>Can't Found Your ID or Keyword</b></font></div>
+  <div id="admin-question-empty" align="center" class="f-thai" style="display:none;">
+    <font color="red" size="3"><br><br><b>Can't Found Your ID or Keyword</b></font>
+  </div>
 </div>
-

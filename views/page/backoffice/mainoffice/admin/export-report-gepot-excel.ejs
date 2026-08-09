@@ -32,9 +32,13 @@
   <form method="get" action="/backoffice/mainoffice/admin/export-report-gepot-excel" accept-charset="UTF-8" align="center" class="f-thai">
     <table align="center" width="72%" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" border="1" style="margin: 0 auto;" class="f-thai">
       <tr height="50" valign="middle">
-        <td align="center" width="13%"><font size="2" color="black"><b>From &nbsp; : &nbsp;</b></font></td>
+        <td align="center" width="13%">
+          <font size="2" color="black"><b>From &nbsp; : &nbsp;</b></font>
+        </td>
         <td width="10%" align="center"><input type="text" name="start_username" id="admin-gepot-start-username" placeholder="Username" required></td>
-        <td align="center" width="13%"><font size="2" color="black"><b>Until &nbsp; : &nbsp;</b></font></td>
+        <td align="center" width="13%">
+          <font size="2" color="black"><b>Until &nbsp; : &nbsp;</b></font>
+        </td>
         <td width="10%" align="center"><input type="text" name="end_username" id="admin-gepot-end-username" placeholder="Username" required></td>
         <td width="3%" align="center"><input name="view_from_util" type="submit" value="Search" class="btn-set-relate"></td>
       </tr>
@@ -76,36 +80,60 @@
       <center data-role="cover" style="display:none;"><img src="/assets/images/image2/gepot/GEPOT-4.webp" style="width:90%; margin-top:20px;border-radius:10px;" alt="GEPOT"><br><br></center>
       <table align="center" width="90%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f7f7f7" style="margin: 0 auto;" class="f-thai">
         <tr height="25">
-          <td width="2%" align="right"><font size="2" color="black"><b data-role="no"></b></font></td>
-          <td width="20%" align="right"><font size="2" color="black"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></font></td>
-          <td width="70%" align="left" colspan="3"><font size="2" color="black"><b>&nbsp; <span data-role="full-name"></span> </b></font></td>
+          <td width="2%" align="right">
+            <font size="2" color="black"><b data-role="no"></b></font>
+          </td>
+          <td width="20%" align="right">
+            <font size="2" color="black"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></font>
+          </td>
+          <td width="70%" align="left" colspan="3">
+            <font size="2" color="black"><b>&nbsp; <span data-role="full-name"></span> </b></font>
+          </td>
         </tr>
         <tr height="25">
           <td data-role="no-spacer"></td>
-          <td align="right"><font size="2" color="black"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></font></td>
-          <td align="left"><font size="2" color="black"><b>&nbsp; <span data-role="date"></span> </b></font></td>
+          <td align="right">
+            <font size="2" color="black"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></font>
+          </td>
+          <td align="left">
+            <font size="2" color="black"><b>&nbsp; <span data-role="date"></span> </b></font>
+          </td>
         </tr>
         <tr height="25">
           <td data-role="type-spacer"></td>
-          <td align="right"><font size="2" color="black"><b>ประเภทการทดสอบ &nbsp; : &nbsp;</b></font></td>
-          <td align="left"><font size="2" color="black"><b>&nbsp; <span data-role="test-type"></span></b></font></td>
+          <td align="right">
+            <font size="2" color="black"><b>ประเภทการทดสอบ &nbsp; : &nbsp;</b></font>
+          </td>
+          <td align="left">
+            <font size="2" color="black"><b>&nbsp; <span data-role="test-type"></span></b></font>
+          </td>
         </tr>
         <tr height="25">
           <td data-role="score-spacer"></td>
-          <td align="right"><font size="2" color="black"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></font></td>
+          <td align="right">
+            <font size="2" color="black"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></font>
+          </td>
           <td align="left">
             <font size="2" color="black"><b>
-              &nbsp; ตอบถูก <span data-role="correct"></span> ข้อ &nbsp; &nbsp; ตอบผิด <span data-role="wrong"></span> ข้อ &nbsp; &nbsp; ไม่ได้ตอบ <span data-role="unanswered"></span> ข้อ &nbsp; &nbsp; คิดเป็น <span data-role="percent"></span> %
-            </b></font>
+                &nbsp; ตอบถูก <span data-role="correct"></span> ข้อ &nbsp; &nbsp; ตอบผิด <span data-role="wrong"></span> ข้อ &nbsp; &nbsp; ไม่ได้ตอบ <span data-role="unanswered"></span> ข้อ &nbsp; &nbsp; คิดเป็น <span data-role="percent"></span> %
+              </b></font>
           </td>
         </tr>
       </table>
       <table align="center" width="90%" cellpadding="5" cellspacing="2" border="0" style="margin: 0 auto;" class="f-thai">
         <tr height="25">
-          <td align="center" width="20%" bgcolor="#aaaaaa"><font size="2" color="#ffffff"><b>ทักษะ ( Skill )</b></font></td>
-          <td align="center" width="45%" bgcolor="#aaaaaa" colspan="3"><font size="2" color="#ffffff"><b>คะแนน ( Score )</b></font></td>
-          <td align="center" bgcolor="#aaaaaa"><font size="2" color="#ffffff"><b>ระดับความสามารถ ( Level )</b></font></td>
-          <td align="center" bgcolor="#aaaaaa"><font size="2" color="#ffffff"><b>CEFR</b></font></td>
+          <td align="center" width="20%" bgcolor="#aaaaaa">
+            <font size="2" color="#ffffff"><b>ทักษะ ( Skill )</b></font>
+          </td>
+          <td align="center" width="45%" bgcolor="#aaaaaa" colspan="3">
+            <font size="2" color="#ffffff"><b>คะแนน ( Score )</b></font>
+          </td>
+          <td align="center" bgcolor="#aaaaaa">
+            <font size="2" color="#ffffff"><b>ระดับความสามารถ ( Level )</b></font>
+          </td>
+          <td align="center" bgcolor="#aaaaaa">
+            <font size="2" color="#ffffff"><b>CEFR</b></font>
+          </td>
         </tr>
         <tbody data-role="skills"></tbody>
       </table>
@@ -116,17 +144,30 @@
   <template id="admin-gepot-skill-template">
     <tbody>
       <tr height="25">
-        <td align="center" bgcolor="#e0e0e0" rowspan="2"><font size="2"><b data-role="skill-name"></b></font></td>
-        <td align="center" bgcolor="#e0e0e0"><font size="2">ตอบถูก <span data-role="skill-correct"></span> ข้อ </font></td>
-        <td align="center" bgcolor="#e0e0e0"><font size="2">ตอบผิด <span data-role="skill-wrong"></span> ข้อ </font></td>
-        <td align="center" bgcolor="#e0e0e0"><font size="2">ไม่ได้ตอบ <span data-role="skill-unanswered"></span> ข้อ </font></td>
-        <td align="center" bgcolor="#e0e0e0" rowspan="2"><font size="2" data-role="skill-level"></font></td>
-        <td align="center" bgcolor="#e0e0e0" rowspan="2"><font size="2" data-role="skill-cefr"></font></td>
+        <td align="center" bgcolor="#e0e0e0" rowspan="2">
+          <font size="2"><b data-role="skill-name"></b></font>
+        </td>
+        <td align="center" bgcolor="#e0e0e0">
+          <font size="2">ตอบถูก <span data-role="skill-correct"></span> ข้อ </font>
+        </td>
+        <td align="center" bgcolor="#e0e0e0">
+          <font size="2">ตอบผิด <span data-role="skill-wrong"></span> ข้อ </font>
+        </td>
+        <td align="center" bgcolor="#e0e0e0">
+          <font size="2">ไม่ได้ตอบ <span data-role="skill-unanswered"></span> ข้อ </font>
+        </td>
+        <td align="center" bgcolor="#e0e0e0" rowspan="2">
+          <font size="2" data-role="skill-level"></font>
+        </td>
+        <td align="center" bgcolor="#e0e0e0" rowspan="2">
+          <font size="2" data-role="skill-cefr"></font>
+        </td>
       </tr>
       <tr height="25">
-        <td align="center" bgcolor="#e0e0e0" colspan="3"><font size="2"><b>คิดเป็น <span data-role="skill-score"></span> / <span data-role="skill-total"></span> คะแนน </b></font></td>
+        <td align="center" bgcolor="#e0e0e0" colspan="3">
+          <font size="2"><b>คิดเป็น <span data-role="skill-score"></span> / <span data-role="skill-total"></span> คะแนน </b></font>
+        </td>
       </tr>
     </tbody>
   </template>
 </div>
-

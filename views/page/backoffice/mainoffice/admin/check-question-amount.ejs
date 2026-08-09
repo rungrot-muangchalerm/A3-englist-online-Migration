@@ -1,64 +1,93 @@
 <div class="main-academic">
-      <br><br>
-      <div align="center" class="f-thai">
-        <br><br>
-        <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
-        <br><br>
-        <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
-        <br><br>
-        <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
-        <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
-        <br><br><br>
-        <hr>
-      </div>
+  <br><br>
+  <div align="center" class="f-thai">
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+    <br><br><br>
+    <hr>
+  </div>
 
-      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="f-thai admin-question-table">
-        <thead>
-          <tr height="50">
-            <td align="center" colspan="7"><font size="4"><b>Academic Room</b></font></td>
-          </tr>
-          <tr height="45" bgcolor="#f7f7f7">
-            <td width="15%" align="center"><font size="3"><b>Skill</b></font></td>
-            <td width="14%" align="center"><font size="3"><b>Beginner</b></font></td>
-            <td width="14%" align="center"><font size="3"><b>Lower Inter.</b></font></td>
-            <td width="14%" align="center"><font size="3"><b>Intermediate</b></font></td>
-            <td width="14%" align="center"><font size="3"><b>Upper Inter.</b></font></td>
-            <td width="14%" align="center"><font size="3"><b>Advanced</b></font></td>
-            <td width="15%" align="center"><font size="3" color="red"><b>Total</b></font></td>
-          </tr>
-        </thead>
-        <tbody id="admin-question-amount-list">
-          <template id="admin-question-amount-template">
-            <tr height="35">
-              <td align="center"><font size="2"><b data-role="skill-name"></b></font></td>
-              <td align="center"><font size="2" color="green"><b data-role="level-1-online"></b></font> + <font size="2" color="red"><b data-role="level-1-offline"></b></font> = <font size="2" color="blue"><b data-role="level-1-total"></b></font></td>
-              <td align="center"><font size="2" color="green"><b data-role="level-2-online"></b></font> + <font size="2" color="red"><b data-role="level-2-offline"></b></font> = <font size="2" color="blue"><b data-role="level-2-total"></b></font></td>
-              <td align="center"><font size="2" color="green"><b data-role="level-3-online"></b></font> + <font size="2" color="red"><b data-role="level-3-offline"></b></font> = <font size="2" color="blue"><b data-role="level-3-total"></b></font></td>
-              <td align="center"><font size="2" color="green"><b data-role="level-4-online"></b></font> + <font size="2" color="red"><b data-role="level-4-offline"></b></font> = <font size="2" color="blue"><b data-role="level-4-total"></b></font></td>
-              <td align="center"><font size="2" color="green"><b data-role="level-5-online"></b></font> + <font size="2" color="red"><b data-role="level-5-offline"></b></font> = <font size="2" color="blue"><b data-role="level-5-total"></b></font></td>
-              <td align="center"><b><font size="2" color="green"><b data-role="online-total"></b></font> + <font size="2" color="red"><b data-role="offline-total"></b></font> = <font size="2" color="blue"><b data-role="total"></b></font></b></td>
-            </tr>
-          </template>
-        </tbody>
-      </table>
+  <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="f-thai admin-question-table">
+    <thead>
+      <tr height="50">
+        <td align="center" colspan="7">
+          <font size="4"><b>Academic Room</b></font>
+        </td>
+      </tr>
+      <tr height="45" bgcolor="#f7f7f7">
+        <td width="15%" align="center">
+          <font size="3"><b>Skill</b></font>
+        </td>
+        <td width="14%" align="center">
+          <font size="3"><b>Beginner</b></font>
+        </td>
+        <td width="14%" align="center">
+          <font size="3"><b>Lower Inter.</b></font>
+        </td>
+        <td width="14%" align="center">
+          <font size="3"><b>Intermediate</b></font>
+        </td>
+        <td width="14%" align="center">
+          <font size="3"><b>Upper Inter.</b></font>
+        </td>
+        <td width="14%" align="center">
+          <font size="3"><b>Advanced</b></font>
+        </td>
+        <td width="15%" align="center">
+          <font size="3" color="red"><b>Total</b></font>
+        </td>
+      </tr>
+    </thead>
+    <tbody id="admin-question-amount-list">
+      <template id="admin-question-amount-template">
+        <tr height="35">
+          <td align="center">
+            <font size="2"><b data-role="skill-name"></b></font>
+          </td>
+          <td align="center">
+            <font size="2" color="green"><b data-role="level-1-online"></b></font> + <font size="2" color="red"><b data-role="level-1-offline"></b></font> = <font size="2" color="blue"><b data-role="level-1-total"></b></font>
+          </td>
+          <td align="center">
+            <font size="2" color="green"><b data-role="level-2-online"></b></font> + <font size="2" color="red"><b data-role="level-2-offline"></b></font> = <font size="2" color="blue"><b data-role="level-2-total"></b></font>
+          </td>
+          <td align="center">
+            <font size="2" color="green"><b data-role="level-3-online"></b></font> + <font size="2" color="red"><b data-role="level-3-offline"></b></font> = <font size="2" color="blue"><b data-role="level-3-total"></b></font>
+          </td>
+          <td align="center">
+            <font size="2" color="green"><b data-role="level-4-online"></b></font> + <font size="2" color="red"><b data-role="level-4-offline"></b></font> = <font size="2" color="blue"><b data-role="level-4-total"></b></font>
+          </td>
+          <td align="center">
+            <font size="2" color="green"><b data-role="level-5-online"></b></font> + <font size="2" color="red"><b data-role="level-5-offline"></b></font> = <font size="2" color="blue"><b data-role="level-5-total"></b></font>
+          </td>
+          <td align="center"><b>
+              <font size="2" color="green"><b data-role="online-total"></b></font> + <font size="2" color="red"><b data-role="offline-total"></b></font> = <font size="2" color="blue"><b data-role="total"></b></font>
+            </b></td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
 
-      <br><br>
-      <div align="center" class="f-thai">
-        <p>Description in Questions</p>
-        <div id="admin-question-description-list">
-          <template id="admin-question-description-template">
-            <span>
-              <font size="2" color="black"><span data-role="skill-name"></span> : <span data-role="amount"></span></font>
-              <font size="2" color="black" data-role="separator">&nbsp;||&nbsp;</font>
-            </span>
-          </template>
-        </div>
-      </div>
+  <br><br>
+  <div align="center" class="f-thai">
+    <p>Description in Questions</p>
+    <div id="admin-question-description-list">
+      <template id="admin-question-description-template">
+        <span>
+          <font size="2" color="black"><span data-role="skill-name"></span> : <span data-role="amount"></span></font>
+          <font size="2" color="black" data-role="separator">&nbsp;||&nbsp;</font>
+        </span>
+      </template>
+    </div>
+  </div>
 </div>
-

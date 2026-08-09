@@ -60,14 +60,20 @@
             <td>ชุดข้อสอบ </td>
             <td><input type="text" name="exam_name" data-role="exam-name" class="txtdetail" style="width:240px;"></td>
           </tr>
-          <tr><td>วันที่ </td><td data-role="create-date"></td></tr>
-          <tr><td>จำนวนข้อ  </td><td data-role="amount"></td></tr>
           <tr>
-            <td>เวลาสอบ   </td>
+            <td>วันที่ </td>
+            <td data-role="create-date"></td>
+          </tr>
+          <tr>
+            <td>จำนวนข้อ </td>
+            <td data-role="amount"></td>
+          </tr>
+          <tr>
+            <td>เวลาสอบ </td>
             <td><input type="text" name="testtime" data-role="testtime" class="txtdetail" style="width:50px;" maxlength="3"> นาที</td>
           </tr>
           <tr>
-            <td>รูปแบบการทดสอบ   </td>
+            <td>รูปแบบการทดสอบ </td>
             <td>
               <input type="radio" name="test_type" value="1"> สอบเก็บคะแนน<br>
               <input type="radio" name="test_type" value="2"> การแข่งขัน
@@ -105,7 +111,10 @@
 </div>
 
 <style type="text/css">
-  :focus { outline: 0; }
+  :focus {
+    outline: 0;
+  }
+
   #contest-exam-wrap {
     position: relative;
     width: 960px;
@@ -118,22 +127,29 @@
     margin-top: 15px;
     margin-left: 20px;
   }
-  table.exam { border-spacing: 0; }
+
+  table.exam {
+    border-spacing: 0;
+  }
+
   table.exam a:link {
     color: #666;
     font-weight: bold;
     text-decoration: none;
   }
+
   table.exam a:visited {
     color: #999999;
     font-weight: bold;
     text-decoration: none;
   }
+
   table.exam a:active,
   table.exam a:hover {
     color: #bd5a35;
     text-decoration: underline;
   }
+
   table.exam {
     font-family: Arial, Helvetica, sans-serif;
     color: #666;
@@ -144,6 +160,7 @@
     border-radius: 3px;
     box-shadow: 0 1px 2px #d1d1d1;
   }
+
   table.exam th {
     padding: 10px 15px 12px 15px;
     border: none;
@@ -153,20 +170,24 @@
     text-shadow: 1px 1px 1px #333;
     background: #FF9900;
   }
+
   table.exam th:first-child {
     text-align: left;
     padding-left: 20px;
   }
+
   table.exam tr {
     text-align: center;
     padding-left: 20px;
   }
+
   table.exam tr td:first-child {
     text-align: left;
     width: 43%;
     padding-left: 20px;
     border-left: 0;
   }
+
   table.exam tr td {
     padding: 15px;
     border-top: 1px solid #ffffff;
@@ -175,16 +196,19 @@
     background: #fafafa;
     background: linear-gradient(to bottom, #fbfbfb, #fafafa);
   }
+
   table.exam tr.even td {
     background: #f6f6f6;
     background: linear-gradient(to bottom, #f8f8f8, #f6f6f6);
   }
+
   table.exam tr:hover td,
   table.exam tr.selected td {
     cursor: pointer;
     background: #E5F3FA;
     background: linear-gradient(to bottom, #E5F3FA, #E1EEF5);
   }
+
   .btn-edit {
     height: 28px;
     width: auto;
@@ -200,6 +224,7 @@
     background: #F08411;
     box-shadow: 1px 1px 1px #D9D9D9;
   }
+
   .bnt-delete {
     height: 28px;
     width: auto;
@@ -215,6 +240,7 @@
     background: #EA1919 !important;
     box-shadow: 1px 1px 1px #D9D9D9;
   }
+
   .bnt-etest {
     height: 28px;
     width: auto;
@@ -230,19 +256,29 @@
     background: #1685DB;
     box-shadow: 1px 1px 1px #D9D9D9;
   }
+
   .bnt-etest:hover {
     border: 1px solid #116BB0;
     background: #1273BD;
     font-size: 15px;
   }
-  .setright { float: right; }
+
+  .setright {
+    float: right;
+  }
+
   #examlist {
     overflow: auto;
   }
+
   #examlist .content {
     min-height: 100%;
   }
-  table.detailform tr td { padding: 5px; }
+
+  table.detailform tr td {
+    padding: 5px;
+  }
+
   #detailexam {
     font-family: Arial, Helvetica, sans-serif;
     color: #666;
@@ -259,6 +295,7 @@
     padding: 5px;
     border-radius: 5px;
   }
+
   #detailexam input.txtdetail {
     border: 1px solid #e0e0e0;
     padding-left: 5px;
@@ -267,11 +304,16 @@
     border-radius: 5px;
     margin-right: 5px;
   }
+
   #detailexam input.txtdetail:hover {
     border: 1px solid #3FC8FA;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
   }
-  #detailexam input.txtdetail:focus { border: 1px solid #1273BD; }
+
+  #detailexam input.txtdetail:focus {
+    border: 1px solid #1273BD;
+  }
+
   .legacy-toggle {
     position: relative;
     width: 68px;
@@ -287,8 +329,9 @@
     line-height: 24px;
     text-align: left;
     text-shadow: 1px 1px 0 #fff;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,.25), 1px 1px 1px #d9d9d9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25), 1px 1px 1px #d9d9d9;
   }
+
   .legacy-toggle:before {
     content: "";
     position: absolute;
@@ -298,8 +341,9 @@
     height: 18px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,.35);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .35);
   }
+
   .legacy-toggle.is-on {
     padding-left: 10px;
     padding-right: 27px;
@@ -309,9 +353,11 @@
     text-align: right;
     text-shadow: 1px 1px 1px #333;
   }
+
   .legacy-toggle.is-on:before {
     left: 43px;
   }
+
   #listgroup_name {
     width: auto;
     height: 250px;
@@ -322,20 +368,24 @@
     border-radius: 5px;
     overflow: auto;
   }
+
   #listgroup_name input.checkbok_group {
     height: 15px;
     width: 15px;
   }
+
   .pagination {
     display: inline-block;
     padding-left: 0;
     margin: 20px 0;
     border-radius: 4px;
   }
-  .pagination > li {
+
+  .pagination>li {
     display: inline;
   }
-  .pagination > li > a {
+
+  .pagination>li>a {
     position: relative;
     float: left;
     padding: 6px 12px;
@@ -346,7 +396,8 @@
     background-color: #fff;
     border: 1px solid #ddd;
   }
-  .pagination > .active > a {
+
+  .pagination>.active>a {
     z-index: 2;
     color: #fff;
     cursor: default;
@@ -354,4 +405,3 @@
     border-color: #337ab7;
   }
 </style>
-

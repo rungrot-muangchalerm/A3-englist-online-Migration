@@ -21,55 +21,96 @@
   <div id="admin-quiz-comment-list-panel">
     <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-quiz-comment-pages"></span>
     <br>
-    <br><br><div align="center" class="f-thai"><font size="3" color="green"><b>Display quiz have comment [ <span id="admin-quiz-comment-total"></span> ]</b></font></div><br><br>
+    <br><br>
+    <div align="center" class="f-thai">
+      <font size="3" color="green"><b>Display quiz have comment [ <span id="admin-quiz-comment-total"></span> ]</b></font>
+    </div><br><br>
     <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="f-thai">
       <tr height="55" bgcolor="#d0d0d0">
-        <td align="center" width="5%"><font size="2"><b>No.</b></font></td>
-        <td align="center" width="10%"><font size="2"><b>Quiz ID</b></font></td>
-        <td align="center" width="25%"><font size="2"><b>Skill</b></font></td>
-        <td align="center" width="25%"><font size="2"><b>Level</b></font></td>
-        <td align="center" width="25%"><font size="2"><b>[ Unanswered / Answered ]</b></font></td>
-        <td align="center" width="10%"><font size="2"><b>Status</b></font></td>
+        <td align="center" width="5%">
+          <font size="2"><b>No.</b></font>
+        </td>
+        <td align="center" width="10%">
+          <font size="2"><b>Quiz ID</b></font>
+        </td>
+        <td align="center" width="25%">
+          <font size="2"><b>Skill</b></font>
+        </td>
+        <td align="center" width="25%">
+          <font size="2"><b>Level</b></font>
+        </td>
+        <td align="center" width="25%">
+          <font size="2"><b>[ Unanswered / Answered ]</b></font>
+        </td>
+        <td align="center" width="10%">
+          <font size="2"><b>Status</b></font>
+        </td>
       </tr>
     </table>
     <div id="admin-quiz-comment-list">
       <template id="admin-quiz-comment-row-template">
         <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="f-thai">
           <tr height="45" data-role="row">
-            <td align="center" width="5%"><font size="2" data-role="no"></font></td>
-            <td align="center" width="10%"><font size="2" color="blue" data-role="quiz-id"></font></td>
-            <td align="center" width="25%"><font size="2" color="brown" data-role="skill-name"></font></td>
-            <td align="center" width="25%"><font size="2" color="#ff44ff" data-role="level-name"></font></td>
-            <td align="center" width="25%"><font size="2">[ <span data-role="unanswered"></span> / <span data-role="answered"></span> ]</font></td>
+            <td align="center" width="5%">
+              <font size="2" data-role="no"></font>
+            </td>
+            <td align="center" width="10%">
+              <font size="2" color="blue" data-role="quiz-id"></font>
+            </td>
+            <td align="center" width="25%">
+              <font size="2" color="brown" data-role="skill-name"></font>
+            </td>
+            <td align="center" width="25%">
+              <font size="2" color="#ff44ff" data-role="level-name"></font>
+            </td>
+            <td align="center" width="25%">
+              <font size="2">[ <span data-role="unanswered"></span> / <span data-role="answered"></span> ]</font>
+            </td>
             <td align="center" width="10%"><a data-role="detail-link"><b data-role="status"></b></a></td>
           </tr>
         </table>
       </template>
     </div>
-    <br><div align="center" class="f-thai"><a href="#"><font size="2" color="blue">Go to Top</font></a></div>
+    <br>
+    <div align="center" class="f-thai"><a href="#">
+        <font size="2" color="blue">Go to Top</font>
+      </a></div>
   </div>
 
   <div id="admin-quiz-comment-detail-panel" style="display:none;">
-    <br><br><div align="center" class="f-thai"><font size="3" color="green"><b>Quiz Comment List</b></font></div><br><br>
+    <br><br>
+    <div align="center" class="f-thai">
+      <font size="3" color="green"><b>Quiz Comment List</b></font>
+    </div><br><br>
     <table align="center" width="100%" border="1" class="f-thai">
       <tr align="middle">
-        <td colspan="2" align="left"><font size="2" color="brown">&nbsp;&nbsp;<span id="admin-quiz-comment-path"></span></font></td>
+        <td colspan="2" align="left">
+          <font size="2" color="brown">&nbsp;&nbsp;<span id="admin-quiz-comment-path"></span></font>
+        </td>
       </tr>
       <tr valign="top">
         <td align="center" rowspan="3" width="10%" id="admin-quiz-comment-question-id"></td>
-        <td align="left" width="90%"><font color="green">None Relate File or Passage</font></td>
+        <td align="left" width="90%">
+          <font color="green">None Relate File or Passage</font>
+        </td>
       </tr>
       <tr>
-        <td align="left" width="100%" bgcolor="#dddddd"><font size="2" id="admin-quiz-comment-question-text"></font><br>&nbsp;</td>
+        <td align="left" width="100%" bgcolor="#dddddd">
+          <font size="2" id="admin-quiz-comment-question-text"></font><br>&nbsp;
+        </td>
       </tr>
       <tr>
-        <td align="left" width="90%"><br><div id="admin-quiz-comment-answer-list"></div></td>
+        <td align="left" width="90%"><br>
+          <div id="admin-quiz-comment-answer-list"></div>
+        </td>
       </tr>
       <tr>
         <td colspan="2">
           <font size="2"><b>&nbsp;Description : <br></b></font>
           <font size="2" color="blue" id="admin-quiz-comment-description"></font>
-          <div align="center" id="admin-quiz-comment-no-description" style="display:none;"><font size="2" color="red"><b> - None Description - </b></font></div><br>
+          <div align="center" id="admin-quiz-comment-no-description" style="display:none;">
+            <font size="2" color="red"><b> - None Description - </b></font>
+          </div><br>
         </td>
       </tr>
     </table>
@@ -81,19 +122,30 @@
       <template id="admin-quiz-comment-detail-template">
         <table align="center" width="100%" cellpadding="5" cellspacing="0" border="0" class="f-thai">
           <tr height="35" bgcolor="#d7d7d7">
-            <td width="35%" align="left"><font size="2">By : <span data-role="name"></span></font></td>
-            <td width="35%" align="left"><font size="2">Email : <span data-role="email"></span></font></td>
-            <td width="25%" align="left"><font size="2">Date : <span data-role="date"></span></font></td>
+            <td width="35%" align="left">
+              <font size="2">By : <span data-role="name"></span></font>
+            </td>
+            <td width="35%" align="left">
+              <font size="2">Email : <span data-role="email"></span></font>
+            </td>
+            <td width="25%" align="left">
+              <font size="2">Date : <span data-role="date"></span></font>
+            </td>
             <td width="5%" align="center"><span data-role="status"></span></td>
           </tr>
           <tr height="35" bgcolor="#f0f0f0">
-            <td width="100%" colspan="4"><font size="2" data-role="text"></font></td>
+            <td width="100%" colspan="4">
+              <font size="2" data-role="text"></font>
+            </td>
           </tr>
-          <tr height="10" bgcolor="#f0f0f0"><td width="100%" colspan="4"></td></tr>
-          <tr height="15"><td width="100%" colspan="4"></td></tr>
+          <tr height="10" bgcolor="#f0f0f0">
+            <td width="100%" colspan="4"></td>
+          </tr>
+          <tr height="15">
+            <td width="100%" colspan="4"></td>
+          </tr>
         </table>
       </template>
     </div>
   </div>
 </div>
-

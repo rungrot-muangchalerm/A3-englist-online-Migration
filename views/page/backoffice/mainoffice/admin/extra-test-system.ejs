@@ -1,141 +1,223 @@
 <div class="main-academic" id="admin-extra-test-app" data-page-mode="<%= pageMode %>" data-test-id="<%= typeof testId !== 'undefined' ? testId : '' %>">
+  <br><br>
+  <div align="center" class="f-thai">
     <br><br>
-    <div align="center" class="f-thai">
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
-      <br><br>
-      <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
-      <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
-      <br><br><br>
-      <hr>
-    </div>
+    <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/check-questions-list">[Check Questions List]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/extra-test-system">[Extra Test System]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/analyze-quiz">[Analyze Quiz]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/quiz-comment">[Quiz Comment]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/lessons-related">[Lessons & Related]</a>&nbsp;&nbsp;
+    <br><br>
+    <a href="/backoffice/mainoffice/admin/monthly-report">[Monthly Report]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-excel">[Export Report GEPOT Excel]</a>&nbsp;&nbsp;
+    <a href="/backoffice/mainoffice/admin/export-report-gepot-pdf">[Export Report GEPOT PDF]</a>&nbsp;&nbsp;
+    <br><br><br>
+    <hr>
+  </div>
 
-    <div id="admin-extra-test-list-panel">
-      <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-extra-test-pages"></span><br>
-      <br><br>
-      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#aaaaaa" class="f-thai">
-        <tr height="65">
-          <td width="10%" align="center"><font size="2" color="white"><b>Extra ID</b></font></td>
-          <td width="30%" align="center"><font size="2" color="white"><b>Name</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>Is Free</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>Status</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>Is EST</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>Time(min)</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>Quiz Amount</b></font></td>
-          <td width="10%" align="center"><font size="2" color="white"><b>&nbsp;</b></font></td>
-        </tr>
-      </table>
-      <div id="admin-extra-test-list">
-        <template id="admin-extra-test-row-template">
-          <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f7f7f7" class="f-thai">
-            <tr height="20">
-              <td width="10%" align="center"><font size="2" color="black" data-role="test-id"></font></td>
-              <td width="30%" align="left"><a href="#" data-role="detail-link"><font size="2" color="blue" data-role="name"></font></a></td>
-              <td width="10%" align="center"><b data-role="free"></b></td>
-              <td width="10%" align="center"><b data-role="active"></b></td>
-              <td width="10%" align="center"><b data-role="est"></b></td>
-              <td width="10%" align="center"><font size="2" color="black" data-role="time"></font></td>
-              <td width="10%" align="center"><font size="2" color="black" data-role="quiz-amount"></font></td>
-              <td width="10%" align="center"><font size="2" color="red"><b>Delete</b></font></td>
-            </tr>
-          </table>
-        </template>
-      </div>
-      <div id="admin-extra-test-empty" align="center" class="f-thai" style="display:none;"><br><br><br><font size="2" color="red"> - Can't Found Extra Test List - </font><br><br><br></div>
-      <br>
-      <table align="center" width="50%" height="65" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" border="0" class="f-thai">
-        <tr height="50">
-          <td align="right"><font size="2"><b>Name</b></font></td>
-          <td align="center"><font size="2"><b>&nbsp;:&nbsp;</b></font></td>
-          <td align="left"><input type="text" size="40" disabled></td>
-          <td align="center"><input type="button" value="&nbsp;Add etest&nbsp;" class="btn-add" disabled></td>
-        </tr>
-      </table>
+  <div id="admin-extra-test-list-panel">
+    <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-extra-test-pages"></span><br>
+    <br><br>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#aaaaaa" class="f-thai">
+      <tr height="65">
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Extra ID</b></font>
+        </td>
+        <td width="30%" align="center">
+          <font size="2" color="white"><b>Name</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Is Free</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Status</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Is EST</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Time(min)</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>Quiz Amount</b></font>
+        </td>
+        <td width="10%" align="center">
+          <font size="2" color="white"><b>&nbsp;</b></font>
+        </td>
+      </tr>
+    </table>
+    <div id="admin-extra-test-list">
+      <template id="admin-extra-test-row-template">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f7f7f7" class="f-thai">
+          <tr height="20">
+            <td width="10%" align="center">
+              <font size="2" color="black" data-role="test-id"></font>
+            </td>
+            <td width="30%" align="left"><a href="#" data-role="detail-link">
+                <font size="2" color="blue" data-role="name"></font>
+              </a></td>
+            <td width="10%" align="center"><b data-role="free"></b></td>
+            <td width="10%" align="center"><b data-role="active"></b></td>
+            <td width="10%" align="center"><b data-role="est"></b></td>
+            <td width="10%" align="center">
+              <font size="2" color="black" data-role="time"></font>
+            </td>
+            <td width="10%" align="center">
+              <font size="2" color="black" data-role="quiz-amount"></font>
+            </td>
+            <td width="10%" align="center">
+              <font size="2" color="red"><b>Delete</b></font>
+            </td>
+          </tr>
+        </table>
+      </template>
     </div>
+    <div id="admin-extra-test-empty" align="center" class="f-thai" style="display:none;"><br><br><br>
+      <font size="2" color="red"> - Can't Found Extra Test List - </font><br><br><br>
+    </div>
+    <br>
+    <table align="center" width="50%" height="65" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" border="0" class="f-thai">
+      <tr height="50">
+        <td align="right">
+          <font size="2"><b>Name</b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b>&nbsp;:&nbsp;</b></font>
+        </td>
+        <td align="left"><input type="text" size="40" disabled></td>
+        <td align="center"><input type="button" value="&nbsp;Add etest&nbsp;" class="btn-add" disabled></td>
+      </tr>
+    </table>
+  </div>
 
-    <div id="admin-extra-test-detail-panel" style="display:none;">
-      <br>
-      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
-        <tr height="25">
-          <td align="left">&nbsp;&nbsp; <b><a href="/backoffice/mainoffice/admin/extra-test-system"><font size="2">Extra Test List</font></a><font size="2">&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</font><font size="2" id="admin-extra-test-detail-name"></font></b></td>
-        </tr>
-      </table>
-      <br>
-      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
-        <tr height="15"><td></td></tr>
-        <tr height="25">
-          <td width="20%" align="right"><font size="2"><b> Extra Test ID </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td width="20%" align="left"><font size="2" id="admin-extra-test-detail-id"></font></td>
-          <td width="15%" align="right"><font size="2"><b> Name </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td align="left" colspan="4"><input type="text" size="40" id="admin-extra-test-name-input" disabled></td>
-        </tr>
-        <tr height="25">
-          <td width="15%" align="right"><font size="2"><b> Time(Min) </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td width="20%" align="left"><input type="number" size="4" id="admin-extra-test-time-input" disabled></td>
-          <td width="15%" align="right"><font size="2"><b> Test Amount </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td align="left"><input type="number" id="admin-extra-test-retest-input" size="4" disabled><font size="2"> &nbsp; [100 = infinity & Open All Times] </font></td>
-          <td align="right"><font size="2"><b>Quiz Amount</b></font></td>
-          <td align="center"><font size="2"><b> : </b></font></td>
-          <td align="left"><font size="2" id="admin-extra-test-quiz-amount"></font></td>
-        </tr>
-        <tr height="25">
-          <td width="15%" align="right"><font size="2"><b> Start </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td width="20%" align="left"><input type="datetime-local" size="20" id="admin-extra-test-start-input" disabled></td>
-          <td width="15%" align="right"><font size="2"><b> Stop </b></font></td>
-          <td align="center"><font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font></td>
-          <td align="left" colspan="4"><input type="datetime-local" id="admin-extra-test-stop-input" size="20" disabled></td>
-        </tr>
-        <tr height="15"><td></td></tr>
-      </table>
-      <br>
-      <div id="admin-extra-test-question-list">
-        <template id="admin-extra-test-question-template">
-          <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%" class="f-thai">
-            <tr>
-              <td>
-                <br>
-                <table align="center" width="100%" border="1" class="f-thai">
-                  <tr align="middle">
-                    <td colspan="2" align="left"><font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font></td>
-                  </tr>
-                  <tr valign="top">
-                    <td align="center" rowspan="3" width="11%">
-                      <span data-role="question-id"></span>
-                      <br><br><br>
-                      <font size="2" color="red"> [Cut Off] </font>
-                      <br><br><b data-role="no"></b>
-                    </td>
-                    <td align="left" width="90%"><font color="green">None Relate File or Passage</font></td>
-                  </tr>
-                  <tr>
-                    <td align="left" width="100%" bgcolor="#dddddd"><font size="2" data-role="question-text"></font></td>
-                  </tr>
-                  <tr>
-                    <td align="left" width="90%"><br><div data-role="answers"></div></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-          <br>
-        </template>
-        <template id="admin-extra-test-answer-template">
-          <div>&nbsp;&nbsp; <span data-role="answer-id"></span> : <span data-role="correct"></span> : <span data-role="answer-text"></span></div>
-        </template>
-      </div>
+  <div id="admin-extra-test-detail-panel" style="display:none;">
+    <br>
+    <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
+      <tr height="25">
+        <td align="left">&nbsp;&nbsp; <b><a href="/backoffice/mainoffice/admin/extra-test-system">
+              <font size="2">Extra Test List</font>
+            </a>
+            <font size="2">&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</font>
+            <font size="2" id="admin-extra-test-detail-name"></font>
+          </b></td>
+      </tr>
+    </table>
+    <br>
+    <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
+      <tr height="15">
+        <td></td>
+      </tr>
+      <tr height="25">
+        <td width="20%" align="right">
+          <font size="2"><b> Extra Test ID </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td width="20%" align="left">
+          <font size="2" id="admin-extra-test-detail-id"></font>
+        </td>
+        <td width="15%" align="right">
+          <font size="2"><b> Name </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td align="left" colspan="4"><input type="text" size="40" id="admin-extra-test-name-input" disabled></td>
+      </tr>
+      <tr height="25">
+        <td width="15%" align="right">
+          <font size="2"><b> Time(Min) </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td width="20%" align="left"><input type="number" size="4" id="admin-extra-test-time-input" disabled></td>
+        <td width="15%" align="right">
+          <font size="2"><b> Test Amount </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td align="left"><input type="number" id="admin-extra-test-retest-input" size="4" disabled>
+          <font size="2"> &nbsp; [100 = infinity & Open All Times] </font>
+        </td>
+        <td align="right">
+          <font size="2"><b>Quiz Amount</b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> : </b></font>
+        </td>
+        <td align="left">
+          <font size="2" id="admin-extra-test-quiz-amount"></font>
+        </td>
+      </tr>
+      <tr height="25">
+        <td width="15%" align="right">
+          <font size="2"><b> Start </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td width="20%" align="left"><input type="datetime-local" size="20" id="admin-extra-test-start-input" disabled></td>
+        <td width="15%" align="right">
+          <font size="2"><b> Stop </b></font>
+        </td>
+        <td align="center">
+          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        </td>
+        <td align="left" colspan="4"><input type="datetime-local" id="admin-extra-test-stop-input" size="20" disabled></td>
+      </tr>
+      <tr height="15">
+        <td></td>
+      </tr>
+    </table>
+    <br>
+    <div id="admin-extra-test-question-list">
+      <template id="admin-extra-test-question-template">
+        <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%" class="f-thai">
+          <tr>
+            <td>
+              <br>
+              <table align="center" width="100%" border="1" class="f-thai">
+                <tr align="middle">
+                  <td colspan="2" align="left">
+                    <font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font>
+                  </td>
+                </tr>
+                <tr valign="top">
+                  <td align="center" rowspan="3" width="11%">
+                    <span data-role="question-id"></span>
+                    <br><br><br>
+                    <font size="2" color="red"> [Cut Off] </font>
+                    <br><br><b data-role="no"></b>
+                  </td>
+                  <td align="left" width="90%">
+                    <font color="green">None Relate File or Passage</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" width="100%" bgcolor="#dddddd">
+                    <font size="2" data-role="question-text"></font>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" width="90%"><br>
+                    <div data-role="answers"></div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </template>
+      <template id="admin-extra-test-answer-template">
+        <div>&nbsp;&nbsp; <span data-role="answer-id"></span> : <span data-role="correct"></span> : <span data-role="answer-text"></span></div>
+      </template>
     </div>
+  </div>
 </div>
-
