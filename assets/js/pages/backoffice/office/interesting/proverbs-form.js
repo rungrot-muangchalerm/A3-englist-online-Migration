@@ -8,7 +8,10 @@ const officeTopicFormBackUrl = `${officeTopicFormListUrl}?page=${encodeURICompon
 document.getElementById('office-topic-back-link').href = officeTopicFormBackUrl;
 
 if (window.CKEDITOR) {
-    CKEDITOR.replace('topic_detail')
+    CKEDITOR.replace('topic_detail', {
+        filebrowserUploadUrl: '/api/backoffice/ckeditor-upload',
+        filebrowserImageUploadUrl: '/api/backoffice/ckeditor-upload/image'
+    })
 }
 
 fetch(`/api/backoffice/office/topics/03-16/${encodeURIComponent(officeTopicFormTopicId)}`, {

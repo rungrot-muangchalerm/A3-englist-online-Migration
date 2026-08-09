@@ -8,7 +8,10 @@ const mainMenuFormBackUrl = `${mainMenuFormListUrl}?page=${encodeURIComponent(ma
 document.getElementById('office-topic-back-link').href = mainMenuFormBackUrl;
 
 if (window.CKEDITOR) {
-    CKEDITOR.replace('topic_detail')
+    CKEDITOR.replace('topic_detail', {
+        filebrowserUploadUrl: '/api/backoffice/ckeditor-upload',
+        filebrowserImageUploadUrl: '/api/backoffice/ckeditor-upload/image'
+    })
 }
 
 fetch(`/api/backoffice/office/topics/01-06/${encodeURIComponent(mainMenuFormTopicId)}`, {
