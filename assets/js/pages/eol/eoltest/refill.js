@@ -10,6 +10,12 @@
   }
   document.addEventListener('DOMContentLoaded', function () {
     const refillBtn = document.getElementById('refill-account-btn');
+    const refillHistoryBtn = document.getElementById('refill-history-show-btn');
+    if (refillHistoryBtn) {
+      refillHistoryBtn.addEventListener('click', () => {
+        document.getElementById('refill_history').style.display = '';
+      });
+    }
     if (refillBtn) {
       refillBtn.addEventListener('click', () => {
         const form = document.getElementById('refillForm');

@@ -64,8 +64,7 @@
 <div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
     <div class="row kanit">
         <div class="col-xs-12" style="padding:0px;margin:0px;">
-            <div id="sub_menu"
-                style="border-top:1px solid #f7941d;padding:10px;text-align:center;background:#f3f3f3;">
+            <div id="sub_menu" style="border-top:1px solid #f7941d;padding:10px;text-align:center;background:#f3f3f3;">
                 <a href="/shop/product-eol-member-club" class="active" style="padding-right:30px;"> •
                     สินค้า</a>
                 <a href="/shop/payment" style="padding-right:30px;">•
@@ -76,21 +75,16 @@
                 <center>
                     <div id="apdiv3menubar" style="background:#f3f3f3;">
                         <a href="/shop/product-eol-member-club">
-                            <img src="/assets/images/image2/about web/menu_icon/EOL-System-Club.jpg"
-                                style="width:180px;height:130px;"></a>
+                            <img src="/assets/images/image2/about web/menu_icon/EOL-System-Club.jpg" style="width:180px;height:130px;"></a>
                         <a href="#">
-                            <img src="/assets/images/image2/about web/menu_icon/over-personal-new.jpg"
-                                style="width:180px;height:130px;"></a>
+                            <img src="/assets/images/image2/about web/menu_icon/over-personal-new.jpg" style="width:180px;height:130px;"></a>
                         <a href="/shop/product-1year">
-                            <img src="/assets/images/image2/about web/menu_icon/1year-course-new.jpg"
-                                style="width:180px;height:130px;"></a>
+                            <img src="/assets/images/image2/about web/menu_icon/1year-course-new.jpg" style="width:180px;height:130px;"></a>
                         <a href="/shop/product-intelligence">
-                            <img src="/assets/images/image2/about web/menu_icon/Intelligence-package-new.jpg"
-                                style="width:180px;height:130px;">
+                            <img src="/assets/images/image2/about web/menu_icon/Intelligence-package-new.jpg" style="width:180px;height:130px;">
                         </a>
                         <a href="/shop/product-corporate">
-                            <img src="/assets/images/image2/about web/menu_icon/coporate-new.jpg"
-                                style="width:180px;height:130px;"></a>
+                            <img src="/assets/images/image2/about web/menu_icon/coporate-new.jpg" style="width:180px;height:130px;"></a>
                         <!-- <a href="/shop/product-eol-platform">
                             <img src="/assets/images/image2/about web/menu_icon/eol-platform.jpg"
                                 style="width:180px;height:130px;"></a> -->
@@ -114,40 +108,43 @@
                 <BR><BR>
                 <div class="text_paragraph ">
                     </center>
-                    <% if (typeof products !== 'undefined' && products.length > 0) { %>
+                    <% if (typeof products !=='undefined' && products.length> 0) { %>
                         <% products.forEach(function(product) { %>
-                        <div class="row" style="padding:5px 0px;">
-                            <div class="col-xs-5">
-                                <img src="/assets/images/shop/products/<%= product.product_image %>"
-                                    style="width:100%; vertical-align: middle; border-radius: 10px;" />
+                            <div class="row" style="padding:5px 0px;">
+                                <div class="col-xs-5">
+                                    <img src="/assets/images/shop/products/<%= product.product_image %>" style="width:100%; vertical-align: middle; border-radius: 10px;" />
+                                </div>
+                                <div class="col-xs-7" style="border:0px solid blue;">
+                                    <table class="item_table" border="0" style="width:100%;">
+                                        <tr>
+                                            <td style="width:50px !important;"><img src="/assets/images/shop/products/icon-card.png" /></td>
+                                            <td style="width:100% !important;">
+                                                <%= product.product_name %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="/assets/images/shop/products/icon-refill.png" /></td>
+                                            <td>
+                                                <%= product.product_detail %><span style="color:red;">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="/assets/images/shop/products/icon-money.png" /></td>
+                                            <td>
+                                                <%= Number(product.product_cost).toLocaleString('en-US') %> Baht
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: right !important;">
+                                                <input type="button" class="btn kanit purchase_item" value="สั่งซื้อ" style="border-radius: 30px !important;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="col-xs-7" style="border:0px solid blue;">
-                                <table class="item_table" border="0" style="width:100%;">
-                                    <tr>
-                                        <td style="width:50px !important;"><img
-                                                src="/assets/images/shop/products/icon-card.png" /></td>
-                                        <td style="width:100% !important;"><%= product.product_name %></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="/assets/images/shop/products/icon-refill.png" /></td>
-                                        <td><%= product.product_detail %><span style="color:red;">*</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="/assets/images/shop/products/icon-money.png" /></td>
-                                        <td><%= Number(product.product_cost).toLocaleString('en-US') %> Baht</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" style="text-align: right !important;">
-                                            <input type="button" class="btn kanit purchase_item" value="สั่งซื้อ"
-                                                onclick="Newbuy()" style="border-radius: 30px !important;">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <hr style="width:100%;border-top:1px solid grey;">
-                        <% }); %>
-                    <% } %>
+                            <hr style="width:100%;border-top:1px solid grey;">
+                            <% }); %>
+                                <% } %>
                 </div>
                 <div style="font-size:20px;font-weight:bold;">
                     <ul style="padding-left:25px;">
@@ -168,9 +165,3 @@
         </div>
     </div>
 </div>
-
-<script>
-function Newbuy() {
-    window.open("https://www.engtest.net/forum/detail.php?type_id=02-02&&topic_id=4786");
-}
-</script>

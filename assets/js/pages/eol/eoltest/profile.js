@@ -10,6 +10,13 @@
   }
   document.addEventListener('DOMContentLoaded', function () {
     const profileBtn = document.getElementById('reg_submit');
+    const passMsg = document.getElementById('pass_msg');
+    if (passMsg) {
+      passMsg.addEventListener('click', () => {
+        document.getElementById('passForm').style.display = '';
+        document.getElementById('pass_msg').style.display = 'none';
+      });
+    }
     if (profileBtn) {
       profileBtn.addEventListener('click', () => {
         const form = document.getElementById('profileForm');

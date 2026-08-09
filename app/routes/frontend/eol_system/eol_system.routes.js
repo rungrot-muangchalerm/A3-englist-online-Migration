@@ -20,6 +20,7 @@ router.get('/oneyear', (req, res) => {
   res.render(path.join(__dirname, '../../../../views/page/eol_system/oneyear.ejs'), {
     layout: path.join(__dirname, '../../../../views/layouts/main.layout.ejs'),
     title: '1 Year Course | EOL System',
+    script: '/assets/js/pages/eol_system/oneyear.js',
   });
 });
 

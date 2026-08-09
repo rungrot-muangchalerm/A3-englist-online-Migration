@@ -135,6 +135,18 @@
 
   function bindStatisticsEvents() {
     const viewBtn = document.getElementById('statistics-view-btn');
+    const exportOverviewBtn = document.getElementById('statistics-export-overview-btn');
+    const exportUsageBtn = document.getElementById('statistics-export-usage-btn');
+    if (exportOverviewBtn) {
+      exportOverviewBtn.addEventListener('click', () => {
+        window.open('/EOL/export_overview_test_and_evaluation.php');
+      });
+    }
+    if (exportUsageBtn) {
+      exportUsageBtn.addEventListener('click', () => {
+        window.open('/EOL/export_usage_history.php', '_blank');
+      });
+    }
     if (viewBtn) {
       viewBtn.addEventListener('click', () => {
         const start = document.getElementById('statistics-start').value;

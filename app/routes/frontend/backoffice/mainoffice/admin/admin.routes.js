@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
     layout: path.join(__dirname, '../../../../../../views/layouts/backoffice.layout.ejs'),
     title: 'Academics Backoffice | EOL System',
     showLogout: false,
+    script: '/assets/js/pages/backoffice/admin-login.js',
   });
 });
 

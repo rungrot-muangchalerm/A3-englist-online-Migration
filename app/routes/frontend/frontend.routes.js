@@ -7,7 +7,7 @@ const jwtMiddleware = require('../../middleware/jwt.middleware');
 router.get('/', (req, res) => {
   res.render(path.join(__dirname, '../../../views/page/index.ejs'), {
     layout: path.join(__dirname, '../../../views/layouts/main.layout.ejs'),
-    script: '/js/pages/index.js',
+    script: '/assets/js/pages/index.js',
   });
 });
 

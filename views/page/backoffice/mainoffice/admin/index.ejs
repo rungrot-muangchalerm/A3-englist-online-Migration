@@ -22,35 +22,10 @@
               <label class="sr-only" for="password">Password</label>
               <input type="password" id="password" name="password" placeholder="Password..." class="form-password form-control" required>
             </div>
-            <button type="button" class="btn" onclick="submitLogin()">LOGIN</button>
+            <button type="button" class="btn" id="admin-login-btn">LOGIN</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-function submitLogin() {
-  const form = document.getElementById('loginForm');
-  const msg = document.getElementById('loginMsg');
-  msg.style.display = 'none';
-  fetch('/api/backoffice/login?section=admin', {
-    method: 'POST',
-    credentials: 'include',
-    body: new URLSearchParams(new FormData(form))
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.ok) {
-        window.location.href = '/backoffice/mainoffice/admin/dashboard';
-      } else {
-        msg.style.display = '';
-        msg.style.color = 'red';
-        msg.style.fontSize = '12px';
-        msg.style.fontWeight = 'bold';
-        msg.textContent = data.message || 'Login failed';
-      }
-    });
-}
-</script>

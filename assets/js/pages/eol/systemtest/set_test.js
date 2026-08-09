@@ -20,7 +20,7 @@
     window.location.href = url;
   }
 
-  window.toggleMultiSkills = function () {
+  function toggleMultiSkills() {
     const box = document.getElementById('multi-skills-box');
     const text = document.getElementById('multi-skills-toggle-text');
     if (box.style.display === 'none') {
@@ -30,7 +30,7 @@
       box.style.display = 'none';
       text.innerHTML = '&raquo; Advanced Setting';
     }
-  };
+  }
 
   function init() {
     get('/api/eol/systemtest/status')
@@ -45,6 +45,7 @@
         if (s.isMultiple) {
           document.getElementById('multi-skills-section').style.display = 'block';
         }
+        document.getElementById('multi-skills-toggle').addEventListener('click', toggleMultiSkills);
         document.getElementById('create-test-form').addEventListener('submit', onCreateSubmit);
         document.getElementById('start-test-btn').addEventListener('click', () => {
           redirect('/eol/systemtest/test?quiz_id=1');

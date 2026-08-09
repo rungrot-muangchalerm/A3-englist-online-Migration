@@ -20,6 +20,7 @@ router.get('/product-1year', (req, res) => {
     res.render(path.join(__dirname, '../../../../views/page/shop/product-1year.ejs'), {
         layout: path.join(__dirname, '../../../../views/layouts/main.layout.ejs'),
         title: 'EOL 1 Year Course | Shop',
+        script: '/assets/js/pages/shop/product-1year.js',
     });
 });
 
@@ -27,6 +28,7 @@ router.get('/product-corporate', (req, res) => {
     res.render(path.join(__dirname, '../../../../views/page/shop/product-corporate.ejs'), {
         layout: path.join(__dirname, '../../../../views/layouts/main.layout.ejs'),
         title: 'EOL Corporate Package | Shop',
+        script: '/assets/js/pages/shop/product-corporate.js',
     });
 });
 
@@ -62,6 +64,7 @@ router.get('/product-personal', (req, res) => {
     res.render(path.join(__dirname, '../../../../views/page/shop/product-personal.ejs'), {
         layout: path.join(__dirname, '../../../../views/layouts/main.layout.ejs'),
         title: 'EOL Personal Package | Shop',
+        script: '/assets/js/pages/shop/product-personal.js',
     });
 });
 

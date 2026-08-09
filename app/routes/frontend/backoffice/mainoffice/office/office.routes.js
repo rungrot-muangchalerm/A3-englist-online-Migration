@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
     layout: path.join(__dirname, '../../../../../../views/layouts/backoffice.layout.ejs'),
     title: 'Webmaster Backoffice | EOL System',
     showLogout: false,
+    script: '/assets/js/pages/backoffice/office-login.js',
   });
 });
 
@@ -18,6 +19,7 @@ router.get('/dashboard', jwtMiddleware.verifyToken, jwtMiddleware.requireRole('b
     showLogout: true,
     adminUser: req.user.user,
     adminFullName: req.user.fullName || req.user.user,
+    script: '/assets/js/pages/backoffice/office-dashboard.js',
   });
 });
 
