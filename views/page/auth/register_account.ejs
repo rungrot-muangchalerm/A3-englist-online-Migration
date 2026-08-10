@@ -1,70 +1,88 @@
-<div class="container shadow">
-  <div class="row">
-    <div class="col-12">
-      <div class="text-center">
-        <div class="">
-          <h2><strong>REGISTER</strong><br>
-            <span>แบบฟอร์มสมาชิกใหม่</span>
-          </h2>
-          <hr />
-        </div>
-      </div>
-
-      <p class="text-danger text-center bold">
-        Username และ Password จะต้องเป็น a-z, A-Z, 0-9 ความยาว 8-20 ตัวอักษรเท่านั้น<br>
-        และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย *
-      </p>
-
-      <div class="row">
-        <div class="col-12" id="form_register">
-          <form id="register-form" method="post" action="/api/auth/register">
-            <div class="row">
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4">Firstname<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="text" name="fname" class="form-control" placeholder="Firstname" required></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Lastname<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="text" name="lname" class="form-control" placeholder="Lastname" required></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Gender <b class="text-danger"> *</b></div>
-                  <div class="col-8">
-                    <input type="radio" name="gender" id="chkbox_male" value="1" checked /> <label for="chkbox_male" id="chkbox_male_text">Male</label>
-                    &emsp;&emsp;&emsp;&emsp;
-                    <input type="radio" name="gender" id="chkbox_female" value="2" /> <label for="chkbox_female" id="chkbox_female_text">Female</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Phone<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="text" name="tel" class="form-control" required placeholder="Phone" maxlength="15"></div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-4">Username<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="text" name="user" class="form-control" maxlength="20" placeholder="Username" required></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Password<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="password" name="pass" class="form-control" maxlength="20" placeholder="Password" required></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">Date of Birth </div>
-                  <div class="col-8"><input type="date" name="datebirth" class="form-control" required></div>
-                </div>
-                <div class="row">
-                  <div class="col-4">E-mail<b class="text-danger"> *</b></div>
-                  <div class="col-8"><input type="email" name="email" class="form-control" placeholder="email@example.com" required></div>
-                </div>
-              </div>
+<div class="bg-light py-5">
+  <div class="container-lg">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card border-0 border-top border-5 border-warning shadow-sm">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold mb-1">REGISTER</h2>
+              <p class="text-muted mb-0">แบบฟอร์มสมาชิกใหม่</p>
+              <hr class="w-50 mx-auto">
             </div>
 
-            <div class="row">
-              <div class="col-12">
-                <br>ข้อกำหนดในการใช้งานระบบ<br>
-                <textarea class="terms-box form-control" readonly>
+            <p class="text-danger text-center fw-bold">
+              Username และ Password จะต้องเป็น a-z, A-Z, 0-9 ความยาว 8-20 ตัวอักษรเท่านั้น<br>
+              และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย *
+            </p>
+
+            <div id="form_register">
+              <form id="register-form" method="post" action="/api/auth/register">
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="fname">Firstname<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="text" id="fname" name="fname" class="form-control" placeholder="Firstname" required>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="lname">Lastname<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="text" id="lname" name="lname" class="form-control" placeholder="Lastname" required>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <div class="col-12 col-md-4">Gender<b class="text-danger"> *</b></div>
+                      <div class="col-12 col-md-8">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" id="chkbox_male" value="1" checked>
+                          <label class="form-check-label" for="chkbox_male" id="chkbox_male_text">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" id="chkbox_female" value="2">
+                          <label class="form-check-label" for="chkbox_female" id="chkbox_female_text">Female</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="tel">Phone<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="text" id="tel" name="tel" class="form-control" required placeholder="Phone" maxlength="15">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="user">Username<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="text" id="user" name="user" class="form-control" maxlength="20" placeholder="Username" required>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="pass">Password<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="password" id="pass" name="pass" class="form-control" maxlength="20" placeholder="Password" required>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="datebirth">Date of Birth</label>
+                      <div class="col-12 col-md-8">
+                        <input type="date" id="datebirth" name="datebirth" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label" for="email">E-mail<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="email@example.com" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-2">
+                  <div class="col-12">
+                    <label class="form-label fw-bold">ข้อกำหนดในการใช้งานระบบ</label>
+                    <textarea class="form-control bg-light" readonly rows="10">
 1. การทดสอบในระบบ EOL System เป็นการทดสอบออนไลน์ จัดทำโดยบริษัทอิงลิชออนไลน์ จำกัด บริษัทจึงมีข้อตกลงเบื้องต้นขึ้น เพื่อท่านสมาชิกหรือท่านที่จะขอใช้บริการ โดยหลังจากที่อ่านจบแล้วให้ท่านกดปุ่ม "ยอมรับ" เพื่อเข้าสู่ขั้นตอนกรอกแบบฟอร์มสมาชิกใหม่ ขอให้ท่านอ่านและทำความเข้าใจโดยละเอียด เพื่อรักษาสิทธิประโยชน์ในการใช้บริการของส่วนรวม และส่วนตัวท่านเอง ในขั้นตอนการกรอกแบบฟอร์มใบสมัครนั้น สมาชิกจะต้องกรอกข้อมูลต่างๆ ตามความเป็นจริง
 2. สมาชิกจะต้องซื้อผลิตภัณฑ์กับทางบริษัทฯ เพื่อเพิ่มวันใช้งานในระบบ ให้สามารถเข้าใช้งานได้ และสมาชิกจะต้องจัดหาอุปกรณ์ในการติดต่อเข้าใช้ระบบอินเตอร์เน็ต และรับผิดชอบค่าใช้จ่ายส่วนอื่นๆ ด้วยตัวเอง
 3. การกำหนดรหัสผ่าน ทางบริษัทขอสงวนสิทธิ์ไม่ให้ใช้คำเหล่านี้ได้แก่ "webmaster", "hostmaster", "admin", "administrator", "postmaster" หรือคำอื่นๆที่ระบุว่าเป็นผู้ดูแลระบบ เป็นชื่อติดต่อบริการ (username, password, login name)
@@ -76,29 +94,35 @@
 9. ข้อความ ข้อสอบ ที่อยู่ในการทดสอบในระบบ EOL System ถือเป็นทรัพย์สินของบริษัทฯ ขอสงวนลิขสิทธิ์ ในข้อความ ข้อสอบ เสียง ภาพเหล่านี้ ห้ามมิให้สมาชิกนำไปเผยแพร่ ดัดแปลง แก้ไขใดๆ ทั้งสิ้น
 10. หากมีการเปลี่ยนแปลงข้อตกลงการใช้บริการ การทดสอบในระบบ EOL System ในการให้บริการของบริษัทฯ จะแจ้งให้สมาชิกทราบ โดยขึ้นที่หน้าจอ “ข้อตกลงในการใช้บริการ”
 11. หากบริษัทฯ พบว่าสมาชิกท่านใด ละเมิดข้อตกลงที่ตั้งไว้ บริษัทฯขอสงวนสิทธิ์ในการระงับการให้บริการกับสมาชิกท่านนั้นโดยมิต้องแจ้งให้ทราบล่วงหน้า
-                </textarea>
-                <br><br>
-                <input type="checkbox" id="check_accept" name="check_accept" />
-                <label for="check_accept" id="check_accept_text">
-                  &emsp;<span>ข้าพเจ้ายอมรับเงื่อนไขในการใช้ระบบ (I accept the EOL terms of use)</span>
-                </label>
-              </div>
-            </div>
+                    </textarea>
+                  </div>
+                </div>
 
-            <div class="row">
-              <div class="col-12">
-                <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
-              </div>
-            </div>
+                <div class="row g-3 mt-2">
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="check_accept" name="check_accept">
+                      <label class="form-check-label" for="check_accept" id="check_accept_text">
+                        ข้าพเจ้ายอมรับเงื่อนไขในการใช้ระบบ (I accept the EOL terms of use)
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="row">
-              <div class="col-12 text-center">
-                <br>
-                <button type="submit" id="btnregister" disabled class="btn btn-lg btn-info">Register</button>
-                <br><br>
-              </div>
+                <div class="row g-3 mt-2">
+                  <div class="col-12">
+                    <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-2">
+                  <div class="col-12 text-center">
+                    <button type="submit" id="btnregister" disabled class="btn btn-lg btn-warning fw-bold">Register</button>
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

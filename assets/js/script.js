@@ -24,33 +24,21 @@ let attachHeaderLogin;
     .then(function (res) { return res.json(); })
     .then(function (data) {
       const widget = document.getElementById('user-widget');
-      const certNav = document.getElementById('nav-certificate');
 
       if (!widget) return;
 
       widget.innerHTML = '';
 
       if (data.loggedIn && data.member) {
-        setVisible(certNav, true);
-        widget.appendChild(buildLoggedInWidget(data.member));
+        widget.appendChild(buildLoggedInDropdown(data.member));
       } else {
-        setVisible(certNav, false);
-        widget.appendChild(buildLoginWidget());
+        widget.appendChild(buildLoginButton());
       }
 
       if (typeof attachHeaderLogin === 'function') {
         attachHeaderLogin();
       }
     });
-
-  function $(id) {
-    return document.getElementById(id);
-  }
-
-  function setVisible(element, visible) {
-    if (!element) return;
-    if (visible ) element.classList.remove('d-none'); else element.classList.add('d-none');
-  }
 
   function createElement(tag, attrs, children) {
     const element = document.createElement(tag);
@@ -84,58 +72,37 @@ let attachHeaderLogin;
 
   function buildAvatar(member) {
     const img = createElement('img', {
-      class: 'user-avatar',
+      class: 'rounded-circle border border-warning border-2',
       src: member.avatar || member.fallbackAvatar || '',
+      width: '32',
+      height: '32',
       alt: ''
     });
 
-    img.addEventListener('error', function () {
+    img.onerror = function () {
       img.onerror = null;
       img.src = member.fallbackAvatar || '';
-    });
+    };
 
-    return createElement('div', { class: 'user-avatar-wrap' }, [img]);
+    return img;
   }
 
-  function buildUserDetails(member) {
-    const nameText = String(member.fname || '') + '\u00A0\u00A0\u00A0\u00A0' + String(member.lname || '');
-
-    return createElement('div', { class: 'user-details' }, [
-      createElement('span', { class: 'user-name', text: nameText }),
-      createElement('br'),
-      createElement('span', { class: 'user-profile', text: member.profile || '' })
+  function buildDropdownItem(label, href) {
+    return createElement('li', null, [
+      createElement('a', { class: 'dropdown-item', href: href, text: label })
     ]);
   }
 
-  function buildEnterAction(member) {
-    const isYc = member.type === '1yc';
-    const href = isYc ? YC_ENTRY : EOL_ENTRY;
-    const imgSrc = isYc
-      ? '/assets/images/image2/mainpage/button/enter eol.png'
-      : '/assets/images/image2/mainpage/button/enter eol.png';
-    const alt = isYc ? 'Enter 1 Year Course' : 'Enter EOL';
-
-    return createElement('div', { class: 'user-action' }, [
-      createElement('a', { href: href }, [
-        createElement('img', {
-          class: 'enter-eol-img',
-          src: imgSrc,
-          alt: alt
-        })
-      ])
-    ]);
-  }
-
-  function buildLogoutAction() {
-    const logoutLink = createElement('a', { href: '#', id: 'logout-link' }, [
-      createElement('img', {
-        class: 'logout-img',
-        src: '/assets/images/image2/eol system/button/logout-06.png',
-        alt: 'Logout'
+  function buildLogoutItem() {
+    const item = createElement('li', null, [
+      createElement('a', {
+        href: '#',
+        class: 'dropdown-item',
+        text: 'Logout'
       })
     ]);
 
-    logoutLink.addEventListener('click', function (event) {
+    item.querySelector('a').addEventListener('click', function (event) {
       event.preventDefault();
       fetch('/api/auth/logout', {
         method: 'POST',
@@ -145,70 +112,60 @@ let attachHeaderLogin;
       });
     });
 
-    return createElement('div', { class: 'user-action' }, [logoutLink]);
+    return item;
   }
 
-  function buildLoggedInWidget(member) {
-    return createElement('div', { class: 'user-widget-logged' }, [
-      buildAvatar(member),
-      buildUserDetails(member),
-      buildEnterAction(member),
-      buildLogoutAction()
-    ]);
-  }
+  function buildLoggedInDropdown(member) {
+    const isYc = member.type === '1yc';
+    const entryHref = isYc ? YC_ENTRY : EOL_ENTRY;
+    const entryLabel = isYc ? 'Enter 1 Year Course' : 'Enter EOL';
 
-  function buildLoginField(side, inputAttrs, linkAttrs, linkText) {
-    const className = 'login-field login-field-' + side;
+    const dropdown = createElement('div', { class: 'dropdown' });
 
-    return createElement('div', { class: className }, [
-      createElement('input', inputAttrs),
-      createElement('br'),
-      createElement('a', linkAttrs, [linkText])
-    ]);
-  }
-
-  function buildLoginWidget() {
-    const usernameInput = {
-      type: 'text',
-      name: 'username',
-      id: 'header-username',
-      class: 'form-control login-input',
-      placeholder: 'Username',
-      required: true
-    };
-    const signupLink = {
-      href: '/auth/register_account',
-      class: 'over_a login-link',
-      id: 'signup'
-    };
-
-    const passwordInput = {
-      type: 'password',
-      name: 'password',
-      id: 'header-password',
-      class: 'form-control login-input',
-      placeholder: 'Password',
-      autocomplete: 'on',
-      required: true
-    };
-    const forgotLink = {
-      href: '/auth/forgot',
-      class: 'over_a login-link',
-      id: 'forgot'
-    };
-
-    return createElement('form', {
-      id: 'header-login-form',
-      method: 'post',
-      action: '/api/auth/login',
-      class: 'header-login-form'
+    const toggle = createElement('button', {
+      type: 'button',
+      class: 'btn btn-dark dropdown-toggle d-flex align-items-center gap-2',
+      'data-bs-toggle': 'dropdown',
+      'aria-expanded': 'false'
     }, [
-      buildLoginField('left', usernameInput, signupLink, 'Sign Up / Register'),
-      buildLoginField('right', passwordInput, forgotLink, 'Forgot Password?'),
-      createElement('div', { class: 'login-button-wrap' }, [
-        createElement('button', { type: 'submit', class: 'btn login-button' }, ['LOGIN'])
-      ])
+      buildAvatar(member),
+      createElement('span', {
+        class: 'd-none d-md-inline small',
+        text: member.fname || member.user || 'User'
+      })
     ]);
+
+    const menu = createElement('ul', {
+      class: 'dropdown-menu dropdown-menu-dark dropdown-menu-end'
+    });
+
+    const nameHeader = createElement('li', null, [
+      createElement('span', {
+        class: 'dropdown-item-text small text-white-50',
+        text: (String(member.fname || '') + ' ' + String(member.lname || '')).trim() || member.user
+      })
+    ]);
+
+    menu.appendChild(nameHeader);
+    menu.appendChild(createElement('li', null, [createElement('hr', { class: 'dropdown-divider' })]));
+    menu.appendChild(buildDropdownItem(entryLabel, entryHref));
+    menu.appendChild(buildDropdownItem('Certificate', '/certificate'));
+    menu.appendChild(createElement('li', null, [createElement('hr', { class: 'dropdown-divider' })]));
+    menu.appendChild(buildLogoutItem());
+
+    dropdown.appendChild(toggle);
+    dropdown.appendChild(menu);
+
+    return dropdown;
+  }
+
+  function buildLoginButton() {
+    return createElement('button', {
+      type: 'button',
+      class: 'btn btn-warning btn-sm fw-bold',
+      'data-bs-toggle': 'modal',
+      'data-bs-target': '#loginModal'
+    }, ['LOGIN']);
   }
 }());
 

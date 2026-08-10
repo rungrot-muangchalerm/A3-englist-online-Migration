@@ -1,167 +1,171 @@
-<div class="container shadow">
-  <div class="row">
-    <div class="col-12">
-      <div id="other-content">
+<div class="container-lg py-4">
+  <div id="other-content" class="row g-4">
 
-        <div id="school-content">
+    <div id="school-content" class="col-12">
+      <div class="card border-0 border-top border-5 border-warning shadow-sm">
+        <div class="card-body">
+          <h2 id="school-title" class="text-center"></h2>
           <hr>
-          <h2>
-            <center id="school-title">
+          <div id="school-main" class="main"></div>
         </div>
-        </h2>
-        <hr>
-        <div class="main" id="school-main"></div>
-        <hr>
       </div>
-
-      <div id="feedback-content">
-        <hr>
-        <h2>
-          <center id="feedback-title">
-      </div>
-      </h2>
-      <hr>
-      <div class="main">
-        <table class="tb-feedback text-center table table-sm" width="90%">
-          <tbody id="feedback-body"></tbody>
-        </table>
-      </div>
-      <hr>
     </div>
 
-    <div id="advertise-content"></div>
+    <div id="feedback-content" class="col-12">
+      <div class="card border-0 border-top border-5 border-warning shadow-sm">
+        <div class="card-body">
+          <h2 id="feedback-title" class="text-center"></h2>
+          <hr>
+          <div class="table-responsive">
+            <table class="tb-feedback text-center table table-sm table-hover">
+              <tbody id="feedback-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="advertise-content" class="col-12"></div>
 
   </div>
-</div>
-</div>
 </div>
 
 <!-- School Category Template -->
 <template id="school-category-template">
-  <table class="tb-school text-center table table-sm" width="90%">
-    <tr height="55" class="align-middle">
-      <td width="5%"></td>
-      <td colspan="4">
-        <span class="text-dark"><b class="school-category-title"></b></span>
-      </td>
-    </tr>
-    <tbody class="school-category-body"></tbody>
-    <tr>
-      <td colspan="4">&nbsp;</td>
-    </tr>
-  </table>
+  <div class="table-responsive">
+    <table class="tb-school text-center table table-sm align-middle">
+      <thead>
+        <tr class="align-middle">
+          <th></th>
+          <th colspan="4">
+            <span class="text-dark"><b class="school-category-title"></b></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="school-category-body"></tbody>
+    </table>
+  </div>
   <br>
 </template>
 
 <!-- School Row Template (2 items per row) -->
 <template id="school-row-template">
-  <tr height="35" class="school-data-row text-center align-middle">
-    <td width="5%"></td>
-    <td width="35%" class="school-name-1 text-start"></td>
-    <td width="5%"></td>
-    <td width="35%" class="school-name-2 text-start"></td>
+  <tr class="school-data-row align-middle">
+    <td style="width: 5%;"></td>
+    <td class="school-name-1 text-start" style="width: 42.5%;"></td>
+    <td style="width: 5%;"></td>
+    <td class="school-name-2 text-start" style="width: 42.5%;"></td>
   </tr>
-  <tr height="10" class="school-spacer-row align-middle">
-    <td></td>
+  <tr class="school-spacer-row align-middle">
+    <td colspan="4">&nbsp;</td>
   </tr>
 </template>
 
 <!-- Feedback Row Template -->
 <template id="feedback-row-template">
-  <tr height="50" class="sub-tb-feedback text-start align-middle">
-    <td width="82%" class="feedback-detail"></td>
+  <tr class="sub-tb-feedback align-middle">
+    <td class="feedback-detail text-start"></td>
   </tr>
 </template>
 
 <!-- Advertise Template -->
 <template id="advertise-template">
-  <div>
-    <div class="text-center"><b>ตำแหน่งในการลงโฆษณา</b></div>
-    <div class="text-center"><b>ADS ZONE</b></div>
-    <hr>
-    <a href="/images/image/sponser/ads_zone.jpg" target="_blank"><img src="/images/image/sponser/ads_zone_thumbnail.jpg"></a>
-    <br><br>
-  </div>
-  <div>
-    <div class="text-center"><b>อัตราค่าโฆษณา (หน้าแรกของเว็บไซต์)</b></div><br>
-    <table>
-      <tr>
-        <td class="center bold-text" rowspan="2">Banner</td>
-        <td class="center bold-text" rowspan="2">1 เดือน</td>
-        <td class="center bold-text" colspan="3">Promotion ลงระยะยาว</td>
-        <td class="center bold-text" rowspan="2">ประเภท</td>
-      </tr>
-      <tr>
-        <td class="center bold-text">3 เดือน</td>
-        <td class="center bold-text">6 เดือน</td>
-        <td class="center bold-text">12 เดือน</td>
-      </tr>
-      <tr>
-        <td class="center bold" rowspan="2"><span>150x150</span><br>pixel</td>
-        <td class="center bold-text" rowspan="2">20,000.-</td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>10%</div>
-          </div>
-        </td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>15%</div>
-          </div>
-        </td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>20%</div>
-          </div>
-        </td>
-        <td class="center" rowspan="2">Fixed banner</td>
-      </tr>
-      <tr>
-        <td class="center">เดือนละ 18,000.-</td>
-        <td class="center">เดือนละ 17,000.-</td>
-        <td class="center">เดือนละ 16,000.-</td>
-      </tr>
-      <tr>
-        <td class="center bold-text" rowspan="2"><span>150x100</span><br>pixel</td>
-        <td class="center bold-text" rowspan="2">15,000.-</td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>10%</div>
-          </div>
-        </td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>15%</div>
-          </div>
-        </td>
-        <td class="center">
-          <div>
-            <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png">
-            <div class="discount_tag">ลด<br>20%</div>
-          </div>
-        </td>
-        <td class="center" rowspan="2">Fixed banner</td>
-      </tr>
-      <tr>
-        <td class="center">เดือนละ 13,500.-</td>
-        <td class="center">เดือนละ 12,750.-</td>
-        <td class="center">เดือนละ 12,000.-</td>
-      </tr>
-    </table>
-    <br>
-    <div>
-      *เงื่อนไขในการลงโฆษณา<br>
-      - ไม่รับลงโฆษณาทุกประเภทที่ไม่เหมาะสำหรับเยาวชน<br>
-      - ไม่รับลงโฆษณาประเภทผิดกฎหมายแพ่ง อาญา กฎหมายลิขสิทธิ์ ศีลธรรม ของไทย<br>
+  <div class="card border-0 border-top border-5 border-warning shadow-sm">
+    <div class="card-body">
+      <div class="text-center"><b>ตำแหน่งในการลงโฆษณา</b></div>
+      <div class="text-center"><b>ADS ZONE</b></div>
+      <hr>
+      <div class="text-center">
+        <a href="/images/image/sponser/ads_zone.jpg" target="_blank"><img src="/images/image/sponser/ads_zone_thumbnail.jpg" class="img-fluid" alt="ADS ZONE"></a>
+      </div>
+      <br><br>
+
+      <div class="text-center mb-3"><b>อัตราค่าโฆษณา (หน้าแรกของเว็บไซต์)</b></div>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th class="text-center" rowspan="2">Banner</th>
+              <th class="text-center" rowspan="2">1 เดือน</th>
+              <th class="text-center" colspan="3">Promotion ลงระยะยาว</th>
+              <th class="text-center" rowspan="2">ประเภท</th>
+            </tr>
+            <tr>
+              <th class="text-center">3 เดือน</th>
+              <th class="text-center">6 เดือน</th>
+              <th class="text-center">12 เดือน</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold" rowspan="2"><span>150x150</span><br>pixel</td>
+              <td class="fw-bold" rowspan="2">20,000.-</td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>10%</div>
+                </div>
+              </td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>15%</div>
+                </div>
+              </td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>20%</div>
+                </div>
+              </td>
+              <td rowspan="2">Fixed banner</td>
+            </tr>
+            <tr>
+              <td>เดือนละ 18,000.-</td>
+              <td>เดือนละ 17,000.-</td>
+              <td>เดือนละ 16,000.-</td>
+            </tr>
+            <tr>
+              <td class="fw-bold" rowspan="2"><span>150x100</span><br>pixel</td>
+              <td class="fw-bold" rowspan="2">15,000.-</td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>10%</div>
+                </div>
+              </td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>15%</div>
+                </div>
+              </td>
+              <td>
+                <div class="position-relative d-inline-block">
+                  <img src="https://www.clker.com/cliparts/R/Z/t/o/x/W/starburst-no-drop-shadow-md.png" class="img-fluid" alt="" style="max-width: 80px;">
+                  <div class="discount_tag position-absolute top-50 start-50 translate-middle text-center small fw-bold">ลด<br>20%</div>
+                </div>
+              </td>
+              <td rowspan="2">Fixed banner</td>
+            </tr>
+            <tr>
+              <td>เดือนละ 13,500.-</td>
+              <td>เดือนละ 12,750.-</td>
+              <td>เดือนละ 12,000.-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div>
+        *เงื่อนไขในการลงโฆษณา<br>
+        - ไม่รับลงโฆษณาทุกประเภทที่ไม่เหมาะสำหรับเยาวชน<br>
+        - ไม่รับลงโฆษณาประเภทผิดกฎหมายแพ่ง อาญา กฎหมายลิขสิทธิ์ ศีลธรรม ของไทย<br>
+      </div>
     </div>
   </div>
   <br><br>
-  <div>
+  <div class="text-center">
     สนใจติดต่อสอบถาม 02 170 8725, 066 115 2916, 066 115 2454, 066 115 2545
   </div>
   <br>

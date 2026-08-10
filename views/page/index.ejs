@@ -1,142 +1,129 @@
-<div class="container bg-white pb-4 shadow">
+<div class="bg-light pb-5">
 
   <!-- Slide -->
-  <div class="row">
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  <section class="container-lg py-3">
+    <div class="row">
+      <div class="col-12">
+        <div id="myCarousel" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="/forum/detail?type_id=02-02&&topic_id=5177">
+                <img class="w-100" src="/images/image2/24.jpg" alt="GEPOT 19 Banner">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="/forum/detail?type_id=02-02&&topic_id=5178">
+                <img class="w-100" src="/images/image2/22.jpg" alt="Franchise Banner">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="/forum/detail?type_id=02-02&&topic_id=5179">
+                <img class="w-100" src="/images/image2/19.jpg" alt="Banner">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="/forum/detail?type_id=02-02&&topic_id=5176">
+                <img class="w-100" src="/images/FRBAN.jpg" alt="Banner1">
+              </a>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a href="/forum/detail?type_id=02-02&&topic_id=5177">
-            <img class="w-100" src="/images/image2/24.jpg" alt="GEPOT 19 Banner">
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="/forum/detail?type_id=02-02&&topic_id=5178">
-            <img class="w-100" src="/images/image2/22.jpg" alt="Franchise Banner">
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="/forum/detail?type_id=02-02&&topic_id=5179">
-            <img class="w-100" src="/images/image2/19.jpg" alt="Banner">
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="/forum/detail?type_id=02-02&&topic_id=5176">
-            <img class="w-100" src="/images/FRBAN.jpg" alt="Banner1">
-          </a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </div>
+  </section>
 
-  <div class="row">
-    <!-- ซ้าย -->
-    <div class="col-8">
-      <!-- GEPOT 19 -->
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-gift"></i> GEPOT 19</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
+  <!-- Main content -->
+  <section class="container-lg">
+    <div class="row g-4">
+      <!-- Left column -->
+      <div class="col-12 col-lg-8">
+        <!-- GEPOT 19 -->
+        <div class="card border-0 border-top border-5 border-warning shadow-sm mb-4">
+          <div class="card-body">
+            <h2 class="h4 text-warning fw-bold mb-3"><i class="bi bi-gift"></i> GEPOT 19</h2>
             <a href="/forum/detail?type_id=02-02&&topic_id=5180">
               <img class="img-fluid rounded-3" src="/event/GPS_Test_2024/21.jpg" alt="GEPOT 19">
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Activity + News -->
-      <div class="row">
-        <div class="col-6">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-image"></i> 543 Active Learning</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
-            <template id="activity-row-template">
-              <tr class="align-top">
-                <td>
-                  <a class="text-decoration-none text-dark activity-link" href="#" target="_blank">
-                    <img class="activity-img rounded-circle" src="" width="100" height="80" alt="">
-                  </a>
-                </td>
-                <td class="activity-text-cell ps-2 pt-1 lh-sm fs-6">
-                  <a class="text-decoration-none text-dark activity-link-text" href="#" target="_blank"></a>
-                </td>
-              </tr>
-              <tr class="align-top">
-                <td class="py-1" colspan="2"></td>
-              </tr>
-            </template>
-            <table id="activity-container" class="w-100 table table-sm">
-              <!-- activity-row-template จะ render ไว้ตรงนี้ เพราะ table ไม่อนุญาติให้เอาอะไรมาไส่นอกจาก tr แต่สิ่งที่ครอบอยู่คือ template ตัว table จะแตะทิ้ง -->
-            </table>
-            <br>
-            <div class="text-center">
-              <a href="/forum/e-eng?type_id=02-01">
-                <button class="btn btn-warning text-white" id="activity">All Gallery</button>
-              </a>
+        <!-- Activity + News -->
+        <div class="row g-4 mb-4">
+          <div class="col-12 col-md-6">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm h-100">
+              <div class="card-body">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-image"></i> 543 Active Learning</h2>
+                <template id="activity-row-template">
+                  <div class="d-flex gap-3 mb-3">
+                    <a class="text-decoration-none text-dark activity-link flex-shrink-0" href="#" target="_blank">
+                      <img class="activity-img rounded-circle" src="" width="80" height="64" alt="">
+                    </a>
+                    <div class="activity-text-cell lh-sm">
+                      <a class="text-decoration-none text-dark activity-link-text" href="#" target="_blank"></a>
+                    </div>
+                  </div>
+                </template>
+                <div id="activity-container" class="w-100">
+                  <!-- rows render here -->
+                </div>
+                <a href="/forum/e-eng?type_id=02-01" class="btn btn-warning text-white w-100 mt-2">All Gallery</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm h-100">
+              <div class="card-body">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-newspaper"></i> NEWS, GALLERY & EVENTS</h2>
+                <template id="news-events-row-template">
+                  <div class="d-flex gap-3 mb-3">
+                    <a class="text-decoration-none text-dark news-events-link flex-shrink-0" href="#" target="_blank">
+                      <img class="news-events-img rounded-circle" src="" width="80" height="64" alt="">
+                    </a>
+                    <div class="news-events-text-cell lh-sm">
+                      <a class="text-decoration-none text-dark news-events-link-text" href="#" target="_blank"></a>
+                    </div>
+                  </div>
+                </template>
+                <div id="news-events-container" class="w-100">
+                  <!-- rows render here -->
+                </div>
+                <a href="/forum/e-eng?type_id=02-02" class="btn btn-warning text-white w-100 mt-2">All News & Events</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-newspaper-o"></i> NEWS, GALLERY & EVENTS</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
-            <template id="news-events-row-template">
-              <tr class="align-top">
-                <td>
-                  <a class="text-decoration-none text-dark news-events-link" href="#" target="_blank">
-                    <img class="news-events-img rounded-circle" src="" width="100" height="80" alt="">
-                  </a>
-                </td>
-                <td class="news-events-text-cell ps-2 pt-1 lh-sm fs-6">
-                  <a class="text-decoration-none text-dark news-events-link-text" href="#" target="_blank"></a>
-                </td>
-              </tr>
-              <tr class="align-top">
-                <td class="py-1" colspan="2"></td>
-              </tr>
-            </template>
-            <table id="news-events-container" class="w-100 table table-sm">
-              <!-- rows render here -->
-            </table>
-            <br>
-            <div class="text-center">
-              <a href="/forum/e-eng?type_id=02-02">
-                <button class="btn btn-warning text-white" id="news_events">All News & Events</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Magazine -->
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-book"></i> EOL MAGAZINE ONLINE SHOWCASE</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
+        <!-- Magazine -->
+        <div class="card border-0 border-top border-5 border-warning shadow-sm">
+          <div class="card-body">
+            <h2 class="h4 text-warning fw-bold mb-3"><i class="bi bi-book"></i> EOL MAGAZINE ONLINE SHOWCASE</h2>
             <div id="magazine-showcase">
-              <div class="row">
-                <div class="col-4">
+              <div class="row g-3 align-items-center">
+                <div class="col-12 col-md-4">
                   <a id="magazine-link" href="#" target="_blank">
                     <img id="magazine-img" class="img-fluid rounded-3" src="" alt="">
                   </a>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                   <a id="magazine-link-text" class="text-decoration-none text-dark" href="#" target="_blank">
-                    <h3 id="magazine-name" class="mt-0"></h3>
+                    <h3 id="magazine-name" class="h4 mt-0"></h3>
                     <p id="magazine-headline" class="fs-6"></p>
                   </a>
-                  <p class="text-muted small">
+                  <p class="text-muted small mb-0">
                     โดย <span id="magazine-author"></span> | อ่าน <span id="magazine-view"></span> ครั้ง
                   </p>
                 </div>
@@ -145,132 +132,120 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ขวา -->
-    <div class="col-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-thumbs-o-up"></i> 20th Anniversary</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4 text-center">
-            <a href="/forum/detail?type_id=02-02&&topic_id=5141">
-              <img class="img-fluid" src="/event/EOL 19th/c2.png" alt="20th Anniversary">
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-video-camera"></i> EOL Presentation</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/cqOrP317QoI" allowfullscreen></iframe>
+      <!-- Right column -->
+      <div class="col-12 col-lg-4">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-hand-thumbs-up"></i> 20th Anniversary</h2>
+                <a href="/forum/detail?type_id=02-02&&topic_id=5141">
+                  <img class="img-fluid rounded-3" src="/event/EOL 19th/c2.png" alt="20th Anniversary">
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-qrcode"></i> QR Payment EOL</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4 text-center">
-            <a href="/event/QR Payment/promptpay.png" target="_blank">
-              <img class="img-fluid rounded-4" src="/event/QR Payment/promptpay.png" alt="QR Payment EOL">
-            </a>
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm">
+              <div class="card-body">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-camera-video"></i> EOL Presentation</h2>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                  <iframe src="https://www.youtube.com/embed/cqOrP317QoI" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="pt-2 fs-4 text-warning"><i class="fa fa-youtube"></i> EOL CHANNEL</div>
-          <div class="border border-warning border-top border-5 p-3 rounded-4">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/9HIctmTKW_4" allowfullscreen></iframe>
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm">
+              <div class="card-body text-center">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-qr-code"></i> QR Payment EOL</h2>
+                <a href="/event/QR Payment/promptpay.png" target="_blank">
+                  <img class="img-fluid rounded-3" src="/event/QR Payment/promptpay.png" alt="QR Payment EOL">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-12">
+            <div class="card border-0 border-top border-5 border-warning shadow-sm">
+              <div class="card-body">
+                <h2 class="h5 text-warning fw-bold mb-3"><i class="bi bi-youtube"></i> EOL CHANNEL</h2>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                  <iframe src="https://www.youtube.com/embed/9HIctmTKW_4" allowfullscreen></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- 3 quick links -->
-  <div class="row pt-2">
-    <div class="col-4">
-      <a href="/forum/other?type=school" class="text-decoration-none">
-        <div class="bg-secondary rounded-4 text-center text-white fs-5 py-3">
-          <i class="fa fa-list-alt"></i> รายชื่อลูกค้าที่ใช้บริการ EOL
-        </div>
-      </a>
+  <section class="container-lg py-4">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <a href="/forum/other?type=school" class="btn btn-dark d-block py-3 fs-5 rounded-3">
+          <i class="bi bi-list-task"></i> รายชื่อลูกค้าที่ใช้บริการ EOL
+        </a>
+      </div>
+      <div class="col-12 col-md-4">
+        <a href="/forum/other?type=feedback" class="btn btn-dark d-block py-3 fs-5 rounded-3">
+          <i class="bi bi-chat"></i> ความคิดเห็นของผู้ใช้บริการ EOL
+        </a>
+      </div>
+      <div class="col-12 col-md-4">
+        <a href="/forum/other?type=advertise" class="btn btn-dark d-block py-3 fs-5 rounded-3">
+          <i class="bi bi-briefcase"></i> ติดต่อลงโฆษณากับเรา
+        </a>
+      </div>
     </div>
-    <div class="col-4">
-      <a href="/forum/other?type=feedback" class="text-decoration-none">
-        <div class="bg-secondary rounded-4 text-center text-white fs-5 py-3">
-          <i class="fa fa-comments-o"></i> ความคิดเห็นของผู้ใช้บริการ EOL
-        </div>
-      </a>
-    </div>
-    <div class="col-4">
-      <a href="/forum/other?type=advertise" class="text-decoration-none">
-        <div class="bg-secondary rounded-4 text-center text-white fs-5 py-3">
-          <i class="fa fa-briefcase"></i> ติดต่อลงโฆษณากับเรา
-        </div>
-      </a>
-    </div>
-  </div>
+  </section>
 
   <!-- EOL English Room -->
-  <div class="row">
-    <div class="col-12">
-      <div class="pt-2 fs-4 text-warning"><i class="fa fa-th"></i>&nbsp;EOL ENGLISH ROOM</div>
-    </div>
-  </div>
-
-  <!-- English Room Template -->
-  <div id="english-room-container" class="row row-cols-3 g-4 pb-4">
-    <template id="english-room-card-template">
-      <div class="english-room-card col">
-        <div class="border border-warning border-top border-5 rounded-4 text-center">
-          <a class="text-decoration-none english-room-category-link position-relative d-block" href="#">
-            <div class="position-absolute top-50 start-50 translate-middle">
-              <div class="rounded-circle bg-warning d-inline-flex align-items-center justify-content-center p-3"><i class="fa english-room-icon text-white fs-3"></i></div>
-            </div>
-            <div class="english-room-new-badge position-absolute top-0 start-0 m-2"><img src="/assets/images/index/icon_new.gif" alt="New"></div>
-          </a>
-          <div>
-            <a class="text-decoration-none english-room-category-link" href="#">
-              <div class="ratio ratio-16x9">
-                <img class="english-room-image w-100 h-100 object-fit-cover rounded-4" src="" alt="">
+  <section class="container-lg py-4">
+    <h2 class="h4 text-warning fw-bold mb-4"><i class="bi bi-grid-3x3-gap"></i>&nbsp;EOL ENGLISH ROOM</h2>
+    <div id="english-room-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <template id="english-room-card-template">
+        <div class="english-room-card col">
+          <div class="card border-0 border-top border-5 border-warning shadow-sm h-100">
+            <div class="position-relative text-center pt-4">
+              <div class="rounded-circle bg-warning d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                <i class="bi text-white fs-3 english-room-icon"></i>
               </div>
-            </a>
-          </div>
-          <a class="text-decoration-none english-room-category-link" href="#">
-            <div class="pt-4 fs-4 fw-bold text-warning english-room-title"></div>
-          </a>
-          <hr class="w-75 border-warning opacity-100 mx-auto my-1">
-          <div class="english-room-content p-2">
-            <table class="w-100 mx-auto table table-sm">
-              <tr class="align-top">
-                <td>
-                  <i class="fa fa-gift text-danger"></i>
-                  <a class="text-decoration-none text-primary small english-room-topic-link" href="#" target="_blank">
+              <div class="english-room-new-badge position-absolute top-0 start-0 m-2"><img src="/assets/images/index/icon_new.gif" alt="New"></div>
+            </div>
+            <div class="card-body text-center pt-2">
+              <a class="text-decoration-none english-room-category-link d-block" href="#">
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden mb-2">
+                  <img class="english-room-image w-100 h-100" src="" alt="" style="object-fit: cover;">
+                </div>
+              </a>
+              <a class="text-decoration-none english-room-category-link" href="#">
+                <h3 class="h5 card-title text-warning fw-bold english-room-title"></h3>
+              </a>
+              <hr class="w-75 border-warning opacity-100 mx-auto my-2">
+              <div class="english-room-content text-start small">
+                <div class="mb-2">
+                  <i class="bi bi-gift text-danger"></i>
+                  <a class="text-decoration-none text-primary english-room-topic-link" href="#" target="_blank">
                     <b class="english-room-topic-name"></b>
                   </a>
-                  <br>
-                  <a class="text-decoration-none text-dark small english-room-topic-link2" href="#" target="_blank">
-                    <i class="fa fa-book"></i>&nbsp;<span class="english-room-topic-headline"></span>
-                    <div class="row text-secondary small m-0">
-                      <div class="col-4 p-0 english-room-date"><i class="fa fa-calendar-check-o"></i>&nbsp;</div>
-                      <div class="col-4 p-0 text-center english-room-author"><i class="fa fa-id-card-o"></i>&nbsp;</div>
-                      <div class="col-4 p-0 text-center"><i class="fa fa-eye"></i>&nbsp;View&nbsp;<span class="english-room-view"></span></div>
-                    </div>
-                  </a>
-                </td>
-              </tr>
-            </table>
+                </div>
+                <a class="text-decoration-none text-dark english-room-topic-link2" href="#" target="_blank">
+                  <i class="bi bi-book"></i>&nbsp;<span class="english-room-topic-headline"></span>
+                  <div class="row text-secondary small m-0 mt-1">
+                    <div class="col-4 p-0 english-room-date"><i class="bi bi-calendar-check"></i>&nbsp;</div>
+                    <div class="col-4 p-0 text-center english-room-author"><i class="bi bi-person-vcard"></i>&nbsp;</div>
+                    <div class="col-4 p-0 text-center"><i class="bi bi-eye"></i>&nbsp;View&nbsp;<span class="english-room-view"></span></div>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </template>
-  </div>
-
+      </template>
+    </div>
+  </section>
 
 </div>

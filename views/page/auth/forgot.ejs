@@ -1,40 +1,40 @@
-<div class="container shadow">
-  <div class="row">
-    <div class="col-12">
-      <div class="text-center">
-        <div class="">
-          <h2><strong>ลืมรหัสผ่าน</strong></h2>
-          <span>กรุณากรอก email address ที่ใช้สมัครสมาชิก</span>
-          <hr />
-        </div>
-      </div>
+<div class="bg-light py-5">
+  <div class="container-lg">
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="card border-0 border-top border-5 border-warning shadow-sm">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold mb-1">ลืมรหัสผ่าน</h2>
+              <p class="text-muted mb-0">กรุณากรอก email address ที่ใช้สมัครสมาชิก</p>
+              <hr class="w-50 mx-auto">
+            </div>
 
-      <div class="row">
-        <div class="col-12" id="form-forgot">
-          <form id="forgot-form" method="post" action="/api/auth/forgot">
-            <div class="row">
-              <div class="col-6 offset-3">
-                <div class="row">
-                  <div class="col-4">E-mail<b class="text-danger"> *</b></div>
-                  <div class="col-8">
-                    <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com" required>
+            <div id="form-forgot">
+              <form id="forgot-form" method="post" action="/api/auth/forgot">
+                <div class="row g-3 justify-content-center">
+                  <div class="col-12 col-md-6">
+                    <div class="row g-3 align-items-center mb-3">
+                      <label class="col-12 col-md-4 col-form-label text-md-end" for="email">E-mail<b class="text-danger"> *</b></label>
+                      <div class="col-12 col-md-8">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com" required>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+                <div class="row g-3 mt-2">
+                  <div class="col-12 text-center">
+                    <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
+                  </div>
+                </div>
+                <div class="row g-3 mt-2">
+                  <div class="col-12 text-center">
+                    <button type="submit" id="btn-forgot" class="btn btn-lg btn-warning fw-bold">Submit Email</button>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="row">
-              <div class="col-12 text-center">
-                <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 text-center">
-                <br>
-                <button type="submit" id="btn-forgot" class="btn btn-lg btn-info">Submit Email</button>
-                <br><br>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

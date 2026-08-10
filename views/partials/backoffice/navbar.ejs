@@ -1,16 +1,21 @@
-<nav class="navbar">
-  <div class="container-nav">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        <img src="/assets/images/index/logo-eol.png" />
-      </a>
-      <% if (typeof showLogout !== 'undefined' && showLogout) { %>
-        <div class="float-end">
-          <a href="javascript:void(0)" onclick="logout()">
-            <img src="/assets/2010/temp_images/temp/button/bt_logout.png" title="Logout" />
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <img src="/assets/images/index/logo-eol.png" alt="English Online" height="40">
+      <span class="d-none d-sm-inline fw-bold">EOL Backoffice</span>
+    </a>
+    <% if (typeof showLogout !== 'undefined' && showLogout) { %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#backofficeNavbar" aria-controls="backofficeNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="backofficeNavbar">
+        <div class="d-flex ms-auto">
+          <a href="javascript:void(0)" onclick="logout()" class="btn btn-outline-light btn-sm d-flex align-items-center gap-2" title="Logout">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
           </a>
         </div>
-      <% } %>
-    </div>
+      </div>
+    <% } %>
   </div>
 </nav>

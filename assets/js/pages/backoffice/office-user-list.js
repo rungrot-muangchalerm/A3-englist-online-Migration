@@ -17,19 +17,19 @@
     const deleteCell = row.querySelector('[data-role="delete-cell"]');
 
     if (user.admin_id === 1) {
-      setHtml(activeCell, '<span class="text-success"><b>-</b></span>');
-      setHtml(editCell, '<span class="text-info"><b>-</b></span>');
+      setHtml(activeCell, '<span class="text-muted">-</span>');
+      setHtml(editCell, '<span class="text-muted">-</span>');
     } else {
-      const activeColor = user.is_active ? 'green' : 'orange';
+      const activeClass = user.is_active ? 'btn-success' : 'btn-warning';
       const activeText = user.is_active ? 'Active' : 'Not Active';
-      setHtml(activeCell, `<a href="#" data-action="toggle"><span><b>${activeText}</b></span></a>`);
-      setHtml(editCell, `<a href="/backoffice/mainoffice/office/user/${encodeURIComponent(user.admin_id)}/edit"><span class="text-info"><b>Edit</b></span></a>`);
+      setHtml(activeCell, `<a href="#" class="btn btn-sm ${activeClass}" data-action="toggle">${activeText}</a>`);
+      setHtml(editCell, `<a href="/backoffice/mainoffice/office/user/${encodeURIComponent(user.admin_id)}/edit" class="btn btn-info btn-sm text-white">Edit</a>`);
     }
 
     if (user.admin_id === 1 || user.admin_id === adminId) {
-      setHtml(deleteCell, '<span class="text-danger"><b> - </b></span>');
+      setHtml(deleteCell, '<span class="text-muted">-</span>');
     } else {
-      setHtml(deleteCell, '<a href="#" class="link-danger" data-action="delete"><b>Delete</b></a>');
+      setHtml(deleteCell, '<a href="#" class="btn btn-danger btn-sm" data-action="delete">Delete</a>');
     }
 
     const toggle = activeCell.querySelector('[data-action="toggle"]');
@@ -60,11 +60,9 @@
     const admin = data.currentAdmin || {};
     currentAdmin.textContent = `${text(admin.prefix)} ${text(admin.fname)} ${text(admin.lname)} [${text(admin.nickname)}]`;
 
-    (data.users || []).forEach(function (user, index) {
+    (data.users || []).forEach(function (user) {
       const fragment = template.content.cloneNode(true);
-      const table = fragment.querySelector('table');
-      table.setAttribute('bgcolor', index % 2 === 1 ? '#E3E3E3' : '#DEDEDE');
-      table.setAttribute('style', `background-color:${(index % 2 === 1 ? '#E3E3E3' : '#DEDEDE')} !important;`);
+      const row = fragment.querySelector('tr');
       fragment.querySelector('[data-role="admin-id"]').textContent = text(user.admin_id);
       fragment.querySelector('[data-role="name-left"]').textContent = `${text(user.prefix)} ${text(user.fname)}`;
       fragment.querySelector('[data-role="name-middle"]').textContent = text(user.lname);

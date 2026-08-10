@@ -1,104 +1,112 @@
-<div class="container shadow">
-    <div class="row">
-        <div class="col-12">
-            <div id="sub_menu">
-                <a href="/shop/product-eol-member-club" class="active"> •
-                    สินค้า</a>
-                <a href="/shop/payment">•
-                    วิธีการสั่งซื้อ</a>
-                <a href="/shop/policy-change-product">• นโยบายการเปลี่ยนสินค้า</a>
-            </div>
-            <div id="apDiv68">
-                <div class="text-center">
-                    <div id="apdiv3menubar">
-                        <a href="/shop/product-eol-member-club">
-                            <img src="/assets/images/image2/about web/menu_icon/EOL-System-Club.jpg"></a>
-                        <a href="#">
-                            <img src="/assets/images/image2/about web/menu_icon/over-personal-new.jpg"></a>
-                        <a href="/shop/product-1year">
-                            <img src="/assets/images/image2/about web/menu_icon/1year-course-new.jpg"></a>
-                        <a href="/shop/product-intelligence">
-                            <img src="/assets/images/image2/about web/menu_icon/Intelligence-package-new.jpg">
-                        </a>
-                        <a href="/shop/product-corporate">
-                            <img src="/assets/images/image2/about web/menu_icon/coporate-new.jpg"></a>
-                        <!-- <a href="/shop/product-eol-platform">
-                            <img src="/assets/images/image2/about web/menu_icon/eol-platform.jpg"
-                               ></a> -->
+<div class="bg-light py-4">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12">
+                <nav id="sub_menu" class="nav nav-pills justify-content-center flex-wrap gap-2 mb-4">
+                    <a class="nav-link active" href="/shop/product-eol-member-club">สินค้า</a>
+                    <a class="nav-link" href="/shop/payment">วิธีการสั่งซื้อ</a>
+                    <a class="nav-link" href="/shop/policy-change-product">นโยบายการเปลี่ยนสินค้า</a>
+                </nav>
 
-                        <!-- <a href="https://www.engtest.net/shop/product_gepot.php">
-                            <img src="https://www.engtest.net/image2/eol system/gepot-new.jpg"
-                               ></a> -->
+                <div id="apDiv68" class="card border-0 border-top border-5 border-warning shadow-sm mb-4">
+                    <div class="card-body">
+                        <div id="apdiv3menubar" class="row g-3 justify-content-center">
+                            <a class="col-6 col-md-4 col-lg-3 d-block text-center" href="/shop/product-eol-member-club">
+                                <img class="img-fluid rounded" src="/assets/images/image2/about web/menu_icon/EOL-System-Club.jpg" alt="EOL Member Club">
+                            </a>
+                            <a class="col-6 col-md-4 col-lg-3 d-block text-center" href="#">
+                                <img class="img-fluid rounded" src="/assets/images/image2/about web/menu_icon/over-personal-new.jpg" alt="EOL Personal">
+                            </a>
+                            <a class="col-6 col-md-4 col-lg-3 d-block text-center" href="/shop/product-1year">
+                                <img class="img-fluid rounded" src="/assets/images/image2/about web/menu_icon/1year-course-new.jpg" alt="EOL 1 Year Course">
+                            </a>
+                            <a class="col-6 col-md-4 col-lg-3 d-block text-center" href="/shop/product-intelligence">
+                                <img class="img-fluid rounded" src="/assets/images/image2/about web/menu_icon/Intelligence-package-new.jpg" alt="EOL Intelligence">
+                            </a>
+                            <a class="col-6 col-md-4 col-lg-3 d-block text-center" href="/shop/product-corporate">
+                                <img class="img-fluid rounded" src="/assets/images/image2/about web/menu_icon/coporate-new.jpg" alt="EOL Corporate">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="">
-                <div class="text-center">
-                    <div id="apDiv69" class="">
-                        <h2><strong>EOL PERSONAL PACKAGE</strong><br>
-                            <span class="">สำหรับบุคคลทั่วไป</span>
+                <div id="apDiv69" class="card border-0 border-top border-5 border-warning shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h2 class="card-title h3"><strong>EOL PERSONAL PACKAGE</strong><br>
+                            <span class="text-muted">สำหรับบุคคลทั่วไป</span>
                         </h2>
-                        <hr />
+                        <hr>
                     </div>
                 </div>
-                <br><br>
-                <div class="text_paragraph">
-                </div>
-                <% if (typeof products !=='undefined' && products.length> 0) { %>
+
+                <div class="text_paragraph"></div>
+
+                <% if (typeof products !== 'undefined' && products.length > 0) { %>
                     <% products.forEach(function(product) { %>
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="/assets/images/shop/products/<%= product.product_image %>" />
-                            </div>
-                            <div class="col-7">
-                                <table class="item_table table table-sm">
-                                    <tr>
-                                        <td><img src="/assets/images/shop/products/icon-card.png" /></td>
-                                        <td>
-                                            <%= product.product_name %>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="/assets/images/shop/products/icon-refill.png" /></td>
-                                        <td>
-                                            <%= product.product_detail %><span>*</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><img src="/assets/images/shop/products/icon-money.png" /></td>
-                                        <td>
-                                            <%= Number(product.product_cost).toLocaleString('en-US') %> Baht
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <input type="button" class="btn purchase_item" value="สั่งซื้อ">
-                                        </td>
-                                    </tr>
-                                </table>
+                        <div class="card border-0 border-top border-5 border-warning shadow-sm mb-4">
+                            <div class="card-body">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-12 col-md-5 text-center">
+                                        <img src="/assets/images/shop/products/<%= product.product_image %>" class="img-fluid rounded" alt="<%= product.product_name %>">
+                                    </div>
+                                    <div class="col-12 col-md-7">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item px-0">
+                                                <div class="row align-items-center g-2">
+                                                    <div class="col-2 text-center">
+                                                        <img src="/assets/images/shop/products/icon-card.png" class="img-fluid" alt="">
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <%= product.product_name %>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="row align-items-center g-2">
+                                                    <div class="col-2 text-center">
+                                                        <img src="/assets/images/shop/products/icon-refill.png" class="img-fluid" alt="">
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <%= product.product_detail %><span>*</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <div class="row align-items-center g-2">
+                                                    <div class="col-2 text-center">
+                                                        <img src="/assets/images/shop/products/icon-money.png" class="img-fluid" alt="">
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <%= Number(product.product_cost).toLocaleString('en-US') %> Baht
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item px-0">
+                                                <input type="button" class="btn btn-warning w-100 purchase_item" value="สั่งซื้อ">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <hr>
-                        <% }); %>
-                            <% } %>
-            </div>
-            <div>
-                <ul>
-                    <li><span>การนับวันใช้งาน</span> : จะนับจากการใช้งานจริงเท่านั้น
-                        ถ้าผู้ใช้ไม่ได้ Log in เข้าระบบ จะไม่หักวันใช้งาน</li>
-                    <li><span>Expire date</span> : ต้องใช้งานภายใน 6 เดือนหลังจาก Login
-                        วันแรก</li>
-                </ul>
-            </div>
-            <br>
-            <a href="/eol_system/personal">
-                <div class="link_shortcut">WHAT IS EOL PERSONAL?</div>
-            </a>
-            <div></div>
+                    <% }); %>
+                <% } %>
 
-            <br><br>
+                <div class="card border-0 border-top border-5 border-warning shadow-sm mb-4">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <span class="fw-bold">การนับวันใช้งาน</span> : จะนับจากการใช้งานจริงเท่านั้น ถ้าผู้ใช้ไม่ได้ Log in เข้าระบบ จะไม่หักวันใช้งาน
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">Expire date</span> : ต้องใช้งานภายใน 6 เดือนหลังจาก Login วันแรก
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="link_shortcut btn btn-warning d-inline-block my-3 text-decoration-none" href="/eol_system/personal">WHAT IS EOL PERSONAL?</a>
+            </div>
         </div>
     </div>
-</div>
 </div>

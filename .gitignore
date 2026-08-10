@@ -69,3 +69,5 @@ assets/event/*
 !assets/event/TEOC10/
 
 assets/uploads
+.playwright-mcp
+*png

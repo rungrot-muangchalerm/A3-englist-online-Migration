@@ -178,15 +178,15 @@ module.exports = {
    */
   englishRoom: async () => {
     const cards = [
-      { key: 'one_day_one_sentence', type_id: '03-01', title: 'One day One sentence', icon: 'fa-calendar-check-o', image: '/assets/images/index/One_day_One_sentence.jpg' },
-      { key: 'english_from_news', type_id: '03-12', title: 'English from News', icon: 'fa-newspaper-o', image: '/assets/images/index/English_From_News.jpg' },
-      { key: 'easy_english', type_id: '03-10', title: 'Easy English', icon: 'fa-child', image: '/assets/images/index/Easy_English.jpg' },
-      { key: 'effective_writing', type_id: '03-11', title: 'Comprehensive Listening', icon: 'fa-heart', image: '/assets/images/index/Comprehensive_Listening.jpg' },
-      { key: 'idiom', type_id: '03-03', title: 'Communicative English', icon: 'fa-text-width', image: '/assets/images/index/Proverbs_Slang_Idioms.jpg' },
-      { key: 'everyday', type_id: '03-15', title: 'Grammar & Writing', icon: 'fa-comments', image: '/assets/images/index/Everyday_English.jpg' },
-      { key: 'impressive_quote', type_id: '03-08', title: 'Pronunciation & Phonetic', icon: 'fa-briefcase', image: '/assets/images/index/Impressive_Quotes.jpg' },
-      { key: 'song', type_id: '03-07', title: 'Song of Souls', icon: 'fa-music', image: '/assets/images/index/Songs_for_Soul.jpg' },
-      { key: 'x_movie', type_id: '03-05', title: 'Movie World', icon: 'fa-film', image: '/assets/images/index/Trendy_Movies.jpg' },
+      { key: 'one_day_one_sentence', type_id: '03-01', title: 'One day One sentence', icon: 'bi-calendar-check', image: '/assets/images/index/One_day_One_sentence.jpg' },
+      { key: 'english_from_news', type_id: '03-12', title: 'English from News', icon: 'bi-newspaper', image: '/assets/images/index/English_From_News.jpg' },
+      { key: 'easy_english', type_id: '03-10', title: 'Easy English', icon: 'bi-person-arms-up', image: '/assets/images/index/Easy_English.jpg' },
+      { key: 'effective_writing', type_id: '03-11', title: 'Comprehensive Listening', icon: 'bi-heart', image: '/assets/images/index/Comprehensive_Listening.jpg' },
+      { key: 'idiom', type_id: '03-03', title: 'Communicative English', icon: 'bi-chat-left-text', image: '/assets/images/index/Proverbs_Slang_Idioms.jpg' },
+      { key: 'everyday', type_id: '03-15', title: 'Grammar & Writing', icon: 'bi-chat', image: '/assets/images/index/Everyday_English.jpg' },
+      { key: 'impressive_quote', type_id: '03-08', title: 'Pronunciation & Phonetic', icon: 'bi-briefcase', image: '/assets/images/index/Impressive_Quotes.jpg' },
+      { key: 'song', type_id: '03-07', title: 'Song of Souls', icon: 'bi-music-note-beamed', image: '/assets/images/index/Songs_for_Soul.jpg' },
+      { key: 'x_movie', type_id: '03-05', title: 'Movie World', icon: 'bi-film', image: '/assets/images/index/Trendy_Movies.jpg' },
     ];
 
     const type_ids = cards.map(card => card.type_id);

@@ -1,31 +1,40 @@
-<div class="container shadow">
-  <div class="row">
-    <div class="col-12">
-      <div class="text-center">
-        <h2><strong>EOL Certificate</strong></h2>
-        <hr />
-      </div>
-      <div id="certificate-app">
-        <div class="text-center loading">กำลังโหลด...</div>
+<div class="bg-light">
+  <div class="container-lg py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 border-top border-5 border-warning shadow-sm">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h2 class="fw-bold">EOL Certificate</h2>
+              <hr class="my-3">
+            </div>
 
-        <div class="certificate-passed">
-          <div class="text-center">
-            <div class="position-relative certificate">
-              <img src="/assets/images/certificate/certificate.jpg" alt="Certificate">
-              <div class="text_certificate position-absolute fw-bold text-center">
-                <span class="full-name"></span>
+            <div id="certificate-app">
+              <div class="text-center loading text-secondary">กำลังโหลด...</div>
+
+              <div class="certificate-passed">
+                <div class="text-center">
+                  <div class="position-relative certificate d-inline-block">
+                    <img src="/assets/images/certificate/certificate.jpg" alt="Certificate" class="img-fluid">
+                    <div class="text_certificate position-absolute fw-bold text-center">
+                      <span class="full-name"></span>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <button id="download-pdf" class="btn btn-primary">ดาวน์โหลด Certificate</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="certificate-missing mt-4">
+                <div class="alert alert-warning">
+                  <h4>คุณยังสอบผ่านทักษะที่กำหนดไม่ครบในระดับ Intermediate (Level 2) หรือสูงกว่า</h4>
+                  <p><strong>ทักษะที่ยังไม่ผ่าน:</strong> <span class="missing-skills"></span></p>
+                  <p>กรุณาทำข้อสอบทุกทักษะในระดับ Intermediate ให้ครบก่อนรับใบประกาศนียบัตร</p>
+                  <a href="/eol/eoltest" class="btn btn-primary mt-3 exam-link">ไปหน้าทำข้อสอบ</a>
+                </div>
               </div>
             </div>
-            <button id="download-pdf" class="btn btn-primary">ดาวน์โหลด Certificate</button>
-          </div>
-        </div>
-
-        <div class="certificate-missing">
-          <div class="alert alert-warning">
-            <h4>คุณยังสอบผ่านทักษะที่กำหนดไม่ครบในระดับ Intermediate (Level 2) หรือสูงกว่า</h4>
-            <p><strong>ทักษะที่ยังไม่ผ่าน:</strong> <span class="missing-skills"></span></p>
-            <p>กรุณาทำข้อสอบทุกทักษะในระดับ Intermediate ให้ครบก่อนรับใบประกาศนียบัตร</p>
-            <a href="/eol/eoltest" class="btn btn-primary mt-3 exam-link">ไปหน้าทำข้อสอบ</a>
           </div>
         </div>
       </div>

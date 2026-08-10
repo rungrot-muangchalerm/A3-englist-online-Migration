@@ -2,7 +2,7 @@
 
 {
 const ICON_MAP = {
-  'fa-map-location-dot': 'fa-map-marker',
+  'fa-map-location-dot': 'bi-geo-alt',
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -93,7 +93,7 @@ fetch(`/api/teoc/rounds?search=${encodeURIComponent(search)}&round=${encodeURICo
             cardClone.querySelector('.province-title').classList.add('text-dark');
             cardClone.querySelector('.province-count-value').classList.add('province-count');
           }
-          cardClone.querySelector('.province-icon').classList.add(isUnknown ? 'fa-question-circle' : 'fa-map-marker');
+          cardClone.querySelector('.province-icon').classList.add(isUnknown ? 'bi-question-circle' : 'bi-geo-alt');
           cardClone.querySelector('.province-name').textContent = item.province;
           cardClone.querySelector('.province-count-value').textContent = item.count;
           row.appendChild(cardClone);

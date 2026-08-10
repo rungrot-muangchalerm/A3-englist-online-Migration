@@ -1,79 +1,62 @@
-<div class="container shadow">
-    <div class="row">
-        <div class="col-12">
-            <div class="text-center">
-                <div id="forum-detail-container">
-                    <table width="95%" class="text-center table table-sm">
-                        <tr height="10" class="align-middle">
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr>
-                            <td width="10%" class="text-center">
-                                <img class="topic-image" src="" width="100" onerror="this.src='/assets/images/image2/logo/logo-02.ico'" />
-                            </td>
-                            <td class="text-center">&nbsp;&nbsp;&nbsp;</td>
-                            <td width="90%" class="detail-breadcrumb text-start">
-                                <span class="text-dark"><b><span class="topic-name"></span></b></span>
-                                <br>
-                                <a href="/">
-                                    <span><b>Home</b></span>
-                                </a>
-                                <a class="category-link" href="">
-                                    <span><b>&nbsp;&raquo;&nbsp;<span class="category-name"></span></b></span>
-                                </a>
-                                <span class="text-dark"><b>&nbsp;&raquo;&nbsp;</b></span>
-                                <a class="topic-link" href="">
-                                    <span><b><span class="topic-name-link-text"></span></b></span>
-                                </a>
-                                <br>
-                                <span class="text-dark"><b>Headline : </b><span class="topic-headline"></span></span>
-                                <br>
-                                <span class="text-dark"><b>Date : </b><span class="topic-date"></span></span>
-                                <br>
-                                <span class="text-dark"><b>View :</b> <span class="topic-view"></span></span>
-                                <br>
-                                <span class="text-dark"><b>By <span class="topic-author"></span></b></span>
-                            </td>
-                        </tr>
-                        <tr height="10" class="align-middle">
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr height="2" class="bg-secondary align-middle">
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr height="10" class="align-middle">
-                            <td colspan="3"></td>
-                        </tr>
-                        <tr height="50" class="align-middle">
-                            <td colspan="3" class="text-end">
-                                <img src="/assets/images/index/EOL19Year.png" width="220" height="195" />
-                                <div class="share-buttons">
-                                    <span class="st_facebook_button" displayText="Facebook"></span>
-                                    <span class="st_twitter_button" displayText="Tweet"></span>
-                                    <span class="st_email_button" displayText="Email"></span>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table width="95%" class="text-center table table-sm">
-                        <tr height="30" class="align-middle">
-                            <td>&nbsp;&nbsp;</td>
-                            <td width="100%" class="detail-content text-start">
-                                <div class="topic-detail"></div>
-                            </td>
-                            <td>&nbsp;&nbsp;</td>
-                        </tr>
-                        <tr height="30" class="align-middle">
-                            <td colspan="2"></td>
-                        </tr>
-                    </table>
-                </div>
+<div class="container-lg py-4">
+  <div class="row">
+    <div class="col-12">
+      <div id="forum-detail-container" class="card border-0 border-top border-5 border-warning shadow-sm">
+        <div class="card-body">
+          <div class="row align-items-start g-3">
+            <div class="col-12 col-md-2 text-center">
+              <img class="topic-image img-fluid" src="" alt="" style="max-width: 100px; max-height: 100px; object-fit: cover;" onerror="this.src='/assets/images/image2/logo/logo-02.ico'" />
             </div>
+            <div class="col-12 col-md-10 detail-breadcrumb text-start">
+              <span class="text-dark"><b><span class="topic-name"></span></b></span>
+              <br>
+              <a href="/" class="text-decoration-none">
+                <span><b>Home</b></span>
+              </a>
+              <a class="category-link text-decoration-none" href="">
+                <span><b>&nbsp;&raquo;&nbsp;<span class="category-name"></span></b></span>
+              </a>
+              <span class="text-dark"><b>&nbsp;&raquo;&nbsp;</b></span>
+              <a class="topic-link text-decoration-none" href="">
+                <span><b><span class="topic-name-link-text"></span></b></span>
+              </a>
+              <br>
+              <span class="text-dark"><b>Headline : </b><span class="topic-headline"></span></span>
+              <br>
+              <span class="text-dark"><b>Date : </b><span class="topic-date"></span></span>
+              <br>
+              <span class="text-dark"><b>View :</b> <span class="topic-view"></span></span>
+              <br>
+              <span class="text-dark"><b>By <span class="topic-author"></span></b></span>
+            </div>
+          </div>
+
+          <hr class="my-3">
+
+          <div class="row">
+            <div class="col-12 text-end">
+              <img src="/assets/images/index/EOL19Year.png" class="img-fluid" alt="" style="max-width: 220px;">
+              <div class="share-buttons mt-2">
+                <span class="st_facebook_button" displayText="Facebook"></span>
+                <span class="st_twitter_button" displayText="Tweet"></span>
+                <span class="st_email_button" displayText="Email"></span>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-3">
+
+          <div class="row">
+            <div class="col-12 detail-content text-start">
+              <div class="topic-detail"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <template id="forum-not-found-template">
-    <div>ไม่มีข้อมูล</div>
+  <div class="alert alert-warning text-center">ไม่มีข้อมูล</div>
 </template>
