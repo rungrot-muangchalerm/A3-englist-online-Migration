@@ -1,423 +1,353 @@
 <div id="view-report-academic" class="eol-view">
-    <div id="report-app">
-        <div id="report-focus-bar" class="report-focus-bar">
-            <template id="report-focus-bar-template">
-                <table width="90%" class="text-center bg-light table table-sm">
-                    <tr height="30" class="align-middle">
-                        <td width="15%" class="text-end">
-                            <span class="text-warning"><b>Focus On &nbsp; : &nbsp; </b></span>
-                        </td>
-                        <td width="85%" class="text-start">
-                            <span class="text-warning"><b class="focus-name"></b></span>
-                        </td>
-                    </tr>
-                </table><br>
-                <div class="report-section-back-wrap">
-                    <a class="back-link" href="/eol/eoltest/report<%= memberIdQuery %>">
-                        <span class="text-primary"><b>&laquo; Back to Report Menu</b></span>
-                    </a>
-                </div>
-            </template>
-        </div>
-
-        <div id="report-academic-layout" class="report-section">
-
-            <img src="/assets/images/image2/eol system/Report/report-test-evo.png" usemap="#MapAcademic" width="100%">
-            <map name="MapAcademic" id="MapAcademic">
-                <area shape="rect" coords="670,292,955,369" class="back-area" href="/eol/eoltest/report<%= memberIdQuery %>" target="_self" />
-            </map>
-            <table width="80%" class="text-center table table-sm">
-                <tr height="30" class="align-middle">
-                    <td width="15%" class="text-end bg-light">
-                        <span class="text-white"><b>Multiple Skills&nbsp;</b></span>
-                    </td>
-                    <td width="85%" class="bg-light">&nbsp;
-                        <a class="multiple-skills-link" href="/eol/eoltest/report/academic?skill_id=10<%= memberIdParam %>">
-                            <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Multiple Skills </b></span>
-                        </a>
-                    </td>
-                </tr>
-                <tr height="30" class="align-middle">
-                    <td width="15%" class="text-end bg-light">
-                        <span class="text-white"><b>Single Skill&nbsp;</b></span>
-                    </td>
-                    <td width="85%" class="bg-light">
-                        <table width="100%" class="text-center table table-sm">
-                            <tr height="25" class="align-middle">
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="1" href="/eol/eoltest/report/academic?skill_id=1<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Reading Comprehension </b></span>
-                                    </a>
-                                </td>
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="3" href="/eol/eoltest/report/academic?skill_id=3<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Semi-Speaking </b></span>
-                                    </a>
-                                </td>
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="5" href="/eol/eoltest/report/academic?skill_id=5<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Grammar </b></span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr height="25" class="align-middle">
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="2" href="/eol/eoltest/report/academic?skill_id=2<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Listening Comprehension </b></span>
-                                    </a>
-                                </td>
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="4" href="/eol/eoltest/report/academic?skill_id=4<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Semi-Writing </b></span>
-                                    </a>
-                                </td>
-                                <td width="33%">&nbsp;
-                                    <a class="skill-link" data-skill-id="7" href="/eol/eoltest/report/academic?skill_id=7<%= memberIdParam %>">
-                                        <span class="text-dark"><b><img src="/assets/images/icon/arrow.gif"> Vocabulary </b></span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="report-academic-list" class="report-section">
-            <div id="academic-list-filter">
-                <template id="report-academic-filter-template">
-                    <br>
-                    <table width="80%" class="text-center bg-light table table-sm">
-                        <tr height="40" class="align-middle">
-                            <td class="text-center">
-                                <span class="text-success"><b> Report : <span class="skill-name"></span></b></span>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <table width="60%" class="text-center bg-light table table-sm">
-                        <tr height="50" class="align-middle">
-                            <td width="13%" class="text-end">
-                                <span class="text-dark"><b>From &nbsp; : &nbsp;</b></span>
-                            </td>
-                            <td width="27%" class="text-start">&nbsp;<input id="popup_container_a" type="text" value="" size="16"></td>
-                            <td width="13%" class="text-end">
-                                <span class="text-dark"><b>Until &nbsp; : &nbsp;</b></span>
-                            </td>
-                            <td width="27%" class="text-start">&nbsp;<input id="popup_container_b" type="text" value="" size="16"></td>
-                            <td width="15%" class="text-start"><button type="button" class="btn-view btn-view-academic">&nbsp; View &nbsp;</button></td>
-                        </tr>
-                        <tr height="25" class="align-middle">
-                            <td colspan="5" class="text-center">
-                                <span class="text-danger"><b>Format Date : Ex. 2010-12-31 </b></span>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                </template>
+  <div id="report-app">
+    <div id="report-focus-bar">
+      <template id="report-focus-bar-template">
+        <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+          <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+            <div>
+              <p class="text-danger fw-semibold mb-1">Academic Report</p>
+              <h1 class="h3 fw-bold mb-1">Test Evaluation Report</h1>
+              <div class="text-body-secondary">Focus on <span class="focus-name fw-semibold text-body"></span></div>
             </div>
-            <div id="academic-list-levels">
-                <template id="report-empty-template">
-                    <table width="90%" height="25" class="text-center bg-light table table-sm">
-                        <tr>
-                            <td class="text-center"><br>
-                                <span class="text-danger"><b>&nbsp;- No Data -</b></span><br>&nbsp;
-                            </td>
-                        </tr>
-                    </table>
-                </template>
-                <template id="report-academic-level-template">
-                    <br>
-                    <table width="90%" class="text-center table table-sm">
-                        <tr height="50" class="align-middle">
-                            <td colspan="4" class="text-start">
-                                <span><b>&nbsp; <span class="level-name"></span></b></span>
-                            </td>
-                        </tr>
-                    </table>
-                    <table width="90%" class="items-table text-center table table-sm"></table>
-                    <table width="90%" class="text-center table table-sm">
-                        <tr height="10" class="align-middle">
-                            <td colspan="4"></td>
-                        </tr>
-                        <tr height="30" class="align-middle">
-                            <td>&nbsp;</td>
-                            <td colspan="3">
-                                <table width="100%" class="text-center bg-light table table-sm">
-                                    <tr height="25" class="align-middle">
-                                        <td width="15%" class="text-end">
-                                            <span class="text-primary"><b>Min&nbsp;:&nbsp;</b></span>
-                                        </td>
-                                        <td width="20%" class="text-start">
-                                            <span class="text-primary"><b class="level-min"></b></span>
-                                        </td>
-                                        <td width="15%" class="text-end">
-                                            <span class="text-danger"><b>Max&nbsp;:&nbsp;</b></span>
-                                        </td>
-                                        <td width="20%" class="text-start">
-                                            <span class="text-danger"><b class="level-max"></b></span>
-                                        </td>
-                                        <td width="15%" class="text-end">
-                                            <span class="text-success"><b>Average&nbsp;:&nbsp;</b></span>
-                                        </td>
-                                        <td width="15%" class="text-start">
-                                            <span class="text-success"><b class="level-average"></b></span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                </template>
-                <template id="report-academic-item-template">
-                    <tr height="30" class="align-middle">
-                        <td width="20%" class="text-start bg-light">
-                            <a class="item-link" target="_blank" href="#">
-                                <span class="text-warning"><b>&nbsp; <span class="item-date"></span></b></span>
-                            </a>
-                        </td>
-                        <td width="10%" class="text-end bg-light">
-                            <span class="text-dark"><b><span class="item-correct"></span> / <span class="item-total"></span>&nbsp;&nbsp;</b></span>
-                        </td>
-                        <td width="60%" class="text-start bg-light">&nbsp;<img class="item-bar" src="" width="" height="25"></td>
-                        <td width="10%" class="text-end bg-light">
-                            <span class="text-primary"><b><span class="item-percent"></span> % &nbsp; </b></span>
-                        </td>
-                    </tr>
-                    <tr height="1" class="align-middle">
-                        <td colspan="4"></td>
-                    </tr>
-                </template>
-            </div>
-        </div>
-
-        <div id="report-academic-detail" class="report-section">
-            <div id="academic-detail-header">
-                <template id="report-detail-header-template">
-
-                    <table width="90%" class="text-center bg-light table table-sm">
-                        <tr height="25" class="align-middle">
-                            <td width="11%" rowspan="4" class="text-center bg-light"><img class="detail-avatar" src="" height="" onerror="this.onerror=null;this.src='/assets/2010/member_images/icon_user_01.jpg'"></td>
-                            <td width="22%" class="text-end">
-                                <span class="text-dark"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></span>
-                            </td>
-                            <td width="50%" class="text-start">
-                                <span class="text-dark"><b>&nbsp; <span class="detail-fname"></span> &nbsp; &nbsp; <span class="detail-lname"></span> </b></span>
-                            </td>
-                            <td width="17%" rowspan="4"></td>
-                        </tr>
-                        <tr height="25" class="align-middle">
-                            <td class="text-end">
-                                <span class="text-dark"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></span>
-                            </td>
-                            <td class="text-start">
-                                <span class="text-dark"><b>&nbsp; <span class="detail-date"></span> </b></span>
-                            </td>
-                        </tr>
-                        <tr height="25" class="align-middle">
-                            <td class="text-end">
-                                <span class="text-dark"><b>ประเภทการทดสอบ &nbsp; : &nbsp; </b></span>
-                            </td>
-                            <td class="text-start">
-                                <span class="text-dark"><b> <span class="detail-section"></span> </b></span>
-                            </td>
-                        </tr>
-                        <tr height="25" class="align-middle">
-                            <td class="text-end">
-                                <span class="text-dark"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></span>
-                            </td>
-                            <td class="text-start">
-                                <span class="text-dark"><b>&nbsp; <span class="detail-amount"></span> / <span class="detail-total"></span> &nbsp; คะแนน &nbsp;&nbsp;&nbsp; คิดเป็น &nbsp; <span class="detail-percent"></span> %</b></span>
-                            </td>
-                        </tr>
-                    </table><br>
-                </template>
-
-                <template id="report-type-tabs-template">
-                    <table width="90%" class="text-center table table-sm">
-                        <tr height="30" class="align-middle">
-                            <td width="15%" class="text-center"><a class="tab-link-1" href="#"><img src="/assets/images/icon/summary-01.png"></a></td>
-                            <td width="15%" class="text-center"><a class="tab-link-2" href="#"><img src="/assets/images/icon/check your answer-01.png"></a></td>
-                            <td width="15%" class="text-center"><a class="tab-link-3" href="#"><img src="/assets/images/icon/ranking-01.png"></a></td>
-                            <td width="70%" colspan="2" class="text-start">&nbsp;</td>
-                        </tr>
-                    </table><br>
-                </template>
-            </div>
-
-            <div id="academic-detail-summary">
-                <template id="report-chart-bar-row-template">
-                    <table width="90%" class="text-center bg-light table table-sm">
-                        <tr height="40" class="align-middle">
-                            <td width="20%" class="text-end">
-                                <span><b><span class="bar-skill"></span></b></span>
-                            </td>
-                            <td width="1%" class="text-center">
-                                <span>&nbsp;:&nbsp;</span>
-                            </td>
-                            <td width="15%" class="text-end bg-light">
-                                <span>&nbsp; <span class="bar-percent"></span>% [<span class="bar-correct"></span>/<span class="bar-total"></span>]&nbsp;</span>
-                            </td>
-                            <td width="64%" class="text-start bg-light">
-                                <img src="" class="bar-image" height="25" width="">
-                            </td>
-                        </tr>
-                    </table>
-                </template>
-                <template id="report-chart-bar-avg-template">
-                    <table width="90%" class="text-center bg-light table table-sm">
-                        <tr height="40" class="align-middle">
-                            <td width="20%" class="text-end">
-                                <span><b>Average</b></span>
-                            </td>
-                            <td width="1%" class="text-center">
-                                <span>&nbsp;:&nbsp;</span>
-                            </td>
-                            <td width="15%" class="text-end bg-light">
-                                <span><b>&nbsp; <span class="avg-percent"></span>% [<span class="avg-correct"></span>/<span class="avg-total"></span>]&nbsp;</span>
-                            </td>
-                            <td width="64%" class="text-start bg-light">
-                                <img src="/assets/2010/temp_images/icon_bar/bar_08.png" height="25" class="avg-bar" width="">
-                            </td>
-                        </tr>
-                    </table>
-                </template>
-                <template id="report-weak-point-template">
-                    <div class="weak-point-skills"></div>
-                </template>
-                <template id="report-weak-point-skill-template">
-                    <table name="tb_topic_test" width="90%" height="25" class="text-center bg-light table table-sm">
-                        <tr>
-                            <td><br>
-                                <span class="text-secondary"><b>&nbsp;The Following Skills are recommended for your future practice</b></span><br>&nbsp;
-                            </td>
-                        </tr>
-                    </table>
-                </template>
-                <template id="report-weak-point-skill-group-template">
-                    <table width="90%" height="25" class="text-center bg-light table table-sm">
-                        <tr>
-                            <td>
-                                <span>&nbsp;<b class="skill-name"></b></span>
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="skill-items"></div>
-                    <br>
-                </template>
-                <template id="report-weak-point-item-template">
-                    <table width="90%" class="text-center bg-light table table-sm">
-                        <tr>
-                            <td width="30%" class="text-start">&nbsp;<span class="text-secondary"><b class="sskill-name"></b></span>
-                            </td>
-                            <td class="text-center">
-                                <span class="text-secondary"><b>&nbsp;:&nbsp;&nbsp;</b></span>
-                            </td>
-                            <td width="70%" class="text-start">
-                                <a class="detail-link" target="_blank" href="#">
-                                    <span class="text-danger"><b class="detail-name"></b></span>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </template>
-            </div>
-
-            <div id="academic-detail-answers">
-                <template id="report-test-question-template">
-                    <table width="90%" class="text-center bg-light table table-sm">
-                        <tr height="10" class="align-middle">
-                            <td rowspan="6">&nbsp;&nbsp;</td>
-                            <td colspan="2"></td>
-                            <td rowspan="5">&nbsp;&nbsp;</td>
-                        </tr>
-                        <tr class="relate-row">
-                            <td width="100%" colspan="2" class="relate-cell text-start"></td>
-                        </tr>
-                        <tr height="25" class="align-middle">
-                            <td width="5%" rowspan="3" class="text-center">
-                                <span><b class="q-no"></b></span>
-                            </td>
-                            <td width="95%">
-                                <span></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table width="100%" class="text-center table table-sm">
-                                    <tr>
-                                        <td width="75%">
-                                            <span>
-                                                <div class="answers"></div>
-                                                <br><b>
-                                                    <span class="text-primary"></span>&nbsp;<span class="msg-b"></span>
-                                                </b>
-                                            </span>
-                                        </td>
-                                        <td width="25%" class="icon-cell text-center"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-start">
-                                <table width="100%" class="text-center table table-sm">
-                                    <tr>
-                                        <td width="80%" class="text-start">
-                                            <span class="text-warning"><b>Tip : <span class="reason-name"></span></span></b>
-                                        </td>
-                                        <td width="20%" class="text-center">
-                                            <a class="lesson-link" target="_blank" href="#">
-                                                <b>
-                                                    <span class="text-success">&raquo; Go to Lessons &laquo;</span>
-                                                </b>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="description-row">
-                                        <td width="80%" class="text-start">
-                                            <span><b>Description : </span></b>
-                                        </td>
-                                        <td width="20%" class="text-end">&nbsp;</td>
-                                    </tr>
-                                    <tr class="description-row">
-                                        <td colspan="2" width="100%">
-                                            <span></span>
-                                        </td>
-                                    </tr>
-                                    <tr height="25" class="align-middle">
-                                        <td colspan="2" class="text-center"></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr height="10" class="align-middle">
-                            <td></td>
-                        </tr>
-                    </table><br>
-                </template>
-                <template id="report-test-relate-text-template">
-                    <span class="relate-text"></span><br>&nbsp;
-                </template>
-                <template id="report-test-relate-image-template">
-                    <img src="" width="300"><br>&nbsp;
-                </template>
-                <template id="report-test-relate-audio-template">
-                    <audio controls="controls" preload="none">
-                        <source src="">
-                    </audio><br>&nbsp;
-                </template>
-                <template id="report-test-answer-template">
-                    <span></span><br>
-                </template>
-                <template id="report-test-icon-template">
-                    <img src="">
-                </template>
-                <template id="report-test-msg-template">
-                    <span></span>
-                </template>
-            </div>
-
-        </div>
+            <a class="back-link btn btn-outline-secondary align-self-start" href="/eol/eoltest/report<%= memberIdQuery %>">
+              <i class="bi bi-arrow-left"></i> Back to Report Menu
+            </a>
+          </div>
+        </section>
+      </template>
     </div>
+
+    <div id="report-academic-layout" class="report-section">
+      <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+        <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+          <div>
+            <p class="text-danger fw-semibold mb-1">Report Center</p>
+            <h2 class="h4 fw-bold mb-0">Select Skill Report</h2>
+          </div>
+          <a class="back-area btn btn-outline-secondary align-self-start" href="/eol/eoltest/report<%= memberIdQuery %>">
+            <i class="bi bi-arrow-left"></i> Back
+          </a>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6 col-xl-4">
+            <a class="multiple-skills-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" href="/eol/eoltest/report/academic?skill_id=10<%= memberIdParam %>">
+              <span class="btn btn-danger rounded-circle"><i class="bi bi-layers"></i></span>
+              <span class="flex-grow-1">
+                <strong class="d-block">Multiple Skills</strong>
+                <small class="text-body-secondary">Integrated skill results</small>
+              </span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="1" href="/eol/eoltest/report/academic?skill_id=1<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-book"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Reading Comprehension</strong><small class="text-body-secondary">Reading results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="2" href="/eol/eoltest/report/academic?skill_id=2<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-headphones"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Listening Comprehension</strong><small class="text-body-secondary">Listening results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="3" href="/eol/eoltest/report/academic?skill_id=3<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-mic"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Semi-Speaking</strong><small class="text-body-secondary">Speaking results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="4" href="/eol/eoltest/report/academic?skill_id=4<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-pencil-square"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Semi-Writing</strong><small class="text-body-secondary">Writing results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="5" href="/eol/eoltest/report/academic?skill_id=5<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-braces"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Grammar</strong><small class="text-body-secondary">Grammar results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a class="skill-link d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" data-skill-id="7" href="/eol/eoltest/report/academic?skill_id=7<%= memberIdParam %>">
+              <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-card-text"></i></span>
+              <span class="flex-grow-1"><strong class="d-block">Vocabulary</strong><small class="text-body-secondary">Vocabulary results</small></span>
+              <i class="bi bi-arrow-right text-danger"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="report-academic-list" class="report-section d-none">
+      <div id="academic-list-filter">
+        <template id="report-academic-filter-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+            <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+              <div>
+                <p class="text-danger fw-semibold mb-1">Report</p>
+                <h2 class="h4 fw-bold mb-0 skill-name"></h2>
+              </div>
+              <div class="row g-2 align-items-end">
+                <div class="col-sm-auto">
+                  <label for="popup_container_a" class="form-label small">From</label>
+                  <input id="popup_container_a" type="text" value="" class="form-control form-control-sm">
+                </div>
+                <div class="col-sm-auto">
+                  <label for="popup_container_b" class="form-label small">Until</label>
+                  <input id="popup_container_b" type="text" value="" class="form-control form-control-sm">
+                </div>
+                <div class="col-sm-auto">
+                  <button type="button" class="btn btn-danger btn-sm btn-view-academic">View</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-text mt-2">Format Date: 2010-12-31</div>
+          </section>
+        </template>
+      </div>
+
+      <div id="academic-list-levels">
+        <template id="report-empty-template">
+          <div class="alert alert-danger">No Data</div>
+        </template>
+
+        <template id="report-academic-level-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+            <div class="d-flex flex-column flex-lg-row justify-content-between gap-2 mb-3">
+              <h3 class="h5 fw-bold mb-0"><span class="level-title"></span><span class="level-name"></span></h3>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge text-bg-primary">Min <span class="level-min"></span></span>
+                <span class="badge text-bg-danger">Max <span class="level-max"></span></span>
+                <span class="badge text-bg-success">Average <span class="level-average"></span></span>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="items-table table table-sm table-hover align-middle mb-0"></table>
+            </div>
+          </section>
+        </template>
+
+        <template id="report-academic-item-template">
+          <tr>
+            <td>
+              <a class="item-link text-warning fw-semibold text-decoration-none" target="_blank" href="#">
+                <span class="item-date"></span>
+              </a>
+            </td>
+            <td class="text-end"><span class="item-correct"></span> / <span class="item-total"></span></td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar bg-danger item-progress" role="progressbar">
+                  <img class="item-bar d-none" src="" alt="">
+                </div>
+              </div>
+            </td>
+            <td class="text-end text-primary fw-semibold"><span class="item-percent"></span>%</td>
+          </tr>
+        </template>
+      </div>
+    </div>
+
+    <div id="report-academic-detail" class="report-section d-none">
+      <div id="academic-detail-header">
+        <template id="report-detail-header-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+            <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3">
+              <img class="detail-avatar rounded-circle border" src="" height="" alt="">
+              <div class="flex-grow-1">
+                <h2 class="h4 fw-bold mb-2"><span class="detail-fname"></span> <span class="detail-lname"></span></h2>
+                <div class="row g-2 small text-body-secondary">
+                  <div class="col-md-4">Date: <span class="detail-date text-body"></span></div>
+                  <div class="col-md-4">Type: <span class="detail-section text-body"></span></div>
+                  <div class="col-md-4">Score: <span class="detail-amount text-body"></span> / <span class="detail-total text-body"></span> (<span class="detail-percent text-body"></span>%)</div>
+                </div>
+              </div>
+              <a class="back-link btn btn-outline-secondary align-self-start" href="/eol/eoltest/report<%= memberIdQuery %>">
+                <i class="bi bi-arrow-left"></i> Back
+              </a>
+            </div>
+          </section>
+        </template>
+
+        <template id="report-type-tabs-template">
+          <nav class="nav nav-pills gap-2 mb-3">
+            <a class="tab-link-1 nav-link" href="#"><i class="bi bi-bar-chart"></i> Summary</a>
+            <a class="tab-link-2 nav-link" href="#"><i class="bi bi-check2-square"></i> Answers</a>
+            <a class="tab-link-3 nav-link" href="#"><i class="bi bi-trophy"></i> Ranking</a>
+          </nav>
+        </template>
+      </div>
+
+      <div id="academic-detail-summary">
+        <template id="report-chart-bar-row-template">
+          <div class="bg-body-tertiary border rounded-3 p-3 mb-2">
+            <div class="d-flex justify-content-between gap-3 mb-2">
+              <strong class="bar-skill"></strong>
+              <span><span class="bar-percent"></span>% [<span class="bar-correct"></span>/<span class="bar-total"></span>]</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger bar-progress" role="progressbar">
+                <img src="" class="bar-image d-none" alt="">
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <template id="report-chart-bar-avg-template">
+          <div class="bg-body-tertiary border border-success rounded-3 p-3 mb-3">
+            <div class="d-flex justify-content-between gap-3 mb-2">
+              <strong>Average</strong>
+              <span><span class="avg-percent"></span>% [<span class="avg-correct"></span>/<span class="avg-total"></span>]</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success avg-progress" role="progressbar">
+                <img src="/assets/2010/temp_images/icon_bar/bar_08.png" class="avg-bar d-none" alt="">
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <template id="report-weak-point-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3">
+            <h3 class="h5 fw-bold mb-3">Recommended Practice</h3>
+            <div class="weak-point-skills"></div>
+          </section>
+        </template>
+        <template id="report-weak-point-skill-template">
+          <p class="text-body-secondary mb-3">The following skills are recommended for your future practice.</p>
+        </template>
+        <template id="report-weak-point-skill-group-template">
+          <div class="border rounded-3 p-3 mb-3">
+            <h4 class="h6 fw-bold skill-name"></h4>
+            <div class="skill-items list-group"></div>
+          </div>
+        </template>
+        <template id="report-weak-point-item-template">
+          <div class="list-group-item">
+            <span class="text-body-secondary sskill-name"></span>
+            <a class="detail-link d-block text-danger fw-semibold text-decoration-none" target="_blank" href="#">
+              <span class="detail-name"></span>
+            </a>
+          </div>
+        </template>
+      </div>
+
+      <div id="academic-detail-answers">
+        <template id="report-test-question-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+            <div class="relate-row d-none mb-3">
+              <div class="relate-cell"></div>
+            </div>
+            <div class="d-flex gap-3">
+              <span class="badge text-bg-danger align-self-start q-no"></span>
+              <div class="flex-grow-1">
+                <div class="fw-semibold mb-3 q-text"></div>
+                <div class="answers mb-3"></div>
+                <div class="mb-3">
+                  <span class="text-primary msg-a"></span>
+                  <span class="msg-b"></span>
+                </div>
+                <div class="icon-cell mb-3"></div>
+                <div class="border-top pt-3">
+                  <div class="text-warning fw-semibold">Tip: <span class="reason-name"></span></div>
+                  <a class="lesson-link btn btn-outline-success btn-sm mt-2" target="_blank" href="#">Go to Lessons</a>
+                  <div class="description-row d-none mt-3">
+                    <strong>Description:</strong>
+                  </div>
+                  <div class="description-row d-none">
+                    <span class="description-text"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </template>
+        <template id="report-test-relate-text-template">
+          <p class="relate-text mb-0"></p>
+        </template>
+        <template id="report-test-relate-image-template">
+          <img src="" width="300" alt="" class="img-fluid rounded border">
+        </template>
+        <template id="report-test-relate-audio-template">
+          <audio controls="controls" preload="none" class="w-100">
+            <source src="">
+          </audio>
+        </template>
+        <template id="report-test-answer-template">
+          <div class="mb-1"><span class="answer-text"></span></div>
+        </template>
+        <template id="report-test-icon-template">
+          <img src="" alt="" class="img-fluid">
+        </template>
+        <template id="report-test-msg-template">
+          <span class="msg-text"></span>
+        </template>
+      </div>
+
+      <div id="academic-detail-group">
+        <template id="report-view-group-empty-template">
+          <div class="alert alert-danger">No Data</div>
+        </template>
+        <template id="report-view-group-template">
+          <section class="bg-body-tertiary border rounded-3 shadow-sm p-3">
+            <h3 class="h5 fw-bold mb-3">View Group</h3>
+            <div class="row g-2 mb-3">
+              <div class="col-md-3"><span class="badge text-bg-primary w-100">Total <span class="vg-total"></span></span></div>
+              <div class="col-md-3"><span class="badge text-bg-danger w-100">Min <span class="vg-min"></span></span></div>
+              <div class="col-md-3"><span class="badge text-bg-success w-100">Max <span class="vg-max"></span></span></div>
+              <div class="col-md-3"><span class="badge text-bg-secondary w-100">Average <span class="vg-average"></span></span></div>
+            </div>
+            <div class="table-responsive mb-3">
+              <table class="distribution-table table table-sm align-middle"></table>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-sm table-hover align-middle">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th class="text-end">Highest %</th>
+                    <th class="text-center">Amount</th>
+                  </tr>
+                </thead>
+                <tbody class="ranking-table"></tbody>
+              </table>
+            </div>
+          </section>
+        </template>
+        <template id="report-view-group-distribution-template">
+          <tr>
+            <td class="dist-label fw-semibold"></td>
+            <td class="dist-amount"></td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar bg-danger dist-progress" role="progressbar">
+                  <img src="" class="dist-bar d-none" alt="">
+                </div>
+              </div>
+            </td>
+            <td class="text-end"><span class="dist-ratio"></span>%</td>
+          </tr>
+        </template>
+        <template id="report-view-group-ranking-template">
+          <tr class="rank-row">
+            <td class="rank-order fw-semibold"></td>
+            <td class="rank-fname"></td>
+            <td class="rank-lname"></td>
+            <td class="rank-highest text-end"></td>
+            <td class="rank-amount text-center"></td>
+          </tr>
+        </template>
+      </div>
+    </div>
+  </div>
+</div>

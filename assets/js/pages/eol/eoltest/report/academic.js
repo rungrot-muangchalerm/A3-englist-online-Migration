@@ -27,6 +27,16 @@ function clearContainerKeepTemplates(id) {
   });
 }
 
+function setProgressClass(el, percent) {
+  if (!el) return;
+  el.classList.remove('w-25', 'w-50', 'w-75', 'w-100');
+  const value = Number(percent) || 0;
+  if (value >= 75) el.classList.add('w-100');
+  else if (value >= 50) el.classList.add('w-75');
+  else if (value >= 25) el.classList.add('w-50');
+  else el.classList.add('w-25');
+}
+
 function renderFocusBar(focus) {
   const container = document.getElementById('report-focus-bar');
   const template = document.getElementById('report-focus-bar-template');
@@ -93,7 +103,7 @@ function renderAcademicList(listData) {
     listData.levels.forEach((lvl) => {
       const levelClone = levelTemplate.content.cloneNode(true);
       const title = levelClone.querySelector('.level-title');
-      if (title) title.setAttribute('color', lvl.color);
+      if (title) title.textContent = '';
       const levelName = levelClone.querySelector('.level-name');
       if (levelName) levelName.textContent = lvl.levelName;
       const itemsTable = levelClone.querySelector('.items-table');
@@ -110,8 +120,8 @@ function renderAcademicList(listData) {
         const bar = itemClone.querySelector('.item-bar');
         if (bar) {
           bar.src = `/assets/2010/temp_images/icon_bar/${lvl.bar}`;
-          bar.width = Math.max(0, 510 * (Number(item.percent) / 100));
         }
+        setProgressClass(itemClone.querySelector('.item-progress'), item.percent);
         const percentEl = itemClone.querySelector('.item-percent');
         if (percentEl) percentEl.textContent = item.percent;
         if (itemsTable) itemsTable.appendChild(itemClone);
@@ -232,7 +242,7 @@ function renderAcademicDetail(d) {
         if (textEl) {
           textEl.textContent = `${a.index}.  ${a.text}`;
           if (a.selected) {
-            textEl.setAttribute('color', 'orange');
+            textEl.classList.add('text-warning');
             textEl.classList.add('fw-bold');
           }
         }
@@ -248,7 +258,7 @@ function renderAcademicDetail(d) {
         const msgClone = msgTemplate.content.cloneNode(true);
         const msgText = msgClone.querySelector('.msg-text');
         if (msgText) {
-          msgText.setAttribute('color', q.isCorrect ? 'green' : 'red');
+          msgText.classList.add(q.isCorrect ? 'text-success' : 'text-danger');
           msgText.textContent = q.isCorrect ? "It's a correct answer." : "It's an incorrect answer.";
         }
         if (msgBEl) msgBEl.appendChild(msgClone);
@@ -304,8 +314,8 @@ function renderAcademicDetail(d) {
         const bar = dClone.querySelector('.dist-bar');
         if (bar) {
           bar.src = `/assets/2010/temp_images/icon_bar/bar_0${rand}.png`;
-          bar.setAttribute('aria-valuenow', `${dist.ratio}%`);
         }
+        setProgressClass(dClone.querySelector('.dist-progress'), dist.ratio);
         const ratio = dClone.querySelector('.dist-ratio');
         if (ratio) ratio.textContent = dist.ratio;
         if (distTable) distTable.appendChild(dClone);
@@ -314,7 +324,7 @@ function renderAcademicDetail(d) {
       d.viewGroup.ranking.forEach((r) => {
         const rClone = rankTemplate.content.cloneNode(true);
         const row = rClone.querySelector('.rank-row');
-        if (row) row.setAttribute('bgcolor', r.isFocus ? '#ffd0ff' : (r.order % 2 === 1 ? '#f7f7f7' : '#f0f0f0'));
+        if (row && r.isFocus) row.classList.add('table-danger');
         const order = rClone.querySelector('.rank-order');
         if (order) order.textContent = r.order;
         const fname = rClone.querySelector('.rank-fname');
@@ -348,8 +358,8 @@ function renderAcademicDetail(d) {
           const img = bClone.querySelector('.bar-image');
           if (img) {
             img.src = `/assets/2010/temp_images/icon_bar/${bar.barImage}`;
-            img.setAttribute('aria-valuenow', `${bar.percent}%`);
           }
+          setProgressClass(bClone.querySelector('.bar-progress'), bar.percent);
           target.appendChild(bClone);
         });
       }
@@ -362,7 +372,8 @@ function renderAcademicDetail(d) {
         const avgTotal = avgClone.querySelector('.avg-total');
         if (avgTotal) avgTotal.textContent = d.chartBar.averageTotal;
         const avgBar = avgClone.querySelector('.avg-bar');
-        if (avgBar) avgBar.setAttribute('aria-valuenow', `${d.chartBar.averagePercent}%`);
+        if (avgBar) avgBar.src = '/assets/2010/temp_images/icon_bar/bar_08.png';
+        setProgressClass(avgClone.querySelector('.avg-progress'), d.chartBar.averagePercent);
         target.appendChild(avgClone);
       }
     }

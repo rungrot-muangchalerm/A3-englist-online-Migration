@@ -1,8 +1,8 @@
 <div id="view-statistics" class="eol-view">
-  <ul class="tabs">
-    <li data-role="tab-overview" class="active tab">Overview Statistic</li>
-    <li data-role="tab-evaluation" class="tab">Test &amp; Evaluation</li>
-    <li data-role="tab-contest" class="tab">EOL Contest</li>
+  <ul class="tabs nav nav-pills gap-2 mb-3">
+    <li data-role="tab-overview" class="active tab nav-link">Overview Statistic</li>
+    <li data-role="tab-evaluation" class="tab nav-link">Test &amp; Evaluation</li>
+    <li data-role="tab-contest" class="tab nav-link">EOL Contest</li>
   </ul>
   <hr>
 
@@ -10,19 +10,19 @@
     <div class="text-center">
       <h1>Overview Statistic</h1>
     </div>
-    <table width='60%' class="text-center bg-light table table-sm">
+    <table width='60%' class="text-center bg-body-secondary table table-sm table-bordered align-middle">
       <tr height='50' class="align-middle">
         <td width='13%' class="text-end">
-          <span class="text-dark"><b>From &nbsp; : &nbsp;</b></span>
+          <span class="text-body"><b>From &nbsp; : &nbsp;</b></span>
         </td>
         <td width='27%' class="text-start">&nbsp;
-          <input id='statistics-start' type='text' size='15' required>
+          <input id='statistics-start' class="form-control form-control-sm" type='text' required>
         </td>
         <td width='13%' class="text-end">
-          <span class="text-dark"><b>Until &nbsp; : &nbsp;</b></span>
+          <span class="text-body"><b>Until &nbsp; : &nbsp;</b></span>
         </td>
         <td width='27%' class="text-start">&nbsp;
-          <input id='statistics-stop' type='text' size='15' required>
+          <input id='statistics-stop' class="form-control form-control-sm" type='text' required>
         </td>
       </tr>
       <tr height=50 class="align-middle">
@@ -30,11 +30,11 @@
           <span><b>View &nbsp; : &nbsp;</b></span>
         </td>
         <td width=40% colspan='2' class="text-start">
-          <select id='statistics-group-id' title='Please select group you want view'>
+          <select id='statistics-group-id' class="form-select form-select-sm" title='Please select group you want view'>
           </select>
         </td>
         <td width='20%' class="text-center">
-          <input type='button' value='View Statistics' class='view_statistic' id='statistics-view-btn'>
+          <input type='button' value='View Statistics' class='btn btn-danger btn-sm' id='statistics-view-btn'>
         </td>
       </tr>
     </table><br>
@@ -78,8 +78,8 @@
         <tr>
           <td class="text-center">
             <form class="text-center">
-              <input type="button" class='yui3-button' value="export overview test &amp; evaluation" id="statistics-export-overview-btn">
-              <input type="button" class='yui3-button' value="export usage history" id="statistics-export-usage-btn">
+              <input type="button" class='btn btn-outline-light btn-sm' value="export overview test &amp; evaluation" id="statistics-export-overview-btn">
+              <input type="button" class='btn btn-outline-light btn-sm' value="export usage history" id="statistics-export-usage-btn">
             </form>
           </td>
         </tr>
@@ -111,8 +111,8 @@
     <table width='95%' class="text-center table table-sm">
       <tr height=30 class="align-middle">
         <td width=90% class="text-center">
-          <select id='evaluation-group-id'></select>
-          <select id='evaluation-skill-id'>
+          <select id='evaluation-group-id' class="form-select form-select-sm d-inline-block w-auto"></select>
+          <select id='evaluation-skill-id' class="form-select form-select-sm d-inline-block w-auto">
             <option value='1'>Reading Comprehension</option>
             <option value='2'>Listening Comprehension</option>
             <option value='3'>Semi - Speaking</option>
@@ -121,7 +121,7 @@
             <option value='5'>Grammar</option>
             <option value='10'>Multiple Skills</option>
           </select>
-          <select id='evaluation-level-id'>
+          <select id='evaluation-level-id' class="form-select form-select-sm d-inline-block w-auto">
             <option value='1'>Beginner</option>
             <option value='2'>Lower Intermediate</option>
             <option value='3'>Intermediate</option>
@@ -132,13 +132,13 @@
       </tr>
       <tr>
         <td width=90% class="text-center">
-          <b>From : </b><input type='text' id='evaluation-start' size='15'>&nbsp;&nbsp;
-          <b>Until : </b><input type='text' id='evaluation-stop' size='15'>
-          <select id='evaluation-sort'>
+          <b>From : </b><input type='text' id='evaluation-start' class="form-control form-control-sm d-inline-block w-auto">&nbsp;&nbsp;
+          <b>Until : </b><input type='text' id='evaluation-stop' class="form-control form-control-sm d-inline-block w-auto">
+          <select id='evaluation-sort' class="form-select form-select-sm d-inline-block w-auto">
             <option value='1'>Sort by ID</option>
             <option value='2'>Sort by Point</option>
           </select>
-          <input type='button' id='evaluation-view-btn' value='View Graph' class='view_graph'>
+          <input type='button' id='evaluation-view-btn' value='View Graph' class='btn btn-danger btn-sm'>
         </td>
       </tr>
     </table>
@@ -198,17 +198,17 @@
     <table width='90%' class="text-center table table-sm">
       <tr height=30 class="align-middle">
         <td width=80% class="text-center">
-          <select id='contest-group-id'></select>
-          <select id='contest-exam-id'></select>
+          <select id='contest-group-id' class="form-select form-select-sm d-inline-block w-auto"></select>
+          <select id='contest-exam-id' class="form-select form-select-sm d-inline-block w-auto"></select>
         </td>
       </tr>
       <tr height=30 class="align-middle">
         <td width=80% class="text-center">
           <b>From&nbsp;:</b>
-          <input id='contest-start' type='text' size='15'>
+          <input id='contest-start' class="form-control form-control-sm d-inline-block w-auto" type='text'>
           <b>&nbsp;&nbsp;Until &nbsp;:</b>
-          <input id='contest-stop' type='text' size='15'>
-          <input type='button' id='contest-view-btn' value='View Contest' class='view_contest'>
+          <input id='contest-stop' class="form-control form-control-sm d-inline-block w-auto" type='text'>
+          <input type='button' id='contest-view-btn' value='View Contest' class='btn btn-danger btn-sm'>
         </td>
       </tr>
     </table>
@@ -258,7 +258,7 @@
       <input type='hidden' name='stop' data-role="contest-export-stop">
       <input type='hidden' name='exam_name' data-role="contest-export-exam-name">
       <input type='hidden' name='exam_id' data-role="contest-export-exam-id">
-      <input type='submit' value='export result'>
+      <input type='submit' value='export result' class="btn btn-outline-light btn-sm">
     </form>
     <br>
   </div>
@@ -272,11 +272,11 @@
   <template id="statistics-member-header-template">
     <tr height=25 class="align-middle">
       <td width=5% rowspan=8 class="text-center bg-secondary-subtle">
-        <span></span>
+        <span data-role="no"></span>
       </td>
       <td colspan=6 class="text-start bg-secondary-subtle">
         <a target=_blank href='' data-role="report-link">
-          <span class="text-dark"></span>
+          <span class="text-body" data-role="name"></span>
         </a>
       </td>
     </tr>
@@ -284,23 +284,23 @@
 
   <template id="statistics-skill-row-template">
     <tr height=25 class="align-middle">
-      <td width=22% class="text-end bg-light">
-        <span class="text-dark"></span>
+      <td width=22% class="text-end bg-body-secondary">
+        <span class="text-body" data-role="skill-name"></span>
       </td>
       <td width=15% class="text-end bg-secondary-subtle">
-        <span class="text-dark"></span>
+        <span class="text-body" data-role="level-1"></span>
       </td>
-      <td width=15% class="text-end bg-light">
-        <span class="text-dark"></span>
-      </td>
-      <td width=15% class="text-end bg-secondary-subtle">
-        <span class="text-dark"></span>
-      </td>
-      <td width=15% class="text-end bg-light">
-        <span class="text-dark"></span>
+      <td width=15% class="text-end bg-body-secondary">
+        <span class="text-body" data-role="level-2"></span>
       </td>
       <td width=15% class="text-end bg-secondary-subtle">
-        <span class="text-dark"></span>
+        <span class="text-body" data-role="level-3"></span>
+      </td>
+      <td width=15% class="text-end bg-body-secondary">
+        <span class="text-body" data-role="level-4"></span>
+      </td>
+      <td width=15% class="text-end bg-secondary-subtle">
+        <span class="text-body" data-role="level-5"></span>
       </td>
     </tr>
   </template>
@@ -326,20 +326,20 @@
       </tr>
       <tbody data-role="history-rows"></tbody>
       <tr>
-        <td class="text-start bg-light">
+        <td class="text-start bg-body-secondary">
           <span class="text-primary">&nbsp;</span>
         </td>
-        <td class="text-center bg-light">
+        <td class="text-center bg-body-secondary">
           <span class="text-warning">&nbsp;</span>
         </td>
-        <td class="text-center bg-light">
+        <td class="text-center bg-body-secondary">
           <span class="text-warning">&nbsp;</span>
         </td>
-        <td class="text-center bg-light">
+        <td class="text-center bg-body-secondary">
           <span class="text-danger"><b>รวมเวลา</b></span>
         </td>
-        <td class="text-center bg-light">
-          <span class="text-danger"></span>
+        <td class="text-center bg-body-secondary">
+          <span class="text-danger" data-role="total-text"></span>
         </td>
       </tr>
     </table>
@@ -347,20 +347,20 @@
 
   <template id="statistics-history-row-template">
     <tr>
-      <td class="text-start bg-light">
+      <td class="text-start bg-body-secondary">
         <span class="text-primary">&nbsp;&nbsp;<span data-role="date-text"></span></span>
       </td>
-      <td class="text-center bg-light">
-        <span class="text-warning"></span>
+      <td class="text-center bg-body-secondary">
+        <span class="text-warning" data-role="start-time"></span>
       </td>
-      <td class="text-center bg-light">
-        <span class="text-success"></span>
+      <td class="text-center bg-body-secondary">
+        <span class="text-success" data-role="stop-time"></span>
       </td>
-      <td class="text-center bg-light">
-        <span class="text-success"></span>
+      <td class="text-center bg-body-secondary">
+        <span class="text-success" data-role="tests"></span>
       </td>
-      <td class="text-center bg-light">
-        <span class="text-danger"></span>
+      <td class="text-center bg-body-secondary">
+        <span class="text-danger" data-role="duration-text"></span>
       </td>
     </tr>
   </template>
@@ -368,24 +368,24 @@
   <template id="statistics-evaluation-row-template">
     <tr>
       <td width='2%' class="text-center">
-        <span></span>
+        <span data-role="no"></span>
       </td>
       <td width='11%' class="text-center">
         <a target='_blank' href='' data-role="report-link">
-          <span></span>
+          <span data-role="date"></span>
         </a>
       </td>
       <td width='10%' class="text-center">
-        <span></span>
+        <span data-role="name"></span>
       </td>
       <td width='10%' class="text-center">
         <img src='/assets/2010/temp_images/icon_bar/bar_07.png' height='20' data-role="bar">
       </td>
       <td width='5%' class="text-center">
-        <span></span>
+        <span data-role="percent"></span>
       </td>
       <td width='6%' class="text-center">
-        <span></span>
+        <span data-role="score"></span>
       </td>
     </tr>
   </template>

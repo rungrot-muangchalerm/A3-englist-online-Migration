@@ -1,90 +1,56 @@
-<div id="eolcontest-app" class="f-thai">
-  <div class="ecop-header">
-    <img src="/assets/images/icon/icon_corporate.png">
-    <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
-  </div>
+<div id="eolcontest-app">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+      <div>
+        <p class="text-danger fw-semibold mb-1">Corporate Member's Use</p>
+        <h1 class="h3 fw-bold mb-0">รายละเอียดของแบบทดสอบ EOL Contest</h1>
+      </div>
+      <a href="/eol/eoltest/eolcontest" class="btn btn-outline-secondary align-self-start"><i class="bi bi-arrow-left"></i> Back</a>
+    </div>
 
-  <div class="info-box">
-    <table>
-      <tr>
-        <td colspan="2">
-          <span class="text-primary"><b>รายละเอียดของแบบทดสอบ EOL Contest</b></span>
-        </td>
-      </tr>
-      <tr>
-        <td width="30%">
-          <span> - ชื่อชุดข้อสอบ </span>
-        </td>
-        <td>
-          <span class="text-success">-</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> - รูปแบบการสอบ </span>
-        </td>
-        <td>
-          <span class="text-success">-</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span> - ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> - จำนวนคำถามในแบบทดสอบชุดนี้ </span>
-        </td>
-        <td>
-          <span class="text-success">-</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> - ระยะเวลาในการทำแบบทดสอบชุดนี้ </span>
-        </td>
-        <td>
-          <span class="text-success">-</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span> - ข้อสอบแต่ละข้อมี : 1 คะแนน </span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span> - กดที่ <span class="text-warning">Start</span> ทางด้านล่างเพื่อเริ่มทำแบบทดสอบ </span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span> - เมื่อกดปุ่ม <span class="text-warning">Start</span> ระบบจะเริ่มจับเวลาทันที </span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span> - กดที่ <span class="text-success">Finish</span> เพื่อประเมินผลแบบทดสอบชุดนี้ </span>
-        </td>
-      </tr>
-      <tr id="contest-note-row">
-        <td colspan="2">
-          <span class="text-danger"><b>- หมายเหตุ </b></span>
-          <span class="text-success">ข้อสอบรูปแบบการแข่งขัน เมื่อท่านกดปุ่ม Record your answer ท่านไม่สามารถเปลี่ยนคำตอบได้อีกแล้ว ดังนั้นเลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" class="text-center">
-          <button id="contest-start-btn" class="btn-start">Start</button>
-        </td>
-      </tr>
-    </table>
-  </div>
+    <div class="table-responsive">
+      <table class="table table-sm align-middle">
+        <tr>
+          <th class="w-25">ชื่อชุดข้อสอบ</th>
+          <td><span id="contest-exam-name" class="text-success">-</span></td>
+        </tr>
+        <tr>
+          <th>รูปแบบการสอบ</th>
+          <td><span id="contest-test-type" class="text-success">-</span></td>
+        </tr>
+        <tr>
+          <th>ประเภทข้อสอบ</th>
+          <td>ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</td>
+        </tr>
+        <tr>
+          <th>จำนวนคำถาม</th>
+          <td><span id="contest-amount" class="text-success">-</span></td>
+        </tr>
+        <tr>
+          <th>ระยะเวลา</th>
+          <td><span id="contest-time" class="text-success">-</span></td>
+        </tr>
+        <tr>
+          <th>คะแนน</th>
+          <td>ข้อสอบแต่ละข้อมี 1 คะแนน</td>
+        </tr>
+        <tr>
+          <th>เริ่มสอบ</th>
+          <td>กดที่ <span class="text-warning">Start</span> เพื่อเริ่มทำแบบทดสอบ ระบบจะเริ่มจับเวลาทันที</td>
+        </tr>
+        <tr>
+          <th>สิ้นสุด</th>
+          <td>กดที่ <span class="text-success">Finish</span> เพื่อประเมินผลแบบทดสอบชุดนี้</td>
+        </tr>
+        <tr id="contest-note-row">
+          <th><span class="text-danger">หมายเหตุ</span></th>
+          <td><span class="text-success">ข้อสอบรูปแบบการแข่งขัน เมื่อท่านกดปุ่ม Record your answer ท่านไม่สามารถเปลี่ยนคำตอบได้อีกแล้ว ดังนั้นเลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</span></td>
+        </tr>
+      </table>
+    </div>
 
-  <div class="back-wrap">
-    <a href="/eol/eoltest/eolcontest">
-      <img src="/assets/images/image2/eol system/ecop/btn_backsite.png">
-    </a>
-  </div>
+    <div class="text-center mt-4">
+      <button id="contest-start-btn" class="btn btn-danger btn-lg">Start</button>
+    </div>
+  </section>
 </div>

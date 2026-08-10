@@ -1,6 +1,23 @@
-<div id="standardtest-set-app" class="f-thai">
-  <img src="/assets/images/image2/eol system/Standard Test/bg-standard-2.png" class="banner-img" alt="Standard Test">
+<div id="standardtest-set-app">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+      <div>
+        <p class="text-danger fw-semibold mb-1">EOL Standard Test</p>
+        <h1 class="h3 fw-bold mb-2">Start EST Session</h1>
+        <p class="text-body-secondary mb-0">A new standard test set will be generated before the test begins.</p>
+      </div>
+      <a href="/eol/standardtest" class="btn btn-outline-secondary align-self-start">
+        <i class="bi bi-arrow-left"></i> Back
+      </a>
+    </div>
 
-  <div class="loading" id="loading-text">กำลังสร้างชุดข้อสอบ...</div>
-  <button type="button" class="start-btn" id="start-btn">Start EOL Standard Test</button>
+    <div class="alert alert-warning d-none" id="loading-text">
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      กำลังสร้างชุดข้อสอบ...
+    </div>
+
+    <button type="button" class="btn btn-danger btn-lg" id="start-btn">
+      <i class="bi bi-play-fill"></i> Start EOL Standard Test
+    </button>
+  </section>
 </div>

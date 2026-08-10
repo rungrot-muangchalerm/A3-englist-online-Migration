@@ -7,7 +7,7 @@
 
   function renderList(exams) {
     if (!exams || exams.length === 0) {
-      listBody.innerHTML = '<tr><td colspan="4"><span class="text-secondary">ไม่มีชุดข้อสอบ</span></td></tr>';
+      listBody.innerHTML = '<tr><td colspan="4"><span class="text-body-secondary">ไม่มีชุดข้อสอบ</span></td></tr>';
       return;
     }
     let html = '';
@@ -15,11 +15,11 @@
       const canTest = exam.allowed && Number(exam.active) === 1;
       const testTypeText = Number(exam.testType) === 2 ? 'การแข่งขัน' : 'สอบเก็บคะแนน';
       const btn = canTest
-        ? `<a href="/eol/eoltest/eolcontest/${encodeURIComponent(exam.examId)}" class="btn-test">Test</a>`
-        : `<button class="btn-test gray" disabled>Test</button>`;
-      const cls = idx % 2 === 0 ? '' : 'class="table-light"';
+        ? `<a href="/eol/eoltest/eolcontest/${encodeURIComponent(exam.examId)}" class="btn btn-danger btn-sm">Test</a>`
+        : `<button class="btn btn-secondary btn-sm" disabled>Test</button>`;
+      const cls = idx % 2 === 0 ? '' : 'class="table-secondary"';
       html += `<tr ${cls}>
-        <td><b>${htmlEscape(exam.examName)}</b> <span class="text-secondary">(${htmlEscape(testTypeText)})</span></td>
+        <td><b>${htmlEscape(exam.examName)}</b> <span class="text-body-secondary">(${htmlEscape(testTypeText)})</span></td>
         <td>${htmlEscape(exam.amount)}</td>
         <td>${htmlEscape(exam.testtime)} นาที</td>
         <td>${btn}</td>

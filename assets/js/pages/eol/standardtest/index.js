@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
 (function () {
-  const ICON_CORRECT = '/assets/2010/temp_images/icon_correct.jpg';
-  const ICON_INCORRECT = '/assets/2010/temp_images/icon_incorrect.jpg';
-
   function api(path, opts) {
     return fetch(path, {
       credentials: 'include',
@@ -27,13 +24,17 @@
     get('/api/eol/standardtest/status')
       .then((res) => {
         if (res.status !== 200 || !res.data) {
-          document.getElementById('status-msg').textContent = res.message || 'ไม่สามารถโหลดสถานะได้';
+          const msg = document.getElementById('status-msg');
+          msg.textContent = res.message || 'ไม่สามารถโหลดสถานะได้';
+          msg.classList.remove('d-none');
           return;
         }
         render(res.data);
       })
       .catch(() => {
-        document.getElementById('status-msg').textContent = 'เกิดข้อผิดพลาดในการโหลดข้อมูล';
+        const msg = document.getElementById('status-msg');
+        msg.textContent = 'เกิดข้อผิดพลาดในการโหลดข้อมูล';
+        msg.classList.remove('d-none');
       });
   }
 
@@ -43,11 +44,12 @@
 
     data.skillStatus.forEach((skill) => {
       const tr = document.createElement('tr');
-      tr.height = 30;
-      tr.innerHTML = `<td class="skill-cell text-center"><span><b>${escapeHtml(skill.skillName)}</b></span></td>`
+      tr.innerHTML = `<td><span class="fw-semibold">${escapeHtml(skill.skillName)}</span></td>`
         + skill.levels.map((lvl) => {
-          const icon = lvl.passed ? ICON_CORRECT : ICON_INCORRECT;
-          return `<td class="icon-cell text-center"><img src="${icon}" width="25"></td>`;
+          const icon = lvl.passed ? 'bi-check-circle-fill' : 'bi-x-circle-fill';
+          const color = lvl.passed ? 'text-success' : 'text-danger';
+          const label = lvl.passed ? 'Passed' : 'Missing';
+          return `<td class="text-center"><span class="${color}"><i class="bi ${icon}"></i> ${label}</span></td>`;
         }).join('');
       tbody.appendChild(tr);
     });
@@ -62,7 +64,9 @@
       });
     } else {
       btn.disabled = true;
-      document.getElementById('status-msg').innerHTML = '<span class="text-danger"><b>คุณยังไม่มีสิทธิ์เข้าใช้งาน EST กรุณาผ่านแบบทดสอบ Single Skill ทั้งหมด 18 ระดับ หรือรอให้ครบเงื่อนไขที่กำหนด</b></span>';
+      const msg = document.getElementById('status-msg');
+      msg.innerHTML = '<strong>คุณยังไม่มีสิทธิ์เข้าใช้งาน EST</strong><div>กรุณาผ่านแบบทดสอบ Single Skill ทั้งหมด 18 ระดับ หรือรอให้ครบเงื่อนไขที่กำหนด</div>';
+      msg.classList.remove('d-none');
     }
   }
 

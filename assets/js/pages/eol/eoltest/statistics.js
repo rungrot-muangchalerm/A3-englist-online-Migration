@@ -92,7 +92,7 @@
             <img data-member="${m.member_id}" data-role="icon-plus" class="pe-auto" src="/assets/2010/temp_images/icon_plus.jpg" width="20" title="Click Here to view refill history">
             <img data-member="${m.member_id}" data-role="icon-sub" class="d-none pe-auto" src="/assets/2010/temp_images/icon_sub.jpg" width="20">
           </td>
-          <td colspan="6" class="bg-light"></td>
+          <td colspan="6" class="bg-body-secondary"></td>
         `;
         memberBody.appendChild(expandRow);
 

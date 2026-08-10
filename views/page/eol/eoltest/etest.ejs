@@ -1,15 +1,15 @@
 <div id="view-e-test" class="eol-view">
   <div id="etest-app">
     <template id="etest-list-template">
-      <div class="etest-toolbar">
-        <a href="#" class="etest-action" data-action="view_lesson"><button class="etest-btn etest-btn-lesson">o บทเรียนทั้งหมด</button></a>
-        <a href="#" class="etest-action" data-action="create_lesson"><button class="etest-btn etest-btn-lesson">+ สร้างบทเรียนแบบกำหนดเอง</button></a>
-        <a href="#" class="etest-action etest-action-right" data-action="create_customize"><button class="etest-btn">+ สร้างชุดข้อสอบแบบกำหนดเอง</button></a>
-        <a href="#" class="etest-action etest-action-right" data-action="create"><button class="etest-btn">+ สร้างชุดข้อสอบจากระบบ</button></a>
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <a href="#" class="etest-action btn btn-outline-secondary" data-action="view_lesson"><i class="bi bi-journal-text"></i> บทเรียนทั้งหมด</a>
+        <a href="#" class="etest-action btn btn-outline-secondary" data-action="create_lesson"><i class="bi bi-plus-lg"></i> สร้างบทเรียนแบบกำหนดเอง</a>
+        <a href="#" class="etest-action btn btn-danger ms-lg-auto" data-action="create_customize"><i class="bi bi-plus-lg"></i> สร้างชุดข้อสอบแบบกำหนดเอง</a>
+        <a href="#" class="etest-action btn btn-danger" data-action="create"><i class="bi bi-plus-lg"></i> สร้างชุดข้อสอบจากระบบ</a>
       </div>
-      <div>
-        <div>
-          <table class="etest-table table table-sm" width="100%">
+      <div class="bg-body-tertiary border rounded-3 shadow-sm p-3">
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle" width="100%">
             <thead>
               <tr>
                 <th>รายละเอียดชุดข้อสอบ</th>
@@ -22,7 +22,7 @@
             <tbody class="etest-list-body"></tbody>
           </table>
         </div>
-        <div id="etest-detail-panel"></div>
+        <div id="etest-detail-panel" class="border rounded-3 bg-body-secondary p-3"></div>
       </div>
     </template>
 
@@ -37,13 +37,13 @@
     </template>
 
     <template id="etest-detail-template">
-      <div class="etest-detail-box">
+      <div class="bg-body-tertiary border rounded-3 p-3 mt-3">
         <form class="etest-detail-form" onsubmit="event.preventDefault();">
           <input type="hidden" name="exam_id" class="etest-exam-id">
-          <table class="detailform table table-sm">
+          <table class="table table-sm align-middle">
             <tr>
               <td>ชุดข้อสอบ</td>
-              <td><input type="text" name="exam_name" class="etest-exam-name txtdetail"></td>
+              <td><input type="text" name="exam_name" class="etest-exam-name form-control form-control-sm"></td>
             </tr>
             <tr>
               <td>วันที่</td>
@@ -55,66 +55,66 @@
             </tr>
             <tr>
               <td>เวลาสอบ</td>
-              <td><input type="text" name="testtime" class="etest-testtime txtdetail" maxlength="3"> นาที</td>
+              <td><input type="text" name="testtime" class="etest-testtime form-control form-control-sm d-inline-block w-auto" maxlength="3"> นาที</td>
             </tr>
             <tr>
               <td>รูปแบบการทดสอบ</td>
               <td>
-                <label><input type="radio" name="test_type" value="1"> สอบเก็บคะแนน</label><br>
-                <label><input type="radio" name="test_type" value="2"> การแข่งขัน</label>
+                <label class="form-check"><input class="form-check-input" type="radio" name="test_type" value="1"> สอบเก็บคะแนน</label>
+                <label class="form-check"><input class="form-check-input" type="radio" name="test_type" value="2"> การแข่งขัน</label>
               </td>
             </tr>
             <tr>
               <td>เปิดใช้งาน</td>
-              <td><input type="checkbox" name="active" value="1" class="etest-active-check"></td>
+              <td><input type="checkbox" name="active" value="1" class="form-check-input etest-active-check"></td>
             </tr>
           </table>
-          <div>เลือกกลุ่มที่สอบ</div>
-          <div class="etest-groups"></div>
-          <button type="button" class="etest-save-btn bnt-etest">บันทึก</button>
-          <button type="button" class="etest-edit-btn bnt-etest">แก้ไขข้อสอบ</button>
-          <button type="button" class="etest-delete-btn bnt-delete">ลบชุดข้อสอบ</button>
+          <div class="fw-semibold mb-2">เลือกกลุ่มที่สอบ</div>
+          <div class="etest-groups d-flex flex-wrap gap-3 mb-3"></div>
+          <button type="button" class="etest-save-btn btn btn-danger">บันทึก</button>
+          <button type="button" class="etest-edit-btn btn btn-outline-light">แก้ไขข้อสอบ</button>
+          <button type="button" class="etest-delete-btn btn btn-outline-danger">ลบชุดข้อสอบ</button>
           <div class="etest-message"></div>
         </form>
       </div>
     </template>
 
     <template id="etest-group-checkbox-template">
-      <label>
-        <input type="checkbox" name="allowgroup[]" class="etest-group-check" value="">
+      <label class="form-check">
+        <input type="checkbox" name="allowgroup[]" class="form-check-input etest-group-check" value="">
         <span></span>
       </label>
     </template>
 
     <template id="etest-create-custom-template">
-      <div class="etest-create-box">
-        <a href="#" class="etest-back">[ Back ]</a>
+      <div class="bg-body-tertiary border rounded-3 shadow-sm p-3">
+        <a href="#" class="etest-back btn btn-outline-secondary btn-sm mb-3"><i class="bi bi-arrow-left"></i> Back</a>
         <h3>สร้างชุดข้อสอบแบบกำหนดเอง</h3>
         <p>ห้ามละเมิดลิขสิทธิ์ผู้อื่น มีความผิดตามกฎหมายและบริษัท อิงลิชออนไลน์ จำกัด จะไม่รับผิดชอบการกระทำใดๆทั้งสิ้น<br>และสงวนสิทธิ์ในการตรวจสอบพร้อมทั้งแก้ไขชุดข้อสอบแบบกำหนดเองโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
         <p>เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
         <form class="etest-create-custom-form" onsubmit="event.preventDefault();">
-          <table class="tbl_create_custom table table-sm">
+          <table class="table table-sm align-middle">
             <tr>
               <td>ชุดข้อสอบ</td>
-              <td><input type="text" name="exam_name" class="txtdetail" required></td>
+              <td><input type="text" name="exam_name" class="form-control form-control-sm" required></td>
             </tr>
             <tr>
               <td colspan="2" class="etest-question-area">
                 <div>ข้อ <span class="etest-q-no">1</span></div>
-                <textarea name="question" rows="4" required></textarea>
+                <textarea name="question" rows="4" class="form-control mb-2" required></textarea>
                 <div class="etest-choices">
-                  <div><label><input type="radio" name="correct" value="0" required> A</label> <textarea name="choice[]" rows="2" required></textarea></div>
-                  <div><label><input type="radio" name="correct" value="1"> B</label> <textarea name="choice[]" rows="2" required></textarea></div>
-                  <div><label><input type="radio" name="correct" value="2"> C</label> <textarea name="choice[]" rows="2" required></textarea></div>
-                  <div><label><input type="radio" name="correct" value="3"> D</label> <textarea name="choice[]" rows="2" required></textarea></div>
+                  <div class="mb-2"><label><input type="radio" name="correct" value="0" required> A</label> <textarea name="choice[]" rows="2" class="form-control" required></textarea></div>
+                  <div class="mb-2"><label><input type="radio" name="correct" value="1"> B</label> <textarea name="choice[]" rows="2" class="form-control" required></textarea></div>
+                  <div class="mb-2"><label><input type="radio" name="correct" value="2"> C</label> <textarea name="choice[]" rows="2" class="form-control" required></textarea></div>
+                  <div class="mb-2"><label><input type="radio" name="correct" value="3"> D</label> <textarea name="choice[]" rows="2" class="form-control" required></textarea></div>
                 </div>
-                <button type="button" class="etest-add-question-btn bnt-etest">บันทึกข้อนี้</button>
+                <button type="button" class="etest-add-question-btn btn btn-danger">บันทึกข้อนี้</button>
                 <div class="etest-message"></div>
               </td>
             </tr>
             <tr>
               <td colspan="2">
-                <button type="button" class="etest-finish-custom-btn bnt-etest" disabled>สิ้นสุดการสร้างชุดข้อสอบ</button>
+                <button type="button" class="etest-finish-custom-btn btn btn-danger" disabled>สิ้นสุดการสร้างชุดข้อสอบ</button>
               </td>
             </tr>
           </table>
@@ -123,19 +123,19 @@
     </template>
 
     <template id="etest-create-system-template">
-      <div class="etest-create-box">
-        <a href="#" class="etest-back">[ Back ]</a>
+      <div class="bg-body-tertiary border rounded-3 shadow-sm p-3">
+        <a href="#" class="etest-back btn btn-outline-secondary btn-sm mb-3"><i class="bi bi-arrow-left"></i> Back</a>
         <h3>สร้างชุดข้อสอบจากระบบ</h3>
         <p>เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
         <form class="etest-create-system-form" onsubmit="event.preventDefault();">
-          <table>
+          <table class="table table-sm align-middle">
             <tr>
               <td>ชื่อชุดข้อสอบ</td>
-              <td><input type="text" name="exam_name" class="txtdetail" required></td>
+              <td><input type="text" name="exam_name" class="form-control form-control-sm" required></td>
             </tr>
             <tr>
               <td>เวลาสอบ</td>
-              <td><input type="text" name="testtime" class="txtdetail" maxlength="3" required> นาที</td>
+              <td><input type="text" name="testtime" class="form-control form-control-sm d-inline-block w-auto" maxlength="3" required> นาที</td>
             </tr>
           </table>
           <table class="etest-system-rows table table-sm" width="100%">
@@ -150,8 +150,8 @@
             </thead>
             <tbody></tbody>
           </table>
-          <button type="button" class="etest-add-row-btn bnt-etest">+ เพิ่มแถว</button>
-          <button type="button" class="etest-create-system-submit bnt-etest">สร้างชุดข้อสอบ</button>
+          <button type="button" class="etest-add-row-btn btn btn-outline-light">+ เพิ่มแถว</button>
+          <button type="button" class="etest-create-system-submit btn btn-danger">สร้างชุดข้อสอบ</button>
           <div class="etest-message"></div>
         </form>
       </div>
@@ -160,7 +160,7 @@
     <template id="etest-system-row-template">
       <tr>
         <td>
-          <select name="skill_id[]" class="etest-skill-select selector">
+          <select name="skill_id[]" class="etest-skill-select form-select form-select-sm">
             <option value="1">Reading Comprehension</option>
             <option value="2">Listening Comprehension</option>
             <option value="3">Semi - Speaking</option>
@@ -170,7 +170,7 @@
           </select>
         </td>
         <td>
-          <select name="level[]" class="etest-level-select selector">
+          <select name="level[]" class="etest-level-select form-select form-select-sm">
             <option value="1">Beginner</option>
             <option value="2">Lower Intermediate</option>
             <option value="3">Intermediate</option>
@@ -178,9 +178,9 @@
             <option value="5">Advanced</option>
           </select>
         </td>
-        <td><select name="topic[]" class="etest-topic-select selector"></select></td>
-        <td><input type="text" name="num[]" class="txtdetail" maxlength="2" required></td>
-        <td><button type="button" class="etest-remove-row-btn bnt-delete">ลบ</button></td>
+        <td><select name="topic[]" class="etest-topic-select form-select form-select-sm"></select></td>
+        <td><input type="text" name="num[]" class="form-control form-control-sm" maxlength="2" required></td>
+        <td><button type="button" class="etest-remove-row-btn btn btn-outline-danger btn-sm">ลบ</button></td>
       </tr>
     </template>
 

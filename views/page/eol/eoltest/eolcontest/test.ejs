@@ -1,73 +1,45 @@
-<div id="eolcontest-app" class="f-thai">
-  <div class="ecop-header">
-    <img src="/assets/images/icon/icon_corporate.png">
-    <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
-  </div>
+<div id="eolcontest-app">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+      <div>
+        <p class="text-danger fw-semibold mb-1">Corporate Member's Use</p>
+        <h1 class="h3 fw-bold mb-0">EOL Contest Test</h1>
+      </div>
+      <div id="contest-timer" class="alert alert-warning mb-0">
+        เวลาที่เหลือ : <span class="text-danger fw-bold">0</span> นาที กับ <span class="text-danger fw-bold">0</span> วินาที
+      </div>
+    </div>
 
-  <div class="timer-box text-center">
-    <div id="contest-timer">เวลาที่เหลือ : <span class="text-danger">0</span> นาที กับ <span class="text-danger">0</span> วินาที</div>
-  </div>
+    <div class="border rounded-3 bg-body-secondary p-3 mb-3">
+      <div id="contest-skill-name" class="text-body-secondary fw-semibold mb-2"></div>
+      <div class="fw-bold mb-3" id="contest-question-no">No. -</div>
+      <div id="contest-media" class="mb-3"></div>
+      <div id="contest-question-text" class="mb-3"></div>
+      <div id="contest-answers" class="mb-3"></div>
+      <button id="contest-record-btn" class="btn btn-danger">Record your answer</button>
+    </div>
 
-  <div class="test-wrap">
-    <table width="100%" class="table table-sm">
-      <tr>
-        <td colspan="2">
-          <span class="text-secondary"><b></b></span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <span><b id="contest-question-no">No. -</b></span>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" id="contest-media" class="media-wrap"></td>
-      </tr>
-      <tr>
-        <td colspan="2" id="contest-question-text" class="question-text"></td>
-      </tr>
-      <tr>
-        <td colspan="2" id="contest-answers"></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <button id="contest-record-btn" class="btn-record">Record your answer</button>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div class="question-grid">
-            <span class="text-dark"><b>Question Number</b></span>
-            <div id="contest-question-grid"></div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <table width="100%" class="table table-sm">
-            <tr>
-              <td width="10%" class="text-start"><img id="contest-back-btn" src="/assets/images/image2/test/back.png"></td>
-              <td width="80%" class="text-center">
-                <span class="text-danger">Red : Unanswer</span>
-                &nbsp;&nbsp;&nbsp;
-                <span class="text-success">Green : Answered</span>
-              </td>
-              <td width="10%" class="text-end"><img id="contest-next-btn" src="/assets/images/image2/test/next.png"></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" class="finish-wrap">
-          <button id="contest-finish-btn" class="btn-finish">Finish</button>
-        </td>
-      </tr>
-    </table>
-  </div>
+    <div class="border rounded-3 p-3 mb-3">
+      <div class="fw-semibold mb-2">Question Number</div>
+      <div id="contest-question-grid" class="d-flex flex-wrap gap-2"></div>
+    </div>
 
-  <div class="back-wrap">
-    <a href="/eol/eoltest/eolcontest">
-      <img src="/assets/images/image2/eol system/ecop/btn_backsite.png">
-    </a>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <button id="contest-back-btn" type="button" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back</button>
+      <div class="small">
+        <span class="text-danger fw-semibold">Red : Unanswer</span>
+        <span class="mx-2">|</span>
+        <span class="text-success fw-semibold">Green : Answered</span>
+      </div>
+      <button id="contest-next-btn" type="button" class="btn btn-outline-secondary">Next <i class="bi bi-arrow-right"></i></button>
+    </div>
+
+    <div class="text-center mt-4">
+      <button id="contest-finish-btn" class="btn btn-success btn-lg">Finish</button>
+    </div>
+  </section>
+
+  <div class="mt-3">
+    <a href="/eol/eoltest/eolcontest" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to Contest</a>
   </div>
 </div>

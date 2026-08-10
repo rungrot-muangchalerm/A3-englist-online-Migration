@@ -10,6 +10,13 @@
       const multiBody = document.getElementById('multi-skills-body')
       const skillTemplate = document.getElementById('academic-skill-row-template')
       const levelTemplate = document.getElementById('academic-level-row-template')
+      let unlockedCount = 0
+      let lockedCount = 0
+
+      while (singleBody.firstChild) singleBody.removeChild(singleBody.firstChild)
+      while (multiBody.firstChild) multiBody.removeChild(multiBody.firstChild)
+
+      document.getElementById('academic-skill-count').textContent = data.data.skills.length
 
       data.data.skills.forEach((skill) => {
         const clone = skillTemplate.content.cloneNode(true)
@@ -32,7 +39,14 @@
         skill.levels.forEach((lvl) => {
           const levelClone = levelTemplate.content.cloneNode(true)
           const colorEl = levelClone.querySelector('.level-color')
-          colorEl.setAttribute('color', String(lvl.color || '').replace(/["<>]/g, ''))
+          colorEl.textContent = lvl.unlocked ? 'Open' : 'Locked'
+          if (lvl.unlocked) {
+            unlockedCount += 1
+            colorEl.classList.remove('text-bg-secondary')
+            colorEl.classList.add('text-bg-success')
+          } else {
+            lockedCount += 1
+          }
           levelClone.querySelector('.level-name').textContent = lvl.levelName
           const msgEl = levelClone.querySelector('.level-message')
           if (lvl.unlocked) {
@@ -43,6 +57,11 @@
             msgEl.classList.add('small');}
           const btn = levelClone.querySelector('.btn-goto-test')
           btn.disabled = !lvl.unlocked
+          if (!lvl.unlocked) {
+            btn.classList.remove('btn-danger')
+            btn.classList.add('btn-outline-secondary')
+            btn.value = 'Locked'
+          }
           btn.addEventListener('click', () => {
             fetch('/api/eol/academic/set-test', {
               method: 'POST',
@@ -73,6 +92,9 @@
           singleBody.appendChild(levelRow)
         }
       })
+
+      document.getElementById('academic-unlocked-count').textContent = unlockedCount
+      document.getElementById('academic-locked-count').textContent = lockedCount
     } else {
       console.log(data)
     }

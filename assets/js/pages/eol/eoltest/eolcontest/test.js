@@ -58,10 +58,8 @@
     let html = '';
     for (let i = 1; i <= amount; i += 1) {
       const answered = !!answers[i];
-      const cls = answered ? 'answered' : 'unanswered';
-      const label = i < 10 ? `&nbsp;&nbsp;${i}&nbsp;&nbsp;` : (i < 100 ? `&nbsp;${i}&nbsp;` : i);
-      html += `<button class="qnum-btn ${cls}" data-page="${i}">${label}</button>`;
-      if (i % 20 === 0) html += '<br>';
+      const cls = answered ? 'btn-success' : 'btn-outline-danger';
+      html += `<button class="qnum-btn btn btn-sm ${cls}" data-page="${i}">${i}</button>`;
     }
     els.grid.innerHTML = html;
     els.grid.querySelectorAll('.qnum-btn').forEach(function (btn) {
@@ -110,7 +108,7 @@
     data.question.answers.forEach(function (a) {
       const checked = answers[currentPage] === Number(a.answerId) ? 'checked' : '';
       const disabled = locked ? 'disabled' : '';
-      ansHtml += `<div class="answer-row"><label><input type="radio" name="choose" value="${a.answerId}" ${checked} ${disabled}> <span>${htmlEscape(a.text)}</span></label></div>`;
+      ansHtml += `<div class="form-check mb-2"><label class="form-check-label"><input class="form-check-input" type="radio" name="choose" value="${a.answerId}" ${checked} ${disabled}> <span>${htmlEscape(a.text)}</span></label></div>`;
     });
     els.answers.innerHTML = ansHtml;
 

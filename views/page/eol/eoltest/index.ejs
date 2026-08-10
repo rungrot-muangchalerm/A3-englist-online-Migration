@@ -1,367 +1,341 @@
-<div id="view-coming-soon" class="eol-view">
-  <table width=90% class="text-center bg-light table table-sm">
-    <tr>
-      <td class="text-center"><br>
-        <span>
-          <b>หน้า <span id="coming-soon-name"></span> ยังไม่เปิดใช้งานใน Phase 2</b>
-        </span><br>&nbsp;
-      </td>
-    </tr>
-  </table>
-</div>
-<div id="view-personal" class="eol-view">
-  <div id='test'>
-    <a href='/eol/eoltest/academic'>
-      <img class='img_hover' src='/assets/images/image2/eol system/test-evaluation-new.png' width='219' height='213' />
-    </a>
-  </div>
-  <div id='report'>
-    <a href='/eol/eoltest/report'>
-      <img class='img_hover' src='/assets/images/image2/eol system/report-new.png' width='219' height='213' />
-    </a>
-  </div>
-  <div id='lesson'>
-    <a href='/lessons/elearning'>
-      <img class='img_hover' src='/assets/images/image2/eol system/lessons-new.png' width='219' height='213' />
-    </a>
-  </div>
-  <div id='coporate'>
-    <a href='/corporate/ecop'>
-      <img class='img_hover' src='/assets/images/image2/eol system/ecop/corporate-icon-new.png' width='219' height='213' />
-    </a>
-  </div>
-  <div id='standardtest'>
-    <a href='/eol/standardtest'>
-      <img class='img_hover' src='/assets/images/image2/eol system/standart-test-new.png' width='219' height='213' />
-    </a>
-  </div>
-  <div id='back_to_home'>
-    <a href='/'>
-      <img src='/assets/images/image2/eol system/button/back_to_home.png'>
-    </a>
-  </div>
-  <img src='/assets/images/image2/eol system/bg-eol.png' width='100%' height='1074' />
+<div id="view-coming-soon" class="eol-view d-none">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-5 text-center">
+    <i class="bi bi-hourglass-split display-5 text-body-secondary"></i>
+    <h1 class="h4 mt-3 mb-0">หน้า <span id="coming-soon-name"></span> ยังไม่เปิดใช้งานใน Phase 2</h1>
+  </section>
 </div>
 
-<div id="view-expired" class="eol-view">
-  <div>
-    <a href='/eol/eoltest/report'>
-      <img class='img_hover' src='/assets/images/image2/eol system/report-new.png'>
-    </a>
-  </div>
-  <div>
-    <a href='/shop/product-personal' target=_blank>
-      <img class='img_hover' src='/assets/images/image2/eol system/purchase-card.png'>
-    </a>
-  </div>
-  <img src='/assets/images/image2/eol system/bg-free-09.jpg'>
+<div id="view-personal" class="eol-view d-none">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm overflow-hidden mb-3">
+    <div class="row g-0 align-items-stretch">
+      <div class="col-lg-7 p-3 p-lg-4">
+        <p class="text-danger fw-semibold mb-2">English Online System</p>
+        <h1 class="h2 fw-bold text-body mb-2">Choose your next learning action</h1>
+        <p class="text-body-secondary mb-0">Test, lessons, reports, and EOL services are grouped into a cleaner dashboard.</p>
+      </div>
+      <div class="col-lg-5 bg-body-secondary">
+        <img src="/assets/images/image2/eol system/eol-personal.jpg" alt="English Online personal learning" width="480" height="180" class="img-fluid w-100 object-fit-cover">
+      </div>
+    </div>
+  </section>
+
+  <section class="row g-3" aria-label="EOL system actions">
+    <div class="col-md-6 col-xl-4">
+      <a id="test" class="d-flex align-items-center gap-3 bg-danger text-white border rounded-3 shadow-sm p-3 text-decoration-none h-100" href="/eol/eoltest/academic">
+        <span class="btn btn-outline-light text-danger rounded-circle"><i class="bi bi-clipboard-check"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Test &amp; Evaluation</strong>
+          <small class="text-white-50">Start academic skill assessment</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4"></i>
+      </a>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <a id="report" class="d-flex align-items-center gap-3 bg-body-tertiary text-body border rounded-3 shadow-sm p-3 text-decoration-none h-100" href="/eol/eoltest/report">
+        <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-graph-up-arrow"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Report</strong>
+          <small class="text-body-secondary">Review scores and progress</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-danger"></i>
+      </a>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <a id="lesson" class="d-flex align-items-center gap-3 bg-body-tertiary text-body border rounded-3 shadow-sm p-3 text-decoration-none h-100" href="/lessons/elearning">
+        <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-play-btn"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Lessons</strong>
+          <small class="text-body-secondary">Continue online learning</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-danger"></i>
+      </a>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <a id="standardtest" class="d-flex align-items-center gap-3 bg-body-tertiary text-body border rounded-3 shadow-sm p-3 text-decoration-none h-100" href="/eol/standardtest">
+        <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-award"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Standard Test</strong>
+          <small class="text-body-secondary">Take standard assessment</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-danger"></i>
+      </a>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <a id="coporate" class="d-flex align-items-center gap-3 bg-body-tertiary text-body border rounded-3 shadow-sm p-3 text-decoration-none h-100 d-none" href="/corporate/ecop">
+        <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-buildings"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Corporate</strong>
+          <small class="text-body-secondary">Open corporate learning tools</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-danger"></i>
+      </a>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <a id="back_to_home" class="d-flex align-items-center gap-3 bg-body-secondary text-body border rounded-3 p-3 text-decoration-none h-100" href="/">
+        <span class="btn btn-outline-secondary rounded-circle"><i class="bi bi-house"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Home</strong>
+          <small class="text-body-secondary">Return to English Online</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-body-secondary"></i>
+      </a>
+    </div>
+  </section>
 </div>
 
-<div id="view-master" class="eol-view">
-  <table width=95% class="text-center table table-sm">
-    <tr height=30 class="align-middle">
-      <td width=7%% class="text-center">
-        <span><b>Group : </b></span>
-      </td>
-      <td width=65%% class="text-start">
-        <select name='group_id' id='group_id'></select>
-        <input type='button' value='View' class='btn-view' id='master-view-group'>
-        <input type='button' value='Edit' class='modalInput btn-edit' rel='#prompt1' id='master-rename-btn'>
-        <input type='button' value='Delete This Group' class='btn-delete-group' id='master-delete-group'>
-      </td>
-      <td width=20%% class="text-end"><input type='text' name='group_name' id='group_name' size=20 placeholder='&nbsp;Name Group' class='enter-name-group' required></td>
-      <td width=15%% class="text-start">
-        <input type='button' value='Create New Group' class='btn-create-group' id='master-create-group'>
-      </td>
-    </tr>
-  </table>
-  <br>
+<div id="view-expired" class="eol-view d-none">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm overflow-hidden mb-4">
+    <div class="row g-0 align-items-stretch">
+      <div class="col-lg-7 p-4 p-lg-5">
+        <p class="text-danger fw-semibold mb-2">Account status</p>
+        <h1 class="display-6 fw-bold text-body mb-3">Your EOL access needs renewal</h1>
+        <p class="lead text-body-secondary mb-0">You can still review reports or purchase a new card to continue learning.</p>
+      </div>
+      <div class="col-lg-5 bg-body-secondary">
+        <img src="/assets/images/image2/eol system/bg-free-09.jpg" alt="EOL renewal" class="img-fluid w-100 h-100 object-fit-cover">
+      </div>
+    </div>
+  </section>
 
-  <div id='master-empty'>
-    <table width=90% height=25 class="text-center bg-light table table-sm">
-      <tr>
-        <td class="text-center"><br>
-          <span class="text-danger"><b>&nbsp;- No Data -</b></span><br>&nbsp;
-        </td>
-      </tr>
-    </table>
-  </div>
+  <section class="row g-3" aria-label="Expired account actions">
+    <div class="col-md-6">
+      <a class="d-flex align-items-center gap-3 bg-body-tertiary text-body border rounded-3 shadow-sm p-4 text-decoration-none h-100" href="/eol/eoltest/report">
+        <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-graph-up-arrow"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Report</strong>
+          <small class="text-body-secondary">View your previous results</small>
+        </span>
+        <i class="bi bi-arrow-right fs-4 text-danger"></i>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a class="d-flex align-items-center gap-3 bg-danger text-white border rounded-3 shadow-sm p-4 text-decoration-none h-100" href="/shop/product-personal" target="_blank">
+        <span class="btn btn-outline-light text-danger rounded-circle"><i class="bi bi-credit-card"></i></span>
+        <span class="flex-grow-1">
+          <strong class="d-block fs-5">Purchase Card</strong>
+          <small class="text-white-50">Renew personal access</small>
+        </span>
+        <i class="bi bi-box-arrow-up-right fs-4"></i>
+      </a>
+    </div>
+  </section>
+</div>
 
-  <div id='master-list-wrap'>
-    <table width=90% class='noborder table-sub-member table text-center table-sm'>
-      <tr height=55 class="align-middle">
-        <td width=4% class="text-center bg-light">
-          <div id="master-select-all">
-            <span class="text-white"><b>All</b></span>
+<div id="view-master" class="eol-view d-none">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+    <div class="d-flex flex-column gap-3 mb-4">
+      <div>
+        <p class="text-danger fw-semibold mb-1">Master Account</p>
+        <h1 class="h3 fw-bold mb-0">Sub account management</h1>
+      </div>
+      <div class="row g-2 align-items-end">
+        <div class="col-lg-5">
+          <label for="group_id" class="form-label fw-semibold">Group</label>
+          <select name="group_id" id="group_id" class="form-select"></select>
+        </div>
+        <div class="col-lg-auto d-flex flex-wrap gap-2">
+          <button type="button" class="btn btn-dark" id="master-view-group"><i class="bi bi-eye"></i> View</button>
+          <button type="button" class="btn btn-outline-light modalInput" rel="#prompt1" id="master-rename-btn"><i class="bi bi-pencil-square"></i> Edit</button>
+          <button type="button" class="btn btn-outline-danger" id="master-delete-group"><i class="bi bi-trash3"></i> Delete</button>
+        </div>
+        <div class="col-lg">
+          <label for="group_name" class="form-label fw-semibold">Create group</label>
+          <div class="input-group">
+            <input type="text" name="group_name" id="group_name" placeholder="Name Group" class="form-control" required>
+            <button type="button" class="btn btn-danger" id="master-create-group"><i class="bi bi-plus-lg"></i> Create</button>
           </div>
-          <input type=hidden id='all_status' value='select'>
-        </td>
-        <td width=24% class="text-center bg-light">
-          <span class="text-white"><b>First name - Last name</b></span>
-        </td>
-        <td width=13% class="text-center bg-light">
-          <span class="text-white"><b>Username</b></span>
-        </td>
-        <td width=13% class="text-center bg-light">
-          <span class="text-white"><b>Password</b></span>
-        </td>
-        <td width=16% class="text-center bg-light">
-          <span class="text-white"><b>Operating time</b></span>
-        </td>
-        <td width=30% color=white class="text-center bg-light">
-          <span class="text-white"><b>Management</b></span>
-        </td>
-      </tr>
-      <tbody id='master-member-rows'></tbody>
-    </table>
+        </div>
+      </div>
+    </div>
 
-    <table width=90% class="text-center table table-sm">
-      <tr>
-        <td width=10% class="text-end">
-          <span class="text-danger"><b>Page :</b></span>
-        </td>
-        <td width=100% id='master-pagination' class="text-start"></td>
-      </tr>
-    </table><br>
+    <div id="master-empty" class="bg-body-secondary border rounded-3 p-5 text-center d-none">
+      <i class="bi bi-inbox display-6 text-body-secondary"></i>
+      <h2 class="h5 mt-3 mb-0">No Data</h2>
+    </div>
 
-    <table width=90% class='table-select-item text-center bg-light table table-sm'>
-      <tr height=70 class="align-middle">
-        <td width=18% class="text-end">
-          <span><b>Selected Items&nbsp;&nbsp;:&nbsp;&nbsp;</b></span>
-        </td>
-        <td width=7% class="text-start">
-          <div class="text-center">
-            <img src='/assets/images/icon/limit.png' class='limit' id='master-bulk-limit'><br>
-            <span>Limit</span>
-          </div>
-        </td>
-        <td width=7% class="text-start">
-          <div class="text-center">
-            <img src='/assets/images/icon/unlimit.png' class='unlimit' id='master-bulk-unlimit'><br>
-            <span>Unlimit</span>
-          </div>
-        </td>
-        <td width=7% class="text-start">
-          <div class="text-center">
-            <img src='/assets/images/icon/bin.png' class='bin' id='master-bulk-delete'><br>
-            <span>Delete</span>
-          </div>
-        </td>
-        <td width=10% class="text-center">
-          <img src='/assets/images/icon/move-to.png'><br>
-          <span><b>Move To&nbsp;&nbsp;:&nbsp;&nbsp;</b></span>
-        </td>
-        <td width=30% class="text-start">
-          <select id='ref_id'></select>
-          <input type='button' value='&nbsp;Set&nbsp;' class='btn-set' id='master-bulk-move'>
-        </td>
-      </tr>
-    </table>
-  </div>
+    <div id="master-list-wrap">
+      <div class="table-responsive">
+        <table class="table table-hover table-sm align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th class="text-center">
+                <button type="button" id="master-select-all" class="btn btn-sm btn-outline-light">All</button>
+                <input type="hidden" id="all_status" value="select">
+              </th>
+              <th>First name - Last name</th>
+              <th class="text-center">Username</th>
+              <th class="text-center">Password</th>
+              <th class="text-center">Operating time</th>
+              <th class="text-center">Management</th>
+            </tr>
+          </thead>
+          <tbody id="master-member-rows"></tbody>
+        </table>
+      </div>
 
-  <div id='master-add-section'>
-    <br>
-    <table width=60% class='add-member text-center table table-sm'>
-      <tr>
-        <td width=100%%>
-          <table width=100% class='table-add-member text-center table table-sm'>
-            <tr height=55 class="align-middle">
-              <td colspan=3 class="text-center">
-                <span class="text-white"><b> :: Add New Member :: </b></span>
-              </td>
-            </tr>
-            <tr id='master-action-error-row'>
-              <td height=10 colspan=3 class="bg-light"></td>
-            </tr>
-            <tr id='master-action-error-msg'>
-              <td height=25 colspan=3 class="text-center bg-light">
-                <span class="text-danger"></span>
-              </td>
-            </tr>
-            <tr id='master-action-error-end'>
-              <td height=10 colspan=3 class="bg-light"></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td width=27% class="text-end">
-                <span class="text-dark"><b> Add to Group </b></span>
-              </td>
-              <td width=5% class="text-center">
-                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-              </td>
-              <td width=68% class="text-start">
-                <select name='user_newgroup' id='master-add-user-newgroup'></select>
-              </td>
-            </tr>
-            <tr height=5 class="bg-light align-middle">
-              <td colspan=3></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td class="text-end">
-                <span class="text-dark"><b> Username </b></span>
-              </td>
-              <td class="text-center">
-                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-              </td>
-              <td class="text-start">
-                <input type='text' size=15 name='add_user' id='master-add-user' placeholder='&nbsp;Username' value='' required>
-                <span class="text-warning">* 8-20 Characters long</span>
-              </td>
-            </tr>
-            <tr height=5 class="bg-light align-middle">
-              <td colspan=3></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td class="text-end">
-                <span class="text-dark"><b> Password </b></span>
-              </td>
-              <td class="text-center">
-                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-              </td>
-              <td class="text-start">
-                <input type='password' size=15 name='add_pass' id='master-add-pass' placeholder='&nbsp;Password' required>
-                <span class="text-warning">* 8-20 Characters long</span>
-              </td>
-            </tr>
-            <tr height=5 class="bg-light align-middle">
-              <td colspan=3></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td class="text-end">
-                <span class="text-dark"><b> Re - Password </b></span>
-              </td>
-              <td class="text-center">
-                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-              </td>
-              <td class="text-start">
-                <input type='password' size=15 name='add_re' id='master-add-re' placeholder='&nbsp;Re - Password' required>
-                <span class="text-warning">* Same as Password</span>
-              </td>
-            </tr>
-            <tr height=10 class="bg-light align-middle">
-              <td colspan=3></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td colspan=3 class="text-start">
-                <span class="text-primary">
-                  &nbsp; * Please use "a-z" , "A-Z" , "0-9" , "-" , "_" , "@" or "." <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp; to create Username and Password <br>
-                  &nbsp; * You can create Username as abcde_01 - abcde_10 ,<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp; abcde01 - abcde10 or abcde-01 - abcde-10<br>
-                  &nbsp; * You can't duplicate usernames <br>
-                </span>
-              </td>
-            </tr>
-            <tr height=10 class="bg-light align-middle">
-              <td colspan=3></td>
-            </tr>
-            <tr height=25 class="bg-light align-middle">
-              <td class="text-end">
-                <span class="text-dark"><b>&nbsp;</b></span>
-              </td>
-              <td width=60 class="text-center">
-                <span class="text-dark"><b>&nbsp;</b></span>
-              </td>
-              <td class="text-start">
-                <input type=button size=20 value='&nbsp; Add  &nbsp;' class='btn-add-member' id='master-add-member-btn'>&nbsp;
-              </td>
-            </tr>
-            <tr height=22 class="bg-light align-middle">
-              <td colspan=3 class="text-center">
-                <span class="text-dark"><b>&nbsp;</b></span>
-              </td>
-            </tr>
-            <tr height=20 class="align-middle">
-              <td colspan=3></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table><br>&nbsp;
-  </div>
-  <div id='master-no-add-section'>
-    <br>&nbsp;
-  </div>
+      <div class="d-flex flex-wrap align-items-center gap-2 border-top border-bottom py-3 mb-3">
+        <span class="fw-semibold text-danger">Page :</span>
+        <div id="master-pagination" class="d-flex flex-wrap gap-1"></div>
+      </div>
+
+      <div class="bg-body-secondary border rounded-3 p-3 mb-4">
+        <div class="row g-2 align-items-center">
+          <div class="col-lg-auto fw-semibold">Selected Items :</div>
+          <div class="col-lg-auto d-flex flex-wrap gap-2">
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="master-bulk-limit">
+              <img src="/assets/images/icon/limit.png" alt="" width="18" height="18"> Limit
+            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="master-bulk-unlimit">
+              <img src="/assets/images/icon/unlimit.png" alt="" width="18" height="18"> Unlimit
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm" id="master-bulk-delete">
+              <img src="/assets/images/icon/bin.png" alt="" width="18" height="18"> Delete
+            </button>
+          </div>
+          <div class="col-lg-auto fw-semibold">Move To :</div>
+          <div class="col-lg">
+            <select id="ref_id" class="form-select form-select-sm"></select>
+          </div>
+          <div class="col-lg-auto">
+            <button type="button" class="btn btn-dark btn-sm" id="master-bulk-move">Set</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="master-add-section" class="border rounded-3 p-3 p-lg-4">
+      <p class="text-danger fw-semibold mb-1">Add New Member</p>
+      <h2 class="h4 fw-bold mb-3">Create sub account</h2>
+      <div id="master-action-error-row" class="d-none"></div>
+      <div id="master-action-error-msg" class="alert alert-danger d-none">
+        <span id="master-action-error-text"></span>
+      </div>
+      <div id="master-action-error-end" class="d-none"></div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="master-add-user-newgroup" class="form-label">Add to Group</label>
+          <select name="user_newgroup" id="master-add-user-newgroup" class="form-select"></select>
+        </div>
+        <div class="col-md-6">
+          <label for="master-add-user" class="form-label">Username</label>
+          <input type="text" name="add_user" id="master-add-user" placeholder="Username" class="form-control" required>
+          <div class="form-text">8-20 characters</div>
+        </div>
+        <div class="col-md-6">
+          <label for="master-add-pass" class="form-label">Password</label>
+          <input type="password" name="add_pass" id="master-add-pass" placeholder="Password" class="form-control" required>
+          <div class="form-text">8-20 characters</div>
+        </div>
+        <div class="col-md-6">
+          <label for="master-add-re" class="form-label">Re - Password</label>
+          <input type="password" name="add_re" id="master-add-re" placeholder="Re - Password" class="form-control" required>
+          <div class="form-text">Same as password</div>
+        </div>
+      </div>
+
+      <p class="text-primary small mt-3 mb-3">Use a-z, A-Z, 0-9, "-", "_", "@" or ".". Usernames cannot be duplicated.</p>
+      <button type="button" class="btn btn-danger" id="master-add-member-btn"><i class="bi bi-person-plus"></i> Add</button>
+    </div>
+    <div id="master-no-add-section" class="d-none"></div>
+  </section>
 
   <template id="master-group-option-template">
-    <option value=''></option>
+    <option value=""></option>
   </template>
 
   <template id="master-member-row-template">
-    <tr height=28 class='line_hover align-middle'>
-      <td class="text-center bg-light">
-        <input type='checkbox' name='' value='' title='' class='master-member-check'>
+    <tr class="line_hover">
+      <td class="text-center">
+        <input type="checkbox" name="" value="" title="" class="form-check-input master-member-check">
       </td>
-      <td data-role="name-cell" class="text-start bg-light"></td>
-      <td data-role="user-cell" class="text-center bg-light"></td>
-      <td data-role="pass-cell" class="text-center bg-light"></td>
-      <td data-role="operating-cell" class="text-center bg-light"></td>
-      <td data-role="actions-cell" class="text-center bg-light">
-        <img src='' title='' class='master-status-btn'>
-        <a target=_blank href='' title='View Personal Report' data-role="report-link"><img src='/assets/images/icon/report.png'></a>
-        <img src='/assets/images/icon/move.png' title='Move current group' class='master-left-btn'>
-        <button class='modalInput master-edit-btn' rel='#prompt2' type='button'>
-          <img src='/assets/images/icon/edit.png' title='Edit Username and Password'>
-        </button>
-        <img src='/assets/images/icon/bin.png' title='Delete this Sub Account from this Corporate Card' class='master-delete-btn'>
+      <td data-role="name-cell"></td>
+      <td data-role="user-cell" class="text-center"></td>
+      <td data-role="pass-cell" class="text-center"></td>
+      <td data-role="operating-cell" class="text-center"></td>
+      <td data-role="actions-cell" class="text-center">
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-outline-light border master-status-btn" title=""><img src="" alt="" width="18" height="18"></button>
+          <a target="_blank" href="" title="View Personal Report" data-role="report-link" class="btn btn-outline-light border"><img src="/assets/images/icon/report.png" alt="" width="18" height="18"></a>
+          <button type="button" class="btn btn-outline-light border master-left-btn" title="Move current group"><img src="/assets/images/icon/move.png" alt="" width="18" height="18"></button>
+          <button class="btn btn-outline-light border modalInput master-edit-btn" rel="#prompt2" type="button" title="Edit Username and Password"><img src="/assets/images/icon/edit.png" alt="" width="18" height="18"></button>
+          <button type="button" class="btn btn-outline-light border master-delete-btn" title="Delete this Sub Account from this Corporate Card"><img src="/assets/images/icon/bin.png" alt="" width="18" height="18"></button>
+        </div>
       </td>
     </tr>
   </template>
 
   <template id="master-member-name-table-template">
-    <table width=100% class="text-center table table-sm">
-      <tr class='line_name'>
-        <td width=50% data-role="fname" class="text-start">&nbsp;</td>
-        <td width=50% data-role="lname" class="text-start">&nbsp;</td>
-      </tr>
-    </table>
-  </template>
-
-  <template id="master-member-name-empty-template">
-    <div class="text-center">
-      <span class="text-danger"> - </span>
+    <div class="d-flex flex-wrap gap-2">
+      <span data-role="fname"></span>
+      <span data-role="lname"></span>
     </div>
   </template>
 
+  <template id="master-member-name-empty-template">
+    <span class="text-danger">-</span>
+  </template>
+
   <template id="master-member-user-template">
-    <span><b data-role="text"></b></span>
+    <strong data-role="text"></strong>
   </template>
 
   <template id="master-member-pass-template">
-    <span><b data-role="text"></b></span>
+    <strong data-role="text"></strong>
   </template>
 
   <template id="master-pagination-link-template">
-    <a href='#' class='master-page-link'>
-      <span></span>
-    </a>
+    <a href="#" class="btn btn-sm btn-outline-secondary master-page-link"><span></span></a>
   </template>
 
-  <!-- Rename Group modal -->
-  <div class='modal1' id='prompt1'>
-    <h2> Rename Group</h2>
-    <form id='rename-group-form' onsubmit='event.preventDefault();'>
-      <input type="text" name="rename" id="rename">
-      <input type="text" name="idrename" id="idrename" readonly class="txt_rename">
-      <br><br>
-      <span> ไม่สามารถเปลี่ยนชื่อ None Group ได้ </span>
-      <br>
-      <input type="submit" id="btn_rename" value="Save" class="btntest btn-save" />
-      <input type="button" value="Cancel" class="close btntest btn-cancel" />
-    </form>
+  <div class="modal fade modal1" id="prompt1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="rename-group-form" onsubmit="event.preventDefault();">
+          <div class="modal-header">
+            <h2 class="modal-title h5">Rename Group</h2>
+            <button type="button" class="btn-close close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="rename" class="form-label">Group name</label>
+            <input type="text" name="rename" id="rename" class="form-control mb-2">
+            <input type="text" name="idrename" id="idrename" readonly class="form-control d-none">
+            <span id="txt_alert" class="text-danger d-none">ไม่สามารถเปลี่ยนชื่อ None Group ได้</span>
+          </div>
+          <div class="modal-footer">
+            <input type="button" value="Cancel" class="close btn btn-outline-secondary">
+            <input type="submit" id="btn_rename" value="Save" class="btn btn-danger">
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <!-- Edit Sub Account modal -->
-  <div class='modal1' id='prompt2'>
-    <h2> Edit Sub Account</h2>
-    <form id='edit-sub-form' onsubmit='event.preventDefault();'>
-      <b>New Username :</b> <input type="text" name="rename-subAcc" id="rename-subAcc">
-      <input type="text" name="idre-sub" id="idre-sub" readonly class="txt_rename"><br><br>
-      <b>New Password :</b><input type="password" name="pass" id="pass"><br><br>
-      <b>Re-New password :</b><input type="password" name="re-pass" id="re-pass"><br><br><br>
-      <div id="imgload"> <img src="/assets/images/image2/eol system/loading2.gif" /></div>
-      <div id="editerror"></div>
-      <input type="submit" id="btn_rename_sub" value="Save" class="btntest btn-save" />
-      <input type="button" value="Cancel" class="close btntest btn-cancel" />
-    </form>
+  <div class="modal fade modal1" id="prompt2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="edit-sub-form" onsubmit="event.preventDefault();">
+          <div class="modal-header">
+            <h2 class="modal-title h5">Edit Sub Account</h2>
+            <button type="button" class="btn-close close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="rename-subAcc" class="form-label">New Username</label>
+            <input type="text" name="rename-subAcc" id="rename-subAcc" class="form-control mb-3">
+            <input type="text" name="idre-sub" id="idre-sub" readonly class="form-control d-none">
+            <label for="pass" class="form-label">New Password</label>
+            <input type="password" name="pass" id="pass" class="form-control mb-3">
+            <label for="re-pass" class="form-label">Re-New password</label>
+            <input type="password" name="re-pass" id="re-pass" class="form-control mb-3">
+            <div id="imgload" class="d-none"><img src="/assets/images/image2/eol system/loading2.gif" alt="Loading"></div>
+            <div id="editerror" class="text-danger"></div>
+          </div>
+          <div class="modal-footer">
+            <input type="button" value="Cancel" class="close btn btn-outline-secondary">
+            <input type="submit" id="btn_rename_sub" value="Save" class="btn btn-danger">
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>

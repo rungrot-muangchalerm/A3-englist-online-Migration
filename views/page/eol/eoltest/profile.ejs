@@ -1,282 +1,177 @@
-<div id="view-edit-profile" class="eol-view">
-  <br>
-  <div class='edit-profile'>
-    <p>Welcome to EngTest.net</p>
+<div id="view-edit-profile" class="eol-view d-none">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <section class="bg-body-tertiary border rounded-3 shadow-sm p-4 h-100">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 p-3">
+            <i class="bi bi-person fs-3"></i>
+          </div>
+          <div>
+            <p class="text-danger fw-semibold mb-1">EngTest.net</p>
+            <h1 class="h3 fw-bold mb-0">Profile</h1>
+          </div>
+        </div>
+
+        <div id="profile-avatar-cell" class="bg-body-secondary border rounded-3 p-4 text-center mb-3"></div>
+
+        <div class="alert alert-primary mb-4">
+          สามารถใส่ข้อมูลส่วนตัวด้วยภาษาไทยได้ และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย <span class="text-danger">*</span>
+        </div>
+
+        <button type="button" id="pass_msg" class="btn btn-outline-primary w-100">
+          <i class="bi bi-key"></i> Change Password
+        </button>
+      </section>
+    </div>
+
+    <div class="col-lg-8">
+      <section class="bg-body-tertiary border rounded-3 shadow-sm p-4 mb-4">
+        <form id="profileForm" enctype="multipart/form-data" onsubmit="event.preventDefault();">
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+            <div>
+              <p class="text-body-secondary fw-semibold mb-1">Personal information</p>
+              <h2 class="h4 fw-bold mb-0">Edit your account details</h2>
+            </div>
+            <button type="button" id="reg_submit" class="btn btn-danger align-self-start">
+              <i class="bi bi-save"></i> Save Profile
+            </button>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label for="profile-fname" class="form-label"><span class="text-danger">*</span> First Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" name="fname" id="profile-fname" value="" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="profile-lname" class="form-label"><span class="text-danger">*</span> Last Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" name="lname" id="profile-lname" value="" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label"><span class="text-danger">*</span> Gender</label>
+              <div class="border rounded-3 px-3 py-2 d-flex gap-4">
+                <div class="form-check mb-0">
+                  <input type="radio" class="form-check-input" name="gender" id="profile-gender-m" value="1">
+                  <label for="profile-gender-m" class="form-check-label">Male</label>
+                </div>
+                <div class="form-check mb-0">
+                  <input type="radio" class="form-check-input" name="gender" id="profile-gender-f" value="2">
+                  <label for="profile-gender-f" class="form-check-label">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="popup_container" class="form-label"><span class="text-danger">*</span> Date of Birth</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                <input class="form-control" type="text" name="birth" id="popup_container" value="" required>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label for="profile-education-a" class="form-label"><span class="text-danger">*</span> Education</label>
+              <select name="education_a" id="profile-education-a" class="form-select">
+                <option value="0">- Select your education level -</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="profile-education-b" class="form-label">School Name</label>
+              <input class="form-control" type="text" name="education_b" id="profile-education-b" value="">
+            </div>
+            <div class="col-12">
+              <label for="profile-address" class="form-label">Address</label>
+              <textarea name="address" id="profile-address" rows="3" class="form-control"></textarea>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="profile-email" class="form-label"><span class="text-danger">*</span> E-mail</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input class="form-control" type="text" name="email" id="profile-email" value="" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="profile-tel" class="form-label">Tel.</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input class="form-control" type="number" name="tel" id="profile-tel" value="">
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="profile-image" class="form-label">Display Image</label>
+              <input id="profile-image" class="form-control" name="image" type="file">
+              <div class="form-text">Image Type: .jpg, Image Size: less than 100 KB, Width: 100 px, Height: 100 px</div>
+            </div>
+          </div>
+
+          <div id="profileMsgRow" class="d-none"></div>
+          <div id="profileMsgRow2" class="alert alert-info mt-3 d-none">
+            <div id="profileMsg"></div>
+          </div>
+        </form>
+      </section>
+
+      <section class="bg-body-tertiary border rounded-3 shadow-sm p-4">
+        <form id="passForm" class="d-none" onsubmit="event.preventDefault();">
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+            <div>
+              <p class="text-body-secondary fw-semibold mb-1">Security</p>
+              <h2 class="h4 fw-bold mb-0">Edit Password</h2>
+            </div>
+            <button type="button" class="btn btn-danger align-self-start" id="password-save-btn">
+              <i class="bi bi-save"></i> Save Password
+            </button>
+          </div>
+
+          <div class="alert alert-primary">
+            Password ใหม่ต้องยาว 8-20 ตัวอักษรและต้องเป็น a-z, A-Z หรือ 0-9 เท่านั้น
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Username</label>
+              <div class="form-control bg-body-secondary"><b id="profile-username"></b></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Old Password</label>
+              <input type="password" class="form-control" name="old" placeholder="Old Password" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">New Password</label>
+              <input type="password" class="form-control" name="new_a" placeholder="New Password" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Re - New Password</label>
+              <input type="password" class="form-control" name="new_b" placeholder="Re - New Password" required>
+            </div>
+          </div>
+
+          <div id="passwordMsgSpacer" class="d-none"></div>
+          <div id="passwordMsgRow" class="alert alert-info mt-3 d-none">
+            <div id="passwordMsg"></div>
+          </div>
+        </form>
+      </section>
+    </div>
   </div>
-
-  <form id='profileForm' enctype='multipart/form-data' onsubmit='event.preventDefault();'>
-    <table width=85% class="text-center table table-sm">
-      <tr height=60 class="align-middle">
-        <td colspan=6 class="text-center">
-          <span class="text-white"><b>Profile</b></span>
-        </td>
-      </tr>
-      <tr height=75 class="bg-light align-middle">
-        <td colspan=6 class="text-center">
-          <span class="text-primary">
-            สามารถใส่ข้อมูลส่วนตัวด้วยภาษาไทยได้และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย <span class="text-danger">*</span>
-            <br> การกด Save Profile จะแก้ไขเพียง Profile เท่านั้น จะไม่แก้ไข Password แต่อย่างใด
-          </span>
-        </td>
-      </tr>
-      <tr height=5 class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark">
-            <b>
-              <span class="text-danger">*</span>&nbsp; First Name
-            </b>
-          </span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start">
-          <input type=text class='inputstyle' name='fname' id='profile-fname' value='' required>
-        </td>
-        <td width=11% class="text-end">
-          <span class="text-dark"><b>
-              <span class="text-danger">*</span>&nbsp; Last Name
-            </b></span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=15% class="text-start">
-          <input type=text size=21 class='inputstyle' name='lname' id='profile-lname' value='' required>
-        </td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark">
-            <span class="text-danger">*</span>&nbsp;<b> Gender </b>
-          </span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start">
-          <span class="text-dark"><b>
-              <input type=radio name='gender' id='profile-gender-m' value='1'>&nbsp;Male
-              <input type=radio name='gender' id='profile-gender-f' value='2'>&nbsp;Female
-            </b></span>
-        </td>
-        <td width=10% class="text-end">
-          <span class="text-danger">*</span>&nbsp;<b>Date of Birth</b>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=11% class="text-start">
-          <input class='inputstyle' id='popup_container' type=text name='birth' id='profile-birth' value='' size=21 required>
-        </td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark">
-            <span class="text-danger">*</span>&nbsp;<b> Education </b>
-          </span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start">
-          <select name='education_a' id='profile-education-a'>
-            <option value='0'>- Select your education level -</option>
-          </select>
-        </td>
-        <td width=11% class="text-end">
-          <span class="text-dark"><b> School Name </b></span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start"><input class='inputstyle' type=text size=21 name='education_b' id='profile-education-b' value=''></td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark"><b> Address </b></span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td colspan=4 class="text-start">
-          <textarea name='address' id='profile-address' rows=3></textarea>
-        </td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=5 class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark">
-            <span class="text-danger">*</span>&nbsp;<b> E-mail </b>
-          </span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start">
-          <input class='inputstyle' type=text name='email' id='profile-email' value='' required>&nbsp;&nbsp;&nbsp;
-        </td>
-        <td width=11% class="text-end">
-          <span class="text-dark"><b> Tel. </b></span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=10% class="text-start"><input class='inputstyle' type=number name='tel' id='profile-tel' value=''></td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td class="text-end">
-          <span class="text-dark"><b> Display Image </b></span>
-        </td>
-        <td class="text-center">
-          <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td colspan=4 class="text-start">
-          <table width=100% class="text-center table table-sm">
-            <tr>
-              <td rowspan=2 id='profile-avatar-cell' class="text-center">
-              </td>
-              <td width=100%%>&nbsp;&nbsp;&nbsp;<input class='inputstyle' name='image' type='file'></td>
-            </tr>
-            <tr>
-              <td width=100%%>
-                <span class="text-primary">&nbsp;&nbsp;&nbsp;Image Type : .jpg &nbsp; Image Size : Less than 100 KB &nbsp; Width : 100 px &nbsp; Height : 100 px</span>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr height=20 id='profileMsgRow' class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=20 id='profileMsgRow2' class="bg-light align-middle">
-        <td width=15% class="text-end">
-          <span class="text-dark"><b>&nbsp;</b></span>
-        </td>
-        <td width=5% class="text-center">
-          <span class="text-dark"><b>&nbsp;</b></span>
-        </td>
-        <td colspan=4 class="text-start">
-          <div id='profileMsg'></div>
-        </td>
-      </tr>
-      <tr height=20 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td class="text-end">
-          <span class="text-dark"><b>&nbsp;</b></span>
-        </td>
-        <td class="text-center">
-          <span class="text-dark"><b>&nbsp;</b></span>
-        </td>
-        <td colspan=4 class="text-start">
-          <button type='button' id='reg_submit' class='myButton'> Save Profile </button>
-        </td>
-      </tr>
-      <tr height=20 class="align-middle">
-        <td colspan=6></td>
-      </tr>
-    </table>
-  </form>
-
-  <br>&nbsp;
-
-  <div id='pass_msg' class="text-center">
-    <span class="text-primary"><b>หากต้องการเปลี่ยน Password โปรดคลิ๊กที่นี่ [Change Password : Click Here]</b></span>
-  </div>
-
-  <form id='passForm' onsubmit='event.preventDefault();'>
-    <table width=70% class="text-center table table-sm">
-      <tr height=50 class="align-middle">
-        <td colspan=6 class="text-center">
-          <span class="text-white"><b>Edit Password</b></span>
-        </td>
-      </tr>
-      <tr height=75 class="bg-light align-middle">
-        <td colspan=6 class="text-center">
-          <span class="text-primary">
-            Password ใหม่ต้องยาว 8-20 ตัวอักษรและต้องเป็น a-z , A-Z หรือ 0-9 เท่านั้น <br> การกด Edit Password จะแก้ไขเพียง Password เท่านั้น จะไม่แก้ไข Profile แต่อย่างใด
-          </span>
-        </td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td width=20%% class="text-end">
-          <span><b>Username</b></span>
-        </td>
-        <td width=3%% class="text-center">
-          <span><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=20%% class="text-start">
-          <span><b id='profile-username'></b></span>
-        </td>
-        <td width=20%% class="text-end">
-          <span><b>Old Password</b></span>
-        </td>
-        <td width=3%% class="text-center">
-          <span><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=24%% class="text-start"><input type='password' size='18' name='old' placeholder='&nbsp;Old Password' required></td>
-      </tr>
-      <tr height=10 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td width=20%% class="text-end">
-          <span><b>New Password</b></span>
-        </td>
-        <td class="text-center">
-          <span><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=22%% class="text-start"><input type='password' size='16' name='new_a' placeholder='&nbsp;New Password' required></td>
-        <td width=20%% class="text-end">
-          <span><b>Re - New Password</b></span>
-        </td>
-        <td class="text-center">
-          <span><b>&nbsp;:&nbsp;</b></span>
-        </td>
-        <td width=24%% class="text-start"><input type='password' size='18' name='new_b' placeholder='&nbsp;Re - New Password' required></td>
-      </tr>
-      <tr height=20 id='passwordMsgSpacer' class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=20 id='passwordMsgRow' class="bg-light align-middle">
-        <td width=100% colspan=6 class="text-center">
-          <div id='passwordMsg'></div>
-        </td>
-      </tr>
-      <tr height=20 class="bg-light align-middle">
-        <td colspan=6></td>
-      </tr>
-      <tr height=25 class="bg-light align-middle">
-        <td colspan=6 class="text-center"><button type='button' class='btn-edit-pass' id='password-save-btn'>&nbsp; Edit Password &nbsp;</button></td>
-      </tr>
-      <tr height=20 class="align-middle">
-        <td colspan=6></td>
-      </tr>
-    </table>
-  </form>
-
-  <br>&nbsp;
 
   <template id="profile-education-option-template">
-    <option value=''></option>
+    <option value=""></option>
   </template>
   <template id="profile-avatar-template">
-    <img src=''><br>
+    <img src="" alt="Profile image" width="100" height="100" class="img-fluid rounded-circle border"><br>
   </template>
 </div>

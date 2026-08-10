@@ -8,15 +8,6 @@
     7: 'Vocabulary',
   };
 
-  const skillBackgrounds = {
-    1: '/assets/images/image2/eol system/Lessons/bg-lessons-reading2.jpg',
-    2: '/assets/images/image2/eol system/Lessons/bg-lessons-listening2.jpg',
-    3: '/assets/images/image2/eol system/Lessons/bg-lessons-speaking2.jpg',
-    4: '/assets/images/image2/eol system/Lessons/bg-lessons-writing2.jpg',
-    5: '/assets/images/image2/eol system/Lessons/bg-lessons-grammar2.jpg',
-    7: '/assets/images/image2/eol system/Lessons/bg-lessons-vocabulary2.jpg',
-  };
-
   const levelNames = {
     1: 'Beginner',
     2: 'Intermediate',
@@ -75,8 +66,9 @@
     const page = Number(params.page) || 1;
     const search = params.search || '';
 
-    document.getElementById('list-bg').src = skillBackgrounds[skillId] || '';
-    document.getElementById('list-map-list').href = buildUrl({ skillId: skillId, levelId: levelId, page: 1, topicId: null, search: null });
+    document.getElementById('lesson-list-title').textContent = `${skillNames[skillId] || 'Lesson'} Topics`;
+    document.getElementById('lesson-list-subtitle').textContent = levelNames[levelId] ? `Level: ${levelNames[levelId]}` : '';
+    document.getElementById('lesson-list-link').href = buildUrl({ skillId: skillId, levelId: levelId, page: 1, topicId: null, search: null });
     document.getElementById('search-input').value = search;
 
     const listUrl = `/api/lessons/elearning/topics?skill_id=${skillId}&level_id=${levelId}&page=${page}${search ? `&search=${encodeURIComponent(search)}` : ''}`;
@@ -118,7 +110,7 @@
 
       if (pageCount > 1) {
         const ul = document.createElement('ul');
-        ul.className = 'pagination';
+        ul.className = 'pagination pagination-sm flex-wrap mb-0';
         const itemTemplate = document.getElementById('pagination-item-template');
         for (let i = 1; i <= pageCount; i += 1) {
           const clone = itemTemplate.content.cloneNode(true);
@@ -140,8 +132,9 @@
     const levelId = Number(params.levelId) || 0;
     const topicId = Number(params.topicId) || 0;
 
-    document.getElementById('detail-bg').src = skillBackgrounds[skillId] || '';
-    document.getElementById('detail-map-list').href = buildUrl({ skillId: skillId, levelId: levelId, page: 1, topicId: null, search: null });
+    document.getElementById('lesson-detail-title').textContent = `${skillNames[skillId] || 'Lesson'} Detail`;
+    document.getElementById('lesson-detail-subtitle').textContent = levelNames[levelId] ? `Level: ${levelNames[levelId]}` : '';
+    document.getElementById('lesson-detail-list-link').href = buildUrl({ skillId: skillId, levelId: levelId, page: 1, topicId: null, search: null });
 
     fetch(`/api/lessons/elearning/topic?topic_id=${topicId}&skill_id=${skillId}&level_id=${levelId}`, {
       credentials: 'include',
@@ -168,23 +161,20 @@
 
       const relatedTopics = data.data.relatedTopics || [];
       if (relatedTopics.length > 0) {
-        const wrapper = document.createElement('table');
-        wrapper.setAttribute('align', 'center');
-        wrapper.setAttribute('width', '100%');
-        wrapper.setAttribute('cellpadding', '0');
-        wrapper.setAttribute('cellspacing', '0');
-        wrapper.setAttribute('border', '0');
-        wrapper.setAttribute('bgcolor', 'f0f0f0');
-        wrapper.innerHTML = '<tr height="30" class="align-middle"><td width="100%" colspan="2" class="text-start"><span><b> &nbsp; Relate Topic </b></span></td></tr><tr><td width="5%" class="text-center">&nbsp;</td><td width="95%" class="text-center"></td></tr><tr height="10" class="align-middle"><td width="100%" colspan="2" class="text-start"></td></tr>';
-        const cell = wrapper.rows[1].cells[1];
+        const title = document.createElement('h2');
+        title.className = 'h5 fw-bold mb-3';
+        title.textContent = 'Related Topics';
+        const wrapper = document.createElement('div');
+        wrapper.className = 'list-group';
         const template = document.getElementById('related-topic-template');
         relatedTopics.forEach((topic) => {
           const clone = template.content.cloneNode(true);
           const link = clone.querySelector('[data-role="link"]');
           link.href = buildUrl({ skillId: skillId, levelId: levelId, topicId: topic.topic_id, page: null, search: null });
           clone.querySelector('[data-role="name"]').textContent = topic.topic_name || '';
-          cell.appendChild(clone);
+          wrapper.appendChild(clone);
         });
+        related.appendChild(title);
         related.appendChild(wrapper);
       }
     });

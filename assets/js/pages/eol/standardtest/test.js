@@ -76,16 +76,15 @@
 
       const html = `
         ${mediaHtml}
-        <table class="table table-sm question-table">
-          <tr class="align-top">
-            <td width="5%" rowspan="2" class="text-center"><span>${q.number}.</span></td>
-            <td width="95%" class="text-start"><span>${q.questionText}</span></td>
-          </tr>
-          <tr height="25" class="align-middle">
-            <td>${answersHtml}</td>
-          </tr>
-        </table>
-        <br>
+        <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 mb-3">
+          <div class="d-flex gap-3">
+            <span class="badge text-bg-danger align-self-start">${q.number}</span>
+            <div class="flex-grow-1">
+              <div class="fw-semibold mb-3">${q.questionText}</div>
+              ${answersHtml}
+            </div>
+          </div>
+        </section>
       `;
       container.insertAdjacentHTML('beforeend', html);
     });
@@ -101,27 +100,27 @@
   function buildMedia(q) {
     if (!q.media) return '';
     if (q.media.type === 'text') {
-      return `<div class="media-box"><span>${escapeHtml(q.media.content)}</span></div>`;
+      return `<div class="bg-body-tertiary border rounded-3 p-3 mb-3">${escapeHtml(q.media.content)}</div>`;
     }
     if (q.media.type === 'image') {
-      return `<div class="media-box"><img src="${escapeHtml(q.media.src)}" width="300"></div>`;
+      return `<div class="bg-body-tertiary border rounded-3 p-3 mb-3 text-center"><img src="${escapeHtml(q.media.src)}" width="300" class="img-fluid rounded" alt=""></div>`;
     }
     if (q.media.type === 'audio') {
       if (q.soundPlayed) {
-        return `<div class="media-box"><span class="played-msg">คุณได้ฟังเสียงนี้ไปแล้ว</span></div>`;
+        return `<div class="alert alert-secondary">คุณได้ฟังเสียงนี้ไปแล้ว</div>`;
       }
       const audioId = `audio_${q.number}`;
       const boxId = `audio_box_${q.number}`;
       const playedInputId = `played_${q.number}`;
       return `
-        <div class="media-box">
+        <div class="bg-body-tertiary border rounded-3 p-3 mb-3">
           <div id="${boxId}">
-            <div class="audio-trigger" data-audio="${audioId}" data-box="${boxId}">
-              <span><b>กดที่นี่เพื่อฟังเสียง สามารถฟังได้เพียงครั้งเดียวเท่านั้น</b></span>
-            </div>
+            <button type="button" class="btn btn-outline-warning audio-trigger" data-audio="${audioId}" data-box="${boxId}">
+              <i class="bi bi-volume-up"></i> กดที่นี่เพื่อฟังเสียง สามารถฟังได้เพียงครั้งเดียวเท่านั้น
+            </button>
           </div>
           <div id="${audioId}_wrap" class="d-none">
-            <audio id="${audioId}" controls preload="auto" data-box="${boxId}" data-wrap="${audioId}_wrap">
+            <audio id="${audioId}" controls preload="auto" class="w-100" data-box="${boxId}" data-wrap="${audioId}_wrap">
               <source src="${escapeHtml(q.media.src)}" type="audio/mpeg">
             </audio>
           </div>
@@ -138,22 +137,18 @@
       const k = idx + 1;
       const checked = q.currentAnswer && q.currentAnswer.includes(ans.answerId) ? 'checked' : '';
       return `
-        <tr class="align-top">
-          <td class="text-start">
-            <input type="checkbox" name="ans_${q.number}_${k}" id="ans_${q.number}_${k}" value="${ans.answerId}" ${checked} data-q="${q.number}" data-k="${k}">
-          </td>
-          <td data-q="${q.number}" data-k="${k}" class="answer-text text-start">
-            <span>${ans.text}</span>
-          </td>
-        </tr>
+        <label data-q="${q.number}" data-k="${k}" class="answer-text list-group-item list-group-item-action d-flex gap-2">
+          <input class="form-check-input mt-1" type="checkbox" name="ans_${q.number}_${k}" id="ans_${q.number}_${k}" value="${ans.answerId}" ${checked} data-q="${q.number}" data-k="${k}">
+          <span>${ans.text}</span>
+        </label>
       `;
     }).join('');
-    return `<table class="table table-sm text-start">${rows}</table>`;
+    return `<div class="list-group">${rows}</div>`;
   }
 
   function attachAnswerHandlers() {
     document.querySelectorAll('input[type="checkbox"][id^="ans_"]').forEach((cb) => {
-      cb.addEventListener('click', function () {
+      cb.addEventListener('change', function () {
         const q = this.getAttribute('data-q');
         const k = this.getAttribute('data-k');
         if (this.checked) {
@@ -163,20 +158,6 @@
               if (other) other.checked = false;
             }
           }
-        }
-      });
-    });
-
-    document.querySelectorAll('.answer-text').forEach((cell) => {
-      cell.addEventListener('click', function () {
-        const q = this.getAttribute('data-q');
-        const k = this.getAttribute('data-k');
-        const cb = document.getElementById(`ans_${q}_${k}`);
-        if (!cb) return;
-        const willCheck = !cb.checked;
-        for (let i = 1; i <= 4; i += 1) {
-          const other = document.getElementById(`ans_${q}_${i}`);
-          if (other) other.checked = (String(i) === k) ? willCheck : false;
         }
       });
     });
@@ -209,7 +190,7 @@
         const box = document.getElementById(boxId);
         if (box) {
           box.classList.remove('d-none');
-          box.innerHTML = '<span class="played-msg">คุณได้ฟังเสียงนี้ไปแล้ว</span>';
+          box.innerHTML = '<div class="alert alert-secondary mb-0">คุณได้ฟังเสียงนี้ไปแล้ว</div>';
         }
       });
     });
@@ -220,13 +201,13 @@
     nav.innerHTML = '';
     for (let i = 1; i <= pageCount; i += 1) {
       const num = i <= 9 ? `[0${i}]` : `[${i}]`;
-      const cls = i === currentPage ? 'current' : 'other';
+      const cls = i === currentPage ? 'btn-danger' : (answeredPages.has(i) ? 'btn-success' : 'btn-outline-danger');
       const a = document.createElement('a');
-      a.className = cls;
-      a.innerHTML = `<span>${num}</span>`;
+      a.className = `btn btn-sm ${cls}`;
+      a.href = '#';
+      a.textContent = num;
       a.onclick = () => recordAndGo(i);
       nav.appendChild(a);
-      if (i % 10 === 0) nav.appendChild(document.createElement('br'));
     }
   }
 

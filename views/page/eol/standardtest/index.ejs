@@ -1,25 +1,58 @@
-<div id="standardtest-index-app" class="f-thai">
-  <img src="/assets/images/image2/eol system/Standard Test/bg-standard-test.png" class="banner-img" alt="Standard Test">
+<div id="standardtest-index-app">
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4 mb-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+      <div>
+        <p class="text-danger fw-semibold mb-1">EOL Standard Test</p>
+        <h1 class="h3 fw-bold mb-2">EST Readiness Check</h1>
+        <p class="text-body-secondary mb-0">Check your single-skill completion status before starting the standard assessment.</p>
+      </div>
+      <a href="/eol/eoltest" class="btn btn-outline-secondary align-self-start">
+        <i class="bi bi-arrow-left"></i> Back to System Page
+      </a>
+    </div>
+  </section>
 
-  <div class="msg-box" id="status-msg"></div>
+  <div id="status-msg" class="alert alert-danger d-none"></div>
 
-  <table class="status-table table table-sm">
-    <thead>
-      <tr height="40" class="align-middle">
-        <th class="header-cell" width="34%">Single Skill</th>
-        <th class="header-cell level" width="22%">Beginner</th>
-        <th class="header-cell level" width="22%">Lower Intermediate</th>
-        <th class="header-cell level" width="22%">Intermediate</th>
-      </tr>
-    </thead>
-    <tbody id="skill-status-body"></tbody>
-    <tfoot>
-      <tr class="last-test-row align-middle" height="40">
-        <td>ทดสอบ EST ครั้งล่าสุดเมื่อ</td>
-        <td colspan="3" id="last-test-cell">-</td>
-      </tr>
-    </tfoot>
-  </table>
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4 mb-4">
+    <div class="d-flex align-items-center gap-2 mb-3">
+      <i class="bi bi-clipboard-check text-danger"></i>
+      <h2 class="h5 fw-bold mb-0">Single Skill Requirement</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-sm table-hover align-middle mb-0">
+        <thead>
+          <tr>
+            <th>Single Skill</th>
+            <th class="text-center">Beginner</th>
+            <th class="text-center">Lower Intermediate</th>
+            <th class="text-center">Intermediate</th>
+          </tr>
+        </thead>
+        <tbody id="skill-status-body">
+          <tr>
+            <td colspan="4" class="text-body-secondary">Loading status...</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>ทดสอบ EST ครั้งล่าสุดเมื่อ</th>
+            <td colspan="3" id="last-test-cell">-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
 
-  <button type="button" class="start-btn" id="start-btn" disabled>I want to use EOL Standard Test ( EST )</button>
+  <section class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div>
+        <h2 class="h5 fw-bold mb-1">Ready for EST?</h2>
+        <p class="text-body-secondary mb-0">The start button becomes available when all conditions are met.</p>
+      </div>
+      <button type="button" class="btn btn-danger btn-lg" id="start-btn" disabled>
+        <i class="bi bi-play-fill"></i> Start EOL Standard Test
+      </button>
+    </div>
+  </section>
 </div>

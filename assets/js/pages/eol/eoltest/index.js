@@ -25,27 +25,16 @@
     window.location.href = `${window.location.pathname}?${q.toString()}`;
   }
 
-  // ---------- Modal helpers ----------
-  let mask;
-  function ensureMask() {
-    if (mask) return;
-    mask = document.createElement('div');
-    mask.className = 'modal-mask';
-    document.body.appendChild(mask);
-    mask.addEventListener('click', closeModals);
-  }
-
   function openModal(id) {
-    ensureMask();
     const modal = document.getElementById(id);
     if (!modal) return;
-    modal.classList.add('active');
-    mask.classList.add('active');
+    bootstrap.Modal.getOrCreateInstance(modal).show();
   }
 
   function closeModals() {
-    document.querySelectorAll('.modal1.active').forEach((m) => m.classList.remove('active'));
-    if (mask) mask.classList.remove('active');
+    document.querySelectorAll('.modal1.show').forEach((m) => {
+      bootstrap.Modal.getOrCreateInstance(m).hide();
+    });
   }
 
   // ---------- Master POST helpers ----------
@@ -409,9 +398,9 @@
                 const userCell = clone.querySelector('[data-role="user-cell"]');
                 userCell.bgColor = color;
                 const userClone = userTemplate.content.cloneNode(true);
-                const userFont = userClone.querySelector('font');
-                userFont.id = `userdata_${m.member_id}`;
-                userClone.querySelector('[data-role="text"]').textContent = m.user;
+                const userText = userClone.querySelector('[data-role="text"]');
+                userText.id = `userdata_${m.member_id}`;
+                userText.textContent = m.user;
                 userCell.appendChild(userClone);
 
                 const passCell = clone.querySelector('[data-role="pass-cell"]');
@@ -425,7 +414,7 @@
                 operatingCell.innerHTML = m.operatingText || '';
 
                 const statusImg = clone.querySelector('.master-status-btn');
-                statusImg.src = `/assets/images/icon/${imgStatus}`;
+                statusImg.querySelector('img').src = `/assets/images/icon/${imgStatus}`;
                 statusImg.title = titleStatus;
                 statusImg.dataset.member = m.member_id;
 
@@ -456,9 +445,12 @@
                 const linkClone = linkTemplate.content.cloneNode(true);
                 const link = linkClone.querySelector('a');
                 link.dataset.page = p;
-                const font = linkClone.querySelector('font');
-                font.color = isCurrent ? '#DF013A' : 'black';
-                font.textContent = pageLabel;
+                const label = linkClone.querySelector('span');
+                if (isCurrent) {
+                  link.classList.remove('btn-outline-secondary');
+                  link.classList.add('btn-danger');
+                }
+                label.textContent = pageLabel;
                 pageContainer.appendChild(linkClone);
                 pageContainer.appendChild(document.createTextNode('\u00A0'));
                 if (p % 20 === 0) pageContainer.appendChild(document.createElement('br'));

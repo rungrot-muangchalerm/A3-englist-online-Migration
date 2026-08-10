@@ -172,49 +172,49 @@ function renderStandardDetail(d) {
     const topEl = scoreClone.querySelector('.score-top');
     if (topEl) {
       const value = d.scoreTable.topScoreColor;
-      if (value === 'bgcolor_ffe0e0') topEl.classList.add('bg-light');
-      else if (value === 'bgcolor_C4FAFC') topEl.classList.add('bg-light');
-      else if (value === 'bgcolor_E2F9F9') topEl.classList.add('bg-light');
-      else topEl.classList.add('bg-light');
+      if (value === 'bgcolor_ffe0e0') topEl.classList.add('bg-body-secondary');
+      else if (value === 'bgcolor_C4FAFC') topEl.classList.add('bg-body-secondary');
+      else if (value === 'bgcolor_E2F9F9') topEl.classList.add('bg-body-secondary');
+      else topEl.classList.add('bg-body-secondary');
     }
     for (let i = 1; i <= 11; i += 1) {
       const el = scoreClone.querySelector(`.score-c-${i}`);
       if (el && c) {
         const value = c[i];
-        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
-        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
-        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
-        else el.classList.add('bg-light');
+        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-body-secondary');
+        else el.classList.add('bg-body-secondary');
       }
     }
     for (let i = 1; i <= 7; i += 1) {
       const el = scoreClone.querySelector(`.score-m-${i}`);
       if (el && m) {
         const value = m[i];
-        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
-        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
-        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
-        else el.classList.add('bg-light');
+        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-body-secondary');
+        else el.classList.add('bg-body-secondary');
       }
     }
     for (let i = 1; i <= 5; i += 1) {
       const el = scoreClone.querySelector(`.score-g-${i}`);
       if (el && g) {
         const value = g[i];
-        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
-        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
-        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
-        else el.classList.add('bg-light');
+        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-body-secondary');
+        else el.classList.add('bg-body-secondary');
       }
     }
     for (let i = 1; i <= 6; i += 1) {
       const el = scoreClone.querySelector(`.score-cc-${i}`);
       if (el && cc) {
         const value = cc[i];
-        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
-        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
-        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
-        else el.classList.add('bg-light');
+        if (value === 'bgcolor_ffe0e0') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-body-secondary');
+        else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-body-secondary');
+        else el.classList.add('bg-body-secondary');
       }
     }
     scoreWrap.appendChild(scoreClone);

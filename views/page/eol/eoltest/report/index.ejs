@@ -1,29 +1,46 @@
 <div id="view-report" class="eol-view">
-    <div id='report-app'>
-        <div id="report-section-selector" class="report-section">
-            <div id="selector-class" class="selector-class">
-                <p id="selector-text"></p>
-            </div>
-            <table width="90%" class="sec-report text-center table table-sm">
-                <tr>
-                    <td>
-                        <div>
-                            <div id="report-buttons" class="report-buttons">
-                                <a id="report-button-academic" class="report-button" href="/eol/eoltest/report/academic<%= memberIdQuery %>">
-                                    <img id="report-button-academic-img" src="/assets/images/image2/eol system/Report/Button/Test Evaluation Report.png">
-                                </a>
-                                <a id="report-button-standard" class="report-button" href="/eol/eoltest/report/standard<%= memberIdQuery %>">
-                                    <img id="report-button-standard-img" src="/assets/images/image2/eol system/Report/Button/EST Report.png">
-                                </a>
-                                <a id="report-button-contest" class="report-button" href="/eol/eoltest/report/contest<%= memberIdQuery %>">
-                                    <img id="report-button-contest-img" src="/assets/images/image2/eol system/Report/Button/Contest Report.png">
-                                </a>
-                            </div>
-                            <img src="/assets/images/image2/eol system/Report/bg-report.png" width="100%">
-                        </div>
-                    </td>
-                </tr>
-            </table><br>&nbsp;
+  <div id="report-app">
+    <section id="report-section-selector" class="bg-body-tertiary border rounded-3 shadow-sm p-3 p-lg-4">
+      <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+        <div>
+          <p id="selector-text" class="text-danger fw-semibold mb-1"></p>
+          <h1 class="h3 fw-bold mb-0">Report Center</h1>
         </div>
-    </div>
+        <a href="/eol/eoltest" class="btn btn-outline-secondary align-self-start"><i class="bi bi-arrow-left"></i> Back to System Page</a>
+      </div>
+
+      <div id="report-buttons" class="row g-3">
+        <div class="col-md-6 col-xl-4">
+          <a id="report-button-academic" class="d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" href="/eol/eoltest/report/academic<%= memberIdQuery %>">
+            <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-clipboard-data"></i></span>
+            <span class="flex-grow-1">
+              <strong class="d-block">Test Evaluation Report</strong>
+              <small class="text-body-secondary">Academic test results</small>
+            </span>
+            <i class="bi bi-arrow-right text-danger"></i>
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <a id="report-button-standard" class="d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" href="/eol/eoltest/report/standard<%= memberIdQuery %>">
+            <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-award"></i></span>
+            <span class="flex-grow-1">
+              <strong class="d-block">EST Report</strong>
+              <small class="text-body-secondary">Standard test results</small>
+            </span>
+            <i class="bi bi-arrow-right text-danger"></i>
+          </a>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <a id="report-button-contest" class="d-flex align-items-center gap-3 border rounded-3 p-3 text-decoration-none text-body h-100" href="/eol/eoltest/report/contest<%= memberIdQuery %>">
+            <span class="btn btn-outline-danger rounded-circle"><i class="bi bi-trophy"></i></span>
+            <span class="flex-grow-1">
+              <strong class="d-block">Contest Report</strong>
+              <small class="text-body-secondary">EOL contest results</small>
+            </span>
+            <i class="bi bi-arrow-right text-danger"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>

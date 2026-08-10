@@ -108,7 +108,7 @@
         if (apiData.selectedExam && exam.examId === apiData.selectedExam.examId) {
           tr.classList.add('table-info');
         } else if (idx % 2 === 1) {
-          tr.classList.add('table-light');
+          tr.classList.add('table-secondary');
         }
         rowClone.querySelector('.etest-select').textContent = exam.examName;
         rowClone.querySelector('.etest-select').addEventListener('click', (e) => {
@@ -139,7 +139,7 @@
     if (apiData.selectedExam) {
       renderEtestDetail(apiData.selectedExam, apiData.groups, detailPanel);
     } else {
-      detailPanel.innerHTML = '<div class="p-3 text-secondary text-center">กรุณาเลือกชุดข้อสอบ</div>';
+      detailPanel.innerHTML = '<div class="p-3 text-body-secondary text-center">กรุณาเลือกชุดข้อสอบ</div>';
     }
 
     content.appendChild(clone);

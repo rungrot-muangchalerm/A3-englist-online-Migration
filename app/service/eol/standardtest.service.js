@@ -35,6 +35,21 @@ function dateDiffDays(a, b) {
   return Math.floor(ms / (1000 * 60 * 60 * 24));
 }
 
+function buildProgressivePassMap(passRows) {
+  const passMap = {};
+  passRows.forEach((r) => {
+    const skillId = Number(r.skill_id);
+    const levelId = Number(r.level_id);
+    if (!TEST_SKILLS.includes(skillId) || levelId < 1) return;
+
+    const maxLevel = Math.min(levelId, 3);
+    for (let id = 1; id <= maxLevel; id += 1) {
+      passMap[`${skillId}-${id}`] = true;
+    }
+  });
+  return passMap;
+}
+
 function formatRelatedMedia(media) {
   if (!media) return null;
   const type = Number(media.GQUESTION_TYPE_ID);
@@ -69,10 +84,7 @@ async function getPreTestStatus(memberId) {
   }
 
   const passRows = await standardtestModel.getPassedResults(memberId, 50);
-  const passMap = {};
-  passRows.forEach((r) => {
-    passMap[`${r.skill_id}-${r.level_id}`] = true;
-  });
+  const passMap = buildProgressivePassMap(passRows);
 
   const skillStatus = TEST_SKILLS.map((skillId) => ({
     skillId,
@@ -84,7 +96,9 @@ async function getPreTestStatus(memberId) {
     })),
   }));
 
-  const passCount = passRows.length;
+  const passCount = TEST_SKILLS.reduce((count, skillId) => (
+    count + [1, 2, 3].filter((levelId) => passMap[`${skillId}-${levelId}`]).length
+  ), 0);
   const allPassed = passCount === 18;
 
   const estRows = await standardtestModel.getEstEtests();
