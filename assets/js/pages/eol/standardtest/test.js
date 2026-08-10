@@ -76,12 +76,12 @@
 
       const html = `
         ${mediaHtml}
-        <table class="question-table" cellpadding="0" cellspacing="0" border="0">
-          <tr height="25" valign="top">
-            <td align="center" width="5%" rowspan="2"><font size="3" face="verdana">${q.number}.</font></td>
-            <td align="left" width="95%"><font size="3" face="verdana">${q.questionText}</font></td>
+        <table class="table table-sm question-table">
+          <tr class="align-top">
+            <td width="5%" rowspan="2" class="text-center"><span>${q.number}.</span></td>
+            <td width="95%" class="text-start"><span>${q.questionText}</span></td>
           </tr>
-          <tr height="25">
+          <tr height="25" class="align-middle">
             <td>${answersHtml}</td>
           </tr>
         </table>
@@ -101,10 +101,10 @@
   function buildMedia(q) {
     if (!q.media) return '';
     if (q.media.type === 'text') {
-      return `<div class="media-box"><font size="3" face="verdana">${escapeHtml(q.media.content)}</font></div>`;
+      return `<div class="media-box"><span>${escapeHtml(q.media.content)}</span></div>`;
     }
     if (q.media.type === 'image') {
-      return `<div class="media-box"><img src="${escapeHtml(q.media.src)}" border="0" width="300"></div>`;
+      return `<div class="media-box"><img src="${escapeHtml(q.media.src)}" width="300"></div>`;
     }
     if (q.media.type === 'audio') {
       if (q.soundPlayed) {
@@ -117,10 +117,10 @@
         <div class="media-box">
           <div id="${boxId}">
             <div class="audio-trigger" data-audio="${audioId}" data-box="${boxId}">
-              <font size="2" face="tahoma"><b>กดที่นี่เพื่อฟังเสียง สามารถฟังได้เพียงครั้งเดียวเท่านั้น</b></font>
+              <span><b>กดที่นี่เพื่อฟังเสียง สามารถฟังได้เพียงครั้งเดียวเท่านั้น</b></span>
             </div>
           </div>
-          <div id="${audioId}_wrap" style="display:none;">
+          <div id="${audioId}_wrap" class="d-none">
             <audio id="${audioId}" controls preload="auto" data-box="${boxId}" data-wrap="${audioId}_wrap">
               <source src="${escapeHtml(q.media.src)}" type="audio/mpeg">
             </audio>
@@ -138,17 +138,17 @@
       const k = idx + 1;
       const checked = q.currentAnswer && q.currentAnswer.includes(ans.answerId) ? 'checked' : '';
       return `
-        <tr height="25" valign="top">
-          <td align="left">
+        <tr class="align-top">
+          <td class="text-start">
             <input type="checkbox" name="ans_${q.number}_${k}" id="ans_${q.number}_${k}" value="${ans.answerId}" ${checked} data-q="${q.number}" data-k="${k}">
           </td>
-          <td align="left" data-q="${q.number}" data-k="${k}" class="answer-text">
-            <font size="3" face="verdana">${ans.text}</font>
+          <td data-q="${q.number}" data-k="${k}" class="answer-text text-start">
+            <span>${ans.text}</span>
           </td>
         </tr>
       `;
     }).join('');
-    return `<table align="left" cellpadding="0" cellspacing="0" border="0">${rows}</table>`;
+    return `<table class="table table-sm text-start">${rows}</table>`;
   }
 
   function attachAnswerHandlers() {
@@ -188,8 +188,8 @@
         const wrap = document.getElementById(`${audioId}_wrap`);
         const audio = document.getElementById(audioId);
         if (!audio) return;
-        document.getElementById(boxId).style.display = 'none';
-        if (wrap) wrap.style.display = '';
+        document.getElementById(boxId).classList.add('d-none');
+        if (wrap) wrap.classList.remove('d-none');
         audio.play();
       });
     });
@@ -205,10 +205,10 @@
         const boxId = this.getAttribute('data-box');
         const wrapId = this.getAttribute('data-wrap');
         const wrap = document.getElementById(wrapId);
-        if (wrap) wrap.style.display = 'none';
+        if (wrap) wrap.classList.add('d-none');
         const box = document.getElementById(boxId);
         if (box) {
-          box.style.display = '';
+          box.classList.remove('d-none');
           box.innerHTML = '<span class="played-msg">คุณได้ฟังเสียงนี้ไปแล้ว</span>';
         }
       });
@@ -223,7 +223,7 @@
       const cls = i === currentPage ? 'current' : 'other';
       const a = document.createElement('a');
       a.className = cls;
-      a.innerHTML = `<font color="${i === currentPage ? 'red' : 'blue'}">${num}</font>`;
+      a.innerHTML = `<span>${num}</span>`;
       a.onclick = () => recordAndGo(i);
       nav.appendChild(a);
       if (i % 10 === 0) nav.appendChild(document.createElement('br'));
@@ -279,7 +279,7 @@
     const min = Math.floor(timeLeft / 60);
     const sec = String(timeLeft % 60).padStart(2, '0');
     if (display) {
-      display.innerHTML = `<b><font face="tahoma" size="2">เวลาที่เหลือ : <font color="red">${min}</font> นาที กับ <font color="red">${sec}</font> วินาที</font></b>`;
+      display.innerHTML = `<b><span>เวลาที่เหลือ : <span class="text-danger">${min}</span> นาที กับ <span class="text-danger">${sec}</span> วินาที</span></b>`;
     }
   }
 

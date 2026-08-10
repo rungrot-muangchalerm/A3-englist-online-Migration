@@ -15,7 +15,7 @@ function setExportField(selector, value, disabled) {
 
 function setExportButton(data) {
   if (data.rows.length === 0) return;
-  document.getElementById('admin-gepot-pdf-export-button').style.display = '';
+  document.getElementById('admin-gepot-pdf-export-button').classList.remove('d-none');
   if (data.mode === 'single') {
     setExportField('[data-export="pdf-member-id"]', data.rows[0].memberId, false);
     setExportField('[data-export="pdf-start-username"]', '', true);
@@ -28,6 +28,16 @@ function setExportButton(data) {
   }
 }
 
+function applyTextColor(el, color) {
+  const value = String(color || '').toLowerCase();
+  const cls = value === 'red' ? 'text-danger'
+    : value === 'green' ? 'text-success'
+      : value === 'blue' ? 'text-primary'
+        : value === 'brown' || value === 'orange' ? 'text-warning'
+          : 'text-dark';
+  el.classList.add(cls);
+}
+
 function renderSkill(container, skill) {
   const clone = document.getElementById('admin-gepot-pdf-skill-template').content.cloneNode(true);
   clone.querySelector('[data-role="skill-name"]').textContent = skill.name;
@@ -37,9 +47,9 @@ function renderSkill(container, skill) {
   clone.querySelector('[data-role="skill-score"]').textContent = skill.score;
   clone.querySelector('[data-role="skill-total"]').textContent = skill.total;
   clone.querySelector('[data-role="skill-level"]').textContent = skill.level.text;
-  clone.querySelector('[data-role="skill-level"]').style.color = skill.level.color;
+  applyTextColor(clone.querySelector('[data-role="skill-level"]'), skill.level.color);
   clone.querySelector('[data-role="skill-cefr"]').textContent = skill.cefr.text;
-  clone.querySelector('[data-role="skill-cefr"]').style.color = skill.cefr.color;
+  applyTextColor(clone.querySelector('[data-role="skill-cefr"]'), skill.cefr.color);
   const tbody = clone.querySelector('tbody');
   while (tbody.firstChild) {
     container.appendChild(tbody.firstChild);
@@ -67,7 +77,7 @@ if (username || startUsername || endUsername) {
   }).then(res => res.json()).then(data => {
     if (data.status === 200) {
       if (data.data.rows.length === 0) {
-        document.getElementById('admin-gepot-pdf-not-found').style.display = '';
+        document.getElementById('admin-gepot-pdf-not-found').classList.remove('d-none');
         return;
       }
       setExportButton(data.data);

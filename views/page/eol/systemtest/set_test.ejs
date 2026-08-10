@@ -1,89 +1,37 @@
 <div id="set-test-app" class="f-thai">
-  <style>
-    #set-test-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-    }
-
-    #set-test-app .back-link {
-      float: right;
-      margin-top: 10px;
-      margin-right: 15px;
-    }
-
-    #set-test-app .test-title {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 18px;
-    }
-
-    #set-test-app .create-form {
-      text-align: center;
-      font-size: 15px;
-      margin: 20px auto;
-    }
-
-    #set-test-app .create-form input[type="number"] {
-      height: 27px;
-      width: 60px;
-    }
-
-    #set-test-app .multi-skills-box {
-      width: 90%;
-      margin: 0 auto;
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 10px 0;
-    }
-
-    #set-test-app .multi-skills-box label {
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    #set-test-app .summary-box {
-      width: 90%;
-      margin: 20px auto;
-      font-size: 16px;
-    }
-
-    #set-test-app .summary-box td {
-      padding: 5px 0;
-    }
-  </style>
-
   <a href="/eol/eoltest/academic" class="back-link">
-    <font size="3" color="black"><b>[ Back ]</b></font>
+    <span class="text-dark"><b>[ Back ]</b></span>
   </a>
   <br><br><br><br>
   <div class="test-title">
-    <font size="4" color="#e29805"><b><span class="skill-name"></span></b></font>
+    <span class="text-warning"><b><span class="skill-name"></span></b></span>
     &nbsp; &raquo; &nbsp;
-    <font size="4" color="green"><b><span class="level-name"></span></b></font>
+    <span class="text-success"><b><span class="level-name"></span></b></span>
   </div>
   <br>
   <div class="create-form table-form-create">
     <form id="create-test-form">
-      <font size="3"><b>ใส่จำนวนคำถามในชุดข้อสอบที่ท่านต้องการทดสอบ</b></font>
+      <span><b>ใส่จำนวนคำถามในชุดข้อสอบที่ท่านต้องการทดสอบ</b></span>
       <br><br>
-      <font size="3"><b>จำนวนข้อสอบในแบบทดสอบ : </b></font>
+      <span><b>จำนวนข้อสอบในแบบทดสอบ : </b></span>
       <input type="number" id="amount-input" name="amount" min="10" max="50" value="10" required autofocus>
       &nbsp;
       <input type="submit" value=" สร้างแบบทดสอบ " class="create-test">
       <br><br>
-      <font size="3" color="red"><b>*** จำนวนข้อสอบในชุดต้องมีอย่างน้อย 10 ข้อ และไม่เกิน 50 ข้อ ***</b></font>
+      <span class="text-danger"><b>*** จำนวนข้อสอบในชุดต้องมีอย่างน้อย 10 ข้อ และไม่เกิน 50 ข้อ ***</b></span>
     </form>
   </div>
 
-  <div id="multi-skills-section" style="display:none;">
-    <table align="center" width="90%" cellpadding="5" cellspacing="0" border="0" style="cursor:pointer;">
-      <tr height="25">
-        <td align="left" id="multi-skills-toggle">
-          <font size="2" face="tahoma" color="black"><b id="multi-skills-toggle-text">&raquo; Advanced Setting</b></font>
+  <div id="multi-skills-section">
+    <table width="90%" class="text-center table table-sm">
+      <tr height="25" class="align-middle">
+        <td id="multi-skills-toggle" class="text-start">
+          <span class="text-dark"><b id="multi-skills-toggle-text">&raquo; Advanced Setting</b></span>
         </td>
       </tr>
     </table>
-    <div id="multi-skills-box" class="multi-skills-box" style="display:none;">
-      <table align="center" width="90%" cellpadding="5" cellspacing="0" border="0">
+    <div id="multi-skills-box" class="multi-skills-box">
+      <table width="90%" class="text-center table table-sm">
         <tr>
           <td width="35%"><label><input type="checkbox" class="skill-checkbox" value="1" checked> Reading Comprehension</label></td>
           <td width="35%"><label><input type="checkbox" class="skill-checkbox" value="3" checked> Semi-Speaking</label></td>
@@ -98,47 +46,47 @@
     </div>
   </div>
 
-  <div id="test-summary" style="display:none;">
+  <div id="test-summary">
     <br>
     <hr><br>
-    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" class="summary-box">
-      <tr height="25">
+    <table width="90%" class="summary-box text-center table table-sm">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="5" color="blue"><b>รายละเอียดของแบบทดสอบชุดนี้</b></font>
+          <span class="text-primary"><b>รายละเอียดของแบบทดสอบชุดนี้</b></span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</font>
+          <span>- ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- จำนวนคำถามในแบบทดสอบชุดนี้ : <span class="summary-amount"></span> ข้อ</font>
+          <span>- จำนวนคำถามในแบบทดสอบชุดนี้ : <span class="summary-amount"></span> ข้อ</span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- ระยะเวลาในการทำแบบทดสอบชุดนี้ : <span class="summary-time"></span> นาที</font>
+          <span>- ระยะเวลาในการทำแบบทดสอบชุดนี้ : <span class="summary-time"></span> นาที</span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- ข้อสอบแต่ละข้อมี : 1 คะแนน</font>
+          <span>- ข้อสอบแต่ละข้อมี : 1 คะแนน</span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- กดที่ <font color="brown">"Start"</font> ทางด้านล่างเพื่อเริ่มทำแบบทดสอบ</font>
+          <span>- กดที่ <span class="text-warning">"Start"</span> ทางด้านล่างเพื่อเริ่มทำแบบทดสอบ</span>
         </td>
       </tr>
-      <tr height="25">
+      <tr height="25" class="align-middle">
         <td>
-          <font size="4">- กดที่ <font color="green">"Finish"</font> เพื่อประเมินผลแบบทดสอบชุดนี้</font>
+          <span>- กดที่ <span class="text-success">"Finish"</span> เพื่อประเมินผลแบบทดสอบชุดนี้</span>
         </td>
       </tr>
-      <tr height="50">
-        <td align="center"><button id="start-test-btn" class="create-test"> Start </button></td>
+      <tr height="50" class="align-middle">
+        <td class="text-center"><button id="start-test-btn" class="create-test"> Start </button></td>
       </tr>
     </table>
   </div>

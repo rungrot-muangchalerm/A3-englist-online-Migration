@@ -1,41 +1,41 @@
 <div class="main" data-type-id="<%= typeof typeId !== 'undefined' ? typeId : '' %>" data-topic-id="<%= typeof topicId !== 'undefined' ? topicId : '' %>">
   <br><br>
-  <table align="left" width="85%" cellpadding="0" cellspacing="0" border="0" bgcolor="#6E6E6E" style="margin-left:48px; margin-top:20px;">
-    <tr height="30">
-      <td align="left" width="85%">
-        &nbsp;<font size="2" face="tahoma" color="ffffff"><b>Welcome to Web Admin System :
-            <font size="2" face="tahoma" color="orange"><b><span id="office-admin-name"></span></b></font>
-          </b></font>
+  <table width="85%" class="text-start bg-light table table-sm">
+    <tr height="30" class="align-middle">
+      <td width="85%" class="text-start">
+        &nbsp;<span><b>Welcome to Web Admin System :
+            <span class="text-warning"><b><span id="office-admin-name"></span></b></span>
+          </b></span>
       </td>
     </tr>
   </table>
   <br>
 
-  <a id="office-topic-back-link" href="#" style="height:40px;">
-    <img src="/assets/2010/temp_images/temp/button/bt_to_list.png" style="height:50px; margin-top:-10px; margin-bottom:10px;" title="Back to List">
+  <a id="office-topic-back-link" href="#">
+    <img src="/assets/2010/temp_images/temp/button/bt_to_list.png" title="Back to List">
   </a>
 
-  <table class="view_detail" width="90%" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
-    <tr height="30">
-      <td align="center" width="15%">&nbsp;<font size="2" face="tahoma" color="orange"><b>Topic ID : <span id="office-topic-id"></span></b></font>
+  <table class="view_detail text-center table table-sm" width="90%">
+    <tr height="30" class="align-middle">
+      <td width="15%" class="text-center">&nbsp;<span class="text-warning"><b>Topic ID : <span id="office-topic-id"></span></b></span>
       </td>
-      <td align="left" width="45%">&nbsp;<font size="2" face="tahoma" color="orange"><b>Topic Name : <span id="office-topic-name"></span></b></font>
+      <td width="45%" class="text-start">&nbsp;<span class="text-warning"><b>Topic Name : <span id="office-topic-name"></span></b></span>
       </td>
-      <td align="center" width="15%">&nbsp;<font size="2" face="tahoma" color="orange"><b>Date : <span id="office-topic-date"></span></b></font>
-      </td>
-    </tr>
-    <tr id="office-topic-headline-row" height="30">
-      <td align="center" width="15%">&nbsp;<font size="2" face="tahoma" color="orange"><b>Headline : </b></font>
-      </td>
-      <td align="left" width="45%" colspan="2">&nbsp;<font size="2" face="tahoma" color="orange"><b><span id="office-topic-headline"></span></b></font>
+      <td width="15%" class="text-center">&nbsp;<span class="text-warning"><b>Date : <span id="office-topic-date"></span></b></span>
       </td>
     </tr>
-    <tr height="30">
-      <td align="center" width="75%" colspan="3">&nbsp;<font size="2" face="tahoma" color="orange"><b>Detail </b></font>
+    <tr id="office-topic-headline-row" height="30" class="align-middle">
+      <td width="15%" class="text-center">&nbsp;<span class="text-warning"><b>Headline : </b></span>
+      </td>
+      <td width="45%" colspan="2" class="text-start">&nbsp;<span class="text-warning"><b><span id="office-topic-headline"></span></b></span>
       </td>
     </tr>
-    <tr height="30">
-      <td align="left" width="75%" colspan="3" style="padding:22px;">&nbsp;<div id="office-topic-detail" style="font-family:tahoma; font-size:13px; color:white; font-weight:bold;"></div>
+    <tr height="30" class="align-middle">
+      <td width="75%" colspan="3" class="text-center">&nbsp;<span class="text-warning"><b>Detail </b></span>
+      </td>
+    </tr>
+    <tr height="30" class="align-middle">
+      <td width="75%" colspan="3" class="text-start">&nbsp;<div id="office-topic-detail"></div>
       </td>
     </tr>
   </table>

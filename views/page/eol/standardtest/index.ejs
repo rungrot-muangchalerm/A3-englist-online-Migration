@@ -1,95 +1,22 @@
 <div id="standardtest-index-app" class="f-thai">
-  <style>
-    #standardtest-index-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-      text-align: center;
-    }
-
-    #standardtest-index-app .banner-img {
-      width: 99.7%;
-      max-width: 100%;
-    }
-
-    #standardtest-index-app .status-table {
-      width: 90%;
-      margin: 0 auto;
-      border-collapse: separate;
-      border-spacing: 1px;
-    }
-
-    #standardtest-index-app .status-table th,
-    #standardtest-index-app .status-table td {
-      padding: 8px 4px;
-    }
-
-    #standardtest-index-app .header-cell {
-      background: #c0c0c0;
-    }
-
-    #standardtest-index-app .header-cell.level {
-      background: #d0d0d0;
-    }
-
-    #standardtest-index-app .skill-cell {
-      background: #e0e0e0;
-      font-weight: bold;
-    }
-
-    #standardtest-index-app .icon-cell {
-      background: #f9f9f9;
-    }
-
-    #standardtest-index-app .last-test-row td {
-      background: #e0e0e0;
-      font-weight: bold;
-    }
-
-    #standardtest-index-app .last-test-row td:last-child {
-      background: #ffffff;
-      font-weight: normal;
-    }
-
-    #standardtest-index-app .start-btn {
-      margin: 30px auto;
-      padding: 10px 30px;
-      font-size: 18px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-      background: #f7941d;
-      color: #fff;
-    }
-
-    #standardtest-index-app .start-btn:disabled {
-      background: #cccccc;
-      cursor: not-allowed;
-    }
-
-    #standardtest-index-app .msg-box {
-      width: 90%;
-      margin: 15px auto;
-      font-size: 14px;
-    }
-  </style>
-
   <img src="/assets/images/image2/eol system/Standard Test/bg-standard-test.png" class="banner-img" alt="Standard Test">
 
   <div class="msg-box" id="status-msg"></div>
 
-  <table class="status-table" cellpadding="0" cellspacing="1" border="0">
+  <table class="status-table table table-sm">
     <thead>
-      <tr height="40">
-        <th class="header-cell" width="34%" style="border-top-left-radius: 5px;">Single Skill</th>
+      <tr height="40" class="align-middle">
+        <th class="header-cell" width="34%">Single Skill</th>
         <th class="header-cell level" width="22%">Beginner</th>
         <th class="header-cell level" width="22%">Lower Intermediate</th>
-        <th class="header-cell level" width="22%" style="border-top-right-radius: 5px;">Intermediate</th>
+        <th class="header-cell level" width="22%">Intermediate</th>
       </tr>
     </thead>
     <tbody id="skill-status-body"></tbody>
     <tfoot>
-      <tr class="last-test-row" height="40">
-        <td style="border-bottom-left-radius: 5px;">ทดสอบ EST ครั้งล่าสุดเมื่อ</td>
-        <td colspan="3" style="border-bottom-right-radius: 5px;" id="last-test-cell">-</td>
+      <tr class="last-test-row align-middle" height="40">
+        <td>ทดสอบ EST ครั้งล่าสุดเมื่อ</td>
+        <td colspan="3" id="last-test-cell">-</td>
       </tr>
     </tfoot>
   </table>

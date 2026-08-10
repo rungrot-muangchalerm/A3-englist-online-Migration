@@ -4,90 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><%= typeof title !== 'undefined' ? title : 'หลักสูตรเรียนภาษาอังกฤษออนไลน์ 1 ปี' %></title>
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/1year/1 year icon.ico">
-  <link rel="stylesheet" href="/assets/bootstrap/css/1yearcontent.css">
-  <style type="text/css">
-    html {
-      overflow-x: hidden;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= typeof title !=='undefined' ? title : 'หลักสูตรเรียนภาษาอังกฤษออนไลน์ 1 ปี' %>
+  </title>
 
-    .head {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .fontsub {
-      font-size: 18px;
-    }
-
-    .fontsub a {
-      font-size: 18px;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/1year/1 year icon.ico">
 </head>
 
 <body>
   <img src="/assets/images/image2/1year/lessons(bg)-01.jpg" class="bg">
   <a href="/1yc" title="Home">
-    <img src="/assets/images/image2/1year/button/home-08.png" width="45" height="43"
-      style="position:absolute;z-index:250;left:50%;margin-left:350px;top:8px;">
+    <img src="/assets/images/image2/1year/button/home-08.png" width="45" height="43">
   </a>
 
-  <div style="position:relative;">
+  <div>
     <div class="head">
-      <center>
-        <img src="/assets/images/image2/1year/status-02.png"
-          style="position:absolute;z-index:200;left:50%;margin-left:-680px; border-bottom-left-radius: 35%; border-bottom-right-radius: 35%;">
-      </center>
+      <div class="text-center">
+        <img src="/assets/images/image2/1year/status-02.png">
+      </div>
     </div>
 
     <br>
 
     <a id="yc-logout-link" href="#" title="logout">
-      <img src="/assets/images/image2/1year/button/log-out.png" width="45" height="42"
-        style="position:absolute;z-index:250;left:50%;margin-left:420px;top:9px;"></a>
-    <div
-      style="position:absolute;z-index:200;left:50%;margin-left:-470px; top:15px;font-weight:bold;">
+      <img src="/assets/images/image2/1year/button/log-out.png" width="45" height="42"></a>
+    <div>
       Welcome : <span id="yc-user-name">...</span>
     </div>
   </div>
 
   <%- body %>
 
-  <div>
-    <center style="margin-bottom:10px; margin-top:-3px;">
-      <b>Copyright © 2024 By English Online Co.,Ltd. All rights reserved.</b>
-    </center>
-  </div>
+    <div>
+      <div class="text-center">
+        <b>Copyright © 2024 By English Online Co.,Ltd. All rights reserved.</b>
+      </div>
+    </div>
 
-  <script>
-    (function () {
-      fetch('/api/1yc/me', { method: 'GET', credentials: 'include' }).then(function (res) { return res.json(); }).then(function (data) {
-        const nameEl = document.getElementById('yc-user-name');
-        if (nameEl && data.status === 200 && data.data) {
-          nameEl.textContent = data.data.fname || data.data.user || '';
-        }
-      });
-
-      const logoutLink = document.getElementById('yc-logout-link');
-      if (logoutLink) {
-        logoutLink.addEventListener('click', function (event) {
-          event.preventDefault();
-          fetch('/api/auth/logout', { method: 'POST', credentials: 'include' }).then(function () {
-            window.location.href = '/';
-          });
+    <script>
+      (function () {
+        fetch('/api/1yc/me', { method: 'GET', credentials: 'include' }).then(function (res) { return res.json(); }).then(function (data) {
+          const nameEl = document.getElementById('yc-user-name');
+          if (nameEl && data.status === 200 && data.data) {
+            nameEl.textContent = data.data.fname || data.data.user || '';
+          }
         });
-      }
-    }());
-  </script>
-  <% if (typeof script !== 'undefined' && script) { %>
-    <script src="<%= script %>"></script>
-  <% } %>
+
+        const logoutLink = document.getElementById('yc-logout-link');
+        if (logoutLink) {
+          logoutLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            fetch('/api/auth/logout', { method: 'POST', credentials: 'include' }).then(function () {
+              window.location.href = '/';
+            });
+          });
+        }
+      }());
+    </script>
+    <% if (typeof script !=='undefined' && script) { %>
+      <script src="<%= script %>"></script>
+      <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

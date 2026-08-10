@@ -34,7 +34,7 @@
   function renderUsername(user) {
     const cell = document.getElementById('office-user-username-cell');
     if (user) {
-      cell.innerHTML = '<font size="2" face="tahoma" color="#cccccc"><b></b></font><input type="hidden" name="user">';
+      cell.innerHTML = '<span class="text-secondary"><b></b></span><input type="hidden" name="user">';
       cell.querySelector('b').textContent = user.user || '';
       cell.querySelector('input').value = user.user || '';
       return;
@@ -49,7 +49,7 @@
       const groupRow = document.createElement('tr');
       const groupCell = document.createElement('td');
       groupCell.colSpan = 2;
-      groupCell.innerHTML = '<br><font size="2" face="tahoma" color="#ffff77"><b></b></font>';
+      groupCell.innerHTML = '<br><span class="text-warning"><b></b></span>';
       groupCell.querySelector('b').textContent = labels[prefix] || `Group ${prefix}`;
       groupRow.appendChild(groupCell);
       body.appendChild(groupRow);
@@ -64,7 +64,7 @@
         cell.width = '50%';
         const checked = permissions.indexOf(type.type_id) !== -1 ? ' checked' : '';
         const disabled = user && user.admin_id === 1 ? ' disabled' : '';
-        cell.innerHTML = `<input type="checkbox" value="1"${checked}${disabled}> <font size="2" face="tahoma" color="#cccccc"><b></b></font>`;
+        cell.innerHTML = `<input type="checkbox" value="1"${checked}${disabled}> <span class="text-secondary"><b></b></span>`;
         cell.querySelector('input').name = type.type_id;
         cell.querySelector('input').id = `chk${type.type_id}`;
         cell.querySelector('b').textContent = type.type_name;

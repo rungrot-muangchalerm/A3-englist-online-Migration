@@ -1,7 +1,7 @@
 document.getElementById('admin-login-btn').addEventListener('click', () => {
   const form = document.getElementById('loginForm');
   const msg = document.getElementById('loginMsg');
-  msg.style.display = 'none';
+  msg.classList.add('d-none');
   fetch('/api/backoffice/login?section=admin', {
     method: 'POST',
     credentials: 'include',
@@ -12,10 +12,10 @@ document.getElementById('admin-login-btn').addEventListener('click', () => {
       if (data.ok) {
         window.location.href = '/backoffice/mainoffice/admin/dashboard';
       } else {
-        msg.style.display = '';
-        msg.style.color = 'red';
-        msg.style.fontSize = '12px';
-        msg.style.fontWeight = 'bold';
+        msg.classList.remove('d-none');
+        msg.classList.add('text-danger');
+        msg.classList.add('small');
+        msg.classList.add('fw-bold');
         msg.textContent = data.message || 'Login failed';
       }
     });

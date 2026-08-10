@@ -1,7 +1,7 @@
 document.getElementById('office-login-btn').addEventListener('click', () => {
   const form = document.getElementById('loginForm');
   const msg = document.getElementById('loginMsg');
-  msg.style.display = 'none';
+  msg.classList.add('d-none');
   fetch('/api/backoffice/login?section=office', {
     method: 'POST',
     credentials: 'include',
@@ -12,8 +12,8 @@ document.getElementById('office-login-btn').addEventListener('click', () => {
       if (data.ok) {
         window.location.href = '/backoffice/mainoffice/office/dashboard';
       } else {
-        msg.style.display = '';
-        msg.innerHTML = `<font size="2" color="red"><b>${data.message || 'Login failed'}</b></font>`;
+        msg.classList.remove('d-none');
+        msg.innerHTML = `<span class="text-danger"><b>${data.message || 'Login failed'}</b></span>`;
       }
     });
 });

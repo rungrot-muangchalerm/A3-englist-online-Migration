@@ -1,30 +1,28 @@
-<div style="position:relative; width: 1050px; margin: 0px auto; top: 60px;">
-  <img id="yc-faq-title" src="/assets/images/image2/1year/font(Q&A).png" style="float:left;margin-left:30%;margin-top:50px;">
-  <div style="position:absolute;float:left;margin-left:50px;margin-top:90px;z-index:200;">
+<div>
+  <img id="yc-faq-title" src="/assets/images/image2/1year/font(Q&A).png">
+  <div>
     <a href="/1yc/lessons">
       <img src="/assets/images/image2/1year/button/back.png">
     </a>
   </div>
-  <img src="/assets/images/image2/1year/logo 1 year.png" style="float:right;">
+  <img src="/assets/images/image2/1year/logo 1 year.png">
 </div>
 
-<div style="position:relative; width: 1050px; margin: 0px auto;">
-  <div class="pjblock" align="center">
-    <table style="font-size:10pt;">
+<div>
+  <div class="pjblock text-center">
+    <table>
       <tr>
         <td>
           <br><br>
-          <table width=90% align=center style='z-index:500;'>
+          <table width=90% class="text-center table table-sm">
             <tr>
-              <td style='padding:10px;'>
-                <div align=left style='background:#fff;padding:10px;width:1020px;min-height:300px;height:auto;-moz-box-shadow: 0px 5px 18px #333;margin-top:77px;
-                         -webkit-box-shadow:  0px 5px 18px #333;
-                         box-shadow:0px 5px 18px #333; border-radius: 8px;'>
-                  <table width=80% align=center style='z-index:500;'>
+              <td>
+                <div class="text-start">
+                  <table width=80% class="text-center table table-sm">
                     <tr>
                       <td>
-                        <div id="yc-faq-body" style="padding-top:20px;">
-                          <p align="center">Loading FAQ...</p>
+                        <div id="yc-faq-body">
+                          <p class="text-center">Loading FAQ...</p>
                         </div>
                       </td>
                     </tr>
@@ -50,8 +48,8 @@
       <button type="reset">Cancel</button>
     </form>
     <br>
-    <img id="faq-loading" src="/assets/images/image2/eol system/loading2.gif" style="display:none; margin-left:100px;"><br>
-    <label id="faq-error" style="display:none; margin-left:100px;">มีความผิดพลาดในการเพิ่มข้อมูล</label>
+    <img id="faq-loading" src="/assets/images/image2/eol system/loading2.gif"><br>
+    <label id="faq-error">มีความผิดพลาดในการเพิ่มข้อมูล</label>
   </div>
 </template>
 
@@ -64,8 +62,8 @@
       <a class="faq-topic-link" href="#">
         <p class="faq-topic"></p>
       </a>
-      <p class="faq-date" align="right"></p>
-      <div class="faq-delete delete" style="display:none;">
+      <p class="faq-date text-end"></p>
+      <div class="faq-delete delete">
         <a class="faq-delete-link" href="#">ลบ</a>
       </div>
     </div>
@@ -74,7 +72,7 @@
 
 <!-- FAQ answer form template -->
 <template id="faq-answer-form-template">
-  <div class="divfaq" style="margin-top:50px;">
+  <div class="divfaq">
     <form id="faq-answer-form" onsubmit="event.preventDefault();">
       ตอบกลับ : <br><br>
       <textarea id="faq-answer-detail" class="tx" maxlength="500"></textarea><br><br>
@@ -82,18 +80,18 @@
       <button type="reset">Cancel</button>
     </form>
     <br>
-    <img id="faq-answer-loading" src="/assets/images/image2/eol system/loading2.gif" style="display:none; margin-left:100px;"><br>
+    <img id="faq-answer-loading" src="/assets/images/image2/eol system/loading2.gif"><br>
   </div>
 </template>
 
 <!-- FAQ answer item template -->
 <template id="faq-answer-item-template">
-  <div class="txtcontentsub" style="margin-left:20px;">
+  <div class="txtcontentsub">
     <p><b>Answer :</b></p>
     <p class="answer-detail"></p>
-    <font style="float:left;" class="answer-name"></font>
-    <font style="float:right;" class="answer-date"></font>
-    <div class="answer-delete delete" style="display:none;">
+    <span></span>
+    <span></span>
+    <div class="answer-delete delete">
       <a class="answer-delete-link" href="#">ลบ</a>
     </div>
     <div class="clear"></div>

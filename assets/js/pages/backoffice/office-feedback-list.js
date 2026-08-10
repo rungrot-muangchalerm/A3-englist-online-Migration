@@ -21,13 +21,11 @@
     pages.innerHTML = '';
     for (let i = 1; i <= data.allPages; i++) {
       const link = document.createElement('a');
-      const font = document.createElement('font');
+      const pageText = document.createElement('span');
       link.href = pageUrl(i);
-      font.setAttribute('size', '2');
-      font.setAttribute('face', 'tahoma');
-      font.setAttribute('color', data.page === i ? 'red' : 'yellow');
-      font.textContent = i;
-      link.appendChild(font);
+      pageText.className = data.page === i ? 'text-danger' : 'text-warning';
+      pageText.textContent = i;
+      link.appendChild(pageText);
       pages.appendChild(document.createTextNode('  '));
       pages.appendChild(link);
       pages.appendChild(document.createTextNode('  '));
@@ -77,7 +75,7 @@
 
   function render(data) {
     document.querySelectorAll('[data-menu-link]').forEach(function (link) {
-      link.style.color = link.dataset.menuLink === menu ? 'red' : '';
+      link.classList.toggle('text-danger', link.dataset.menuLink === menu);
     });
     document.getElementById('feedback-header-id').textContent = data.labels.headerId;
     document.getElementById('feedback-header-text').textContent = data.labels.headerText;

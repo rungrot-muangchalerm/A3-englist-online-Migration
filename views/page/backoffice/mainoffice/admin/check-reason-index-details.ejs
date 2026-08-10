@@ -1,6 +1,6 @@
 <div class="main-academic" id="admin-reason-app" data-page-mode="<%= pageMode %>" data-skill-path="<%= typeof skillPath !== 'undefined' ? skillPath : '' %>" data-detail-id="<%= typeof detailId !== 'undefined' ? detailId : '' %>" data-quiz-id="<%= typeof quizId !== 'undefined' ? quizId : '' %>">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -18,7 +18,7 @@
     <hr>
   </div>
 
-  <div align="center" class="f-thai reason-skill-menu">
+  <div class="f-thai reason-skill-menu text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-reason-index-details/reading">[Reading]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details/listening">[Listening]</a>&nbsp;&nbsp;
@@ -29,222 +29,222 @@
     <a href="/backoffice/mainoffice/admin/check-reason-index-details/vocab">[Vocab]</a>&nbsp;&nbsp;
   </div>
 
-  <div id="admin-reason-skill-title" align="center" class="f-thai reason-title" style="display:none;">
+  <div id="admin-reason-skill-title" class="f-thai reason-title text-center">
     <br>
     <h3>
-      <font color="red" id="admin-reason-skill-name"></font>
+      <span class="text-danger"></span>
     </h3>
   </div>
-  <div id="admin-reason-detail-title" align="center" class="f-thai reason-title" style="display:none;">
+  <div id="admin-reason-detail-title" class="f-thai reason-title text-center">
     <br>
-    <font size="3"><b id="admin-reason-detail-heading"></b></font><br>&nbsp;
+    <span><b id="admin-reason-detail-heading"></b></span><br>&nbsp;
   </div>
 
-  <table id="admin-reason-list-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" bordercolor="gray" class="f-thai">
+  <table id="admin-reason-list-table" width="100%" class="f-thai text-center table table-sm">
     <thead>
-      <tr bgcolor="#DDDDDD" height="45">
-        <td align="center" colspan="6">
-          <font color="black" size="3">Reason Amounts : <span id="admin-reason-list-amount"></span></font>
+      <tr height="45" class="bg-light align-middle">
+        <td colspan="6" class="text-center">
+          <span class="text-dark">Reason Amounts : <span id="admin-reason-list-amount"></span></span>
         </td>
       </tr>
-      <tr bgcolor="#EEEEEE" height="40">
-        <td align="center">
-          <font color="black" size="2">&nbsp;No.&nbsp;</font>
+      <tr height="40" class="bg-light align-middle">
+        <td class="text-center">
+          <span class="text-dark">&nbsp;No.&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;DETAIL_ID&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;DETAIL_ID&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;SSKILL_ID&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;SSKILL_ID&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;SSKILL_NAME&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;SSKILL_NAME&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;DETAIL_CODE&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;DETAIL_CODE&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;DETAIL_NAME&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;DETAIL_NAME&nbsp;</span>
         </td>
       </tr>
     </thead>
     <tbody id="admin-reason-list">
       <template id="admin-reason-list-template">
-        <tr height="35" valign="top">
-          <td align="center">
-            <font color="black" size="2" data-role="no"></font>
+        <tr height="35" class="align-middle">
+          <td class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center">
-            <font color="black" size="2" data-role="detail-id"></font>
+          <td class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center">
-            <font color="black" size="2" data-role="sskill-id"></font>
+          <td class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="left" width="20%">
-            <font color="black" size="2" data-role="sskill-name"></font>
+          <td width="20%" class="text-start">
+            <span class="text-dark"></span>
           </td>
-          <td align="center">
-            <font color="black" size="2" data-role="detail-code"></font>
+          <td class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="left" width="60%"><a href="#" target="_blank" data-role="detail-link">
-              <font color="black" size="2" data-role="detail-name"></font>
+          <td width="60%" class="text-start"><a href="#" target="_blank" data-role="detail-link">
+              <span class="text-dark"></span>
             </a></td>
         </tr>
       </template>
     </tbody>
   </table>
 
-  <table id="admin-reason-skill-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" bordercolor="gray" class="f-thai" style="display:none;">
+  <table id="admin-reason-skill-table" width="100%" class="f-thai text-center table table-sm">
     <thead>
-      <tr bgcolor="#DDDDDD" height="45">
-        <td align="center" colspan="10">
-          <font color="black" size="3">Reason Amounts : <span id="admin-reason-skill-amount"></span></font>
+      <tr height="45" class="bg-light align-middle">
+        <td colspan="10" class="text-center">
+          <span class="text-dark">Reason Amounts : <span id="admin-reason-skill-amount"></span></span>
         </td>
       </tr>
-      <tr bgcolor="#EEEEEE" height="40">
-        <td align="center">
-          <font color="black" size="2">&nbsp;No.&nbsp;</font>
+      <tr height="40" class="bg-light align-middle">
+        <td class="text-center">
+          <span class="text-dark">&nbsp;No.&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;DETAIL_ID&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;DETAIL_ID&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;SSKILL_ID&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;SSKILL_ID&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;SSKILL_NAME&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;SSKILL_NAME&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;DETAIL_NAME&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;DETAIL_NAME&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;B&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;B&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;L&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;L&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;I&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;I&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;U&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;U&nbsp;</span>
         </td>
-        <td align="center">
-          <font color="black" size="2">&nbsp;A&nbsp;</font>
+        <td class="text-center">
+          <span class="text-dark">&nbsp;A&nbsp;</span>
         </td>
       </tr>
     </thead>
     <tbody id="admin-reason-skill-list">
       <template id="admin-reason-skill-template">
-        <tr height="35" valign="top">
-          <td align="center" width="3%">
-            <font color="black" size="2" data-role="no"></font>
+        <tr height="35" class="align-middle">
+          <td width="3%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="6%">
-            <font color="black" size="2" data-role="detail-id"></font>
+          <td width="6%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="6%">
-            <font color="black" size="2" data-role="sskill-id"></font>
+          <td width="6%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="left" width="10%">
-            <font color="black" size="2" data-role="sskill-name"></font>
+          <td width="10%" class="text-start">
+            <span class="text-dark"></span>
           </td>
-          <td align="left" width="40%"><a href="#" target="_blank" data-role="detail-link">
-              <font color="black" size="2" data-role="detail-name"></font>
+          <td width="40%" class="text-start"><a href="#" target="_blank" data-role="detail-link">
+              <span class="text-dark"></span>
             </a></td>
-          <td align="center" width="7%">
-            <font color="black" size="2" data-role="level-1"></font>
+          <td width="7%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="7%">
-            <font color="black" size="2" data-role="level-2"></font>
+          <td width="7%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="7%">
-            <font color="black" size="2" data-role="level-3"></font>
+          <td width="7%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="7%">
-            <font color="black" size="2" data-role="level-4"></font>
+          <td width="7%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td align="center" width="7%">
-            <font color="black" size="2" data-role="level-5"></font>
+          <td width="7%" class="text-center">
+            <span class="text-dark"></span>
           </td>
         </tr>
       </template>
     </tbody>
   </table>
 
-  <table id="admin-reason-detail-table" align="center" width="100%" cellpadding="0" cellspacing="0" border="1" class="f-thai" style="display:none;">
+  <table id="admin-reason-detail-table" width="100%" class="f-thai text-center table table-sm">
     <thead>
-      <tr height="45" bgcolor="#eeeeee">
-        <td width="5%" align="center">
-          <font size="2" color="black"><b>No.</b></font>
+      <tr height="45" class="bg-light align-middle">
+        <td width="5%" class="text-center">
+          <span class="text-dark"><b>No.</b></span>
         </td>
-        <td width="5%" align="center">
-          <font size="2" color="black"><b>Quiz ID</b></font>
+        <td width="5%" class="text-center">
+          <span class="text-dark"><b>Quiz ID</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="black"><b>Test</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-dark"><b>Test</b></span>
         </td>
-        <td width="15%" align="center">
-          <font size="2" color="black"><b>Level</b></font>
+        <td width="15%" class="text-center">
+          <span class="text-dark"><b>Level</b></span>
         </td>
-        <td width="5%" align="center">
-          <font size="2" color="black"><b>Skill ID</b></font>
+        <td width="5%" class="text-center">
+          <span class="text-dark"><b>Skill ID</b></span>
         </td>
-        <td width="15%" align="center">
-          <font size="2" color="black"><b>Skill Name</b></font>
+        <td width="15%" class="text-center">
+          <span class="text-dark"><b>Skill Name</b></span>
         </td>
-        <td width="5%" align="center">
-          <font size="2" color="black"><b>SSkill ID</b></font>
+        <td width="5%" class="text-center">
+          <span class="text-dark"><b>SSkill ID</b></span>
         </td>
-        <td width="30%" align="center">
-          <font size="2" color="black"><b>SSkill Name</b></font>
+        <td width="30%" class="text-center">
+          <span class="text-dark"><b>SSkill Name</b></span>
         </td>
       </tr>
     </thead>
     <tbody id="admin-reason-detail-list">
       <template id="admin-reason-detail-template">
-        <tr height="35">
-          <td width="5%" align="center">
-            <font size="2" color="black" data-role="no"></font>
+        <tr height="35" class="align-middle">
+          <td width="5%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="5%" align="center"><a href="#" target="_blank" data-role="quiz-link">
-              <font size="2" color="black" data-role="question-id"></font>
+          <td width="5%" class="text-center"><a href="#" target="_blank" data-role="quiz-link">
+              <span class="text-dark"></span>
             </a></td>
-          <td width="10%" align="center">
-            <font size="2" color="black" data-role="test-name"></font>
+          <td width="10%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="15%" align="center">
-            <font size="2" color="black" data-role="level-name"></font>
+          <td width="15%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="5%" align="center">
-            <font size="2" color="black" data-role="skill-id"></font>
+          <td width="5%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="15%" align="center">
-            <font size="2" color="black" data-role="skill-name"></font>
+          <td width="15%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="5%" align="center">
-            <font size="2" color="black" data-role="sskill-id"></font>
+          <td width="5%" class="text-center">
+            <span class="text-dark"></span>
           </td>
-          <td width="30%" align="center">
-            <font size="2" color="black" data-role="sskill-name"></font>
+          <td width="30%" class="text-center">
+            <span class="text-dark"></span>
           </td>
         </tr>
       </template>
     </tbody>
   </table>
 
-  <table id="admin-reason-quiz-table" align="center" width="100%" border="1" class="f-thai" style="display:none;">
+  <table id="admin-reason-quiz-table" width="100%" class="f-thai text-center table table-sm">
     <tbody>
-      <tr align="middle">
-        <td align="left">
-          <font size="2" face="tahoma" color="brown">&nbsp;<span id="admin-reason-quiz-path"></span></font>
+      <tr class="text-center">
+        <td class="text-start">
+          <span class="text-warning">&nbsp;<span id="admin-reason-quiz-path"></span></span>
         </td>
       </tr>
-      <tr valign="top">
+      <tr>
         <td>&nbsp;[<span id="admin-reason-quiz-id"></span>] <span id="admin-reason-quiz-text"></span></td>
       </tr>
       <tr>
-        <td align="left" width="90%" id="admin-reason-answer-list">
+        <td width="90%" id="admin-reason-answer-list" class="text-start">
           <template id="admin-reason-answer-template">
             <div>
               &nbsp;&nbsp; [<span data-role="answer-id"></span>] : <span data-role="correct"></span> : <span data-role="answer-text"></span>
@@ -254,10 +254,10 @@
       </tr>
       <tr>
         <td>
-          <font size="2"><b>&nbsp;Description : <br></b></font>
-          <font size="2" color="blue" id="admin-reason-description"></font>
-          <div align="center" id="admin-reason-no-description" style="display:none;">
-            <font size="2" color="red"><b> - None Description - </b></font>
+          <span><b>&nbsp;Description : <br></b></span>
+          <span class="text-primary"></span>
+          <div id="admin-reason-no-description" class="text-center">
+            <span class="text-danger"><b> - None Description - </b></span>
           </div><br>
         </td>
       </tr>

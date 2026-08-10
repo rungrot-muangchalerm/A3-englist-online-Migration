@@ -65,7 +65,7 @@
       setText(row.querySelector('[data-role="time"]'), exam.testtime);
       const active = row.querySelector('[data-role="active"]');
       setText(active, exam.active ? 'ON' : 'OFF');
-      active.style.color = exam.active ? '#2db6ee' : 'orange';
+      active.classList.add(exam.active ? 'text-info' : 'text-warning');
 
       listBody.appendChild(row);
     });
@@ -136,7 +136,7 @@
 
     const groups = form.querySelector('[data-role="groups"]');
     const noneLabel = document.createElement('label');
-    noneLabel.style.display = 'block';
+    noneLabel.classList.remove('d-none');
     const noneCheck = document.createElement('input');
     noneCheck.type = 'checkbox';
     noneCheck.name = 'allowgroup';
@@ -149,7 +149,7 @@
 
     (exam.groups || []).forEach((group) => {
       const label = document.createElement('label');
-      label.style.display = 'block';
+      label.classList.remove('d-none');
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.name = 'allowgroup';
@@ -219,7 +219,7 @@
       const row = document.createElement('tr');
       const cell = document.createElement('td');
       cell.colSpan = 5;
-      cell.style.textAlign = 'center';
+      cell.classList.add('text-center');
       cell.textContent = error.message;
       row.appendChild(cell);
       listBody.appendChild(row);

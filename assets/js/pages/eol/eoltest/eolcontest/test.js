@@ -31,11 +31,11 @@
     const min = Math.floor(timeLeft / 60);
     const sec = timeLeft % 60;
     if (min !== 0) {
-      els.timer.innerHTML = `เวลาที่เหลือ : <font color="red">${min}</font> นาที กับ <font color="red">${sec}</font> วินาที`;
+      els.timer.innerHTML = `เวลาที่เหลือ : <span class="text-danger">${min}</span> นาที กับ <span class="text-danger">${sec}</span> วินาที`;
     } else if (sec === 0) {
       els.timer.innerHTML = 'หมดเวลา';
     } else {
-      els.timer.innerHTML = `เวลาที่เหลือ <font color="red">${sec}</font> วินาที`;
+      els.timer.innerHTML = `เวลาที่เหลือ <span class="text-danger">${sec}</span> วินาที`;
     }
   }
 
@@ -91,11 +91,11 @@
 
     if (data.question.media) {
       if (data.question.media.type === 'text') {
-        els.media.innerHTML = `<font size="3" face="verdana">${htmlEscape(data.question.media.content)}</font>`;
+        els.media.innerHTML = `<span>${htmlEscape(data.question.media.content)}</span>`;
       } else if (data.question.media.type === 'image') {
-        els.media.innerHTML = `<div align="center"><img src="${htmlEscape(data.question.media.src)}" border="0" width="300"></div>`;
+        els.media.innerHTML = `<div class="text-center"><img src="${htmlEscape(data.question.media.src)}" width="300"></div>`;
       } else if (data.question.media.type === 'audio') {
-        els.media.innerHTML = `<div align="center"><audio controls><source src="${htmlEscape(data.question.media.src)}"></audio></div>`;
+        els.media.innerHTML = `<div class="text-center"><audio controls><source src="${htmlEscape(data.question.media.src)}"></audio></div>`;
       } else {
         els.media.innerHTML = '';
       }
@@ -103,18 +103,18 @@
       els.media.innerHTML = '';
     }
 
-    els.questionText.innerHTML = `<font size="3" face="verdana">${data.question.questionText || ''}</font>`;
+    els.questionText.innerHTML = `<span>${data.question.questionText || ''}</span>`;
 
     let ansHtml = '';
     const locked = testType === 2 && !!answers[currentPage];
     data.question.answers.forEach(function (a) {
       const checked = answers[currentPage] === Number(a.answerId) ? 'checked' : '';
       const disabled = locked ? 'disabled' : '';
-      ansHtml += `<div class="answer-row"><label><input type="radio" name="choose" value="${a.answerId}" ${checked} ${disabled}> <font face="Verdana" size="3">${htmlEscape(a.text)}</font></label></div>`;
+      ansHtml += `<div class="answer-row"><label><input type="radio" name="choose" value="${a.answerId}" ${checked} ${disabled}> <span>${htmlEscape(a.text)}</span></label></div>`;
     });
     els.answers.innerHTML = ansHtml;
 
-    els.recordBtn.style.display = locked ? 'none' : '';
+    if (locked ) els.recordBtn.classList.add('d-none'); else els.recordBtn.classList.remove('d-none');
 
     renderGrid();
     updateTimerDisplay();

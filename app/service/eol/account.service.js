@@ -72,8 +72,8 @@ async function buildInfoText(memberId, type) {
         [memberId],
       );
       const subCount = subRows.length;
-      return `<table align=center width=90% cellpadding=0 cellspacing=0 border=0>
-        <tr height=25><td align=left><b><font color=green face=tahoma size=2> Available From : ${formatDbDate(sp.start)} <br> Available Until : ${formatDbDate(sp.stop)} <br> Sub Account Amount : ${subCount} / ${sp.amount} </font></b></td></tr>
+      return `<table class="table table-sm w-100 text-center">
+        <tr height=25 class="align-middle"><td class="text-start"><b><span class="text-success"> Available From : ${formatDbDate(sp.start)} <br> Available Until : ${formatDbDate(sp.stop)} <br> Sub Account Amount : ${subCount} / ${sp.amount} </span></b></td></tr>
       </table>`;
     }
 
@@ -88,20 +88,20 @@ async function buildInfoText(memberId, type) {
         [memberId],
       );
       const subCount = subRows.length;
-      return `<table align=center width=90% cellpadding=0 cellspacing=0 border=0>
-        <tr height=25><td align=left><b><font color=white face=tahoma size=2> Available From : ${formatDbDate(sp.start)} <br> Available Until : ${formatDbDate(sp.stop)} <br> Sub Account Amount : ${subCount} / ${sp.amount} </font></b></td></tr>
+      return `<table class="table table-sm w-100 text-center">
+        <tr height=25 class="align-middle"><td class="text-start"><b><span class="text-white"> Available From : ${formatDbDate(sp.start)} <br> Available Until : ${formatDbDate(sp.stop)} <br> Sub Account Amount : ${subCount} / ${sp.amount} </span></b></td></tr>
       </table>`;
     }
 
-    return `<table align=center width=90% cellpadding=0 cellspacing=0 border=0>
-      <tr height=25><td align=left><b><font size=2 face=tahoma color=white>Available Amount : ${amount} Day(s)</font></b></td></tr>
+    return `<table class="table table-sm w-100 text-center">
+      <tr height=25 class="align-middle"><td class="text-start"><b><span class="text-white">Available Amount : ${amount} Day(s)</span></b></td></tr>
     </table>`;
   }
 
   // personal / expired
   const timeRow = await getLatestTime(memberId);
   const stopText = timeRow ? timeRow.stop : '-';
-  const airTime = `<b><font size=2 face=tahoma color=white>Available Time : ${stopText} </font></b>`;
+  const airTime = `<b><span class="text-white">Available Time : ${stopText} </span></b>`;
 
   const [totalRows] = await mysqli.query(
     'SELECT amount FROM tbl_x_member_total WHERE member_id = ? LIMIT 1',
@@ -111,22 +111,22 @@ async function buildInfoText(memberId, type) {
   let totalMsg = '';
   if (totalRows.length === 1) {
     const available = totalRows[0].amount;
-    totalMsg = `<b><font color=white face=tahoma size=2>Total Available Day : ${available} days </font></b>`;
+    totalMsg = `<b><span class="text-white">Total Available Day : ${available} days </span></b>`;
   } else {
     const [subRows] = await mysqli.query(
       'SELECT sub_id FROM tbl_x_member_sub WHERE sub_id = ? LIMIT 1',
       [memberId],
     );
     if (subRows.length === 1) {
-      totalMsg = `<b><font color=white face=tahoma size=2> Days remaining depends on the Master Account </font></b>`;
+      totalMsg = `<b><span class="text-white"> Days remaining depends on the Master Account </span></b>`;
     } else {
-      totalMsg = `<b><font color=white face=tahoma size=2> Total Available Day : - days </font></b>`;
+      totalMsg = `<b><span class="text-white"> Total Available Day : - days </span></b>`;
     }
   }
 
-  return `<table align=center width=90% cellpadding=0 cellspacing=0 border=0>
-    <tr height=25><td width=65% align=left>${airTime}</td></tr>
-    <tr height=25><td align=left>${totalMsg}</td></tr>
+  return `<table class="table table-sm w-100 text-center">
+    <tr height=25 class="align-middle"><td width=65% class="text-start">${airTime}</td></tr>
+    <tr height=25 class="align-middle"><td class="text-start">${totalMsg}</td></tr>
   </table>`;
 }
 

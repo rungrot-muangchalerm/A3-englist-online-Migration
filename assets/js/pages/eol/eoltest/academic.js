@@ -24,15 +24,9 @@
         const toggleA = skillRow.querySelector('.skill-toggle-a')
         const toggleB = skillRow.querySelector('.skill-toggle-b')
         toggleA.addEventListener('click', () => {
-          levelRow.style.display = ''
-          toggleA.style.display = 'none'
-          toggleB.style.display = ''
-        })
+          levelRow.classList.remove('d-none');toggleA.classList.add('d-none');toggleB.classList.remove('d-none');})
         toggleB.addEventListener('click', () => {
-          levelRow.style.display = 'none'
-          toggleA.style.display = ''
-          toggleB.style.display = 'none'
-        })
+          levelRow.classList.add('d-none');toggleA.classList.remove('d-none');toggleB.classList.add('d-none');})
 
         const levelTable = levelRow.querySelector('.level-table')
         skill.levels.forEach((lvl) => {
@@ -45,10 +39,8 @@
             msgEl.textContent = ''
           } else {
             msgEl.textContent = 'Must pass the lower level at least 50%'
-            msgEl.style.color = 'red'
-            msgEl.style.fontFamily = 'tahoma'
-            msgEl.style.fontSize = 'small'
-          }
+            msgEl.classList.add('text-danger')
+            msgEl.classList.add('small');}
           const btn = levelClone.querySelector('.btn-goto-test')
           btn.disabled = !lvl.unlocked
           btn.addEventListener('click', () => {

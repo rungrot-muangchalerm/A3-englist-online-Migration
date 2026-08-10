@@ -1,140 +1,20 @@
 <div id="eol-lessons-app" class="f-thai">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Oswald');
-    @import url('https://fonts.googleapis.com/css?family=Kanit');
-
-    #eol-lessons-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-      text-align: center;
-    }
-
-    #eol-lessons-app .oswald {
-      font-family: 'Oswald', sans-serif !important;
-    }
-
-    #eol-lessons-app .kanit {
-      font-family: 'Kanit', sans-serif !important;
-    }
-
-    #eol-lessons-app .ecop-header {
-      background: #545454;
-      height: 80px;
-      position: relative;
-      text-align: left;
-    }
-
-    #eol-lessons-app .ecop-header img {
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 65px;
-    }
-
-    #eol-lessons-app .ecop-header-title {
-      position: absolute;
-      left: 180px;
-      font-size: 32px;
-      color: #fff;
-      line-height: 80px;
-    }
-
-    #eol-lessons-app .lesson-list-wrap {
-      background: #fff;
-      min-height: 200px;
-      padding: 20px;
-    }
-
-    #eol-lessons-app .lesson-table {
-      width: 820px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 14px;
-      border: 1px solid #E3E3E3;
-    }
-
-    #eol-lessons-app .lesson-table th {
-      background: #324d60;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
-
-    #eol-lessons-app .lesson-table td {
-      padding: 10px;
-      border-bottom: 1px solid #e0e0e0;
-      text-align: left;
-    }
-
-    #eol-lessons-app .lesson-table tr:nth-child(even) {
-      background: #f7f7f7;
-    }
-
-    #eol-lessons-app .lesson-table a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    #eol-lessons-app .lesson-table a:hover {
-      text-decoration: underline;
-    }
-
-    #eol-lessons-app .lesson-detail {
-      padding: 20px;
-      text-align: left;
-    }
-
-    #eol-lessons-app .lesson-detail-title {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #000;
-    }
-
-    #eol-lessons-app .lesson-detail-separator {
-      background: rgb(244, 176, 131);
-      border-radius: 5px;
-      height: 10px;
-      margin-bottom: 15px;
-    }
-
-    #eol-lessons-app .back-wrap {
-      text-align: right;
-      padding: 10px 50px;
-      background: #324d60;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      width: 820px;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
-    #eol-lessons-app .back-wrap img {
-      height: 40px;
-    }
-
-    #eol-lessons-app .limited-msg {
-      padding: 80px 20px;
-      color: red;
-    }
-  </style>
-
   <div class="ecop-header">
     <img src="/assets/images/icon/icon_corporate.png">
     <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
   </div>
 
   <div id="eol-lessons-list" class="lesson-list-wrap">
-    <table class="lesson-table">
+    <table class="lesson-table table table-sm">
       <thead>
         <tr>
-          <th class="kanit">EOL LESSONS</th>
+          <th class="">EOL LESSONS</th>
         </tr>
       </thead>
       <tbody id="eol-lessons-list-body">
         <tr>
           <td>
-            <font size="2" face="tahoma" color="gray">Loading...</font>
+            <span class="text-secondary">Loading...</span>
           </td>
         </tr>
       </tbody>
@@ -146,11 +26,11 @@
     </div>
   </div>
 
-  <div id="eol-lessons-detail" class="lesson-list-wrap" style="display:none;">
-    <table class="lesson-table">
+  <div id="eol-lessons-detail" class="lesson-list-wrap">
+    <table class="lesson-table table table-sm">
       <thead>
         <tr>
-          <th class="kanit">EOL LESSONS</th>
+          <th class="">EOL LESSONS</th>
         </tr>
       </thead>
       <tbody>

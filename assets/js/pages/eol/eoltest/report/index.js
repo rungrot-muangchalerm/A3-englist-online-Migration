@@ -13,10 +13,10 @@ fetch(`/api/eol/report/selector?member_id=${encodeURIComponent(memberId)}`, {
     document.getElementById('selector-class').className = accountType === 'master' || data.data.corporate ? 'sub-member' : 'personal';
 
     if (data.data.corporate === true || accountType === 'master') {
-      document.getElementById('report-button-contest').style.display = 'block';
+      document.getElementById('report-button-contest').classList.remove('d-none');
       document.getElementById('selector-text').textContent = 'ตรวจเช็คดูผลการฝึกฝนและเรียนรู้ในห้องทดสอบ 3 ฟังชั่น';
     } else {
-      document.getElementById('report-button-contest').style.display = 'none';
+      document.getElementById('report-button-contest').classList.add('d-none');
       document.getElementById('selector-text').textContent = 'ตรวจเช็คดูผลการฝึกฝนและเรียนรู้ในห้องทดสอบ 2 ฟังชั่น';
     }
   } else {

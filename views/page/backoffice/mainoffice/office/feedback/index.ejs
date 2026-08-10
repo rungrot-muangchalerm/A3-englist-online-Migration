@@ -1,14 +1,14 @@
 <div class="main" data-list-url="<%= typeof listUrl !== 'undefined' ? listUrl : '/backoffice/mainoffice/office/activity-news/feedback' %>">
   <br><br>
-  <a href="/backoffice/mainoffice/office/dashboard" style="height:40px;">
-    <img src="/assets/2010/temp_images/temp/button/bt_to_main.png" style="height:50px;margin-top:-10px;margin-bottom:10px;" title="Back to Main">
+  <a href="/backoffice/mainoffice/office/dashboard">
+    <img src="/assets/2010/temp_images/temp/button/bt_to_main.png" title="Back to Main">
   </a>
 
-  <table class="tb-feedback" align="center" cellpadding="0" cellspacing="0" border="0" width="90%">
-    <tr height="50" valign="top">
+  <table class="tb-feedback text-center table table-sm" width="90%">
+    <tr height="50" class="align-middle">
       <td width="100%">
-        <table class="menu-feedback" align="right" cellpadding="0" cellspacing="0" border="0">
-          <tr height="25">
+        <table class="menu-feedback text-end table table-sm">
+          <tr height="25" class="align-middle">
             <td><a data-menu-link="1" href="<%= typeof listUrl !== 'undefined' ? listUrl : '/backoffice/mainoffice/office/activity-news/feedback' %>?menu=1&page=1">Organization List</a></td>
             <td>&nbsp;</td>
             <td><a data-menu-link="2" href="<%= typeof listUrl !== 'undefined' ? listUrl : '/backoffice/mainoffice/office/activity-news/feedback' %>?menu=2&page=1">Feedback List</a></td>
@@ -19,50 +19,50 @@
     </tr>
     <tr>
       <td>
-        <table class="list-feedback" align="center" width="90%" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
+        <table class="list-feedback text-center table table-sm" width="90%">
           <thead>
-            <tr height="50">
-              <td align="center" width="15%">
-                <font size="2" color="white" face="tahoma"><b><span id="feedback-header-id"></span></b></font>
+            <tr height="50" class="align-middle">
+              <td width="15%" class="text-center">
+                <span class="text-white"><b><span id="feedback-header-id"></span></b></span>
               </td>
-              <td align="center" width="60%">
-                <font size="2" color="white" face="tahoma"><b><span id="feedback-header-text"></span></b></font>
+              <td width="60%" class="text-center">
+                <span class="text-white"><b><span id="feedback-header-text"></span></b></span>
               </td>
-              <td align="center" width="25%" colspan="2">
-                <font size="2" color="white" face="tahoma"><b>Management</b></font>
+              <td width="25%" colspan="2" class="text-center">
+                <span class="text-white"><b>Management</b></span>
               </td>
             </tr>
           </thead>
           <tbody id="feedback-list"></tbody>
         </table>
         <template id="feedback-row-template">
-    <tr height="25">
-      <td width="14.7%" align="center">
-        <font size="2" face="tahoma" color="white"><b><span data-role="id"></span></b></font>
+    <tr height="25" class="align-middle">
+      <td width="14.7%" class="text-center">
+        <span class="text-white"><b><span data-role="id"></span></b></span>
       </td>
-      <td width="60%" align="left" class="topic-name">
-        <font size="2" face="tahoma"><b>&nbsp;<span data-role="text"></span></b></font>
+      <td width="60%" class="topic-name text-start">
+        <span><b>&nbsp;<span data-role="text"></span></b></span>
       </td>
-      <td width="12.4%" align="center"><a href="#" data-role="toggle">
-          <font size="2" face="tahoma"><b><span data-role="active"></span></b></font>
+      <td width="12.4%" class="text-center"><a href="#" data-role="toggle">
+          <span><b><span data-role="active"></span></b></span>
         </a></td>
-      <td width="12.4%" align="center"><a style="cursor:pointer;" data-role="delete">
-          <font size="2" face="tahoma" color="red"><b>Delete</b></font>
+      <td width="12.4%" class="text-center"><a data-role="delete">
+          <span class="text-danger"><b>Delete</b></span>
         </a></td>
     </tr>
     </template>
     <template id="feedback-empty-template">
-      <tr height="25">
-        <td colspan="4" align="center">
-          <font size="2" color="red" face="tahoma"><b> - Not Data - </b></font>
+      <tr height="25" class="align-middle">
+        <td colspan="4" class="text-center">
+          <span class="text-danger"><b> - Not Data - </b></span>
         </td>
       </tr>
     </template>
     <br>
-    <table class="page-num" align="center" cellpadding="0" cellspacing="0" border="0" width="75%">
-      <tr height="25">
-        <td align="left">
-          <font size="2" face="tahoma" color="white"><b>&nbsp;Page : &nbsp;<span id="feedback-pages"></span></b></font>
+    <table class="page-num text-center table table-sm" width="75%">
+      <tr height="25" class="align-middle">
+        <td class="text-start">
+          <span class="text-white"><b>&nbsp;Page : &nbsp;<span id="feedback-pages"></span></b></span>
         </td>
       </tr>
     </table>
@@ -72,27 +72,27 @@
       <td>
         <br>
         <form id="feedback-add-form">
-          <table class="tb-add" align="center" cellpadding="0" cellspacing="0" border="0" width="90%">
+          <table class="tb-add text-center table table-sm" width="90%">
             <tr>
-              <td width="19%" align="right">
-                <font size="2" face="tahoma" color="white"><b><span id="feedback-field-label"></span></b></font>
+              <td width="19%" class="text-end">
+                <span class="text-white"><b><span id="feedback-field-label"></span></b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="white"><b>&nbsp;:&nbsp;</b></font>
+              <td class="text-center">
+                <span class="text-white"><b>&nbsp;:&nbsp;</b></span>
               </td>
-              <td width="62%" align="center"><textarea id="feedback-text" cols="50" rows="1" required></textarea></td>
-              <td width="16%" align="left"><input class="btn-add" type="submit" id="feedback-add-button" value=""></td>
+              <td width="62%" class="text-center"><textarea id="feedback-text" cols="50" rows="1" required></textarea></td>
+              <td width="16%" class="text-start"><input class="btn-add" type="submit" id="feedback-add-button" value=""></td>
             </tr>
             <tr>
-              <td colspan="4" align="center">
-                <font size="2" face="tahoma" color="red"><b><span id="feedback-message"></span></b></font>
+              <td colspan="4" class="text-center">
+                <span class="text-danger"><b><span id="feedback-message"></span></b></span>
               </td>
             </tr>
           </table>
         </form>
       </td>
     </tr>
-    <tr height="25">
+    <tr height="25" class="align-middle">
       <td width="100%"></td>
     </tr>
   </table>

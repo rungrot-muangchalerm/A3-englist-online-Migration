@@ -78,9 +78,9 @@ fetch(`/api/teoc/rounds?search=${encodeURIComponent(search)}&round=${encodeURICo
       }
 
       if (r.provinceCounts && r.provinceCounts.length > 0) {
-        content.querySelector('.province-summary-title').style.display = 'block';
+        content.querySelector('.province-summary-title').classList.remove('d-none');
         const row = content.querySelector('.province-summary-row');
-        row.style.display = 'block';
+        row.classList.remove('d-none');
         r.provinceCounts.forEach((item) => {
           const isUnknown = item.province === 'ไม่ทราบจังหวัด';
           const cardClone = provinceCardTemplate.content.cloneNode(true);
@@ -116,7 +116,7 @@ fetch(`/api/teoc/rounds?search=${encodeURIComponent(search)}&round=${encodeURICo
       });
 
       if (hasTie) {
-        content.querySelector('.tie-note').style.display = 'block';
+        content.querySelector('.tie-note').classList.remove('d-none');
       }
 
       body.appendChild(content);

@@ -11,20 +11,20 @@
   }
 
   function showList() {
-    listSection.style.display = '';
-    detailSection.style.display = 'none';
+    listSection.classList.remove('d-none');
+    detailSection.classList.add('d-none');
   }
 
   function showDetail(lesson) {
     detailTitle.textContent = lesson.lessonName || '';
     detailContent.innerHTML = lesson.lessonContent || '';
-    listSection.style.display = 'none';
-    detailSection.style.display = '';
+    listSection.classList.add('d-none');
+    detailSection.classList.remove('d-none');
   }
 
   function renderList(lessons) {
     if (!lessons || lessons.length === 0) {
-      listBody.innerHTML = '<tr><td><font size="2" face="tahoma" color="gray">ไม่มีบทเรียน</font></td></tr>';
+      listBody.innerHTML = '<tr><td><span class="text-secondary">ไม่มีบทเรียน</span></td></tr>';
       return;
     }
     let html = '';
@@ -68,12 +68,12 @@
     .then(function (res) { return res.json(); })
     .then(function (data) {
       if (data.status !== 200) {
-        listBody.innerHTML = `<tr><td><font size="2" face="tahoma" color="red">${htmlEscape(data.message || 'Error')}</font></td></tr>`;
+        listBody.innerHTML = `<tr><td><span class="text-danger">${htmlEscape(data.message || 'Error')}</span></td></tr>`;
         return;
       }
       renderList(data.data.items);
     })
     .catch(function (err) {
-      listBody.innerHTML = `<tr><td><font size="2" face="tahoma" color="red">${htmlEscape(err.message || 'Network error')}</font></td></tr>`;
+      listBody.innerHTML = `<tr><td><span class="text-danger">${htmlEscape(err.message || 'Network error')}</span></td></tr>`;
     });
 })();

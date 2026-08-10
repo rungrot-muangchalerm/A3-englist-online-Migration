@@ -1,63 +1,18 @@
 <div id="view-e-test" class="eol-view">
-  <style>
-    .etest-btn {
-      height: 28px;
-      padding: 0 10px;
-      margin-bottom: 10px;
-      font-weight: bold;
-      color: #fff;
-      cursor: pointer;
-      border: 1px solid #147CCC;
-      border-radius: 4px;
-      background: #1685DB;
-    }
-
-    .etest-btn:disabled {
-      background: #aaa;
-      border-color: #aaa;
-      cursor: not-allowed;
-    }
-
-    .etest-table th,
-    .etest-table td {
-      border: 1px solid #e0e0e0;
-    }
-
-    .etest-row:hover {
-      background: #E5F3FA;
-    }
-
-    .etest-detail-box input[type="text"],
-    .etest-create-box input[type="text"],
-    .etest-create-box textarea {
-      border: 1px solid #e0e0e0;
-      padding-left: 5px;
-      height: 28px;
-      border-radius: 5px;
-    }
-
-    .etest-create-box textarea {
-      height: auto;
-    }
-
-    .etest-detail-box table td {
-      padding: 5px;
-    }
-  </style>
   <div id="etest-app">
     <template id="etest-list-template">
-      <div class="etest-toolbar" style="height:45px;margin-bottom:10px;">
-        <a href="#" class="etest-action" data-action="view_lesson"><button class="etest-btn etest-btn-lesson" style="background:#00B800;border-color:#00B800;">o บทเรียนทั้งหมด</button></a>
-        <a href="#" class="etest-action" data-action="create_lesson"><button class="etest-btn etest-btn-lesson" style="background:#00B800;border-color:#00B800;">+ สร้างบทเรียนแบบกำหนดเอง</button></a>
-        <a href="#" class="etest-action etest-action-right" data-action="create_customize" style="float:right;"><button class="etest-btn">+ สร้างชุดข้อสอบแบบกำหนดเอง</button></a>
-        <a href="#" class="etest-action etest-action-right" data-action="create" style="float:right;margin-right:5px;"><button class="etest-btn">+ สร้างชุดข้อสอบจากระบบ</button></a>
+      <div class="etest-toolbar">
+        <a href="#" class="etest-action" data-action="view_lesson"><button class="etest-btn etest-btn-lesson">o บทเรียนทั้งหมด</button></a>
+        <a href="#" class="etest-action" data-action="create_lesson"><button class="etest-btn etest-btn-lesson">+ สร้างบทเรียนแบบกำหนดเอง</button></a>
+        <a href="#" class="etest-action etest-action-right" data-action="create_customize"><button class="etest-btn">+ สร้างชุดข้อสอบแบบกำหนดเอง</button></a>
+        <a href="#" class="etest-action etest-action-right" data-action="create"><button class="etest-btn">+ สร้างชุดข้อสอบจากระบบ</button></a>
       </div>
-      <div style="display:flex;gap:10px;align-items:flex-start;">
-        <div style="width:600px;height:510px;overflow-y:auto;border:1px solid #E3E3E3;border-radius:5px;background:#fff;">
-          <table class="etest-table" width="100%" cellspacing="0" style="font-size:12px;border-collapse:collapse;">
-            <thead style="position:sticky;top:0;z-index:1;">
-              <tr style="background:#FF9900;color:#fff;">
-                <th style="padding:10px;text-align:left;">รายละเอียดชุดข้อสอบ</th>
+      <div>
+        <div>
+          <table class="etest-table table table-sm" width="100%">
+            <thead>
+              <tr>
+                <th>รายละเอียดชุดข้อสอบ</th>
                 <th>ดูชุดข้อสอบ</th>
                 <th>จำนวนข้อ</th>
                 <th>เวลาสอบ</th>
@@ -67,28 +22,28 @@
             <tbody class="etest-list-body"></tbody>
           </table>
         </div>
-        <div id="etest-detail-panel" style="flex:1;position:sticky;top:10px;align-self:flex-start;"></div>
+        <div id="etest-detail-panel"></div>
       </div>
     </template>
 
     <template id="etest-row-template">
       <tr class="etest-row">
-        <td style="padding:10px;border:1px solid #e0e0e0;"><a href="#" class="etest-select" style="font-weight:bold;color:#666;"></a></td>
-        <td style="padding:10px;border:1px solid #e0e0e0;text-align:center;"><a href="#" class="etest-view" style="color:#666;">View</a></td>
-        <td class="etest-amount" style="padding:10px;border:1px solid #e0e0e0;text-align:center;"></td>
-        <td class="etest-time" style="padding:10px;border:1px solid #e0e0e0;text-align:center;"></td>
-        <td class="etest-active" style="padding:10px;border:1px solid #e0e0e0;text-align:center;font-weight:bold;"></td>
+        <td><a href="#" class="etest-select"></a></td>
+        <td><a href="#" class="etest-view">View</a></td>
+        <td class="etest-amount"></td>
+        <td class="etest-time"></td>
+        <td class="etest-active"></td>
       </tr>
     </template>
 
     <template id="etest-detail-template">
-      <div class="etest-detail-box" style="background:#fff;border:1px solid #E3E3E3;border-radius:5px;padding:10px;">
+      <div class="etest-detail-box">
         <form class="etest-detail-form" onsubmit="event.preventDefault();">
           <input type="hidden" name="exam_id" class="etest-exam-id">
-          <table style="font-size:12px;width:100%;" class="detailform">
+          <table class="detailform table table-sm">
             <tr>
               <td>ชุดข้อสอบ</td>
-              <td><input type="text" name="exam_name" class="etest-exam-name txtdetail" style="width:240px;"></td>
+              <td><input type="text" name="exam_name" class="etest-exam-name txtdetail"></td>
             </tr>
             <tr>
               <td>วันที่</td>
@@ -100,7 +55,7 @@
             </tr>
             <tr>
               <td>เวลาสอบ</td>
-              <td><input type="text" name="testtime" class="etest-testtime txtdetail" style="width:50px;" maxlength="3"> นาที</td>
+              <td><input type="text" name="testtime" class="etest-testtime txtdetail" maxlength="3"> นาที</td>
             </tr>
             <tr>
               <td>รูปแบบการทดสอบ</td>
@@ -114,39 +69,39 @@
               <td><input type="checkbox" name="active" value="1" class="etest-active-check"></td>
             </tr>
           </table>
-          <div style="margin-top:10px;font-weight:bold;">เลือกกลุ่มที่สอบ</div>
-          <div class="etest-groups" style="border:1px solid #E3E3E3;border-radius:5px;padding:10px;margin:5px 0;max-height:200px;overflow:auto;"></div>
-          <button type="button" class="etest-save-btn bnt-etest" style="margin-top:5px;">บันทึก</button>
-          <button type="button" class="etest-edit-btn bnt-etest" style="margin-top:5px;display:none;">แก้ไขข้อสอบ</button>
-          <button type="button" class="etest-delete-btn bnt-delete" style="margin-top:5px;">ลบชุดข้อสอบ</button>
-          <div class="etest-message" style="color:red;margin-top:5px;"></div>
+          <div>เลือกกลุ่มที่สอบ</div>
+          <div class="etest-groups"></div>
+          <button type="button" class="etest-save-btn bnt-etest">บันทึก</button>
+          <button type="button" class="etest-edit-btn bnt-etest">แก้ไขข้อสอบ</button>
+          <button type="button" class="etest-delete-btn bnt-delete">ลบชุดข้อสอบ</button>
+          <div class="etest-message"></div>
         </form>
       </div>
     </template>
 
     <template id="etest-group-checkbox-template">
-      <label style="display:block;margin:3px 0;">
+      <label>
         <input type="checkbox" name="allowgroup[]" class="etest-group-check" value="">
         <span></span>
       </label>
     </template>
 
     <template id="etest-create-custom-template">
-      <div class="etest-create-box" style="background:#fff;padding:10px;border-radius:5px;">
-        <a href="#" class="etest-back" style="float:right;">[ Back ]</a>
-        <h3 style="color:#000;">สร้างชุดข้อสอบแบบกำหนดเอง</h3>
-        <p style="color:blue;font-size:12px;">ห้ามละเมิดลิขสิทธิ์ผู้อื่น มีความผิดตามกฎหมายและบริษัท อิงลิชออนไลน์ จำกัด จะไม่รับผิดชอบการกระทำใดๆทั้งสิ้น<br>และสงวนสิทธิ์ในการตรวจสอบพร้อมทั้งแก้ไขชุดข้อสอบแบบกำหนดเองโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
-        <p style="color:red;text-align:center;">เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
+      <div class="etest-create-box">
+        <a href="#" class="etest-back">[ Back ]</a>
+        <h3>สร้างชุดข้อสอบแบบกำหนดเอง</h3>
+        <p>ห้ามละเมิดลิขสิทธิ์ผู้อื่น มีความผิดตามกฎหมายและบริษัท อิงลิชออนไลน์ จำกัด จะไม่รับผิดชอบการกระทำใดๆทั้งสิ้น<br>และสงวนสิทธิ์ในการตรวจสอบพร้อมทั้งแก้ไขชุดข้อสอบแบบกำหนดเองโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
+        <p>เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
         <form class="etest-create-custom-form" onsubmit="event.preventDefault();">
-          <table style="width:100%;font-size:12px;" class="tbl_create_custom">
+          <table class="tbl_create_custom table table-sm">
             <tr>
               <td>ชุดข้อสอบ</td>
-              <td><input type="text" name="exam_name" class="txtdetail" style="width:400px;" required></td>
+              <td><input type="text" name="exam_name" class="txtdetail" required></td>
             </tr>
             <tr>
-              <td colspan="2" class="etest-question-area" style="background:#f6f6f6;border-radius:10px;padding:10px;">
+              <td colspan="2" class="etest-question-area">
                 <div>ข้อ <span class="etest-q-no">1</span></div>
-                <textarea name="question" rows="4" style="width:90%;" required></textarea>
+                <textarea name="question" rows="4" required></textarea>
                 <div class="etest-choices">
                   <div><label><input type="radio" name="correct" value="0" required> A</label> <textarea name="choice[]" rows="2" required></textarea></div>
                   <div><label><input type="radio" name="correct" value="1"> B</label> <textarea name="choice[]" rows="2" required></textarea></div>
@@ -154,11 +109,11 @@
                   <div><label><input type="radio" name="correct" value="3"> D</label> <textarea name="choice[]" rows="2" required></textarea></div>
                 </div>
                 <button type="button" class="etest-add-question-btn bnt-etest">บันทึกข้อนี้</button>
-                <div class="etest-message" style="color:red;"></div>
+                <div class="etest-message"></div>
               </td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align:center;">
+              <td colspan="2">
                 <button type="button" class="etest-finish-custom-btn bnt-etest" disabled>สิ้นสุดการสร้างชุดข้อสอบ</button>
               </td>
             </tr>
@@ -168,23 +123,23 @@
     </template>
 
     <template id="etest-create-system-template">
-      <div class="etest-create-box" style="background:#fff;padding:10px;border-radius:5px;">
-        <a href="#" class="etest-back" style="float:right;">[ Back ]</a>
-        <h3 style="color:#000;">สร้างชุดข้อสอบจากระบบ</h3>
-        <p style="color:red;text-align:center;">เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
+      <div class="etest-create-box">
+        <a href="#" class="etest-back">[ Back ]</a>
+        <h3>สร้างชุดข้อสอบจากระบบ</h3>
+        <p>เลือกข้อสอบอย่างน้อย 10 ข้อขึ้นไปและสูงสุดไม่เกิน 30 ข้อ</p>
         <form class="etest-create-system-form" onsubmit="event.preventDefault();">
-          <table style="font-size:12px;">
+          <table>
             <tr>
               <td>ชื่อชุดข้อสอบ</td>
               <td><input type="text" name="exam_name" class="txtdetail" required></td>
             </tr>
             <tr>
               <td>เวลาสอบ</td>
-              <td><input type="text" name="testtime" class="txtdetail" style="width:50px;" maxlength="3" required> นาที</td>
+              <td><input type="text" name="testtime" class="txtdetail" maxlength="3" required> นาที</td>
             </tr>
           </table>
-          <table class="etest-system-rows" width="100%" style="font-size:12px;margin-top:10px;">
-            <thead style="background:#FF9900;color:#fff;">
+          <table class="etest-system-rows table table-sm" width="100%">
+            <thead>
               <tr>
                 <th>Skill</th>
                 <th>Level</th>
@@ -195,9 +150,9 @@
             </thead>
             <tbody></tbody>
           </table>
-          <button type="button" class="etest-add-row-btn bnt-etest" style="margin-top:5px;">+ เพิ่มแถว</button>
-          <button type="button" class="etest-create-system-submit bnt-etest" style="margin-top:5px;">สร้างชุดข้อสอบ</button>
-          <div class="etest-message" style="color:red;margin-top:5px;"></div>
+          <button type="button" class="etest-add-row-btn bnt-etest">+ เพิ่มแถว</button>
+          <button type="button" class="etest-create-system-submit bnt-etest">สร้างชุดข้อสอบ</button>
+          <div class="etest-message"></div>
         </form>
       </div>
     </template>
@@ -223,14 +178,14 @@
             <option value="5">Advanced</option>
           </select>
         </td>
-        <td><select name="topic[]" class="etest-topic-select selector" style="width:250px;"></select></td>
-        <td><input type="text" name="num[]" class="txtdetail" style="width:50px;" maxlength="2" required></td>
+        <td><select name="topic[]" class="etest-topic-select selector"></select></td>
+        <td><input type="text" name="num[]" class="txtdetail" maxlength="2" required></td>
         <td><button type="button" class="etest-remove-row-btn bnt-delete">ลบ</button></td>
       </tr>
     </template>
 
     <template id="etest-lesson-placeholder-template">
-      <div style="text-align:center;padding:30px;">
+      <div>
         <p>บทเรียนยังไม่เปิดใช้งานใน Phase นี้</p>
         <a href="#" class="etest-back">[ Back ]</a>
       </div>

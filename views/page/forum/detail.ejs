@@ -1,83 +1,53 @@
-<style>
-    .detail-breadcrumb a {
-        color: #f98d2b;
-        font-weight: bold;
-    }
-
-    .detail-breadcrumb a.category-link {
-        color: black;
-    }
-
-    .detail-breadcrumb a.topic-link {
-        color: #1ea9c3;
-    }
-
-    .detail-content {
-        text-align: left;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .detail-content img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .share-buttons span {
-        margin-right: 5px;
-    }
-</style>
-
-<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
-    <div class="row kanit">
-        <div class="col-xs-12" style="padding:10px 50px;">
-            <center>
+<div class="container shadow">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
                 <div id="forum-detail-container">
-                    <table align="center" width="95%" cellpadding="0" cellspacing="0" border="0">
-                        <tr height="10">
+                    <table width="95%" class="text-center table table-sm">
+                        <tr height="10" class="align-middle">
                             <td colspan="3"></td>
                         </tr>
                         <tr>
-                            <td width="10%" align="center">
-                                <img class="topic-image" src="" width="100" style="border-radius: 10%;" onerror="this.src='/assets/images/image2/logo/logo-02.ico'" />
+                            <td width="10%" class="text-center">
+                                <img class="topic-image" src="" width="100" onerror="this.src='/assets/images/image2/logo/logo-02.ico'" />
                             </td>
-                            <td align="center">&nbsp;&nbsp;&nbsp;</td>
-                            <td width="90%" align="left" class="detail-breadcrumb">
-                                <font size="2" face="tahoma" color="black"><b><span class="topic-name"></span></b></font>
+                            <td class="text-center">&nbsp;&nbsp;&nbsp;</td>
+                            <td width="90%" class="detail-breadcrumb text-start">
+                                <span class="text-dark"><b><span class="topic-name"></span></b></span>
                                 <br>
                                 <a href="/">
-                                    <font size="2" face="tahoma"><b>Home</b></font>
+                                    <span><b>Home</b></span>
                                 </a>
                                 <a class="category-link" href="">
-                                    <font size="2" face="tahoma" class="category-link"><b>&nbsp;&raquo;&nbsp;<span class="category-name"></span></b></font>
+                                    <span><b>&nbsp;&raquo;&nbsp;<span class="category-name"></span></b></span>
                                 </a>
-                                <font size="2" face="tahoma" color="black"><b>&nbsp;&raquo;&nbsp;</b></font>
+                                <span class="text-dark"><b>&nbsp;&raquo;&nbsp;</b></span>
                                 <a class="topic-link" href="">
-                                    <font size="2" face="tahoma" class="topic-link"><b><span class="topic-name-link-text"></span></b></font>
+                                    <span><b><span class="topic-name-link-text"></span></b></span>
                                 </a>
                                 <br>
-                                <font size="2" face="tahoma" color="black"><b>Headline : </b><span class="topic-headline"></span></font>
+                                <span class="text-dark"><b>Headline : </b><span class="topic-headline"></span></span>
                                 <br>
-                                <font size="2" face="tahoma" color="black"><b>Date : </b><span class="topic-date"></span></font>
+                                <span class="text-dark"><b>Date : </b><span class="topic-date"></span></span>
                                 <br>
-                                <font size="2" face="tahoma" color="black"><b>View :</b> <span class="topic-view"></span></font>
+                                <span class="text-dark"><b>View :</b> <span class="topic-view"></span></span>
                                 <br>
-                                <font size="2" face="tahoma" color="black"><b>By <span class="topic-author"></span></b></font>
+                                <span class="text-dark"><b>By <span class="topic-author"></span></b></span>
                             </td>
                         </tr>
-                        <tr height="10">
+                        <tr height="10" class="align-middle">
                             <td colspan="3"></td>
                         </tr>
-                        <tr height="2" bgcolor="gray">
+                        <tr height="2" class="bg-secondary align-middle">
                             <td colspan="3"></td>
                         </tr>
-                        <tr height="10">
+                        <tr height="10" class="align-middle">
                             <td colspan="3"></td>
                         </tr>
-                        <tr height="50">
-                            <td align="right" colspan="3">
+                        <tr height="50" class="align-middle">
+                            <td colspan="3" class="text-end">
                                 <img src="/assets/images/index/EOL19Year.png" width="220" height="195" />
-                                <div class="share-buttons" style="display:inline-block;vertical-align:top;margin-top:10px;">
+                                <div class="share-buttons">
                                     <span class="st_facebook_button" displayText="Facebook"></span>
                                     <span class="st_twitter_button" displayText="Tweet"></span>
                                     <span class="st_email_button" displayText="Email"></span>
@@ -86,24 +56,24 @@
                         </tr>
                     </table>
 
-                    <table align="center" width="95%" cellpadding="0" cellspacing="0" border="0">
-                        <tr height="30">
+                    <table width="95%" class="text-center table table-sm">
+                        <tr height="30" class="align-middle">
                             <td>&nbsp;&nbsp;</td>
-                            <td width="100%" align="left" class="detail-content">
+                            <td width="100%" class="detail-content text-start">
                                 <div class="topic-detail"></div>
                             </td>
                             <td>&nbsp;&nbsp;</td>
                         </tr>
-                        <tr height="30">
+                        <tr height="30" class="align-middle">
                             <td colspan="2"></td>
                         </tr>
                     </table>
                 </div>
-            </center>
+            </div>
         </div>
     </div>
 </div>
 
 <template id="forum-not-found-template">
-    <div style="margin:100px 0px 0px 0px;font-size:14px;">ไม่มีข้อมูล</div>
+    <div>ไม่มีข้อมูล</div>
 </template>

@@ -4,9 +4,9 @@
   }
   function showView(id) {
     const views = document.querySelectorAll('.eol-view');
-    views.forEach((v) => { v.style.display = 'none'; });
+    views.forEach((v) => { v.classList.add('d-none'); });
     const target = document.getElementById(id);
-    if (target) target.style.display = '';
+    if (target) target.classList.remove('d-none');
   }
   function reloadCurrent(extra) {
     const q = new URLSearchParams(window.location.search);
@@ -54,11 +54,11 @@
 
     const members = apiData.members || [];
     if (members.length === 0) {
-      document.getElementById('statistics-empty').style.display = '';
-      document.getElementById('statistics-export').style.display = 'none';
+      document.getElementById('statistics-empty').classList.remove('d-none');
+      document.getElementById('statistics-export').classList.add('d-none');
     } else {
-      document.getElementById('statistics-empty').style.display = 'none';
-      document.getElementById('statistics-export').style.display = '';
+      document.getElementById('statistics-empty').classList.add('d-none');
+      document.getElementById('statistics-export').classList.remove('d-none');
 
       const memberTemplate = document.getElementById('statistics-member-template');
       const headerTemplate = document.getElementById('statistics-member-header-template');
@@ -88,11 +88,11 @@
 
         const expandRow = document.createElement('tr');
         expandRow.innerHTML = `
-          <td width="5%" align="center" bgcolor="#e0e0e0">
-            <img data-member="${m.member_id}" data-role="icon-plus" src="/assets/2010/temp_images/icon_plus.jpg" width="20" border="0" title="Click Here to view refill history" style="cursor:pointer;">
-            <img data-member="${m.member_id}" data-role="icon-sub" src="/assets/2010/temp_images/icon_sub.jpg" width="20" border="0" style="display:none;cursor:pointer;">
+          <td width="5%" class="text-center bg-secondary-subtle">
+            <img data-member="${m.member_id}" data-role="icon-plus" class="pe-auto" src="/assets/2010/temp_images/icon_plus.jpg" width="20" title="Click Here to view refill history">
+            <img data-member="${m.member_id}" data-role="icon-sub" class="d-none pe-auto" src="/assets/2010/temp_images/icon_sub.jpg" width="20">
           </td>
-          <td colspan="6" bgcolor="#f0f0f0"></td>
+          <td colspan="6" class="bg-light"></td>
         `;
         memberBody.appendChild(expandRow);
 
@@ -102,7 +102,7 @@
         const historyRowsContainer = historyClone.querySelector('[data-role="history-rows"]');
         if (!m.history || !m.history.rows || m.history.rows.length === 0) {
           const emptyRow = document.createElement('tr');
-          emptyRow.innerHTML = '<td colspan="5" align="center"><font size=2 face=tahoma color=red>ไม่พบข้อมูล</font></td>';
+          emptyRow.innerHTML = '<td colspan="5" class="text-center"><span class="text-danger">ไม่พบข้อมูล</span></td>';
           historyRowsContainer.appendChild(emptyRow);
         } else {
           m.history.rows.forEach((row) => {
@@ -119,7 +119,7 @@
         }
 
         const historyRow = document.createElement('tr');
-        historyRow.style.display = 'none';
+        historyRow.classList.add('d-none');
         historyRow.dataset.role = 'history-row';
         historyRow.dataset.member = m.member_id;
         const historyCell = document.createElement('td');
@@ -210,16 +210,16 @@
         if (!row) return;
         const icons = membersContainer.querySelectorAll(`img[data-member="${memberId}"]`);
         if (plus) {
-          row.style.display = '';
+          row.classList.remove('d-none');
           icons.forEach((img) => {
-            if (img.dataset.role === 'icon-plus') img.style.display = 'none';
-            if (img.dataset.role === 'icon-sub') img.style.display = '';
+            if (img.dataset.role === 'icon-plus') img.classList.add('d-none');
+            if (img.dataset.role === 'icon-sub') img.classList.remove('d-none');
           });
         } else {
-          row.style.display = 'none';
+          row.classList.add('d-none');
           icons.forEach((img) => {
-            if (img.dataset.role === 'icon-plus') img.style.display = '';
-            if (img.dataset.role === 'icon-sub') img.style.display = 'none';
+            if (img.dataset.role === 'icon-plus') img.classList.remove('d-none');
+            if (img.dataset.role === 'icon-sub') img.classList.add('d-none');
           });
         }
       });
@@ -270,9 +270,9 @@
 
     const results = apiData.results || [];
     if (results.length === 0) {
-      document.getElementById('evaluation-empty').style.display = '';
+      document.getElementById('evaluation-empty').classList.remove('d-none');
     } else {
-      document.getElementById('evaluation-empty').style.display = 'none';
+      document.getElementById('evaluation-empty').classList.add('d-none');
       const rowTemplate = document.getElementById('statistics-evaluation-row-template');
       results.forEach((r, idx) => {
         const clone = rowTemplate.content.cloneNode(true);
@@ -295,9 +295,9 @@
     document.querySelectorAll('#view-statistics .tabs li').forEach((t) => t.classList.remove('active'));
     const evalTab = document.querySelector('[data-role="tab-evaluation"]');
     if (evalTab) evalTab.classList.add('active');
-    document.querySelector('[data-role="statistics-overview-panel"]').style.display = 'none';
-    document.querySelector('[data-role="statistics-evaluation-panel"]').style.display = '';
-    document.querySelector('[data-role="statistics-contest-panel"]').style.display = 'none';
+    document.querySelector('[data-role="statistics-overview-panel"]').classList.add('d-none');
+    document.querySelector('[data-role="statistics-evaluation-panel"]').classList.remove('d-none');
+    document.querySelector('[data-role="statistics-contest-panel"]').classList.add('d-none');
 
     fetch(`/api/eol/statistics/evaluation${window.location.search}`, {
       credentials: 'include'
@@ -349,24 +349,24 @@
 
     const results = apiData.results || [];
     const emptyRows = document.querySelectorAll('[data-role="contest-empty"]');
-    emptyRows.forEach((row) => { row.style.display = results.length === 0 ? '' : 'none'; });
+    emptyRows.forEach((row) => { if (results.length === 0 ) row.classList.remove('d-none'); else row.classList.add('d-none'); });
 
     if (results.length > 0) {
       results.forEach((r, idx) => {
         const tr = document.createElement('tr');
-        tr.style.height = '30px';
+        tr.className = 'align-middle';
         tr.innerHTML = `
-          <td width="2%" align="center"><font size="2" face="tahoma"><b>${idx + 1}</b></font></td>
-          <td width="20%" align="center">
-            <font size="2" face="tahoma">
+          <td width="2%" class="text-center"><span><b>${idx + 1}</b></span></td>
+          <td width="20%" class="text-center">
+            <span>
               <a target="_blank" href="/eol/eoltest/report/contest?result_id=${encodeURIComponent(r.result_id)}&member_id=${encodeURIComponent(r.member_id)}">
                 <b>${htmlEscape(r.create_date)}</b>
               </a>
-            </font>
+            </span>
           </td>
-          <td width="20%" align="center"><font size="2" face="tahoma">${htmlEscape(`${r.fname || ''}    ${r.lname || ''}`)}</font></td>
-          <td align="left"><img src="/assets/2010/temp_images/icon_bar/bar_07.png" width="${Math.max(0, (r.percent || 0) * 4)}" height="20" style="border-radius:5px;"></td>
-          <td width="10%" align="center"><font size="2" face="tahoma"><b>${(r.percent || 0)} %</b></font></td>
+          <td width="20%" class="text-center"><span>${htmlEscape(`${r.fname || ''}    ${r.lname || ''}`)}</span></td>
+          <td class="text-start"><img src="/assets/2010/temp_images/icon_bar/bar_07.png" width="${Math.max(0, (r.percent || 0) * 4)}" height="20" class="rounded"></td>
+          <td width="10%" class="text-center"><span><b>${(r.percent || 0)} %</b></span></td>
         `;
         rowsContainer.appendChild(tr);
       });
@@ -375,12 +375,12 @@
     const scoreboardLink = document.querySelector('[data-role="contest-scoreboard-link"]');
     if (scoreboardLink) {
       scoreboardLink.href = apiData.scoreboardUrl || '';
-      scoreboardLink.style.display = apiData.scoreboardUrl ? '' : 'none';
+      if (apiData.scoreboardUrl ) scoreboardLink.classList.remove('d-none'); else scoreboardLink.classList.add('d-none');
     }
 
     const exportForm = document.getElementById('contest-export-form');
     if (exportForm) {
-      exportForm.style.display = results.length > 0 ? '' : 'none';
+      if (results.length > 0 ) exportForm.classList.remove('d-none'); else exportForm.classList.add('d-none');
       const groupInput = exportForm.querySelector('[data-role="contest-export-group"]');
       const startInput = exportForm.querySelector('[data-role="contest-export-start"]');
       const stopInput = exportForm.querySelector('[data-role="contest-export-stop"]');
@@ -399,9 +399,9 @@
     document.querySelectorAll('#view-statistics .tabs li').forEach((t) => t.classList.remove('active'));
     const contestTab = document.querySelector('[data-role="tab-contest"]');
     if (contestTab) contestTab.classList.add('active');
-    document.querySelector('[data-role="statistics-overview-panel"]').style.display = 'none';
-    document.querySelector('[data-role="statistics-evaluation-panel"]').style.display = 'none';
-    document.querySelector('[data-role="statistics-contest-panel"]').style.display = '';
+    document.querySelector('[data-role="statistics-overview-panel"]').classList.add('d-none');
+    document.querySelector('[data-role="statistics-evaluation-panel"]').classList.add('d-none');
+    document.querySelector('[data-role="statistics-contest-panel"]').classList.remove('d-none');
 
     fetch(`/api/eol/statistics/contest${window.location.search}`, {
       credentials: 'include'

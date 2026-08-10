@@ -11,12 +11,12 @@ const memberIdQuery = memberId ? `?member_id=${encodeURIComponent(memberId)}` : 
 
 function showList() {
   const el = document.getElementById('report-academic-list');
-  if (el) el.style.display = '';
+  if (el) el.classList.remove('d-none');
 }
 
 function showDetail() {
   const el = document.getElementById('report-academic-detail');
-  if (el) el.style.display = '';
+  if (el) el.classList.remove('d-none');
 }
 
 function clearContainerKeepTemplates(id) {
@@ -202,19 +202,19 @@ function renderAcademicDetail(d) {
       const relateCell = qClone.querySelector('.relate-cell');
       const relateRow = qClone.querySelector('.relate-row');
       if (q.relateType === 1) {
-        if (relateRow) relateRow.style.display = '';
+        if (relateRow) relateRow.classList.remove('d-none');
         const tClone = document.getElementById('report-test-relate-text-template').content.cloneNode(true);
         const t = tClone.querySelector('.relate-text');
         if (t) t.textContent = q.relateText;
         if (relateCell) relateCell.appendChild(tClone);
       } else if (q.relateType === 2) {
-        if (relateRow) relateRow.style.display = '';
+        if (relateRow) relateRow.classList.remove('d-none');
         const tClone = document.getElementById('report-test-relate-image-template').content.cloneNode(true);
         const img = tClone.querySelector('img');
         if (img) img.src = q.relateText;
         if (relateCell) relateCell.appendChild(tClone);
       } else if (q.relateType === 3) {
-        if (relateRow) relateRow.style.display = '';
+        if (relateRow) relateRow.classList.remove('d-none');
         const tClone = document.getElementById('report-test-relate-audio-template').content.cloneNode(true);
         const source = tClone.querySelector('source');
         if (source) source.src = `https://www.engtest.net/files/sound/${q.relateText}`;
@@ -233,7 +233,7 @@ function renderAcademicDetail(d) {
           textEl.textContent = `${a.index}.  ${a.text}`;
           if (a.selected) {
             textEl.setAttribute('color', 'orange');
-            textEl.style.fontWeight = 'bold';
+            textEl.classList.add('fw-bold');
           }
         }
         if (answersContainer) answersContainer.appendChild(aClone);
@@ -267,7 +267,7 @@ function renderAcademicDetail(d) {
       const lessonLink = qClone.querySelector('.lesson-link');
       if (lessonLink) lessonLink.href = `/eol/elearning_switch?reason_id=${q.detailId}&skill_id=${q.skillId}`;
       if (q.description) {
-        qClone.querySelectorAll('.description-row').forEach((row) => { row.style.display = ''; });
+        qClone.querySelectorAll('.description-row').forEach((row) => { row.classList.remove('d-none'); });
         const desc = qClone.querySelector('.description-text');
         if (desc) desc.textContent = q.description;
       }
@@ -304,7 +304,7 @@ function renderAcademicDetail(d) {
         const bar = dClone.querySelector('.dist-bar');
         if (bar) {
           bar.src = `/assets/2010/temp_images/icon_bar/bar_0${rand}.png`;
-          bar.style.width = `${dist.ratio}%`;
+          bar.setAttribute('aria-valuenow', `${dist.ratio}%`);
         }
         const ratio = dClone.querySelector('.dist-ratio');
         if (ratio) ratio.textContent = dist.ratio;
@@ -348,7 +348,7 @@ function renderAcademicDetail(d) {
           const img = bClone.querySelector('.bar-image');
           if (img) {
             img.src = `/assets/2010/temp_images/icon_bar/${bar.barImage}`;
-            img.style.width = `${bar.percent}%`;
+            img.setAttribute('aria-valuenow', `${bar.percent}%`);
           }
           target.appendChild(bClone);
         });
@@ -362,7 +362,7 @@ function renderAcademicDetail(d) {
         const avgTotal = avgClone.querySelector('.avg-total');
         if (avgTotal) avgTotal.textContent = d.chartBar.averageTotal;
         const avgBar = avgClone.querySelector('.avg-bar');
-        if (avgBar) avgBar.style.width = `${d.chartBar.averagePercent}%`;
+        if (avgBar) avgBar.setAttribute('aria-valuenow', `${d.chartBar.averagePercent}%`);
         target.appendChild(avgClone);
       }
     }

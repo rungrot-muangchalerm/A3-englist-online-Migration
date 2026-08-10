@@ -1,88 +1,4 @@
 <div id="eolcontest-app" class="f-thai">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Oswald');
-    @import url('https://fonts.googleapis.com/css?family=Kanit');
-
-    #eolcontest-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-      text-align: center;
-    }
-
-    #eolcontest-app .oswald {
-      font-family: 'Oswald', sans-serif !important;
-    }
-
-    #eolcontest-app .kanit {
-      font-family: 'Kanit', sans-serif !important;
-    }
-
-    #eolcontest-app .ecop-header {
-      background: #545454;
-      height: 80px;
-      position: relative;
-      text-align: left;
-    }
-
-    #eolcontest-app .ecop-header img {
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 65px;
-    }
-
-    #eolcontest-app .ecop-header-title {
-      position: absolute;
-      left: 180px;
-      font-size: 32px;
-      color: #fff;
-      line-height: 80px;
-    }
-
-    #eolcontest-app .info-box {
-      background: #fff;
-      padding: 30px 100px;
-      text-align: left;
-      min-height: 300px;
-    }
-
-    #eolcontest-app .info-box table {
-      width: 100%;
-      font-size: 18px;
-    }
-
-    #eolcontest-app .info-box td {
-      padding: 8px 0;
-    }
-
-    #eolcontest-app .btn-start {
-      display: inline-block;
-      padding: 10px 30px;
-      border-radius: 5px;
-      background: #337ab7;
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    #eolcontest-app .btn-start:disabled {
-      background: #aaa;
-      cursor: not-allowed;
-    }
-
-    #eolcontest-app .back-wrap {
-      text-align: right;
-      padding: 10px 50px;
-      background: #555555;
-    }
-
-    #eolcontest-app .back-wrap img {
-      height: 40px;
-    }
-  </style>
-
   <div class="ecop-header">
     <img src="/assets/images/icon/icon_corporate.png">
     <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
@@ -92,75 +8,75 @@
     <table>
       <tr>
         <td colspan="2">
-          <font size="5" color="blue"><b>รายละเอียดของแบบทดสอบ EOL Contest</b></font>
+          <span class="text-primary"><b>รายละเอียดของแบบทดสอบ EOL Contest</b></span>
         </td>
       </tr>
       <tr>
         <td width="30%">
-          <font size="4"> - ชื่อชุดข้อสอบ </font>
+          <span> - ชื่อชุดข้อสอบ </span>
         </td>
         <td>
-          <font size="4" color="green" id="contest-exam-name">-</font>
+          <span class="text-success">-</span>
         </td>
       </tr>
       <tr>
         <td>
-          <font size="4"> - รูปแบบการสอบ </font>
+          <span> - รูปแบบการสอบ </span>
         </td>
         <td>
-          <font size="4" color="green" id="contest-test-type">-</font>
+          <span class="text-success">-</span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="4"> - ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น </font>
+          <span> - ข้อสอบประเภท 4 ตัวเลือก ให้เลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น </span>
         </td>
       </tr>
       <tr>
         <td>
-          <font size="4"> - จำนวนคำถามในแบบทดสอบชุดนี้ </font>
+          <span> - จำนวนคำถามในแบบทดสอบชุดนี้ </span>
         </td>
         <td>
-          <font size="4" color="green" id="contest-amount">-</font>
+          <span class="text-success">-</span>
         </td>
       </tr>
       <tr>
         <td>
-          <font size="4"> - ระยะเวลาในการทำแบบทดสอบชุดนี้ </font>
+          <span> - ระยะเวลาในการทำแบบทดสอบชุดนี้ </span>
         </td>
         <td>
-          <font size="4" color="green" id="contest-time">-</font>
+          <span class="text-success">-</span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="4"> - ข้อสอบแต่ละข้อมี : 1 คะแนน </font>
+          <span> - ข้อสอบแต่ละข้อมี : 1 คะแนน </span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="4"> - กดที่ <font color="brown">Start</font> ทางด้านล่างเพื่อเริ่มทำแบบทดสอบ </font>
+          <span> - กดที่ <span class="text-warning">Start</span> ทางด้านล่างเพื่อเริ่มทำแบบทดสอบ </span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="4"> - เมื่อกดปุ่ม <font color="brown">Start</font> ระบบจะเริ่มจับเวลาทันที </font>
+          <span> - เมื่อกดปุ่ม <span class="text-warning">Start</span> ระบบจะเริ่มจับเวลาทันที </span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="4"> - กดที่ <font color="green">Finish</font> เพื่อประเมินผลแบบทดสอบชุดนี้ </font>
+          <span> - กดที่ <span class="text-success">Finish</span> เพื่อประเมินผลแบบทดสอบชุดนี้ </span>
         </td>
       </tr>
-      <tr id="contest-note-row" style="display:none;">
+      <tr id="contest-note-row">
         <td colspan="2">
-          <font size="4" color="red"><b>- หมายเหตุ </b></font>
-          <font size="4" color="green">ข้อสอบรูปแบบการแข่งขัน เมื่อท่านกดปุ่ม Record your answer ท่านไม่สามารถเปลี่ยนคำตอบได้อีกแล้ว ดังนั้นเลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</font>
+          <span class="text-danger"><b>- หมายเหตุ </b></span>
+          <span class="text-success">ข้อสอบรูปแบบการแข่งขัน เมื่อท่านกดปุ่ม Record your answer ท่านไม่สามารถเปลี่ยนคำตอบได้อีกแล้ว ดังนั้นเลือกเฉพาะข้อที่ถูกต้องที่สุดเท่านั้น</span>
         </td>
       </tr>
       <tr>
-        <td colspan="2" align="center" style="padding-top:30px;">
-          <button id="contest-start-btn" class="btn-start kanit">Start</button>
+        <td colspan="2" class="text-center">
+          <button id="contest-start-btn" class="btn-start">Start</button>
         </td>
       </tr>
     </table>

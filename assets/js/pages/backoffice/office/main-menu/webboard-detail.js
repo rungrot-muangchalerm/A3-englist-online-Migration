@@ -13,8 +13,7 @@ fetch(`/api/backoffice/office/topics/01-02/${encodeURIComponent(mainMenuDetailTo
         document.getElementById('office-topic-date').textContent = data.data.topic.topic_create
         document.getElementById('office-topic-headline').textContent = data.data.topic.topic_headline
         document.getElementById('office-topic-detail').innerHTML = data.data.topic.topic_detail || ''
-        document.getElementById('office-topic-headline-row').style.display = 'none'
-    } else {
+        document.getElementById('office-topic-headline-row').classList.add('d-none');} else {
         console.log(data)
     }
 })

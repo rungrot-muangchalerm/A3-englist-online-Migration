@@ -11,7 +11,7 @@
       $('email').value = data.data.email || '';
       $('user').value = data.data.user || '';
       if (data.data.admin) {
-        $('yc-management-link').style.display = 'inline';
+        $('yc-management-link').classList.remove('d-none');
       }
     } else {
       console.log(data);
@@ -43,11 +43,11 @@
       })
     }).then(function (res) { return res.json(); }).then(function (data) {
       if (data.status === 200) {
-        status.innerHTML = '<span style="color:green;">' + data.data.message + '</span>';
+        status.innerHTML = '<span class="text-success">' + data.data.message + '</span>';
         setTimeout(function () { window.location.reload(); }, 1000);
       } else {
         console.log(data);
-        status.innerHTML = '<span style="color:red;">' + (data.message || 'Some problem occurred') + '</span>';
+        status.innerHTML = '<span class="text-danger">' + (data.message || 'Some problem occurred') + '</span>';
       }
     });
   });
@@ -70,11 +70,11 @@
       body: JSON.stringify({ user: u, pass: p, repass: rp })
     }).then(function (res) { return res.json(); }).then(function (data) {
       if (data.status === 200) {
-        status.innerHTML = '<span style="color:green;">' + data.data.message + '</span>';
+        status.innerHTML = '<span class="text-success">' + data.data.message + '</span>';
         setTimeout(function () { window.location.reload(); }, 1000);
       } else {
         console.log(data);
-        status.innerHTML = '<span style="color:red;">' + (data.message || 'Some problem occurred') + '</span>';
+        status.innerHTML = '<span class="text-danger">' + (data.message || 'Some problem occurred') + '</span>';
       }
     });
   });

@@ -17,19 +17,19 @@
     const deleteCell = row.querySelector('[data-role="delete-cell"]');
 
     if (user.admin_id === 1) {
-      setHtml(activeCell, '<font size="2" color="green"><b>-</b></font>');
-      setHtml(editCell, '<font size="2" face="tahoma" color="#48A7F0"><b>-</b></font>');
+      setHtml(activeCell, '<span class="text-success"><b>-</b></span>');
+      setHtml(editCell, '<span class="text-info"><b>-</b></span>');
     } else {
       const activeColor = user.is_active ? 'green' : 'orange';
       const activeText = user.is_active ? 'Active' : 'Not Active';
-      setHtml(activeCell, `<a href="#" data-action="toggle"><font size="2" color="${activeColor}"><b>${activeText}</b></font></a>`);
-      setHtml(editCell, `<a href="/backoffice/mainoffice/office/user/${encodeURIComponent(user.admin_id)}/edit"><font size="2" face="tahoma" color="#48A7F0"><b>Edit</b></font></a>`);
+      setHtml(activeCell, `<a href="#" data-action="toggle"><span><b>${activeText}</b></span></a>`);
+      setHtml(editCell, `<a href="/backoffice/mainoffice/office/user/${encodeURIComponent(user.admin_id)}/edit"><span class="text-info"><b>Edit</b></span></a>`);
     }
 
     if (user.admin_id === 1 || user.admin_id === adminId) {
-      setHtml(deleteCell, '<font size="2" face="tahoma" color="red"><b> - </b></font>');
+      setHtml(deleteCell, '<span class="text-danger"><b> - </b></span>');
     } else {
-      setHtml(deleteCell, '<a style="cursor:pointer;" data-action="delete"><font size="2" face="tahoma" color="red"><b>Delete</b></font></a>');
+      setHtml(deleteCell, '<a href="#" class="link-danger" data-action="delete"><b>Delete</b></a>');
     }
 
     const toggle = activeCell.querySelector('[data-action="toggle"]');

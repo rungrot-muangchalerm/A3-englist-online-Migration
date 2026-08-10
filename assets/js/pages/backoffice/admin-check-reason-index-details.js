@@ -25,9 +25,9 @@ fetch(apiPath, {
     }
 
     if (data.data.mode === 'skill') {
-      document.getElementById('admin-reason-list-table').style.display = 'none';
-      document.getElementById('admin-reason-skill-table').style.display = '';
-      document.getElementById('admin-reason-skill-title').style.display = '';
+      document.getElementById('admin-reason-list-table').classList.add('d-none');
+      document.getElementById('admin-reason-skill-table').classList.remove('d-none');
+      document.getElementById('admin-reason-skill-title').classList.remove('d-none');
       document.getElementById('admin-reason-skill-name').textContent = data.data.selectedSkillName;
       document.getElementById('admin-reason-skill-amount').textContent = data.data.amount;
       data.data.details.forEach(detail => {
@@ -48,9 +48,9 @@ fetch(apiPath, {
     }
 
     if (data.data.mode === 'detail') {
-      document.getElementById('admin-reason-list-table').style.display = 'none';
-      document.getElementById('admin-reason-detail-table').style.display = '';
-      document.getElementById('admin-reason-detail-title').style.display = '';
+      document.getElementById('admin-reason-list-table').classList.add('d-none');
+      document.getElementById('admin-reason-detail-table').classList.remove('d-none');
+      document.getElementById('admin-reason-detail-title').classList.remove('d-none');
       document.getElementById('admin-reason-detail-heading').textContent = `Found Quiz By Detail ID : ${data.data.detail.detailName} [ ${data.data.detail.detailId} ] : ${data.data.detail.amount} Quizes`;
       data.data.questions.forEach(question => {
         const clone = document.getElementById('admin-reason-detail-template').content.cloneNode(true);
@@ -68,8 +68,8 @@ fetch(apiPath, {
     }
 
     if (data.data.mode === 'quiz') {
-      document.getElementById('admin-reason-list-table').style.display = 'none';
-      document.getElementById('admin-reason-quiz-table').style.display = '';
+      document.getElementById('admin-reason-list-table').classList.add('d-none');
+      document.getElementById('admin-reason-quiz-table').classList.remove('d-none');
       if (data.data.question) {
         document.getElementById('admin-reason-quiz-path').textContent = data.data.question.path;
         document.getElementById('admin-reason-quiz-id').textContent = data.data.question.questionId;
@@ -79,14 +79,14 @@ fetch(apiPath, {
         const clone = document.getElementById('admin-reason-answer-template').content.cloneNode(true);
         clone.querySelector('[data-role="answer-id"]').textContent = answer.answerId;
         clone.querySelector('[data-role="correct"]').textContent = answer.correct ? 'True' : 'False';
-        clone.querySelector('[data-role="correct"]').style.color = answer.correct ? 'blue' : 'red';
+        clone.querySelector('[data-role="correct"]').classList.add(answer.correct ? 'text-primary' : 'text-danger');
         clone.querySelector('[data-role="answer-text"]').textContent = answer.answerText;
         document.getElementById('admin-reason-answer-list').appendChild(clone);
       });
       if (data.data.description) {
         document.getElementById('admin-reason-description').textContent = data.data.description;
       } else {
-        document.getElementById('admin-reason-no-description').style.display = '';
+        document.getElementById('admin-reason-no-description').classList.remove('d-none');
       }
     }
   } else {

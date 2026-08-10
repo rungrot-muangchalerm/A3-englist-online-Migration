@@ -44,10 +44,10 @@
     data.skillStatus.forEach((skill) => {
       const tr = document.createElement('tr');
       tr.height = 30;
-      tr.innerHTML = `<td align="center" class="skill-cell"><font size="2" face="tahoma"><b>${escapeHtml(skill.skillName)}</b></font></td>`
+      tr.innerHTML = `<td class="skill-cell text-center"><span><b>${escapeHtml(skill.skillName)}</b></span></td>`
         + skill.levels.map((lvl) => {
           const icon = lvl.passed ? ICON_CORRECT : ICON_INCORRECT;
-          return `<td align="center" class="icon-cell"><img src="${icon}" width="25" border="0"></td>`;
+          return `<td class="icon-cell text-center"><img src="${icon}" width="25"></td>`;
         }).join('');
       tbody.appendChild(tr);
     });
@@ -62,7 +62,7 @@
       });
     } else {
       btn.disabled = true;
-      document.getElementById('status-msg').innerHTML = '<font color="red"><b>คุณยังไม่มีสิทธิ์เข้าใช้งาน EST กรุณาผ่านแบบทดสอบ Single Skill ทั้งหมด 18 ระดับ หรือรอให้ครบเงื่อนไขที่กำหนด</b></font>';
+      document.getElementById('status-msg').innerHTML = '<span class="text-danger"><b>คุณยังไม่มีสิทธิ์เข้าใช้งาน EST กรุณาผ่านแบบทดสอบ Single Skill ทั้งหมด 18 ระดับ หรือรอให้ครบเงื่อนไขที่กำหนด</b></span>';
     }
   }
 

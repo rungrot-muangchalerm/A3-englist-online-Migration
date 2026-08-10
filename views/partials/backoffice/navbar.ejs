@@ -1,13 +1,13 @@
 <nav class="navbar">
   <div class="container-nav">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/" style="color:#FFFFFF !important;">
-        <img src="/assets/images/index/logo-eol.png" style="height:40px;margin-top:12px;" />
+      <a class="navbar-brand" href="/">
+        <img src="/assets/images/index/logo-eol.png" />
       </a>
       <% if (typeof showLogout !== 'undefined' && showLogout) { %>
-        <div class="pull-right">
-          <a href="javascript:void(0)" onclick="logout()" style="height:40px;margin-top:12px;">
-            <img src="/assets/2010/temp_images/temp/button/bt_logout.png" style="height:50px; margin-right:35px;" title="Logout" />
+        <div class="float-end">
+          <a href="javascript:void(0)" onclick="logout()">
+            <img src="/assets/2010/temp_images/temp/button/bt_logout.png" title="Logout" />
           </a>
         </div>
       <% } %>

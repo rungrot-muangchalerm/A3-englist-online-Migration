@@ -13,13 +13,13 @@
 
   function hideAllSections() {
     document.querySelectorAll('.report-section').forEach((el) => {
-      el.style.display = 'none';
+      el.classList.add('d-none');
     });
   }
 
   function showSection(id) {
     const el = document.getElementById(id);
-    if (el) el.style.display = '';
+    if (el) el.classList.remove('d-none');
   }
 
   function clearContainerKeepTemplates(id) {
@@ -85,18 +85,15 @@
           const link = document.getElementById(`report-button-${cfg.section}`);
           const img = document.getElementById(`report-button-${cfg.section}-img`);
           if (!link || !img) return;
-          link.style.display = '';
+          link.classList.remove('d-none');
           img.src = cfg.src;
-          img.style.position = 'absolute';
-          img.style.top = cfg.top;
-          img.style.left = cfg.left;
-          img.style.marginLeft = cfg.marginLeft;
-          img.style.borderRadius = '20px';
-          img.style.width = '28%';
+          img.classList.add('position-absolute');
+          img.classList.add('rounded');
+          img.setAttribute('aria-valuenow', '28%');
         });
 
         const contestBtn = document.getElementById('report-button-contest');
-        if (contestBtn) contestBtn.style.display = showContest ? '' : 'none';
+        if (contestBtn) if (showContest ) contestBtn.classList.remove('d-none'); else contestBtn.classList.add('d-none');
       });
   }
 
@@ -261,19 +258,19 @@
         const relateCell = qClone.querySelector('.relate-cell');
         const relateRow = qClone.querySelector('.relate-row');
         if (q.relateType === 1) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-text-template').content.cloneNode(true);
           const t = tClone.querySelector('.relate-text');
           if (t) t.textContent = q.relateText;
           if (relateCell) relateCell.appendChild(tClone);
         } else if (q.relateType === 2) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-image-template').content.cloneNode(true);
           const img = tClone.querySelector('img');
           if (img) img.src = q.relateText;
           if (relateCell) relateCell.appendChild(tClone);
         } else if (q.relateType === 3) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-audio-template').content.cloneNode(true);
           const source = tClone.querySelector('source');
           if (source) source.src = `https://www.engtest.net/files/sound/${q.relateText}`;
@@ -292,7 +289,7 @@
             textEl.textContent = `${a.index}.  ${a.text}`;
             if (a.selected) {
               textEl.setAttribute('color', 'orange');
-              textEl.style.fontWeight = 'bold';
+              textEl.classList.add('fw-bold');
             }
           }
           if (answersContainer) answersContainer.appendChild(aClone);
@@ -326,7 +323,7 @@
         const lessonLink = qClone.querySelector('.lesson-link');
         if (lessonLink) lessonLink.href = `/eol/elearning_switch?reason_id=${q.detailId}&skill_id=${q.skillId}`;
         if (q.description) {
-          qClone.querySelectorAll('.description-row').forEach((row) => { row.style.display = ''; });
+          qClone.querySelectorAll('.description-row').forEach((row) => { row.classList.remove('d-none'); });
           const desc = qClone.querySelector('.description-text');
           if (desc) desc.textContent = q.description;
         }
@@ -363,7 +360,7 @@
           const bar = dClone.querySelector('.dist-bar');
           if (bar) {
             bar.src = `/assets/2010/temp_images/icon_bar/bar_0${rand}.png`;
-            bar.style.width = `${dist.ratio}%`;
+            bar.setAttribute('aria-valuenow', `${dist.ratio}%`);
           }
           const ratio = dClone.querySelector('.dist-ratio');
           if (ratio) ratio.textContent = dist.ratio;
@@ -407,7 +404,7 @@
             const img = bClone.querySelector('.bar-image');
             if (img) {
               img.src = `/assets/2010/temp_images/icon_bar/${bar.barImage}`;
-              img.style.width = `${bar.percent}%`;
+              img.setAttribute('aria-valuenow', `${bar.percent}%`);
             }
             target.appendChild(bClone);
           });
@@ -421,7 +418,7 @@
           const avgTotal = avgClone.querySelector('.avg-total');
           if (avgTotal) avgTotal.textContent = d.chartBar.averageTotal;
           const avgBar = avgClone.querySelector('.avg-bar');
-          if (avgBar) avgBar.style.width = `${d.chartBar.averagePercent}%`;
+          if (avgBar) avgBar.setAttribute('aria-valuenow', `${d.chartBar.averagePercent}%`);
           target.appendChild(avgClone);
         }
       }
@@ -610,49 +607,49 @@
       const topEl = scoreClone.querySelector('.score-top');
       if (topEl) {
         const value = d.scoreTable.topScoreColor;
-        if (value === 'bgcolor_ffe0e0') topEl.style.background = '#ffe0e0';
-        else if (value === 'bgcolor_C4FAFC') topEl.style.background = '#C4FAFC';
-        else if (value === 'bgcolor_E2F9F9') topEl.style.background = '#E2F9F9';
-        else topEl.style.background = '#f0f0f0';
+        if (value === 'bgcolor_ffe0e0') topEl.classList.add('bg-light');
+        else if (value === 'bgcolor_C4FAFC') topEl.classList.add('bg-light');
+        else if (value === 'bgcolor_E2F9F9') topEl.classList.add('bg-light');
+        else topEl.classList.add('bg-light');
       }
       for (let i = 1; i <= 11; i += 1) {
         const el = scoreClone.querySelector(`.score-c-${i}`);
         if (el) {
           const value = c[i];
-          if (value === 'bgcolor_ffe0e0') el.style.background = '#ffe0e0';
-          else if (value === 'bgcolor_C4FAFC') el.style.background = '#C4FAFC';
-          else if (value === 'bgcolor_E2F9F9') el.style.background = '#E2F9F9';
-          else el.style.background = '#f0f0f0';
+          if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
+          else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
+          else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
+          else el.classList.add('bg-light');
         }
       }
       for (let i = 1; i <= 7; i += 1) {
         const el = scoreClone.querySelector(`.score-m-${i}`);
         if (el) {
           const value = m[i];
-          if (value === 'bgcolor_ffe0e0') el.style.background = '#ffe0e0';
-          else if (value === 'bgcolor_C4FAFC') el.style.background = '#C4FAFC';
-          else if (value === 'bgcolor_E2F9F9') el.style.background = '#E2F9F9';
-          else el.style.background = '#f0f0f0';
+          if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
+          else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
+          else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
+          else el.classList.add('bg-light');
         }
       }
       for (let i = 1; i <= 5; i += 1) {
         const el = scoreClone.querySelector(`.score-g-${i}`);
         if (el) {
           const value = g[i];
-          if (value === 'bgcolor_ffe0e0') el.style.background = '#ffe0e0';
-          else if (value === 'bgcolor_C4FAFC') el.style.background = '#C4FAFC';
-          else if (value === 'bgcolor_E2F9F9') el.style.background = '#E2F9F9';
-          else el.style.background = '#f0f0f0';
+          if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
+          else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
+          else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
+          else el.classList.add('bg-light');
         }
       }
       for (let i = 1; i <= 6; i += 1) {
         const el = scoreClone.querySelector(`.score-cc-${i}`);
         if (el) {
           const value = cc[i];
-          if (value === 'bgcolor_ffe0e0') el.style.background = '#ffe0e0';
-          else if (value === 'bgcolor_C4FAFC') el.style.background = '#C4FAFC';
-          else if (value === 'bgcolor_E2F9F9') el.style.background = '#E2F9F9';
-          else el.style.background = '#f0f0f0';
+          if (value === 'bgcolor_ffe0e0') el.classList.add('bg-light');
+          else if (value === 'bgcolor_C4FAFC') el.classList.add('bg-light');
+          else if (value === 'bgcolor_E2F9F9') el.classList.add('bg-light');
+          else el.classList.add('bg-light');
         }
       }
       scoreWrap.appendChild(scoreClone);
@@ -725,7 +722,7 @@
         if (percent) percent.textContent = `${item.percent}%`;
         const bar = rowClone.querySelector('.contest-bar');
         if (bar) {
-          bar.style.width = `${item.percent}%`;
+          bar.setAttribute('aria-valuenow', `${item.percent}%`);
           bar.setAttribute('title', item.examName);
         }
         if (table) table.appendChild(rowClone);
@@ -843,19 +840,19 @@
         const relateCell = qClone.querySelector('.relate-cell');
         const relateRow = qClone.querySelector('.relate-row');
         if (q.relateType === 1) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-text-template').content.cloneNode(true);
           const t = tClone.querySelector('.relate-text');
           if (t) t.textContent = q.relateText;
           if (relateCell) relateCell.appendChild(tClone);
         } else if (q.relateType === 2) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-image-template').content.cloneNode(true);
           const img = tClone.querySelector('img');
           if (img) img.src = q.relateText;
           if (relateCell) relateCell.appendChild(tClone);
         } else if (q.relateType === 3) {
-          if (relateRow) relateRow.style.display = '';
+          if (relateRow) relateRow.classList.remove('d-none');
           const tClone = document.getElementById('report-test-relate-audio-template').content.cloneNode(true);
           const source = tClone.querySelector('source');
           if (source) source.src = `https://www.engtest.net/files/sound/${q.relateText}`;
@@ -874,7 +871,7 @@
             textEl.textContent = `${a.index}.  ${a.text}`;
             if (a.selected) {
               textEl.setAttribute('color', 'orange');
-              textEl.style.fontWeight = 'bold';
+              textEl.classList.add('fw-bold');
             }
           }
           if (answersContainer) answersContainer.appendChild(aClone);
@@ -908,7 +905,7 @@
         const lessonLink = qClone.querySelector('.lesson-link');
         if (lessonLink) lessonLink.href = `/eol/elearning_switch?reason_id=${q.detailId}&skill_id=${q.skillId}`;
         if (q.description) {
-          qClone.querySelectorAll('.description-row').forEach((row) => { row.style.display = ''; });
+          qClone.querySelectorAll('.description-row').forEach((row) => { row.classList.remove('d-none'); });
           const desc = qClone.querySelector('.description-text');
           if (desc) desc.textContent = q.description;
         }
@@ -943,7 +940,7 @@
           const bar = dClone.querySelector('.dist-bar');
           if (bar) {
             bar.src = `/assets/2010/temp_images/icon_bar/bar_0${rand}.png`;
-            bar.style.width = `${dist.ratio}%`;
+            bar.setAttribute('aria-valuenow', `${dist.ratio}%`);
           }
           const ratio = dClone.querySelector('.dist-ratio');
           if (ratio) ratio.textContent = dist.ratio;
@@ -986,7 +983,7 @@
             const img = bClone.querySelector('.bar-image');
             if (img) {
               img.src = `/assets/2010/temp_images/icon_bar/${bar.barImage}`;
-              img.style.width = `${bar.percent}%`;
+              img.setAttribute('aria-valuenow', `${bar.percent}%`);
             }
             target.appendChild(bClone);
           });
@@ -1000,7 +997,7 @@
           const avgTotal = avgClone.querySelector('.avg-total');
           if (avgTotal) avgTotal.textContent = d.chartBar.averageTotal;
           const avgBar = avgClone.querySelector('.avg-bar');
-          if (avgBar) avgBar.style.width = `${d.chartBar.averagePercent}%`;
+          if (avgBar) avgBar.setAttribute('aria-valuenow', `${d.chartBar.averagePercent}%`);
           target.appendChild(avgClone);
         }
       }

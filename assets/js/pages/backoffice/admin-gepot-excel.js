@@ -16,7 +16,7 @@ function setExportField(selector, value, disabled) {
 function setExportButtons(data) {
   const panel = document.getElementById('admin-gepot-export-buttons');
   if (data.rows.length === 0) return;
-  panel.style.display = '';
+  panel.classList.remove('d-none');
   if (data.mode === 'single') {
     const memberId = data.rows[0].memberId;
     setExportField('[data-export="full-member-id"]', memberId, false);
@@ -36,6 +36,16 @@ function setExportButtons(data) {
   }
 }
 
+function applyTextColor(el, color) {
+  const value = String(color || '').toLowerCase();
+  const cls = value === 'red' ? 'text-danger'
+    : value === 'green' ? 'text-success'
+      : value === 'blue' ? 'text-primary'
+        : value === 'brown' || value === 'orange' ? 'text-warning'
+          : 'text-dark';
+  el.classList.add(cls);
+}
+
 function renderSkill(container, skill) {
   const template = document.getElementById('admin-gepot-skill-template');
   const clone = template.content.cloneNode(true);
@@ -46,9 +56,9 @@ function renderSkill(container, skill) {
   clone.querySelector('[data-role="skill-score"]').textContent = skill.score;
   clone.querySelector('[data-role="skill-total"]').textContent = skill.total;
   clone.querySelector('[data-role="skill-level"]').textContent = skill.level.text;
-  clone.querySelector('[data-role="skill-level"]').style.color = skill.level.color;
+  applyTextColor(clone.querySelector('[data-role="skill-level"]'), skill.level.color);
   clone.querySelector('[data-role="skill-cefr"]').textContent = skill.cefr.text;
-  clone.querySelector('[data-role="skill-cefr"]').style.color = skill.cefr.color;
+  applyTextColor(clone.querySelector('[data-role="skill-cefr"]'), skill.cefr.color);
   const tbody = clone.querySelector('tbody');
   while (tbody.firstChild) {
     container.appendChild(tbody.firstChild);
@@ -58,7 +68,7 @@ function renderSkill(container, skill) {
 function renderCard(row, mode) {
   const clone = document.getElementById('admin-gepot-card-template').content.cloneNode(true);
   if (mode === 'single') {
-    clone.querySelector('[data-role="cover"]').style.display = '';
+    clone.querySelector('[data-role="cover"]').classList.remove('d-none');
     clone.querySelector('[data-role="no"]').textContent = '';
   } else {
     clone.querySelector('[data-role="no"]').textContent = row.no;
@@ -81,7 +91,7 @@ if (username || startUsername || endUsername) {
   }).then(res => res.json()).then(data => {
     if (data.status === 200) {
       if (data.data.rows.length === 0) {
-        document.getElementById('admin-gepot-not-found').style.display = '';
+        document.getElementById('admin-gepot-not-found').classList.remove('d-none');
         return;
       }
       setExportButtons(data.data);

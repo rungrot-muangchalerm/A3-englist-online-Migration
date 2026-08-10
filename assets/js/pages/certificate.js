@@ -5,10 +5,8 @@ fetch('/api/certificate/me', {
   method: 'GET',
 }).then(res => res.json()).then(data => {
   if (data.status === 200) {
-    document.querySelector('#certificate-app .loading').style.display = 'none'
-    if (data.data.allPassed) {
-      document.querySelector('#certificate-app .certificate-passed').style.display = 'block'
-      document.querySelector('#certificate-app .full-name').textContent = data.data.fullName || ''
+    document.querySelector('#certificate-app .loading').classList.add('d-none');if (data.data.allPassed) {
+      document.querySelector('#certificate-app .certificate-passed').classList.remove('d-none');document.querySelector('#certificate-app .full-name').textContent = data.data.fullName || ''
       document.getElementById('download-pdf').addEventListener('click', () => {
         const cert = document.querySelector('.certificate')
         html2canvas(cert, { scale: 2 }).then((canvas) => {
@@ -23,8 +21,7 @@ fetch('/api/certificate/me', {
         })
       })
     } else {
-      document.querySelector('#certificate-app .certificate-missing').style.display = 'block'
-      document.querySelector('#certificate-app .missing-skills').textContent = data.data.missingSkillsText
+      document.querySelector('#certificate-app .certificate-missing').classList.remove('d-none');document.querySelector('#certificate-app .missing-skills').textContent = data.data.missingSkillsText
     }
   } else if (data.status === 401) {
     window.location.href = '/'

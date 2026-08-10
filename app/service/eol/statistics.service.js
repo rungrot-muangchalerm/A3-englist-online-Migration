@@ -50,7 +50,7 @@ function formatDuration(minutes) {
   const mins = minutes % 60;
   let htxt = '';
   if (hours > 0) htxt = `${hours} ชั่วโมง `;
-  return `<font color=green> ${htxt}${mins} นาที </font>`;
+  return `<span class="text-success"> ${htxt}${mins} นาที </span>`;
 }
 
 async function buildOverview(masterId, query) {

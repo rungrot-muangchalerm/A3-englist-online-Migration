@@ -1,6 +1,6 @@
 <div class="main-academic" id="admin-question-list-app" data-page-mode="<%= pageMode %>">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -19,7 +19,7 @@
   </div>
 
   <br><br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <a href="/backoffice/mainoffice/admin/check-questions-list/search">[Search List]</a>&nbsp;&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-questions-list/add-question">[Add Questions]</a>&nbsp;&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-questions-list/add-related-item">[Add Related Item]</a>&nbsp;&nbsp;&nbsp;
@@ -30,85 +30,85 @@
   </div>
   <br><br>
 
-  <table id="admin-question-search-panel" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#dddddd" class="f-thai" style="display:none;">
-    <tr height="40">
-      <td align="center" width="30%">
-        <font size="2">
+  <table id="admin-question-search-panel" width="100%" class="f-thai text-center bg-light table table-sm">
+    <tr height="40" class="align-middle">
+      <td width="30%" class="text-center">
+        <span>
           <input type="radio" name="mode" value="question" checked> &raquo; Question
           <input type="radio" name="mode" value="relation" disabled> &raquo; Relation
           <input type="radio" name="mode" value="answer" disabled> &raquo; Answer
-        </font>
+        </span>
       </td>
-      <td align="left" width="55%">
-        <font size="2">
+      <td width="55%" class="text-start">
+        <span>
           &nbsp; By ID : &nbsp;<input type="text" id="admin-question-search-id" size="5">
           &nbsp; By Keyword : &nbsp;<input type="text" id="admin-question-search-keyword" size="35">
-        </font>
+        </span>
       </td>
-      <td align="center" width="15%">
+      <td width="15%" class="text-center">
         <button type="button" id="admin-question-search-button" class="btn-set-relate">&nbsp;&nbsp; Search &nbsp;&nbsp;</button>
       </td>
     </tr>
-    <tr height="25">
-      <td align="center" colspan="3">
-        <font size="2" color="red">
+    <tr height="25" class="align-middle">
+      <td colspan="3" class="text-center">
+        <span class="text-danger">
           Tips Search : Relation &raquo; by Keyword , It's going to find only in Passage Section [Sounds & Pictures haven't any Keywords]
-        </font>
+        </span>
       </td>
     </tr>
   </table>
 
-  <div id="admin-related-type-menu" align="center" class="f-thai" style="display:none;">
+  <div id="admin-related-type-menu" class="f-thai text-center">
     <br>
     <a data-role="related-type" data-type-id="1" href="#">Passage</a>&nbsp;&nbsp;&nbsp;
     <a data-role="related-type" data-type-id="2" href="#">Picture</a>&nbsp;&nbsp;&nbsp;
     <a data-role="related-type" data-type-id="3" href="#">Sound</a>
   </div>
 
-  <div id="admin-question-list-title" align="center" class="f-thai"></div>
-  <table id="admin-question-pages-table" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" class="f-thai" style="display:none;">
-    <tr valign="top">
-      <td width="7%" align="right">
-        <font size="2">Page : </font>
+  <div id="admin-question-list-title" class="f-thai text-center"></div>
+  <table id="admin-question-pages-table" width="100%" class="f-thai text-center table table-sm">
+    <tr>
+      <td width="7%" class="text-end">
+        <span>Page : </span>
       </td>
-      <td align="left" width="93%" id="admin-question-pages"></td>
+      <td width="93%" id="admin-question-pages" class="text-start"></td>
     </tr>
   </table>
 
   <div id="admin-question-list">
     <template id="admin-question-template">
-      <table align="center" width="100%" border="1" style="margin: 0 auto;" class="f-thai show-quiz">
-        <tr align="middle">
-          <td colspan="2" align="left">
-            <font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font>
+      <table width="100%" class="f-thai show-quiz text-center table table-sm">
+        <tr class="text-center">
+          <td colspan="2" class="text-start">
+            <span class="text-warning">&nbsp;&nbsp;<span data-role="path"></span></span>
           </td>
         </tr>
-        <tr valign="top">
-          <td align="center" rowspan="3" width="10%">
+        <tr>
+          <td rowspan="3" width="10%" class="text-center">
             <span data-role="question-id"></span>
             <br><br><br>
             <span data-role="active-action"></span><br><br><b data-role="no"></b>
           </td>
-          <td align="left" width="90%">
-            <font color="green">None Relate File or Passage</font>
+          <td width="90%" class="text-start">
+            <span class="text-success">None Relate File or Passage</span>
           </td>
         </tr>
         <tr>
-          <td align="left" width="100%" bgcolor="#dddddd">
-            <font size="2" data-role="question-text"></font><br>&nbsp;
+          <td width="100%" class="text-start bg-light">
+            <span></span><br>&nbsp;
           </td>
         </tr>
         <tr>
-          <td align="left" width="90%"><br>
+          <td width="90%" class="text-start"><br>
             <div data-role="answers"></div>
           </td>
         </tr>
         <tr>
           <td colspan="2">
-            <font size="2"><b>&nbsp;Description : <br></b></font>
-            <font size="2" color="blue" data-role="description"></font>
-            <div align="center" data-role="no-description" style="display:none;">
-              <font size="2" color="red"><b> - None Description - </b></font>
+            <span><b>&nbsp;Description : <br></b></span>
+            <span class="text-primary"></span>
+            <div data-role="no-description" class="text-center">
+              <span class="text-danger"><b> - None Description - </b></span>
             </div><br>
           </td>
         </tr>
@@ -122,28 +122,28 @@
 
   <div id="admin-related-list">
     <template id="admin-related-template">
-      <table align="center" width="100%" cellpadding="0" cellspacing="0" border="1" class="f-thai show-relate" style="margin: 0 auto;">
-        <tr height="40">
-          <td width="20%" align="center">
-            <font size="2">Data ID : <span data-role="related-id"></span></font>
+      <table width="100%" class="f-thai show-relate text-center table table-sm">
+        <tr height="40" class="align-middle">
+          <td width="20%" class="text-center">
+            <span>Data ID : <span data-role="related-id"></span></span>
           </td>
-          <td width="20%" align="center">
-            <font size="2">Type : <span data-role="type-name"></span></font>
+          <td width="20%" class="text-center">
+            <span>Type : <span data-role="type-name"></span></span>
           </td>
-          <td width="60%" align="left">&nbsp; <font size="2">Reference Name <span data-role="reference-name"></span></font>
+          <td width="60%" class="text-start">&nbsp; <span>Reference Name <span data-role="reference-name"></span></span>
           </td>
         </tr>
         <tr>
-          <td width="100%" align="left" colspan="3"><br>
-            <font size="2" data-role="related-text"></font><br>&nbsp;
+          <td width="100%" colspan="3" class="text-start"><br>
+            <span></span><br>&nbsp;
           </td>
         </tr>
-        <tr height="50">
-          <td width="100%" align="center" colspan="3"><span data-role="active-action"></span> Relate Question List</td>
+        <tr height="50" class="align-middle">
+          <td width="100%" colspan="3" class="text-center"><span data-role="active-action"></span> Relate Question List</td>
         </tr>
-        <tr height="20">
-          <td width="100%" align="left" colspan="3">
-            <font size="2">&nbsp;&nbsp;<span data-role="question-ids"></span></font>
+        <tr height="20" class="align-middle">
+          <td width="100%" colspan="3" class="text-start">
+            <span>&nbsp;&nbsp;<span data-role="question-ids"></span></span>
           </td>
         </tr>
       </table>
@@ -151,7 +151,7 @@
     </template>
   </div>
 
-  <div id="admin-question-empty" align="center" class="f-thai" style="display:none;">
-    <font color="red" size="3"><br><br><b>Can't Found Your ID or Keyword</b></font>
+  <div id="admin-question-empty" class="f-thai text-center">
+    <span class="text-danger"><br><br><b>Can't Found Your ID or Keyword</b></span>
   </div>
 </div>

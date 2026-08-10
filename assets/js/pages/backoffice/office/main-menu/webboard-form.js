@@ -5,7 +5,7 @@ const mainMenuFormPage = new URLSearchParams(window.location.search).get('page')
 const mainMenuFormListUrl = '/backoffice/mainoffice/office/main-menu/webboard';
 const mainMenuFormBackUrl = `${mainMenuFormListUrl}?page=${encodeURIComponent(mainMenuFormPage)}`;
 
-document.getElementById('office-topic-headline-form-row').style.display = 'none';
+document.getElementById('office-topic-headline-form-row').classList.add('d-none');
 document.getElementById('office-topic-form').elements.topic_headline.required = false;
 document.getElementById('office-topic-back-link').href = mainMenuFormBackUrl;
 

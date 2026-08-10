@@ -17,14 +17,14 @@
           onerror="this.onerror=null;this.src='${htmlEscape(member.fallbackAvatar)}'">
       </div>
       <div id="user_text">
-        <p style="margin-left:20px;font-weight:bold;">
+        <p class="ms-3 fw-bold">
           ${htmlEscape(member.fname)}&nbsp;&nbsp;&nbsp;&nbsp;${htmlEscape(member.lname)}
         </p>
         <div id="account-info-text">${account.infoText || ''}</div>
       </div>
       <div id="logoutPic">
         <a href="#" id="system-logout">
-          <img src="/assets/images/image2/eol system/button/logout-06.png" style="margin-top:13px;">
+          <img src="/assets/images/image2/eol system/button/logout-06.png" class="mt-3">
         </a>
       </div>
     `;
@@ -56,16 +56,16 @@
     if (!container) return;
 
     const page = getActivePage();
-    const lineColor = {
-      manage_admin: '#2a3f54',
-      edit_profile: '#3BB9FF',
-      refill: '#d5e17f',
-      statistics: '#aeafb0',
-      'e-test': '#ec5c27',
-      corporate: '#ec5c27',
-      eol_system: '#f7941d',
+    const lineClass = {
+      manage_admin: 'border-dark',
+      edit_profile: 'border-info',
+      refill: 'border-warning',
+      statistics: 'border-secondary',
+      'e-test': 'border-danger',
+      corporate: 'border-danger',
+      eol_system: 'border-warning',
     };
-    const bottomColor = lineColor[page] || lineColor.eol_system;
+    const bottomClass = lineClass[page] || lineClass.eol_system;
 
     const isMaster = account.type === 'master';
     const isAdmin = account.isAdmin;
@@ -95,7 +95,7 @@
     items += `<li class="${!page ? 'active' : ''}" id="tab_eolsystem"><a href="/eol/eoltest">SYSTEM Page</a></li>`;
 
     container.innerHTML = `
-      <div class="tabbed" style="border-bottom: 4px solid ${bottomColor} !important;">
+      <div class="tabbed border-bottom border-4 ${bottomClass}">
         <ul>${items}</ul>
       </div>
     `;

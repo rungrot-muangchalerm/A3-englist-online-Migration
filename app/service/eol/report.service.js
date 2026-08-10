@@ -753,10 +753,10 @@ async function getStandardDetail(focusMemberId, resultId) {
   const percent = totalAmount > 0 ? ((allPass) - (allWrong * 0.25)) * (100 / totalAmount) : 0;
 
   const textMsg = [
-    '<font color=red>ไม่สามารถประเมินได้ ( Incalculable )</font>',
-    '<font color=brown>พอใช้ ( Low )</font>',
-    '<font color=green>ปานกลาง ( Intermediate )</font>',
-    '<font color=blue>สูง ( High )</font>',
+    '<span class="text-danger">ไม่สามารถประเมินได้ ( Incalculable )</span>',
+    '<span class="text-warning">พอใช้ ( Low )</span>',
+    '<span class="text-success">ปานกลาง ( Intermediate )</span>',
+    '<span class="text-primary">สูง ( High )</span>',
   ];
 
   const eachPercent = [

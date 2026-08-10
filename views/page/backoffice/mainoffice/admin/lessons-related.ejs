@@ -1,6 +1,6 @@
 <div class="main-academic" id="admin-lessons-related-app" data-skill-path="<%= typeof skillPath !== 'undefined' ? skillPath : '' %>">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -19,7 +19,7 @@
   </div>
 
   <br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <a href="/backoffice/mainoffice/admin/lessons-related/reading">[ Reading ]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/lessons-related/listening">[ Listening ]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/lessons-related/semi-speaking">[ Semi-Speaking ]</a>&nbsp;&nbsp;
@@ -30,61 +30,61 @@
   </div>
   <br><br>
 
-  <div id="admin-lessons-related-panel" style="display:none;">
-    <div align="center" class="f-thai">
-      <font color="green" size="4"><b id="admin-lessons-related-skill-name"></b></font><br>&nbsp;
+  <div id="admin-lessons-related-panel">
+    <div class="f-thai text-center">
+      <span class="text-success"><b id="admin-lessons-related-skill-name"></b></span><br>&nbsp;
     </div>
 
     <div id="admin-lessons-related-list">
       <template id="admin-lessons-related-template">
-        <table align="center" width="100%" cellpadding="5" cellspacing="0" border="0" class="f-thai">
-          <tr height="25" bgcolor="#f0f0f0">
-            <td width="8%" align="center" rowspan="2">
-              <font size="2"><b data-role="no"></b></font>
+        <table width="100%" class="f-thai text-center table table-sm">
+          <tr height="25" class="bg-light align-middle">
+            <td width="8%" rowspan="2" class="text-center">
+              <span><b data-role="no"></b></span>
             </td>
-            <td align="left" width="80%">
-              <font size="2"><b> Reason Detail : [<span data-role="reason-id"></span>] <span data-role="reason-name"></span> </b></font>
+            <td width="80%" class="text-start">
+              <span><b> Reason Detail : [<span data-role="reason-id"></span>] <span data-role="reason-name"></span> </b></span>
             </td>
-            <td align="center" width="12%" rowspan="2">
-              <font size="2" color="red"><b> &laquo; Delete &raquo; </b></font>
-            </td>
-          </tr>
-          <tr height="25" bgcolor="#f0f0f0">
-            <td align="left">
-              <font size="2"><b> Elearning Topic : [<span data-role="topic-id"></span>] <span data-role="topic-name"></span> </b></font>
+            <td width="12%" rowspan="2" class="text-center">
+              <span class="text-danger"><b> &laquo; Delete &raquo; </b></span>
             </td>
           </tr>
-          <tr height="10" bgcolor="white">
+          <tr height="25" class="bg-light align-middle">
+            <td class="text-start">
+              <span><b> Elearning Topic : [<span data-role="topic-id"></span>] <span data-role="topic-name"></span> </b></span>
+            </td>
+          </tr>
+          <tr height="10" class="bg-light align-middle">
             <td colspan="3"></td>
           </tr>
         </table>
       </template>
     </div>
 
-    <div align="center" class="f-thai" id="admin-lessons-related-empty" style="display:none;">
+    <div class="f-thai text-center" id="admin-lessons-related-empty">
       <br><br>
-      <font size="3" color="red"><b>[ No Relate Reason with Elearning in this Skill ]</b></font><br><br>&nbsp;
+      <span class="text-danger"><b>[ No Relate Reason with Elearning in this Skill ]</b></span><br><br>&nbsp;
     </div>
 
     <br>
     <form class="f-thai">
-      <table align="center" width="60%" bgcolor="#f0f0f0" border="0" class="f-thai" style="margin: 0 auto; padding: 0 10px;">
-        <tr height="70">
-          <td width="15%" align="right">
-            <font size="2"><b>Reason ID</b></font>
+      <table width="60%" class="f-thai text-center bg-light table table-sm">
+        <tr height="70" class="align-middle">
+          <td width="15%" class="text-end">
+            <span><b>Reason ID</b></span>
           </td>
-          <td width="10%" align="center">
-            <font size="2"><b> : </b></font>
+          <td width="10%" class="text-center">
+            <span><b> : </b></span>
           </td>
-          <td width="15%" align="left"><input type="number" size="5" disabled></td>
-          <td width="15%" align="right">
-            <font size="2"><b>Topic ID</b></font>
+          <td width="15%" class="text-start"><input type="number" size="5" disabled></td>
+          <td width="15%" class="text-end">
+            <span><b>Topic ID</b></span>
           </td>
-          <td width="10%" align="center">
-            <font size="2"><b> : </b></font>
+          <td width="10%" class="text-center">
+            <span><b> : </b></span>
           </td>
-          <td width="15%" align="left"><input type="number" size="5" disabled></td>
-          <td width="20%" align="center"><input type="button" value=" Add Relation " class="btn-add" disabled></td>
+          <td width="15%" class="text-start"><input type="number" size="5" disabled></td>
+          <td width="20%" class="text-center"><input type="button" value=" Add Relation " class="btn-add" disabled></td>
         </tr>
       </table>
     </form><br>&nbsp;

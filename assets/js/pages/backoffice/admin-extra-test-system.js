@@ -2,6 +2,10 @@ const app = document.getElementById('admin-extra-test-app');
 const mode = app.dataset.pageMode;
 const params = new URLSearchParams(window.location.search);
 
+function setStateClass(el, active, trueClass, falseClass) {
+  el.classList.add(active ? trueClass : falseClass);
+}
+
 if (mode === 'list') {
   fetch(`/api/backoffice/admin/extra-tests?page=${encodeURIComponent(params.get('page') || '1')}`, {
     credentials: 'include'
@@ -10,12 +14,10 @@ if (mode === 'list') {
       for (let pageNumber = 1; pageNumber <= data.data.allPages; pageNumber += 1) {
         const link = document.createElement('a');
         link.href = `/backoffice/mainoffice/admin/extra-test-system?page=${encodeURIComponent(String(pageNumber))}`;
-        const font = document.createElement('font');
-        font.color = pageNumber === data.data.page ? 'red' : 'blue';
-        font.size = '2';
-        font.className = 'f-thai';
-        font.textContent = String(pageNumber);
-        link.appendChild(font);
+        const pageText = document.createElement('span');
+        pageText.className = pageNumber === data.data.page ? 'f-thai text-danger' : 'f-thai text-primary';
+        pageText.textContent = String(pageNumber);
+        link.appendChild(pageText);
         document.getElementById('admin-extra-test-pages').appendChild(document.createTextNode('  '));
         document.getElementById('admin-extra-test-pages').appendChild(link);
         document.getElementById('admin-extra-test-pages').appendChild(document.createTextNode(' '));
@@ -24,18 +26,18 @@ if (mode === 'list') {
           document.getElementById('admin-extra-test-pages').appendChild(document.createTextNode('\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0'));
         }
       }
-      if (!data.data.tests.length) document.getElementById('admin-extra-test-empty').style.display = '';
+      if (!data.data.tests.length) document.getElementById('admin-extra-test-empty').classList.remove('d-none');
       data.data.tests.forEach(test => {
         const clone = document.getElementById('admin-extra-test-row-template').content.cloneNode(true);
         clone.querySelector('[data-role="test-id"]').textContent = test.testId;
         clone.querySelector('[data-role="name"]').textContent = test.name;
         clone.querySelector('[data-role="detail-link"]').href = `/backoffice/mainoffice/admin/extra-test-system/${encodeURIComponent(test.testId)}`;
         clone.querySelector('[data-role="free"]').textContent = test.free ? 'Yes' : 'No';
-        clone.querySelector('[data-role="free"]').style.color = test.free ? 'green' : 'red';
+        setStateClass(clone.querySelector('[data-role="free"]'), test.free, 'text-success', 'text-danger');
         clone.querySelector('[data-role="active"]').textContent = test.active ? 'Online' : 'Offline';
-        clone.querySelector('[data-role="active"]').style.color = test.active ? 'green' : 'red';
+        setStateClass(clone.querySelector('[data-role="active"]'), test.active, 'text-success', 'text-danger');
         clone.querySelector('[data-role="est"]').textContent = test.est ? 'Yes' : 'No';
-        clone.querySelector('[data-role="est"]').style.color = test.est ? 'green' : 'red';
+        setStateClass(clone.querySelector('[data-role="est"]'), test.est, 'text-success', 'text-danger');
         clone.querySelector('[data-role="time"]').textContent = test.time;
         clone.querySelector('[data-role="quiz-amount"]').textContent = test.quizAmount;
         document.getElementById('admin-extra-test-list').appendChild(clone);
@@ -47,8 +49,8 @@ if (mode === 'list') {
 }
 
 if (mode === 'detail') {
-  document.getElementById('admin-extra-test-list-panel').style.display = 'none';
-  document.getElementById('admin-extra-test-detail-panel').style.display = '';
+  document.getElementById('admin-extra-test-list-panel').classList.add('d-none');
+  document.getElementById('admin-extra-test-detail-panel').classList.remove('d-none');
   fetch(`/api/backoffice/admin/extra-tests/${encodeURIComponent(app.dataset.testId)}`, {
     credentials: 'include'
   }).then(res => res.json()).then(data => {
@@ -73,7 +75,7 @@ if (mode === 'detail') {
           const answerClone = document.getElementById('admin-extra-test-answer-template').content.cloneNode(true);
           answerClone.querySelector('[data-role="answer-id"]').textContent = answer.answerId;
           answerClone.querySelector('[data-role="correct"]').textContent = answer.correct ? 'True' : 'False';
-          answerClone.querySelector('[data-role="correct"]').style.color = answer.correct ? 'blue' : 'red';
+          setStateClass(answerClone.querySelector('[data-role="correct"]'), answer.correct, 'text-primary', 'text-danger');
           answerClone.querySelector('[data-role="answer-text"]').textContent = answer.answerText;
           clone.querySelector('[data-role="answers"]').appendChild(answerClone);
         });

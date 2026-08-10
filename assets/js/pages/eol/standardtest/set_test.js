@@ -22,14 +22,14 @@
 
     btn.addEventListener('click', function () {
       btn.disabled = true;
-      loading.style.display = 'block';
+      loading.classList.remove('d-none');
 
       post('/api/eol/standardtest/create', { event_pass: 1 })
         .then((res) => {
           if (res.status !== 200) {
             alert(res.message || 'ไม่สามารถสร้างแบบทดสอบได้');
             btn.disabled = false;
-            loading.style.display = 'none';
+            loading.classList.add('d-none');
             return;
           }
           redirect('/eol/standardtest/test?page=1');
@@ -37,7 +37,7 @@
         .catch(() => {
           alert('เกิดข้อผิดพลาด');
           btn.disabled = false;
-          loading.style.display = 'none';
+          loading.classList.add('d-none');
         });
     });
   }

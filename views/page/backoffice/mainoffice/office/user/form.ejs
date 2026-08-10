@@ -1,120 +1,120 @@
 <div class="main" data-mode="<%= mode %>" data-user-id="<%= userId || '' %>">
   <br><br>
-  <table align="center" width="90%" cellpadding="0" cellspacing="0" border="1" bordercolor="white">
-    <tr height="50">
-      <td align="center" colspan="3">
-        <font size="3" face="tahoma" color="#ffff77"><b><span id="office-user-form-title"></span></b></font>
+  <table width="90%" class="text-center table table-sm">
+    <tr height="50" class="align-middle">
+      <td colspan="3" class="text-center">
+        <span class="text-warning"><b><span id="office-user-form-title"></span></b></span>
       </td>
     </tr>
     <tr>
       <td>
-        <form name="userForm" id="office-user-form" onsubmit="event.preventDefault();" style="width:90%;">
-          <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0">
-            <tr height="25">
-              <td width="20%" align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Admin ID</b></font>
+        <form name="userForm" id="office-user-form" onsubmit="event.preventDefault();">
+          <table width="90%" class="text-center table table-sm">
+            <tr height="25" class="align-middle">
+              <td width="20%" class="text-end">
+                <span class="text-secondary"><b>Admin ID</b></span>
               </td>
-              <td width="5%" align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td width="5%" class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td width="80%" align="left">
-                <font size="2" face="tahoma" color="#cccccc"><b><span id="office-user-admin-id"></span></b></font>
+              <td width="80%" class="text-start">
+                <span class="text-secondary"><b><span id="office-user-admin-id"></span></b></span>
               </td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Prefix</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Prefix</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="text" size="10" name="prefix" required></td>
+              <td class="text-start"><input type="text" size="10" name="prefix" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Firstname</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Firstname</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="text" size="20" name="fname" required></td>
+              <td class="text-start"><input type="text" size="20" name="fname" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Lastname</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Lastname</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="text" size="20" name="lname" required></td>
+              <td class="text-start"><input type="text" size="20" name="lname" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Email</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Email</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="text" size="30" name="email" required></td>
+              <td class="text-start"><input type="text" size="30" name="email" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Nickname</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Nickname</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="text" size="20" name="nickname" required></td>
+              <td class="text-start"><input type="text" size="20" name="nickname" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Username</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Username</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left" id="office-user-username-cell"></td>
+              <td id="office-user-username-cell" class="text-start"></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Password</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Password</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="password" size="20" name="pass" required></td>
+              <td class="text-start"><input type="password" size="20" name="pass" required></td>
             </tr>
-            <tr height="25">
-              <td align="right">
-                <font size="2" face="tahoma" color="#cccccc"><b>Active</b></font>
+            <tr height="25" class="align-middle">
+              <td class="text-end">
+                <span class="text-secondary"><b>Active</b></span>
               </td>
-              <td align="center">
-                <font size="2" face="tahoma" color="#cccccc"><b>:</b></font>
+              <td class="text-center">
+                <span class="text-secondary"><b>:</b></span>
               </td>
-              <td align="left"><input type="checkbox" name="is_active" value="1"> Active</td>
+              <td class="text-start"><input type="checkbox" name="is_active" value="1"> Active</td>
             </tr>
-            <tr height="15"></tr>
-            <tr height="25">
-              <td width="80%" align="center" colspan="3"><br>
-                <font size="5" color="black"> >> List Permission << </font>
+            <tr height="15" class="align-middle"></tr>
+            <tr height="25" class="align-middle">
+              <td width="80%" colspan="3" class="text-center"><br>
+                <span class="text-dark"> >> List Permission << </span>
               </td>
             </tr>
             <tr>
-              <td width="100%" align="left" colspan="3">
-                <table class="list-permission" align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+              <td width="100%" colspan="3" class="text-start">
+                <table class="list-permission text-center table table-sm" width="100%">
                   <tbody id="office-user-permissions"></tbody>
                 </table>
               </td>
             </tr>
             <tr>
-              <td align="center" colspan="3">
+              <td colspan="3" class="text-center">
                 <br><br>
-                <div align="center">
-                  <font size="2" color="#77ff77" face="tahoma"><b>After Set New Permission Some Effect Is Activate After Next Login</b></font>
+                <div class="text-center">
+                  <span><b>After Set New Permission Some Effect Is Activate After Next Login</b></span>
                 </div><br><br>
-                <div align="center"><input class="edit-personal" type="submit" id="office-user-submit" value=""></div>
-                <div align="center">
-                  <font size="2" color="red" face="tahoma"><b><span id="office-user-message"></span></b></font>
+                <div class="text-center"><input class="edit-personal" type="submit" id="office-user-submit" value=""></div>
+                <div class="text-center">
+                  <span class="text-danger"><b><span id="office-user-message"></span></b></span>
                 </div>
               </td>
             </tr>
@@ -125,9 +125,9 @@
   </table>
 
   <br>
-  <div align="center">
+  <div class="text-center">
     <a href="/backoffice/mainoffice/office/user">
-      <font size="2" face="tahoma"><b>&lt;&lt; Back to User List</b></font>
+      <span><b>&lt;&lt; Back to User List</b></span>
     </a>
   </div>
   <br><br>

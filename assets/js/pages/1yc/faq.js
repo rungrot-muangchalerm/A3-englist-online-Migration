@@ -63,12 +63,12 @@
   function renderFaqList(page) {
     const body = $('yc-faq-body');
     if (!body) return;
-    body.innerHTML = '<p align="center">Loading FAQ...</p>';
+    body.innerHTML = '<p class="text-center">Loading FAQ...</p>';
 
     fetch('/api/1yc/faq?page=' + page, { method: 'GET', credentials: 'include' }).then(function (res) { return res.json(); }).then(function (data) {
       if (data.status !== 200) {
         console.log(data);
-        body.innerHTML = '<p align="center">Error loading FAQ</p>';
+        body.innerHTML = '<p class="text-center">Error loading FAQ</p>';
         return;
       }
 
@@ -90,7 +90,7 @@
         clone.querySelector('.faq-date').textContent = formatDate(faq.date) + '   View [' + faq.view + ']';
         if (data.data.isAdmin) {
           const del = clone.querySelector('.faq-delete');
-          del.style.display = 'block';
+          del.classList.remove('d-none');
           del.querySelector('.faq-delete-link').addEventListener('click', function (event) {
             event.preventDefault();
             if (confirm('Do you want to delete this Q&A ?')) {
@@ -106,21 +106,21 @@
       $('btn-post-faq').addEventListener('click', function () {
         const topic = $('faq-topic').value.trim();
         if (!topic) return;
-        $('faq-loading').style.display = 'inline';
+        $('faq-loading').classList.remove('d-none');
         fetch('/api/1yc/faq', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
           body: JSON.stringify({ topic: topic })
         }).then(function (res) { return res.json(); }).then(function (data) {
-          $('faq-loading').style.display = 'none';
+          $('faq-loading').classList.add('d-none');
           if (data.status === 200) {
             $('faq-topic').value = '';
-            $('faq-error').style.display = 'none';
+            $('faq-error').classList.add('d-none');
             renderFaqList(page);
           } else {
             console.log(data);
-            $('faq-error').style.display = 'inline';
+            $('faq-error').classList.remove('d-none');
           }
         });
       });
@@ -130,12 +130,12 @@
   function renderFaqDetail(faqId) {
     const body = $('yc-faq-body');
     if (!body) return;
-    body.innerHTML = '<p align="center">Loading FAQ...</p>';
+    body.innerHTML = '<p class="text-center">Loading FAQ...</p>';
 
     fetch('/api/1yc/faq/' + faqId, { method: 'GET', credentials: 'include' }).then(function (res) { return res.json(); }).then(function (data) {
       if (data.status !== 200) {
         console.log(data);
-        body.innerHTML = '<p align="center">Error loading FAQ</p>';
+        body.innerHTML = '<p class="text-center">Error loading FAQ</p>';
         return;
       }
 
@@ -148,7 +148,7 @@
         '<div class="txtcontent">' +
         '<p><b>Question : </b></p>' +
         '<p>' + data.data.faq.topic + '</p>' +
-        '<p align="right">' + formatDate(data.data.faq.date) + '</p>' +
+        '<p class="text-end">' + formatDate(data.data.faq.date) + '</p>' +
         '</div>';
       body.appendChild(listfaq);
 
@@ -160,7 +160,7 @@
         clone.querySelector('.answer-date').textContent = formatDate(answer.date);
         if (data.data.isAdmin) {
           const del = clone.querySelector('.answer-delete');
-          del.style.display = 'block';
+          del.classList.remove('d-none');
           del.querySelector('.answer-delete-link').addEventListener('click', function (event) {
             event.preventDefault();
             if (confirm('Do you want to delete this answer ?')) {
@@ -177,14 +177,14 @@
       $('btn-post-answer').addEventListener('click', function () {
         const detail = $('faq-answer-detail').value.trim();
         if (!detail) return;
-        $('faq-answer-loading').style.display = 'inline';
+        $('faq-answer-loading').classList.remove('d-none');
         fetch('/api/1yc/faq/' + faqId + '/answer', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
           body: JSON.stringify({ detail: detail })
         }).then(function (res) { return res.json(); }).then(function (data) {
-          $('faq-answer-loading').style.display = 'none';
+          $('faq-answer-loading').classList.add('d-none');
           if (data.status === 200) {
             window.location.href = '/1yc/faq/' + faqId;
           } else {

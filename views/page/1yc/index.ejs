@@ -1,55 +1,55 @@
-<div style='position:relative;'>
-  <center>
-    <img src="/assets/images/image2/1year/status.png" style="position:absolute;z-index:200;left:50%;margin-left:-680px;">
-  </center>
-  <img src="/assets/images/image2/1year/bg-01.jpg" style="position:absolute;left:50%;margin-left:-680px;">
-  <a href="/1yc/faq" title="กระดานถาม ตอบ" style="position:absolute;z-index:230;left:50%;margin-left:300px;top:100px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+<div>
+  <div class="text-center">
+    <img src="/assets/images/image2/1year/status.png">
+  </div>
+  <img src="/assets/images/image2/1year/bg-01.jpg">
+  <a href="/1yc/faq" title="กระดานถาม ตอบ">
     <img src="/assets/images/image2/1year/button/button webboard.png" width="151" height="127">
   </a>
-  <a href="/1yc/logtime" title="ประวัติการใช้งาน" style="position:absolute;z-index:230;left:50%;margin-left:230px;top:250px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+  <a href="/1yc/logtime" title="ประวัติการใช้งาน">
     <img src="/assets/images/image2/1year/button/button history.png" width="150">
   </a>
-  <a href="/1yc/lessons" title="เข้าสู่บทเรียน" style="position:absolute;z-index:230;left:50%;margin-left:330px;top:390px;font-weight:bold;font-size:18px;color:#000;text-decoration: none;">
+  <a href="/1yc/lessons" title="เข้าสู่บทเรียน">
     <img src="/assets/images/image2/1year/button/button EnterLessons.png" width="200">
   </a>
-  <a href="#" id="yc-edit-profile-btn" title="Edit profile" data-toggle="modal" data-target="#modalFormEditProfile">
-    <img src="/assets/images/image2/1year/button/edit.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:350px;top:7px;">
+  <a href="#" id="yc-edit-profile-btn" title="Edit profile" data-bs-toggle="modal" data-bs-target="#modalFormEditProfile">
+    <img src="/assets/images/image2/1year/button/edit.png" width="45" height="39">
   </a>
   <a id="yc-logout-link" href="#" title="logout">
-    <img src="/assets/images/image2/1year/button/log-out.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:420px;top:7px;">
+    <img src="/assets/images/image2/1year/button/log-out.png" width="45" height="39">
   </a>
-  <a href="#" id="yc-edit-pass-btn" title="Edit Username and Password" data-toggle="modal" data-target="#modalFormEditUserPass">
-    <img src="/assets/images/image2/1year/button/edit-pass.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:490px;top:7px;">
+  <a href="#" id="yc-edit-pass-btn" title="Edit Username and Password" data-bs-toggle="modal" data-bs-target="#modalFormEditUserPass">
+    <img src="/assets/images/image2/1year/button/edit-pass.png" width="45" height="39">
   </a>
-  <a id="yc-management-link" href="/1yc/content?section=management" title="manage user" style="display:none;">
-    <img src="/assets/images/image2/1year/button/management.png" width="45" height="39" style="position:absolute;z-index:250;left:50%;margin-left:555px;top:7px;">
+  <a id="yc-management-link" href="/1yc/content?section=management" title="manage user">
+    <img src="/assets/images/image2/1year/button/management.png" width="45" height="39">
   </a>
-  <div style="position:absolute;z-index:200;left:50%;margin-left:-466px; top:15px;font-weight:bold;width:100%;">
+  <div>
     Welcome : <span id="yc-user-name">...</span>
   </div>
-  <center>
-    <div style="position:absolute;left:50%;z-index:200;top:660px;margin-left:270px;">
-      <table width="353" border="0" cellpadding="2" cellspacing="1">
+  <div class="text-center">
+    <div>
+      <table width="353" class="table table-sm">
         <tr>
           <td width="115" rowspan="4">
             <span class="style1">
-              <div id="server_time" style="color:#FFFFFF;font-size:40px;">&nbsp;</div>
+              <div id="server_time">&nbsp;</div>
             </span>
           </td>
         </tr>
         <tr>
           <td>
-            <div id="mount" style="color:#FFFFFF;font-weight:bold;">&nbsp;</div>
+            <div id="mount">&nbsp;</div>
           </td>
         </tr>
         <tr>
           <td>
-            <div id="year" style="color:#FFFFFF;font-size:18px;font-weight:bold;">&nbsp;</div>
+            <div id="year">&nbsp;</div>
           </td>
         </tr>
       </table>
     </div>
-  </center>
+  </div>
 </div>
 
 <!-- Modal Edit Profile-->
@@ -57,7 +57,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-bs-dismiss="modal">
           <span aria-hidden="true">&times;</span>
           <span class="sr-only">Close</span>
         </button>
@@ -81,7 +81,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary submitBtn" id="btn-edit-profile">Save</button>
       </div>
     </div>
@@ -93,7 +93,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-bs-dismiss="modal">
           <span aria-hidden="true">&times;</span>
           <span class="sr-only">Close</span>
         </button>
@@ -117,7 +117,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary submitBtn" id="btn-edit-account">Save</button>
       </div>
     </div>

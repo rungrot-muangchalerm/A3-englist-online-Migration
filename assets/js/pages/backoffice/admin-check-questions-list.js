@@ -9,7 +9,7 @@ if (pageMode === 'hidden-questions') apiUrl = `/api/backoffice/admin/questions/l
 if (pageMode === 'show-related') apiUrl = `/api/backoffice/admin/questions/related/show?page=${encodeURIComponent(page)}&related_type=${encodeURIComponent(params.get('related_type') || '1')}`;
 if (pageMode === 'hidden-related') apiUrl = `/api/backoffice/admin/questions/related/hidden?page=${encodeURIComponent(page)}&related_type=${encodeURIComponent(params.get('related_type') || '1')}`;
 if (pageMode === 'search') {
-  document.getElementById('admin-question-search-panel').style.display = '';
+  document.getElementById('admin-question-search-panel').classList.remove('d-none');
   document.getElementById('admin-question-search-id').value = params.get('question_id') || '';
   document.getElementById('admin-question-search-keyword').value = params.get('keyword') || '';
   apiUrl = `/api/backoffice/admin/questions/search?page=${encodeURIComponent(page)}&question_id=${encodeURIComponent(params.get('question_id') || '')}&keyword=${encodeURIComponent(params.get('keyword') || '')}`;
@@ -35,9 +35,8 @@ if (apiUrl) {
   }).then(res => res.json()).then(data => {
     if (data.status === 200) {
       document.getElementById('admin-question-list-title').textContent = '';
-      const title = document.createElement('font');
-      title.size = '5';
-      title.color = data.data.mode === 'hidden-questions' || data.data.mode === 'hidden-related' ? 'brown' : 'green';
+      const title = document.createElement('span');
+      title.className = data.data.mode === 'hidden-questions' || data.data.mode === 'hidden-related' ? 'fs-5 text-warning' : 'fs-5 text-success';
       const bold = document.createElement('b');
       bold.textContent = `${data.data.title} [${data.data.total} Items]`;
       title.appendChild(bold);
@@ -45,16 +44,14 @@ if (apiUrl) {
       document.getElementById('admin-question-list-title').appendChild(title);
       document.getElementById('admin-question-list-title').appendChild(document.createElement('br'));
 
-      document.getElementById('admin-question-pages-table').style.display = '';
+      document.getElementById('admin-question-pages-table').classList.remove('d-none');
       for (let pageNumber = 1; pageNumber <= data.data.allPages; pageNumber += 1) {
         const pageLink = document.createElement('a');
         pageLink.href = `${window.location.pathname}?${new URLSearchParams({ ...Object.fromEntries(params), page: String(pageNumber) }).toString()}`;
-        const font = document.createElement('font');
-        font.color = pageNumber === data.data.page ? 'red' : 'blue';
-        font.size = '2';
-        font.className = 'f-thai';
-        font.textContent = String(pageNumber);
-        pageLink.appendChild(font);
+        const pageText = document.createElement('span');
+        pageText.className = pageNumber === data.data.page ? 'f-thai text-danger' : 'f-thai text-primary';
+        pageText.textContent = String(pageNumber);
+        pageLink.appendChild(pageText);
         document.getElementById('admin-question-pages').appendChild(document.createTextNode('  '));
         document.getElementById('admin-question-pages').appendChild(pageLink);
         document.getElementById('admin-question-pages').appendChild(document.createTextNode(' '));
@@ -62,7 +59,7 @@ if (apiUrl) {
       }
 
       if (data.data.mode === 'show-related' || data.data.mode === 'hidden-related') {
-        document.getElementById('admin-related-type-menu').style.display = '';
+        document.getElementById('admin-related-type-menu').classList.remove('d-none');
         data.data.related.forEach(item => {
           const clone = document.getElementById('admin-related-template').content.cloneNode(true);
           clone.querySelector('[data-role="related-id"]').textContent = item.relatedId;
@@ -74,7 +71,7 @@ if (apiUrl) {
           document.getElementById('admin-related-list').appendChild(clone);
         });
       } else {
-        if (!data.data.questions.length && data.data.mode === 'search') document.getElementById('admin-question-empty').style.display = '';
+        if (!data.data.questions.length && data.data.mode === 'search') document.getElementById('admin-question-empty').classList.remove('d-none');
         data.data.questions.forEach((question, index) => {
           const clone = document.getElementById('admin-question-template').content.cloneNode(true);
           clone.querySelector('[data-role="path"]').textContent = question.path;
@@ -86,14 +83,14 @@ if (apiUrl) {
             const answerClone = document.getElementById('admin-answer-template').content.cloneNode(true);
             answerClone.querySelector('[data-role="answer-id"]').textContent = answer.answerId;
             answerClone.querySelector('[data-role="correct"]').textContent = answer.correct ? 'True' : 'False';
-            answerClone.querySelector('[data-role="correct"]').style.color = answer.correct ? 'blue' : 'red';
+            answerClone.querySelector('[data-role="correct"]').classList.add(answer.correct ? 'text-primary' : 'text-danger');
             answerClone.querySelector('[data-role="answer-text"]').textContent = answer.answerText;
             clone.querySelector('[data-role="answers"]').appendChild(answerClone);
           });
           if (question.description) {
             clone.querySelector('[data-role="description"]').textContent = question.description;
           } else {
-            clone.querySelector('[data-role="no-description"]').style.display = '';
+            clone.querySelector('[data-role="no-description"]').classList.remove('d-none');
           }
           document.getElementById('admin-question-list').appendChild(clone);
         });

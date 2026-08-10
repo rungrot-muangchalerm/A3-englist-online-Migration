@@ -1,6 +1,6 @@
 <div class="main-academic">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -18,60 +18,60 @@
     <hr>
   </div>
 
-  <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="f-thai admin-question-table">
+  <table width="100%" class="f-thai admin-question-table text-center table table-sm">
     <thead>
-      <tr height="50">
-        <td align="center" colspan="7">
-          <font size="4"><b>Academic Room</b></font>
+      <tr height="50" class="align-middle">
+        <td colspan="7" class="text-center">
+          <span><b>Academic Room</b></span>
         </td>
       </tr>
-      <tr height="45" bgcolor="#f7f7f7">
-        <td width="15%" align="center">
-          <font size="3"><b>Skill</b></font>
+      <tr height="45" class="table-light align-middle">
+        <td width="15%" class="text-center">
+          <span><b>Skill</b></span>
         </td>
-        <td width="14%" align="center">
-          <font size="3"><b>Beginner</b></font>
+        <td width="14%" class="text-center">
+          <span><b>Beginner</b></span>
         </td>
-        <td width="14%" align="center">
-          <font size="3"><b>Lower Inter.</b></font>
+        <td width="14%" class="text-center">
+          <span><b>Lower Inter.</b></span>
         </td>
-        <td width="14%" align="center">
-          <font size="3"><b>Intermediate</b></font>
+        <td width="14%" class="text-center">
+          <span><b>Intermediate</b></span>
         </td>
-        <td width="14%" align="center">
-          <font size="3"><b>Upper Inter.</b></font>
+        <td width="14%" class="text-center">
+          <span><b>Upper Inter.</b></span>
         </td>
-        <td width="14%" align="center">
-          <font size="3"><b>Advanced</b></font>
+        <td width="14%" class="text-center">
+          <span><b>Advanced</b></span>
         </td>
-        <td width="15%" align="center">
-          <font size="3" color="red"><b>Total</b></font>
+        <td width="15%" class="text-center">
+          <span class="text-danger"><b>Total</b></span>
         </td>
       </tr>
     </thead>
     <tbody id="admin-question-amount-list">
       <template id="admin-question-amount-template">
-        <tr height="35">
-          <td align="center">
-            <font size="2"><b data-role="skill-name"></b></font>
+        <tr height="35" class="align-middle">
+          <td class="text-center">
+            <span><b data-role="skill-name"></b></span>
           </td>
-          <td align="center">
-            <font size="2" color="green"><b data-role="level-1-online"></b></font> + <font size="2" color="red"><b data-role="level-1-offline"></b></font> = <font size="2" color="blue"><b data-role="level-1-total"></b></font>
+          <td class="text-center">
+            <span class="text-success"><b data-role="level-1-online"></b></span> + <span class="text-danger"><b data-role="level-1-offline"></b></span> = <span class="text-primary"><b data-role="level-1-total"></b></span>
           </td>
-          <td align="center">
-            <font size="2" color="green"><b data-role="level-2-online"></b></font> + <font size="2" color="red"><b data-role="level-2-offline"></b></font> = <font size="2" color="blue"><b data-role="level-2-total"></b></font>
+          <td class="text-center">
+            <span class="text-success"><b data-role="level-2-online"></b></span> + <span class="text-danger"><b data-role="level-2-offline"></b></span> = <span class="text-primary"><b data-role="level-2-total"></b></span>
           </td>
-          <td align="center">
-            <font size="2" color="green"><b data-role="level-3-online"></b></font> + <font size="2" color="red"><b data-role="level-3-offline"></b></font> = <font size="2" color="blue"><b data-role="level-3-total"></b></font>
+          <td class="text-center">
+            <span class="text-success"><b data-role="level-3-online"></b></span> + <span class="text-danger"><b data-role="level-3-offline"></b></span> = <span class="text-primary"><b data-role="level-3-total"></b></span>
           </td>
-          <td align="center">
-            <font size="2" color="green"><b data-role="level-4-online"></b></font> + <font size="2" color="red"><b data-role="level-4-offline"></b></font> = <font size="2" color="blue"><b data-role="level-4-total"></b></font>
+          <td class="text-center">
+            <span class="text-success"><b data-role="level-4-online"></b></span> + <span class="text-danger"><b data-role="level-4-offline"></b></span> = <span class="text-primary"><b data-role="level-4-total"></b></span>
           </td>
-          <td align="center">
-            <font size="2" color="green"><b data-role="level-5-online"></b></font> + <font size="2" color="red"><b data-role="level-5-offline"></b></font> = <font size="2" color="blue"><b data-role="level-5-total"></b></font>
+          <td class="text-center">
+            <span class="text-success"><b data-role="level-5-online"></b></span> + <span class="text-danger"><b data-role="level-5-offline"></b></span> = <span class="text-primary"><b data-role="level-5-total"></b></span>
           </td>
-          <td align="center"><b>
-              <font size="2" color="green"><b data-role="online-total"></b></font> + <font size="2" color="red"><b data-role="offline-total"></b></font> = <font size="2" color="blue"><b data-role="total"></b></font>
+          <td class="text-center"><b>
+              <span class="text-success"><b data-role="online-total"></b></span> + <span class="text-danger"><b data-role="offline-total"></b></span> = <span class="text-primary"><b data-role="total"></b></span>
             </b></td>
         </tr>
       </template>
@@ -79,13 +79,13 @@
   </table>
 
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <p>Description in Questions</p>
     <div id="admin-question-description-list">
       <template id="admin-question-description-template">
         <span>
-          <font size="2" color="black"><span data-role="skill-name"></span> : <span data-role="amount"></span></font>
-          <font size="2" color="black" data-role="separator">&nbsp;||&nbsp;</font>
+          <span class="text-dark"><span data-role="skill-name"></span> : <span data-role="amount"></span></span>
+          <span class="text-dark">&nbsp;||&nbsp;</span>
         </span>
       </template>
     </div>

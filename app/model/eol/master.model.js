@@ -89,7 +89,7 @@ async function getOperatingTime(memberId) {
     let htxt = '';
     if (hours > 0) htxt = `${hours} ชั่วโมง `;
     return {
-      text: `<font color=green title='${lastLogdate}'> ${htxt}${minutes} นาที </font>`,
+      text: `<span class="text-success" title="${lastLogdate}"> ${htxt}${minutes} นาที </span>`,
       lastLogdate,
     };
   }
@@ -101,12 +101,12 @@ async function getOperatingTime(memberId) {
   if (latestRows.length === 1) {
     const lastime = formatDateTime(latestRows[0].logdate);
     return {
-      text: `<font color=red title='เข้าใช้ครั้งล่าสุดเมื่อ ${lastime}'> ${lastime} </font>`,
+      text: `<span class="text-danger" title="เข้าใช้ครั้งล่าสุดเมื่อ ${lastime}"> ${lastime} </span>`,
       lastLogdate: lastime,
     };
   }
 
-  return { text: "<font color='red'> - </font>", lastLogdate: null };
+  return { text: '<span class="text-danger"> - </span>', lastLogdate: null };
 }
 
 async function getSubStatus(masterId, subId) {

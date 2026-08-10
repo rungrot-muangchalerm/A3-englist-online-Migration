@@ -9,10 +9,10 @@ if (skillPath) {
       const panel = document.getElementById('admin-lessons-related-panel');
       const list = document.getElementById('admin-lessons-related-list');
       const empty = document.getElementById('admin-lessons-related-empty');
-      panel.style.display = '';
+      panel.classList.remove('d-none');
       document.getElementById('admin-lessons-related-skill-name').textContent = data.data.selectedSkillName;
       if (data.data.relations.length === 0) {
-        empty.style.display = '';
+        empty.classList.remove('d-none');
       }
       data.data.relations.forEach(relation => {
         const clone = document.getElementById('admin-lessons-related-template').content.cloneNode(true);

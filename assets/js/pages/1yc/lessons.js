@@ -13,14 +13,14 @@
         if (!id) return;
         var parts = id.split('_');
         var menu = document.getElementById('menu' + parts[1]);
-        if (menu) menu.style.display = 'block';
+        if (menu) menu.classList.remove('d-none');
       });
       el.addEventListener('mouseleave', function () {
         var id = el.getAttribute('id');
         if (!id) return;
         var parts = id.split('_');
         var menu = document.getElementById('menu' + parts[1]);
-        if (menu) menu.style.display = 'none';
+        if (menu) menu.classList.add('d-none');
       });
     });
   }
@@ -36,7 +36,7 @@
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data.status !== 200 || !data.data) {
-          container.innerHTML = '<p align="center">Error loading lessons</p>';
+          container.innerHTML = '<p class="text-center">Error loading lessons</p>';
           return;
         }
 
@@ -49,7 +49,7 @@
       })
       .catch(function (err) {
         console.error(err);
-        container.innerHTML = '<p align="center">Error loading lessons</p>';
+        container.innerHTML = '<p class="text-center">Error loading lessons</p>';
       });
   });
 }());

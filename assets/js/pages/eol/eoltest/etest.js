@@ -11,9 +11,9 @@
   }
   function showView(id) {
     const views = document.querySelectorAll('.eol-view');
-    views.forEach((v) => { v.style.display = 'none'; });
+    views.forEach((v) => { v.classList.add('d-none'); });
     const target = document.getElementById(id);
-    if (target) target.style.display = '';
+    if (target) target.classList.remove('d-none');
   }
 
   function renderEtestDetail(exam, groups, container) {
@@ -99,16 +99,16 @@
 
     if (apiData.list.length === 0) {
       const emptyRow = document.createElement('tr');
-      emptyRow.innerHTML = '<td colspan="5" style="padding:20px;text-align:center;color:red;">ไม่มีชุดข้อสอบ</td>';
+      emptyRow.innerHTML = '<td colspan="5" class="p-3 text-center text-danger">ไม่มีชุดข้อสอบ</td>';
       tbody.appendChild(emptyRow);
     } else {
       apiData.list.forEach((exam, idx) => {
         const rowClone = rowTemplate.content.cloneNode(true);
         const tr = rowClone.querySelector('tr');
         if (apiData.selectedExam && exam.examId === apiData.selectedExam.examId) {
-          tr.style.background = '#E5F3FA';
+          tr.classList.add('table-info');
         } else if (idx % 2 === 1) {
-          tr.style.background = '#f6f6f6';
+          tr.classList.add('table-light');
         }
         rowClone.querySelector('.etest-select').textContent = exam.examName;
         rowClone.querySelector('.etest-select').addEventListener('click', (e) => {
@@ -122,8 +122,8 @@
         rowClone.querySelector('.etest-amount').textContent = exam.amount;
         rowClone.querySelector('.etest-time').textContent = exam.testtime;
         rowClone.querySelector('.etest-active').innerHTML = exam.active
-          ? "<font color='#2db6ee'>ON</font>"
-          : "<font color='orange'>OFF</font>";
+          ? '<span class="text-info">ON</span>'
+          : '<span class="text-warning">OFF</span>';
         tbody.appendChild(rowClone);
       });
     }
@@ -139,7 +139,7 @@
     if (apiData.selectedExam) {
       renderEtestDetail(apiData.selectedExam, apiData.groups, detailPanel);
     } else {
-      detailPanel.innerHTML = '<div style="padding:20px;color:#666;text-align:center;">กรุณาเลือกชุดข้อสอบ</div>';
+      detailPanel.innerHTML = '<div class="p-3 text-secondary text-center">กรุณาเลือกชุดข้อสอบ</div>';
     }
 
     content.appendChild(clone);

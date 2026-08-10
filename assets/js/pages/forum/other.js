@@ -47,8 +47,7 @@ if (type === 'school') {
       main.appendChild(categoryClone)
     })
 
-      content.style.display = 'block'
-    } else {
+      content.classList.remove('d-none');} else {
       console.log(data)
     }
   })
@@ -75,8 +74,7 @@ if (type === 'school') {
       body.appendChild(rowClone)
     })
 
-      content.style.display = 'block'
-    } else {
+      content.classList.remove('d-none');} else {
       console.log(data)
     }
   })
@@ -93,8 +91,7 @@ if (type === 'school') {
       content.removeChild(content.firstChild)
     }
       content.appendChild(template.content.cloneNode(true))
-      content.style.display = 'block'
-    } else {
+      content.classList.remove('d-none');} else {
       console.log(data)
     }
   })

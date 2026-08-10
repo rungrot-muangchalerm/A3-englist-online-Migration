@@ -21,7 +21,7 @@
   }
 
   function setError(msg) {
-    els.name.innerHTML = `<font color="red">${htmlEscape(msg)}</font>`;
+    els.name.innerHTML = `<span class="text-danger">${htmlEscape(msg)}</span>`;
     els.startBtn.disabled = true;
   }
 
@@ -45,7 +45,7 @@
       els.amount.textContent = `${info.amount} ข้อ`;
       els.time.textContent = `${info.timeSeconds} วินาที (${info.timeSeconds / 60} นาที)`;
       if (Number(info.testType) === 2) {
-        els.note.style.display = '';
+        els.note.classList.remove('d-none');
       }
       els.startBtn.disabled = false;
       els.startBtn.addEventListener('click', function () {

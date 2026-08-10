@@ -34,8 +34,7 @@ fetch(`/api/forum?type_id=${type_id}&page=${page}`, {
           const newBadgeImg = document.createElement('img')
           newBadgeImg.src = '/assets/images/icon_new.gif'
           newBadgeImg.border = '0'
-          newBadgeImg.style.borderRadius = '5px'
-          newBadge.appendChild(newBadgeImg)
+          newBadgeImg.classList.add('rounded');newBadge.appendChild(newBadgeImg)
         }
 
         clone.querySelector('.topic-headline-link').href = row.detail_url
@@ -69,16 +68,13 @@ fetch(`/api/forum?type_id=${type_id}&page=${page}`, {
       if (page > 1) {
         const prev = document.createElement('a')
         prev.href = `/forum/e-eng?type_id=${type_id}&page=${page - 1}`
-        prev.style.color = '#333'
-        prev.style.fontWeight = 'bold'
-        prev.textContent = 'Previous'
+        prev.classList.add('text-dark');prev.classList.add('fw-bold');prev.textContent = 'Previous'
         pagination.appendChild(prev)
       }
       if (pageStart > 1) {
         const dots = document.createElement('a')
         dots.href = `/forum/e-eng?type_id=${type_id}&page=${pageStart - 1}`
-        dots.style.fontWeight = 'bold'
-        dots.textContent = '......'
+        dots.classList.add('fw-bold');dots.textContent = '......'
         pagination.appendChild(dots)
       }
       for (let i = pageStart; i <= pageEnd; i++) {
@@ -96,16 +92,13 @@ fetch(`/api/forum?type_id=${type_id}&page=${page}`, {
       if (pageEnd < data.data.total_pages) {
         const dots = document.createElement('a')
         dots.href = `/forum/e-eng?type_id=${type_id}&page=${pageEnd + 1}`
-        dots.style.fontWeight = 'bold'
-        dots.textContent = '......'
+        dots.classList.add('fw-bold');dots.textContent = '......'
         pagination.appendChild(dots)
       }
       if (page < data.data.total_pages) {
         const next = document.createElement('a')
         next.href = `/forum/e-eng?type_id=${type_id}&page=${page + 1}`
-        next.style.color = '#333'
-        next.style.fontWeight = 'bold'
-        next.textContent = 'Next'
+        next.classList.add('text-dark');next.classList.add('fw-bold');next.textContent = 'Next'
         pagination.appendChild(next)
       }
     }

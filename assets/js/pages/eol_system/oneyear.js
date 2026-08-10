@@ -2,7 +2,7 @@ function blink() {
   const blinks = document.getElementsByTagName('blink');
   for (let i = blinks.length - 1; i >= 0; i -= 1) {
     const item = blinks[i];
-    item.style.visibility = item.style.visibility === 'visible' ? 'hidden' : 'visible';
+    item.classList.toggle('invisible');
   }
   window.setTimeout(blink, 1000);
 }

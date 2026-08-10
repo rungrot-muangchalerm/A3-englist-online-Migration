@@ -75,16 +75,16 @@
     const mediaRow = document.getElementById('media-row');
     const mediaContent = document.getElementById('media-content');
     if (data.media) {
-      mediaRow.style.display = 'table-row';
+      mediaRow.classList.remove('d-none');
       if (data.media.type === 'text') {
-        mediaContent.innerHTML = `<font size="3" face="verdana">${data.media.content}</font>`;
+        mediaContent.innerHTML = `<span>${data.media.content}</span>`;
       } else if (data.media.type === 'image') {
-        mediaContent.innerHTML = `<img src="${escapeHtml(data.media.src)}" border="0" width="300">`;
+        mediaContent.innerHTML = `<img src="${escapeHtml(data.media.src)}" width="300">`;
       } else if (data.media.type === 'audio') {
         mediaContent.innerHTML = `<audio autoplay controls><source src="${escapeHtml(data.media.src)}" type="audio/mpeg"></audio>`;
       }
     } else {
-      mediaRow.style.display = 'none';
+      mediaRow.classList.add('d-none');
       mediaContent.innerHTML = '';
     }
 
@@ -95,7 +95,7 @@
       list.insertAdjacentHTML('beforeend', `<div class="answer-row">
         <label>
           <input type="radio" name="choose" value="${ans.answerId}" ${checked}>
-          &nbsp; <font face="Verdana" size="3">${ans.text}</font>
+          &nbsp; <span>${ans.text}</span>
         </label>
       </div>`);
     });
@@ -180,7 +180,7 @@
     const min = Math.floor(timeLeft / 60);
     const sec = String(timeLeft % 60).padStart(2, '0');
     if (display) {
-      display.innerHTML = `<b><font face="tahoma" size="2">เวลาที่เหลือ : <font color="red">${min}</font> นาที กับ <font color="red">${sec}</font> วินาที</font></b>`;
+      display.innerHTML = `<b><span>เวลาที่เหลือ : <span class="text-danger">${min}</span> นาที กับ <span class="text-danger">${sec}</span> วินาที</span></b>`;
     }
   }
 

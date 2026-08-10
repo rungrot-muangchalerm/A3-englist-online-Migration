@@ -7,77 +7,77 @@
   <hr>
 
   <div data-role="statistics-overview-panel">
-    <center>
+    <div class="text-center">
       <h1>Overview Statistic</h1>
-    </center>
-    <table align='center' width='60%' bgcolor='#f0f0f0' cellpadding='0' cellspacing='0' border='0' style='border-radius: 8px;'>
-      <tr height='50' valign='middle'>
-        <td align='right' width='13%'>
-          <font size='2' face=tahoma color=black><b>From &nbsp; : &nbsp;</b></font>
+    </div>
+    <table width='60%' class="text-center bg-light table table-sm">
+      <tr height='50' class="align-middle">
+        <td width='13%' class="text-end">
+          <span class="text-dark"><b>From &nbsp; : &nbsp;</b></span>
         </td>
-        <td align='left' width='27%'>&nbsp;
-          <input id='statistics-start' type='text' size='15' style='height:23px;border-radius:8px;border:1px solid #bbb2ae' required>
+        <td width='27%' class="text-start">&nbsp;
+          <input id='statistics-start' type='text' size='15' required>
         </td>
-        <td align='right' width='13%'>
-          <font size='2' face=tahoma color=black><b>Until &nbsp; : &nbsp;</b></font>
+        <td width='13%' class="text-end">
+          <span class="text-dark"><b>Until &nbsp; : &nbsp;</b></span>
         </td>
-        <td align='left' width='27%'>&nbsp;
-          <input id='statistics-stop' type='text' size='15' style='height:23px;border-radius:8px;border:1px solid #bbb2ae' required>
+        <td width='27%' class="text-start">&nbsp;
+          <input id='statistics-stop' type='text' size='15' required>
         </td>
       </tr>
-      <tr height=50>
-        <td align=right width=7%>
-          <font size=2 face=tahoma><b>View &nbsp; : &nbsp;</b></font>
+      <tr height=50 class="align-middle">
+        <td width=7% class="text-end">
+          <span><b>View &nbsp; : &nbsp;</b></span>
         </td>
-        <td align=left width=40% colspan='2'>
-          <select id='statistics-group-id' style='float:left; height:28px; background:#b3e9ff; border: 2px solid #6ccff7; border-radius:5px;' title='Please select group you want view'>
+        <td width=40% colspan='2' class="text-start">
+          <select id='statistics-group-id' title='Please select group you want view'>
           </select>
         </td>
-        <td align='center' width='20%'>
-          <input type='button' value='View Statistics' style='font-weight:bold;' class='view_statistic' id='statistics-view-btn'>
+        <td width='20%' class="text-center">
+          <input type='button' value='View Statistics' class='view_statistic' id='statistics-view-btn'>
         </td>
       </tr>
     </table><br>
 
-    <table align=center width=90% cellpadding=5 cellspacing=1 border=0>
-      <tr height=25 bgcolor='#aaaaaa'>
-        <td width=5% align=center rowspan=2>
-          <font size=2 face=tahoma color=white><b>No.</b></font>
+    <table width=90% class="text-center table table-sm">
+      <tr height=25 class="bg-secondary text-white align-middle">
+        <td width=5% rowspan=2 class="text-center">
+          <span class="text-white"><b>No.</b></span>
         </td>
-        <td width=22% align=center rowspan=2>
-          <font size=2 face=tahoma color=white><b>Name</b></font>
+        <td width=22% rowspan=2 class="text-center">
+          <span class="text-white"><b>Name</b></span>
         </td>
-        <td width=75% align=center colspan=5>
-          <font size=2 face=tahoma color=white><b>Statistics &nbsp; : &nbsp; Most Percent [ Test Amount ] </b></font>
+        <td width=75% colspan=5 class="text-center">
+          <span class="text-white"><b>Statistics &nbsp; : &nbsp; Most Percent [ Test Amount ] </b></span>
         </td>
       </tr>
-      <tr height=40>
-        <td align=center width=15% bgcolor='#aaaaaa'>
-          <font color='white' face=tahoma size=2><b>Beginner</b></font>
+      <tr height=40 class="align-middle">
+        <td width=15% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Beginner</b></span>
         </td>
-        <td align=center width=15% bgcolor='#aaaaaa'>
-          <font color='white' face=tahoma size=2><b>Lower<br>Intermediate</b></font>
+        <td width=15% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Lower<br>Intermediate</b></span>
         </td>
-        <td align=center width=15% bgcolor='#aaaaaa'>
-          <font color='white' face=tahoma size=2><b>Intermediate</b></font>
+        <td width=15% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Intermediate</b></span>
         </td>
-        <td align=center width=15% bgcolor='#aaaaaa'>
-          <font color='white' face=tahoma size=2><b>Upper<br>Intermediate</b></font>
+        <td width=15% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Upper<br>Intermediate</b></span>
         </td>
-        <td align=center width=15% bgcolor='#aaaaaa'>
-          <font color='white' face=tahoma size=2><b>Advanced</b></font>
+        <td width=15% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Advanced</b></span>
         </td>
       </tr>
     </table>
 
     <div id="statistics-members"></div>
 
-    <div id="statistics-export" style="display:none;">
+    <div id="statistics-export">
       <br>
-      <table width=90% align=center cellpadding=5 cellspacing=0 border=0>
+      <table width=90% class="text-center table table-sm">
         <tr>
-          <td align=center>
-            <form align='center'>
+          <td class="text-center">
+            <form class="text-center">
               <input type="button" class='yui3-button' value="export overview test &amp; evaluation" id="statistics-export-overview-btn">
               <input type="button" class='yui3-button' value="export usage history" id="statistics-export-usage-btn">
             </form>
@@ -86,33 +86,33 @@
       </table>
     </div>
 
-    <div id="statistics-empty" style="display:none;">
+    <div id="statistics-empty">
       <br>
-      <table width=90% align=center cellpadding=5 cellspacing=0 border=0 style='background:#f0f0f0; border-radius:10px;'>
-        <tr height='20px'>
-          <td align=center>
-            <font size=2 face=tahoma color='red'> - Didn't find any result - </font>
+      <table width=90% class="text-center table table-sm">
+        <tr height='20px' class="align-middle">
+          <td class="text-center">
+            <span class="text-danger"> - Didn't find any result - </span>
           </td>
         </tr>
-        <tr height='20px'>
-          <td align=center>
-            <font size=2 face=tahoma color='red'> - Please select correct items you want view - </font>
+        <tr height='20px' class="align-middle">
+          <td class="text-center">
+            <span class="text-danger"> - Please select correct items you want view - </span>
           </td>
         </tr>
       </table>
     </div>
   </div>
 
-  <div data-role="statistics-evaluation-panel" style="display:none;">
-    <center>
+  <div data-role="statistics-evaluation-panel">
+    <div class="text-center">
       <h1>Test &amp; Evaluation</h1>
-    </center>
+    </div>
 
-    <table align='center' width='95%' cellpadding='5' cellspacing='0' border='0'>
-      <tr height=30>
-        <td align=center width=90% style='background:#f0f0f0;height:30px;padding:5px;'>
-          <select id='evaluation-group-id' style='height:28px;'></select>
-          <select id='evaluation-skill-id' style='margin-left:10px; height:28px;'>
+    <table width='95%' class="text-center table table-sm">
+      <tr height=30 class="align-middle">
+        <td width=90% class="text-center">
+          <select id='evaluation-group-id'></select>
+          <select id='evaluation-skill-id'>
             <option value='1'>Reading Comprehension</option>
             <option value='2'>Listening Comprehension</option>
             <option value='3'>Semi - Speaking</option>
@@ -121,7 +121,7 @@
             <option value='5'>Grammar</option>
             <option value='10'>Multiple Skills</option>
           </select>
-          <select id='evaluation-level-id' style='margin-left:10px; height:28px;'>
+          <select id='evaluation-level-id'>
             <option value='1'>Beginner</option>
             <option value='2'>Lower Intermediate</option>
             <option value='3'>Intermediate</option>
@@ -131,128 +131,128 @@
         </td>
       </tr>
       <tr>
-        <td align=center width=90% style='background:#f0f0f0;height:30px;padding:5px;'>
-          <b>From : </b><input type='text' id='evaluation-start' size='15' style='margin-left:10px; width:100px; height:26px;border-radius:8px;border:1px solid #bbb2ae;'>&nbsp;&nbsp;
-          <b>Until : </b><input type='text' id='evaluation-stop' size='15' style='margin-left:10px; width:100px; height:26px;border-radius:8px;border:1px solid #bbb2ae;'>
-          <select id='evaluation-sort' style='margin-left:10px; height: 28px;'>
+        <td width=90% class="text-center">
+          <b>From : </b><input type='text' id='evaluation-start' size='15'>&nbsp;&nbsp;
+          <b>Until : </b><input type='text' id='evaluation-stop' size='15'>
+          <select id='evaluation-sort'>
             <option value='1'>Sort by ID</option>
             <option value='2'>Sort by Point</option>
           </select>
-          <input type='button' id='evaluation-view-btn' value='View Graph' style='font-weight:bold; margin-left:10px; height:28px;' class='view_graph'>
+          <input type='button' id='evaluation-view-btn' value='View Graph' class='view_graph'>
         </td>
       </tr>
     </table>
 
     <br><br>
-    <center>
-      <font size=3><b data-role="evaluation-title"> Reading Comprehension ➤ Beginner </b></font>
-    </center>
+    <div class="text-center">
+      <span><b data-role="evaluation-title"> Reading Comprehension ➤ Beginner </b></span>
+    </div>
     <br>
 
-    <table align='center' width='100%' bgcolor='#ccc' cellpadding='0' cellspacing='0' style='border-radius: 5px;'>
-      <tr style='padding:5px; height:30px;'>
-        <td width='2%' align=center>
-          <font size=2 face=tahoma color=white><b>No.</b></font>
+    <table width='100%' class="text-center bg-secondary text-white table table-sm">
+      <tr>
+        <td width='2%' class="text-center">
+          <span class="text-white"><b>No.</b></span>
         </td>
-        <td width='11%' align=center>
-          <font size=2 face=tahoma color=white><b>Date</b></font>
+        <td width='11%' class="text-center">
+          <span class="text-white"><b>Date</b></span>
         </td>
-        <td width='10%' align=center>
-          <font size=2 face=tahoma color=white><b>Name</b></font>
+        <td width='10%' class="text-center">
+          <span class="text-white"><b>Name</b></span>
         </td>
-        <td width='10%' align=center>
-          <font size=2 face=tahoma color=white><b>Graph</b></font>
+        <td width='10%' class="text-center">
+          <span class="text-white"><b>Graph</b></span>
         </td>
-        <td width='5%' align=center>
-          <font size=2 face=tahoma color=white><b>Percent</b></font>
+        <td width='5%' class="text-center">
+          <span class="text-white"><b>Percent</b></span>
         </td>
-        <td width='6%' align=center>
-          <font size=2 face=tahoma color=white><b>Score</b></font>
+        <td width='6%' class="text-center">
+          <span class="text-white"><b>Score</b></span>
         </td>
       </tr>
       <tbody id="evaluation-rows"></tbody>
     </table>
 
-    <div id="evaluation-empty" style="display:none;">
+    <div id="evaluation-empty">
       <br>
-      <table width=90% align=center cellpadding=5 cellspacing=0 border=0 style='background:#f0f0f0; border-radius:10px;'>
-        <tr height='20px'>
-          <td align=center>
-            <font size=2 face=tahoma color='red'> - Didn't find any result - </font>
+      <table width=90% class="text-center table table-sm">
+        <tr height='20px' class="align-middle">
+          <td class="text-center">
+            <span class="text-danger"> - Didn't find any result - </span>
           </td>
         </tr>
-        <tr height='20px'>
-          <td align=center>
-            <font size=2 face=tahoma color='red'> - Please select correct items you want view - </font>
+        <tr height='20px' class="align-middle">
+          <td class="text-center">
+            <span class="text-danger"> - Please select correct items you want view - </span>
           </td>
         </tr>
       </table>
     </div>
   </div>
 
-  <div data-role="statistics-contest-panel" style="display:none;">
-    <center>
+  <div data-role="statistics-contest-panel">
+    <div class="text-center">
       <h1>EOL Contest</h1>
-    </center>
+    </div>
 
-    <table align='center' width='90%' cellpadding='5' cellspacing='0' border='0'>
-      <tr height=30>
-        <td align=center width=80% style='background:#f0f0f0;height:30px;padding:5px;'>
-          <select id='contest-group-id' style='margin-left:10px; height: 28px;'></select>
-          <select id='contest-exam-id' style='margin-left:10px; height:28px;'></select>
+    <table width='90%' class="text-center table table-sm">
+      <tr height=30 class="align-middle">
+        <td width=80% class="text-center">
+          <select id='contest-group-id'></select>
+          <select id='contest-exam-id'></select>
         </td>
       </tr>
-      <tr height=30>
-        <td align=center width=80% style='background:#f0f0f0;height:30px;padding:5px;'>
+      <tr height=30 class="align-middle">
+        <td width=80% class="text-center">
           <b>From&nbsp;:</b>
-          <input id='contest-start' type='text' size='15' style='margin-left:10px; width:100px; height:26px;border-radius:8px;border:1px solid #bbb2ae;'>
+          <input id='contest-start' type='text' size='15'>
           <b>&nbsp;&nbsp;Until &nbsp;:</b>
-          <input id='contest-stop' type='text' size='15' style='margin-left:10px; width:100px; height:26px;border-radius:8px;border:1px solid #bbb2ae;'>
-          <input type='button' id='contest-view-btn' value='View Contest' style='font-weight:bold; margin-left:10px; height:28px;' class='view_contest'>
+          <input id='contest-stop' type='text' size='15'>
+          <input type='button' id='contest-view-btn' value='View Contest' class='view_contest'>
         </td>
       </tr>
     </table>
 
     <br>
-    <table align=center width=95% bgcolor='#ccc' cellpadding=0 cellspacing=0 style='padding:10px; border-radius:5px;' id="contest-results-table">
-      <tr style='height:30px;'>
+    <table width=95% id="contest-results-table" class="text-center bg-secondary text-white table table-sm">
+      <tr>
         <td colspan='4' width="75%"><b data-role="contest-head">&nbsp;</b></td>
         <td width="15%">
           <a data-role="contest-scoreboard-link" href='' target='_blank'>go to Scoreboard</a>
         </td>
       </tr>
-      <tr style='height:30px;'>
-        <td width=2% align=center>
-          <font size=2 face=tahoma color=white><b>No.</b></font>
+      <tr>
+        <td width=2% class="text-center">
+          <span class="text-white"><b>No.</b></span>
         </td>
-        <td width=20% align=center>
-          <font size=2 face=tahoma color=white><b>Date</b></font>
+        <td width=20% class="text-center">
+          <span class="text-white"><b>Date</b></span>
         </td>
-        <td width=20% align=center>
-          <font size=2 face=tahoma color=white><b>Name</b></font>
+        <td width=20% class="text-center">
+          <span class="text-white"><b>Name</b></span>
         </td>
-        <td align=center>
-          <font size=2 face=tahoma color=white><b>Graph</b></font>
+        <td class="text-center">
+          <span class="text-white"><b>Graph</b></span>
         </td>
-        <td width=10% align=center>
-          <font size=2 face=tahoma color=white><b>Percent</b></font>
+        <td width=10% class="text-center">
+          <span class="text-white"><b>Percent</b></span>
         </td>
       </tr>
       <tbody id="contest-rows"></tbody>
-      <tr data-role="contest-empty" style='height:20px;'>
-        <td colspan='5' align=center>
-          <font color='red' face=tahoma size=3> - Not Found - </font>
+      <tr data-role="contest-empty">
+        <td colspan='5' class="text-center">
+          <span class="text-danger"> - Not Found - </span>
         </td>
       </tr>
-      <tr data-role="contest-empty" style='height:20px;'>
-        <td colspan='5' align=center>
-          <font color='red' face=tahoma size=2> - Please select correct items you want view - </font>
+      <tr data-role="contest-empty">
+        <td colspan='5' class="text-center">
+          <span class="text-danger"> - Please select correct items you want view - </span>
         </td>
       </tr>
     </table>
 
     <br>
-    <form id='contest-export-form' method='post' action='/EOL/export_result_contest.php' accept-charset='UTF-8' style='text-align:center' target='_blank'>
+    <form id='contest-export-form' method='post' action='/EOL/export_result_contest.php' accept-charset='UTF-8' target='_blank'>
       <input type='hidden' name='group' data-role="contest-export-group">
       <input type='hidden' name='start' data-role="contest-export-start">
       <input type='hidden' name='stop' data-role="contest-export-stop">
@@ -264,82 +264,82 @@
   </div>
 
   <template id="statistics-member-template">
-    <table align=center width=90% cellpadding=5 cellspacing=0 border=0 class="statistics-member-table">
+    <table width=90% class="statistics-member-table text-center table table-sm">
       <tbody class="statistics-member-body"></tbody>
     </table>
   </template>
 
   <template id="statistics-member-header-template">
-    <tr height=25 valign=top>
-      <td width=5% align=center rowspan=8 bgcolor='#e0e0e0'>
-        <font size=2 face=tahoma data-role="no"></font>
+    <tr height=25 class="align-middle">
+      <td width=5% rowspan=8 class="text-center bg-secondary-subtle">
+        <span></span>
       </td>
-      <td align=left bgcolor='#e0e0e0' colspan=6>
+      <td colspan=6 class="text-start bg-secondary-subtle">
         <a target=_blank href='' data-role="report-link">
-          <font color='black' face=tahoma size=2 data-role="name"></font>
+          <span class="text-dark"></span>
         </a>
       </td>
     </tr>
   </template>
 
   <template id="statistics-skill-row-template">
-    <tr height=25>
-      <td align=right width=22% bgcolor='#f0f0f0'>
-        <font color='black' face=tahoma size=2 data-role="skill-name"></font>
+    <tr height=25 class="align-middle">
+      <td width=22% class="text-end bg-light">
+        <span class="text-dark"></span>
       </td>
-      <td width=15% align=right bgcolor='#e0e0e0'>
-        <font color='black' face=tahoma size=2 data-role="level-1"></font>
+      <td width=15% class="text-end bg-secondary-subtle">
+        <span class="text-dark"></span>
       </td>
-      <td width=15% align=right bgcolor='#f0f0f0'>
-        <font color='black' face=tahoma size=2 data-role="level-2"></font>
+      <td width=15% class="text-end bg-light">
+        <span class="text-dark"></span>
       </td>
-      <td width=15% align=right bgcolor='#e0e0e0'>
-        <font color='black' face=tahoma size=2 data-role="level-3"></font>
+      <td width=15% class="text-end bg-secondary-subtle">
+        <span class="text-dark"></span>
       </td>
-      <td width=15% align=right bgcolor='#f0f0f0'>
-        <font color='black' face=tahoma size=2 data-role="level-4"></font>
+      <td width=15% class="text-end bg-light">
+        <span class="text-dark"></span>
       </td>
-      <td width=15% align=right bgcolor='#e0e0e0'>
-        <font color='black' face=tahoma size=2 data-role="level-5"></font>
+      <td width=15% class="text-end bg-secondary-subtle">
+        <span class="text-dark"></span>
       </td>
     </tr>
   </template>
 
   <template id="statistics-history-template">
-    <table data-role="history-table" align=center width=90% cellpadding=5 cellspacing=1 border=0>
+    <table data-role="history-table" width=90% class="text-center table table-sm">
       <tr>
-        <td width=28% bgcolor='#aaaaaa' align=center>
-          <font size=2 face=tahoma color=white><b>Last login</b></font>
+        <td width=28% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Last login</b></span>
         </td>
-        <td width=10% bgcolor='#aaaaaa' align=center>
-          <font size=2 face=tahoma color=white><b>From</b></font>
+        <td width=10% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>From</b></span>
         </td>
-        <td width=10% bgcolor='#aaaaaa' align=center>
-          <font size=2 face=tahoma color=white><b>Untill</b></font>
+        <td width=10% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Untill</b></span>
         </td>
-        <td width=35% bgcolor='#aaaaaa' align=center>
-          <font size=2 face=tahoma color=white><b>Test</b></font>
+        <td width=35% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Test</b></span>
         </td>
-        <td width=18% bgcolor='#aaaaaa' align=center>
-          <font size=2 face=tahoma color=white><b>Total time</b></font>
+        <td width=18% class="text-center bg-secondary text-white">
+          <span class="text-white"><b>Total time</b></span>
         </td>
       </tr>
       <tbody data-role="history-rows"></tbody>
       <tr>
-        <td bgcolor='#f0f0f0' align=left>
-          <font size=2 face=tahoma color='blue'>&nbsp;</font>
+        <td class="text-start bg-light">
+          <span class="text-primary">&nbsp;</span>
         </td>
-        <td bgcolor='#f0f0f0' align=center>
-          <font size=2 face=tahoma color='brown'>&nbsp;</font>
+        <td class="text-center bg-light">
+          <span class="text-warning">&nbsp;</span>
         </td>
-        <td bgcolor='#f0f0f0' align=center>
-          <font size=2 face=tahoma color='brown'>&nbsp;</font>
+        <td class="text-center bg-light">
+          <span class="text-warning">&nbsp;</span>
         </td>
-        <td bgcolor='#f0f0f0' align=center>
-          <font size=2 face=tahoma color='red'><b>รวมเวลา</b></font>
+        <td class="text-center bg-light">
+          <span class="text-danger"><b>รวมเวลา</b></span>
         </td>
-        <td bgcolor='#f0f0f0' align=center>
-          <font size=2 face=tahoma color='red' data-role="total-text"></font>
+        <td class="text-center bg-light">
+          <span class="text-danger"></span>
         </td>
       </tr>
     </table>
@@ -347,45 +347,45 @@
 
   <template id="statistics-history-row-template">
     <tr>
-      <td bgcolor='#f0f0f0' align=left>
-        <font size=2 face=tahoma color='blue'>&nbsp;&nbsp;<span data-role="date-text"></span></font>
+      <td class="text-start bg-light">
+        <span class="text-primary">&nbsp;&nbsp;<span data-role="date-text"></span></span>
       </td>
-      <td bgcolor='#f0f0f0' align=center>
-        <font size=2 face=tahoma color='brown' data-role="start-time"></font>
+      <td class="text-center bg-light">
+        <span class="text-warning"></span>
       </td>
-      <td bgcolor='#f0f0f0' align=center>
-        <font size=2 face=tahoma color='green' data-role="stop-time"></font>
+      <td class="text-center bg-light">
+        <span class="text-success"></span>
       </td>
-      <td bgcolor='#f0f0f0' align=center>
-        <font size=2 face=tahoma color='green' data-role="tests"></font>
+      <td class="text-center bg-light">
+        <span class="text-success"></span>
       </td>
-      <td bgcolor='#f0f0f0' align=center>
-        <font size=2 face=tahoma color='red' data-role="duration-text"></font>
+      <td class="text-center bg-light">
+        <span class="text-danger"></span>
       </td>
     </tr>
   </template>
 
   <template id="statistics-evaluation-row-template">
-    <tr style='padding:5px; height:30px;'>
-      <td width='2%' align=center>
-        <font size=2 face=tahoma data-role="no"></font>
+    <tr>
+      <td width='2%' class="text-center">
+        <span></span>
       </td>
-      <td width='11%' align=center>
+      <td width='11%' class="text-center">
         <a target='_blank' href='' data-role="report-link">
-          <font size=2 face=tahoma data-role="date"></font>
+          <span></span>
         </a>
       </td>
-      <td width='10%' align=center>
-        <font size=2 face=tahoma data-role="name"></font>
+      <td width='10%' class="text-center">
+        <span></span>
       </td>
-      <td width='10%' align=center>
-        <img src='/assets/2010/temp_images/icon_bar/bar_07.png' height='20' style='border-radius: 5px;' data-role="bar">
+      <td width='10%' class="text-center">
+        <img src='/assets/2010/temp_images/icon_bar/bar_07.png' height='20' data-role="bar">
       </td>
-      <td width='5%' align=center>
-        <font size=2 face=tahoma data-role="percent"></font>
+      <td width='5%' class="text-center">
+        <span></span>
       </td>
-      <td width='6%' align=center>
-        <font size=2 face=tahoma data-role="score"></font>
+      <td width='6%' class="text-center">
+        <span></span>
       </td>
     </tr>
   </template>

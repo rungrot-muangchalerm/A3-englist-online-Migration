@@ -1,193 +1,23 @@
 <div id="eolcontest-app" class="f-thai">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Oswald');
-    @import url('https://fonts.googleapis.com/css?family=Kanit');
-
-    #eolcontest-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-      text-align: center;
-    }
-
-    #eolcontest-app .oswald {
-      font-family: 'Oswald', sans-serif !important;
-    }
-
-    #eolcontest-app .kanit {
-      font-family: 'Kanit', sans-serif !important;
-    }
-
-    #eolcontest-app .ecop-header {
-      background: #545454;
-      height: 80px;
-      position: relative;
-      text-align: left;
-    }
-
-    #eolcontest-app .ecop-header img {
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 65px;
-    }
-
-    #eolcontest-app .ecop-header-title {
-      position: absolute;
-      left: 180px;
-      font-size: 32px;
-      color: #fff;
-      line-height: 80px;
-    }
-
-    #eolcontest-app .timer-box {
-      width: 250px;
-      margin: 10px auto;
-      background: #F2DEDE;
-      border-radius: 5px;
-      padding: 5px;
-      font-size: 14px;
-    }
-
-    #eolcontest-app .test-wrap {
-      background: #fff;
-      padding: 20px 80px;
-      text-align: left;
-      min-height: 300px;
-    }
-
-    #eolcontest-app .question-text {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    #eolcontest-app .answer-row {
-      padding: 5px 0;
-      font-size: 15px;
-    }
-
-    #eolcontest-app .answer-row input {
-      margin-right: 8px;
-    }
-
-    #eolcontest-app .media-wrap {
-      margin: 10px 0;
-      text-align: center;
-    }
-
-    #eolcontest-app .media-wrap img {
-      max-width: 300px;
-    }
-
-    #eolcontest-app .media-wrap audio {
-      width: 300px;
-    }
-
-    #eolcontest-app .btn-record {
-      display: inline-block;
-      padding: 8px 20px;
-      border-radius: 4px;
-      background: #f0ad4e;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    #eolcontest-app .btn-record:disabled {
-      background: #aaa;
-      cursor: not-allowed;
-    }
-
-    #eolcontest-app .question-grid {
-      text-align: center;
-      background: #fdb83d;
-      border-radius: 4px;
-      padding: 10px;
-      margin-top: 20px;
-    }
-
-    #eolcontest-app .qnum-btn {
-      width: 34px;
-      height: 24px;
-      border-radius: 2px;
-      border: none;
-      margin: 2px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    #eolcontest-app .qnum-btn.answered {
-      background: #5cb85c;
-      color: #fff;
-    }
-
-    #eolcontest-app .qnum-btn.unanswered {
-      background: #d9534f;
-      color: #fff;
-    }
-
-    #eolcontest-app .nav-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    #eolcontest-app .nav-wrap img {
-      height: 40px;
-      cursor: pointer;
-    }
-
-    #eolcontest-app .finish-wrap {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    #eolcontest-app .btn-finish {
-      display: inline-block;
-      padding: 8px 25px;
-      border-radius: 4px;
-      background: #5cb85c;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    #eolcontest-app .back-wrap {
-      text-align: right;
-      padding: 10px 50px;
-      background: #555555;
-    }
-
-    #eolcontest-app .back-wrap img {
-      height: 40px;
-    }
-
-    #eolcontest-app .hidden {
-      display: none;
-    }
-  </style>
-
   <div class="ecop-header">
     <img src="/assets/images/icon/icon_corporate.png">
     <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
   </div>
 
-  <div class="timer-box" align="center">
-    <div id="contest-timer">เวลาที่เหลือ : <font color="red">0</font> นาที กับ <font color="red">0</font> วินาที</div>
+  <div class="timer-box text-center">
+    <div id="contest-timer">เวลาที่เหลือ : <span class="text-danger">0</span> นาที กับ <span class="text-danger">0</span> วินาที</div>
   </div>
 
   <div class="test-wrap">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <table width="100%" class="table table-sm">
       <tr>
         <td colspan="2">
-          <font size="3" color="gray" id="contest-skill-name"><b></b></font>
+          <span class="text-secondary"><b></b></span>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <font size="3" face="tahoma"><b id="contest-question-no">No. -</b></font>
+          <span><b id="contest-question-no">No. -</b></span>
         </td>
       </tr>
       <tr>
@@ -201,35 +31,35 @@
       </tr>
       <tr>
         <td colspan="2">
-          <button id="contest-record-btn" class="btn-record kanit">Record your answer</button>
+          <button id="contest-record-btn" class="btn-record">Record your answer</button>
         </td>
       </tr>
       <tr>
         <td colspan="2">
           <div class="question-grid">
-            <font size="2" face="tahoma" color="black"><b>Question Number</b></font>
+            <span class="text-dark"><b>Question Number</b></span>
             <div id="contest-question-grid"></div>
           </div>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <table width="100%" class="table table-sm">
             <tr>
-              <td width="10%" align="left"><img id="contest-back-btn" src="/assets/images/image2/test/back.png"></td>
-              <td width="80%" align="center">
-                <font size="2" face="tahoma" color="red">Red : Unanswer</font>
+              <td width="10%" class="text-start"><img id="contest-back-btn" src="/assets/images/image2/test/back.png"></td>
+              <td width="80%" class="text-center">
+                <span class="text-danger">Red : Unanswer</span>
                 &nbsp;&nbsp;&nbsp;
-                <font size="2" face="tahoma" color="green">Green : Answered</font>
+                <span class="text-success">Green : Answered</span>
               </td>
-              <td width="10%" align="right"><img id="contest-next-btn" src="/assets/images/image2/test/next.png"></td>
+              <td width="10%" class="text-end"><img id="contest-next-btn" src="/assets/images/image2/test/next.png"></td>
             </tr>
           </table>
         </td>
       </tr>
       <tr>
         <td colspan="2" class="finish-wrap">
-          <button id="contest-finish-btn" class="btn-finish kanit">Finish</button>
+          <button id="contest-finish-btn" class="btn-finish">Finish</button>
         </td>
       </tr>
     </table>

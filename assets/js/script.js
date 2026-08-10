@@ -49,7 +49,7 @@ let attachHeaderLogin;
 
   function setVisible(element, visible) {
     if (!element) return;
-    element.style.display = visible ? 'inline-block' : 'none';
+    if (visible ) element.classList.remove('d-none'); else element.classList.add('d-none');
   }
 
   function createElement(tag, attrs, children) {

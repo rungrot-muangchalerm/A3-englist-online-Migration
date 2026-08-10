@@ -1,82 +1,67 @@
 <div id="view-academic">
-  <style>
-    #academic-app input.btn-goto-test:disabled {
-      background-color: #bbb;
-      color: #555;
-      cursor: not-allowed;
-      border: 1px solid #999;
-    }
-
-    #academic-app input.btn-goto-test:not(:disabled) {
-      background-color: #28a745;
-      color: #fff;
-      cursor: pointer;
-      border: 1px solid #1e7e34;
-    }
-  </style>
   <div id='academic-app'>
     <template id="academic-level-row-template">
-      <tr height="32">
+      <tr height="32" class="align-middle">
         <td width="8%">&nbsp;</td>
         <td width="32%">
-          <font size="3" face="tahoma" color="black"><b>
-              <font class="level-color">&raquo; <span class="level-name"></span></font>
-            </b></font>
+          <span class="text-dark"><b>
+              <span>&raquo; <span class="level-name"></span></span>
+            </b></span>
         </td>
-        <td width="47%" align="right" class="level-message"></td>
-        <td width="13%" align="right">
-          <input class="btn-goto-test" type="button" value=" Test " style="font-size:13px; border:1px solid #ccc; font-weight:bold;">
+        <td width="47%" class="level-message text-end"></td>
+        <td width="13%" class="text-end">
+          <input class="btn-goto-test" type="button" value=" Test ">
         </td>
       </tr>
     </template>
 
     <template id="academic-skill-row-template">
-      <tr height="40" class="skill-row">
-        <td bgcolor="#fff0d9" colspan="2">
-          <div class="skill-toggle-a" style="cursor:pointer">
-            <font size="3" face="tahoma" color="black"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo; <span class="skill-name"></span> <br></b></font>
+      <tr height="40" class="skill-row align-middle">
+        <td colspan="2" class="bg-light">
+          <div class="skill-toggle-a">
+            <span class="text-dark"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo; <span class="skill-name"></span> <br></b></span>
           </div>
-          <div class="skill-toggle-b" style="cursor:pointer; display:none;">
-            <font size="3" face="tahoma" color="black"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&laquo; <span class="skill-name"></span> <br></b></font>
+          <div class="skill-toggle-b">
+            <span class="text-dark"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&laquo; <span class="skill-name"></span> <br></b></span>
           </div>
         </td>
       </tr>
-      <tr class="level-list-row" style="display:none;">
-        <td colspan="2" bgcolor="#f7f7f7">
-          <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="level-table"></table>
+      <tr class="level-list-row">
+        <td colspan="2" class="table-light">
+          <table width="100%" class="level-table text-center table table-sm"></table>
         </td>
       </tr>
     </template>
 
-    <div style="position:absolute;margin-top:350px;z-index:0;width:970px;">
-      <table align="center" width="970px" cellpadding="0" cellspacing="0" border="0">
-        <tr valign="top">
+    <div>
+      <table width="970px" class="text-center table table-sm">
+        <tr>
           <td width="60%">
-            <table align="center" width="70%" cellpadding="5" cellspacing="0" border="0" id="single-skills-table">
-              <tr height="50">
-                <td colspan="2" style="border-top-right-radius:10px;border-top-left-radius:10px; background:#ffb208;">
-                  <font size="4" color="white" face="tahoma"><b>&nbsp; &raquo; Single Skill</b></font><br>
+            <table width="70%" id="single-skills-table" class="text-center table table-sm">
+              <tr height="50" class="align-middle">
+                <td colspan="2">
+                  <span class="text-white"><b>&nbsp; &raquo; Single Skill</b></span><br>
                 </td>
               </tr>
               <tbody id="single-skills-body"></tbody>
-              <tr height="15">
-                <td colspan="2" style="border-bottom-right-radius:10px;border-bottom-left-radius:10px; background:#fff0d9;"></td>
+              <tr height="15" class="align-middle">
+                <td colspan="2"></td>
               </tr>
-              <tr height="25">
+              <tr height="25" class="align-middle">
                 <td colspan="2"></td>
               </tr>
             </table>
-            <table align="center" width="70%" cellpadding="5" cellspacing="0" border="0" id="multi-skills-table">
-              <tr height="50">
-                <td colspan="2" style="border-top-right-radius:10px;border-top-left-radius:10px; background:#ffb208;">
-                  <font size="4" color="white" face="tahoma"><b>&nbsp; &raquo; Multiple Skills</b></font><br>
+            <table width="70%" id="multi-skills-table" class="text-center table table-sm">
+              <tr height="50" class="align-middle">
+                <td colspan="2">
+                  <span class="text-white"><b>&nbsp; &raquo; Multiple Skills</b></span><br>
                 </td>
               </tr>
               <tbody id="multi-skills-body"></tbody>
-              <tr height="15">
-                <td colspan="2" style="border-bottom-right-radius:10px;border-bottom-left-radius:10px; background:#fff0d9;"></td>
+              <tr height="15" class="align-middle">
+                <td colspan="2"></td>
               </tr>
-              <tr height="10">
+              <tr height="10" class="align-middle">
                 <td colspan="2"></td>
               </tr>
             </table>
@@ -84,6 +69,6 @@
         </tr>
       </table><br>&nbsp;
     </div>
-    <img src="/assets/images/image2/eol system/bg-test-evo1.png" width="100%" style="border-radius:10px;">
+    <img src="/assets/images/image2/eol system/bg-test-evo1.png" width="100%">
   </div>
 </div>

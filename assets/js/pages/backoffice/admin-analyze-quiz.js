@@ -7,12 +7,10 @@ fetch(`/api/backoffice/admin/analyze-quiz?page=${encodeURIComponent(params.get('
     for (let pageNumber = 1; pageNumber <= data.data.allPages; pageNumber += 1) {
       const link = document.createElement('a');
       link.href = `/backoffice/mainoffice/admin/analyze-quiz?page=${encodeURIComponent(String(pageNumber))}`;
-      const font = document.createElement('font');
-      font.color = pageNumber === data.data.page ? 'red' : 'blue';
-      font.size = '2';
-      font.className = 'f-thai';
-      font.textContent = String(pageNumber);
-      link.appendChild(font);
+      const pageText = document.createElement('span');
+      pageText.className = pageNumber === data.data.page ? 'f-thai text-danger' : 'f-thai text-primary';
+      pageText.textContent = String(pageNumber);
+      link.appendChild(pageText);
       document.getElementById('admin-analyze-pages').appendChild(document.createTextNode('  '));
       document.getElementById('admin-analyze-pages').appendChild(link);
       document.getElementById('admin-analyze-pages').appendChild(document.createTextNode(' '));
@@ -29,8 +27,8 @@ fetch(`/api/backoffice/admin/analyze-quiz?page=${encodeURIComponent(params.get('
       clone.querySelector('[data-role="detail-link"]').href = `/backoffice/mainoffice/admin/check-questions-list/search?question_id=${encodeURIComponent(row.questionId)}`;
       clone.querySelector('[data-role="correct-answer-id"]').textContent = row.correctAnswerId;
       clone.querySelector('[data-role="total-answers"]').textContent = row.totalAnswers;
-      clone.querySelector('[data-role="summary-cell"]').style.backgroundColor = row.color;
-      clone.querySelector('[data-role="answer-panel"]').style.backgroundColor = row.color;
+      clone.querySelector('[data-role="summary-cell"]').classList.add('bg-light');
+      clone.querySelector('[data-role="answer-panel"]').classList.add('bg-light');
       row.answers.forEach(answer => {
         const answerClone = document.getElementById('admin-analyze-answer-template').content.cloneNode(true);
         answerClone.querySelector('[data-role="answer-id"]').textContent = `Answer ID : ${answer.answerId}`;

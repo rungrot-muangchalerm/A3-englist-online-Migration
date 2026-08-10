@@ -4,23 +4,23 @@
   }
   function showView(id) {
     const views = document.querySelectorAll('.eol-view');
-    views.forEach((v) => { v.style.display = 'none'; });
+    views.forEach((v) => { v.classList.add('d-none'); });
     const target = document.getElementById(id);
-    if (target) target.style.display = '';
+    if (target) target.classList.remove('d-none');
   }
   document.addEventListener('DOMContentLoaded', function () {
     const refillBtn = document.getElementById('refill-account-btn');
     const refillHistoryBtn = document.getElementById('refill-history-show-btn');
     if (refillHistoryBtn) {
       refillHistoryBtn.addEventListener('click', () => {
-        document.getElementById('refill_history').style.display = '';
+        document.getElementById('refill_history').classList.remove('d-none');
       });
     }
     if (refillBtn) {
       refillBtn.addEventListener('click', () => {
         const form = document.getElementById('refillForm');
         const msg = document.getElementById('refillMsg');
-        msg.style.display = 'none';
+        msg.classList.add('d-none');
         fetch('/api/eol/refill', {
           method: 'POST',
           credentials: 'include',
@@ -28,9 +28,9 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            msg.style.display = '';
+            msg.classList.remove('d-none');
             const message = data.data && data.data.message ? data.data.message : data.message;
-            msg.innerHTML = `<font size=2 face=tahoma color=${data.status === 200 ? 'green' : 'red'}><b><br>${htmlEscape(message)}<br>&nbsp;</b></font>`;
+            msg.innerHTML = `<span><b><br>${htmlEscape(message)}<br>&nbsp;</b></span>`;
             if (data.status === 200) {
               form.reset();
               setTimeout(function () { window.location.reload(); }, 1500);
@@ -97,7 +97,7 @@
           container.appendChild(tableClone);
           container.querySelector('.refill-history-hide').addEventListener('click', (e) => {
             e.preventDefault();
-            container.style.display = 'none';
+            container.classList.add('d-none');
           });
         });
   });

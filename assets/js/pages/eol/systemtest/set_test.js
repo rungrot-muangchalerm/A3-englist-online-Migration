@@ -23,11 +23,11 @@
   function toggleMultiSkills() {
     const box = document.getElementById('multi-skills-box');
     const text = document.getElementById('multi-skills-toggle-text');
-    if (box.style.display === 'none') {
-      box.style.display = 'block';
+    if (box.classList.contains('d-none')) {
+      box.classList.remove('d-none');
       text.innerHTML = '&laquo; Advanced Setting';
     } else {
-      box.style.display = 'none';
+      box.classList.add('d-none');
       text.innerHTML = '&raquo; Advanced Setting';
     }
   }
@@ -43,7 +43,7 @@
         document.querySelector('#set-test-app .skill-name').textContent = s.skillName;
         document.querySelector('#set-test-app .level-name').textContent = s.levelName;
         if (s.isMultiple) {
-          document.getElementById('multi-skills-section').style.display = 'block';
+          document.getElementById('multi-skills-section').classList.remove('d-none');
         }
         document.getElementById('multi-skills-toggle').addEventListener('click', toggleMultiSkills);
         document.getElementById('create-test-form').addEventListener('submit', onCreateSubmit);
@@ -64,7 +64,7 @@
     }
     const body = { amount: amt };
     const multiSection = document.getElementById('multi-skills-section');
-    if (multiSection && multiSection.style.display !== 'none') {
+    if (multiSection && !multiSection.classList.contains('d-none')) {
       const checked = Array.from(document.querySelectorAll('.skill-checkbox:checked')).map((cb) => Number(cb.value));
       if (checked.length === 0) {
         alert('กรุณาเลือกอย่างน้อย 1 skill');
@@ -80,7 +80,7 @@
         }
         document.querySelector('.summary-amount').textContent = data.data.amount;
         document.querySelector('.summary-time').textContent = data.data.timeMinutes;
-        document.getElementById('test-summary').style.display = 'block';
+        document.getElementById('test-summary').classList.remove('d-none');
         input.disabled = true;
       })
       .catch(() => alert('เกิดข้อผิดพลาด'));

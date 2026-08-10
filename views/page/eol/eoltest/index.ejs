@@ -1,276 +1,276 @@
-<div id="view-coming-soon" class="eol-view" style="display:none;">
-  <table align=center width=90% cellpadding=0 cellspacing=0 border=0 bgcolor='#FFFFFF' style='border-radius:5px'>
+<div id="view-coming-soon" class="eol-view">
+  <table width=90% class="text-center bg-light table table-sm">
     <tr>
-      <td align=center><br>
-        <font size=3 face=tahoma color=#676868>
-          <b>หน้า <span id="coming-soon-name" style="text-transform:capitalize"></span> ยังไม่เปิดใช้งานใน Phase 2</b>
-        </font><br>&nbsp;
+      <td class="text-center"><br>
+        <span>
+          <b>หน้า <span id="coming-soon-name"></span> ยังไม่เปิดใช้งานใน Phase 2</b>
+        </span><br>&nbsp;
       </td>
     </tr>
   </table>
 </div>
-<div id="view-personal" class="eol-view" style="display:none;">
-  <div id='test' style='position:absolute;margin-top:157px;margin-left:47px;z-index:100;'>
+<div id="view-personal" class="eol-view">
+  <div id='test'>
     <a href='/eol/eoltest/academic'>
       <img class='img_hover' src='/assets/images/image2/eol system/test-evaluation-new.png' width='219' height='213' />
     </a>
   </div>
-  <div id='report' style='position:absolute;margin-top:317px;margin-left:737px;z-index:100;'>
+  <div id='report'>
     <a href='/eol/eoltest/report'>
       <img class='img_hover' src='/assets/images/image2/eol system/report-new.png' width='219' height='213' />
     </a>
   </div>
-  <div id='lesson' style='position:absolute;margin-top:152px;margin-left:337px;z-index:100;'>
+  <div id='lesson'>
     <a href='/lessons/elearning'>
       <img class='img_hover' src='/assets/images/image2/eol system/lessons-new.png' width='219' height='213' />
     </a>
   </div>
-  <div id='coporate' style='position:absolute;margin-top:580px;left:0px;margin-left:330px;z-index:100;display:none;'>
+  <div id='coporate'>
     <a href='/corporate/ecop'>
       <img class='img_hover' src='/assets/images/image2/eol system/ecop/corporate-icon-new.png' width='219' height='213' />
     </a>
   </div>
-  <div id='standardtest' style='position:absolute;margin-top:622px;left:0px;margin-left:40px;z-index:100;'>
+  <div id='standardtest'>
     <a href='/eol/standardtest'>
       <img class='img_hover' src='/assets/images/image2/eol system/standart-test-new.png' width='219' height='213' />
     </a>
   </div>
-  <div id='back_to_home' style='position:absolute;margin-top:870px; margin-left:120px;'>
+  <div id='back_to_home'>
     <a href='/'>
-      <img src='/assets/images/image2/eol system/button/back_to_home.png' border=0>
+      <img src='/assets/images/image2/eol system/button/back_to_home.png'>
     </a>
   </div>
-  <img src='/assets/images/image2/eol system/bg-eol.png' width='100%' height='1074' style='border-radius:10px;' />
+  <img src='/assets/images/image2/eol system/bg-eol.png' width='100%' height='1074' />
 </div>
 
-<div id="view-expired" class="eol-view" style="display:none;">
-  <div style='position:absolute;margin-top:110px;margin-left:330px;z-index:100;'>
+<div id="view-expired" class="eol-view">
+  <div>
     <a href='/eol/eoltest/report'>
-      <img class='img_hover' src='/assets/images/image2/eol system/report-new.png' border=0>
+      <img class='img_hover' src='/assets/images/image2/eol system/report-new.png'>
     </a>
   </div>
-  <div style='position:absolute;top:650px;margin-left:50px;z-index:100px;'>
-    <a href='/shop/product-personal' target=_blank border=0>
-      <img class='img_hover' src='/assets/images/image2/eol system/purchase-card.png' border=0>
+  <div>
+    <a href='/shop/product-personal' target=_blank>
+      <img class='img_hover' src='/assets/images/image2/eol system/purchase-card.png'>
     </a>
   </div>
-  <img src='/assets/images/image2/eol system/bg-free-09.jpg' style='border-radius:10px;'>
+  <img src='/assets/images/image2/eol system/bg-free-09.jpg'>
 </div>
 
-<div id="view-master" class="eol-view" style="display:none;">
-  <table align=center width=95% cellpadding=5 cellspacing=0 border=0>
-    <tr height=30>
-      <td align=center width=7%%>
-        <font size=2 face=tahoma><b>Group : </b></font>
+<div id="view-master" class="eol-view">
+  <table width=95% class="text-center table table-sm">
+    <tr height=30 class="align-middle">
+      <td width=7%% class="text-center">
+        <span><b>Group : </b></span>
       </td>
-      <td align=left width=65%%>
-        <select name='group_id' id='group_id' style='height: 28px;'></select>
+      <td width=65%% class="text-start">
+        <select name='group_id' id='group_id'></select>
         <input type='button' value='View' class='btn-view' id='master-view-group'>
         <input type='button' value='Edit' class='modalInput btn-edit' rel='#prompt1' id='master-rename-btn'>
         <input type='button' value='Delete This Group' class='btn-delete-group' id='master-delete-group'>
       </td>
-      <td align=right width=20%%><input type='text' name='group_name' id='group_name' size=20 placeholder='&nbsp;Name Group' class='enter-name-group' required></td>
-      <td align=left width=15%%>
+      <td width=20%% class="text-end"><input type='text' name='group_name' id='group_name' size=20 placeholder='&nbsp;Name Group' class='enter-name-group' required></td>
+      <td width=15%% class="text-start">
         <input type='button' value='Create New Group' class='btn-create-group' id='master-create-group'>
       </td>
     </tr>
   </table>
   <br>
 
-  <div id='master-empty' style='display:none;'>
-    <table align=center width=90% height=25 cellpadding=0 cellspacing=0 border=0 bgcolor='#FFFFFF' style='border-radius:5px'>
+  <div id='master-empty'>
+    <table width=90% height=25 class="text-center bg-light table table-sm">
       <tr>
-        <td align=center><br>
-          <font size=2 face=tahoma color=red><b>&nbsp;- No Data -</b></font><br>&nbsp;
+        <td class="text-center"><br>
+          <span class="text-danger"><b>&nbsp;- No Data -</b></span><br>&nbsp;
         </td>
       </tr>
     </table>
   </div>
 
-  <div id='master-list-wrap' style='display:none;'>
-    <table align=center width=90% cellpadding=0 cellspacing=2 border=0 class='noborder table-sub-member table'>
-      <tr height=55>
-        <td width=4% bgcolor='#FAAC58' align=center>
-          <div id="master-select-all" style='cursor:pointer;'>
-            <font size=2 face=tahoma color=white title='Select All'><b>All</b></font>
+  <div id='master-list-wrap'>
+    <table width=90% class='noborder table-sub-member table text-center table-sm'>
+      <tr height=55 class="align-middle">
+        <td width=4% class="text-center bg-light">
+          <div id="master-select-all">
+            <span class="text-white"><b>All</b></span>
           </div>
           <input type=hidden id='all_status' value='select'>
         </td>
-        <td width=24% bgcolor='#676868' align=center>
-          <font size=2 face=tahoma color=white><b>First name - Last name</b></font>
+        <td width=24% class="text-center bg-light">
+          <span class="text-white"><b>First name - Last name</b></span>
         </td>
-        <td width=13% bgcolor='#676868' align=center>
-          <font size=2 face=tahoma color=white><b>Username</b></font>
+        <td width=13% class="text-center bg-light">
+          <span class="text-white"><b>Username</b></span>
         </td>
-        <td width=13% bgcolor='#676868' align=center>
-          <font size=2 face=tahoma color=white><b>Password</b></font>
+        <td width=13% class="text-center bg-light">
+          <span class="text-white"><b>Password</b></span>
         </td>
-        <td width=16% bgcolor='#676868' align=center>
-          <font size=2 face=tahoma color=white><b>Operating time</b></font>
+        <td width=16% class="text-center bg-light">
+          <span class="text-white"><b>Operating time</b></span>
         </td>
-        <td width=30% bgcolor='#676868' align=center color=white>
-          <font size=2 face=tahoma color=white><b>Management</b></font>
+        <td width=30% color=white class="text-center bg-light">
+          <span class="text-white"><b>Management</b></span>
         </td>
       </tr>
       <tbody id='master-member-rows'></tbody>
     </table>
 
-    <table align=center width=90% cellpadding=5 cellspacing=0 border=0>
-      <tr valign=top>
-        <td width=10% align=right>
-          <font size=2 face=tahoma color=red><b>Page :</b></font>
+    <table width=90% class="text-center table table-sm">
+      <tr>
+        <td width=10% class="text-end">
+          <span class="text-danger"><b>Page :</b></span>
         </td>
-        <td width=100% align=left id='master-pagination'></td>
+        <td width=100% id='master-pagination' class="text-start"></td>
       </tr>
     </table><br>
 
-    <table align=center width=90% cellpadding=0 cellspacing=0 border=0 class='table-select-item' bgcolor='#FFFFFF'>
-      <tr height=70>
-        <td width=18% align=right>
-          <font size=2 face=tahoma color='#676868'><b>Selected Items&nbsp;&nbsp;:&nbsp;&nbsp;</b></font>
+    <table width=90% class='table-select-item text-center bg-light table table-sm'>
+      <tr height=70 class="align-middle">
+        <td width=18% class="text-end">
+          <span><b>Selected Items&nbsp;&nbsp;:&nbsp;&nbsp;</b></span>
         </td>
-        <td width=7% align=left>
-          <center>
-            <img src='/assets/images/icon/limit.png' class='limit' border=0 style='width:30%;cursor:pointer;' id='master-bulk-limit'><br>
-            <font style='color:#FFB700;'>Limit</font>
-          </center>
+        <td width=7% class="text-start">
+          <div class="text-center">
+            <img src='/assets/images/icon/limit.png' class='limit' id='master-bulk-limit'><br>
+            <span>Limit</span>
+          </div>
         </td>
-        <td width=7% align=left>
-          <center>
-            <img src='/assets/images/icon/unlimit.png' class='unlimit' border=0 style='width:30%; cursor:pointer;' id='master-bulk-unlimit'><br>
-            <font style='color:#00C12B;'>Unlimit</font>
-          </center>
+        <td width=7% class="text-start">
+          <div class="text-center">
+            <img src='/assets/images/icon/unlimit.png' class='unlimit' id='master-bulk-unlimit'><br>
+            <span>Unlimit</span>
+          </div>
         </td>
-        <td width=7% align=left>
-          <center>
-            <img src='/assets/images/icon/bin.png' class='bin' border=0 style='width: 30%; cursor:pointer;' id='master-bulk-delete'><br>
-            <font style='color:red;'>Delete</font>
-          </center>
+        <td width=7% class="text-start">
+          <div class="text-center">
+            <img src='/assets/images/icon/bin.png' class='bin' id='master-bulk-delete'><br>
+            <span>Delete</span>
+          </div>
         </td>
-        <td width=10% align=center>
-          <img src='/assets/images/icon/move-to.png' border=0 style='width:22px; margin-right:15px;'><br>
-          <font size=2 face=tahoma color='#676868'><b>Move To&nbsp;&nbsp;:&nbsp;&nbsp;</b></font>
+        <td width=10% class="text-center">
+          <img src='/assets/images/icon/move-to.png'><br>
+          <span><b>Move To&nbsp;&nbsp;:&nbsp;&nbsp;</b></span>
         </td>
-        <td width=30% align=left>
-          <select id='ref_id' style='height: 28px;'></select>
+        <td width=30% class="text-start">
+          <select id='ref_id'></select>
           <input type='button' value='&nbsp;Set&nbsp;' class='btn-set' id='master-bulk-move'>
         </td>
       </tr>
     </table>
   </div>
 
-  <div id='master-add-section' style='display:none;'>
+  <div id='master-add-section'>
     <br>
-    <table align=center width=60% cellpadding=0 cellspacing=0 border=0 class='add-member'>
-      <tr valign=top>
+    <table width=60% class='add-member text-center table table-sm'>
+      <tr>
         <td width=100%%>
-          <table align=center width=100% cellpadding=0 cellspacing=0 border=0 class='table-add-member'>
-            <tr height=55>
-              <td align=center colspan=3>
-                <font face=tahoma size=3 color=white><b> :: Add New Member :: </b></font>
+          <table width=100% class='table-add-member text-center table table-sm'>
+            <tr height=55 class="align-middle">
+              <td colspan=3 class="text-center">
+                <span class="text-white"><b> :: Add New Member :: </b></span>
               </td>
             </tr>
-            <tr id='master-action-error-row' style='display:none;'>
-              <td height=10 bgcolor='#ffeadc' colspan=3></td>
+            <tr id='master-action-error-row'>
+              <td height=10 colspan=3 class="bg-light"></td>
             </tr>
-            <tr id='master-action-error-msg' style='display:none;'>
-              <td height=25 bgcolor='#ffeadc' align=center colspan=3>
-                <font face=tahoma size=2 color=red id='master-action-error-text'></font>
+            <tr id='master-action-error-msg'>
+              <td height=25 colspan=3 class="text-center bg-light">
+                <span class="text-danger"></span>
               </td>
             </tr>
-            <tr id='master-action-error-end' style='display:none;'>
-              <td height=10 bgcolor='#ffeadc' colspan=3></td>
+            <tr id='master-action-error-end'>
+              <td height=10 colspan=3 class="bg-light"></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td width=27% align=right>
-                <font face=tahoma size=2 color=black><b> Add to Group </b></font>
+            <tr height=25 class="bg-light align-middle">
+              <td width=27% class="text-end">
+                <span class="text-dark"><b> Add to Group </b></span>
               </td>
-              <td width=5% align=center>
-                <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+              <td width=5% class="text-center">
+                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
               </td>
-              <td width=68% align=left>
-                <select name='user_newgroup' id='master-add-user-newgroup' style='height: 25px;'></select>
+              <td width=68% class="text-start">
+                <select name='user_newgroup' id='master-add-user-newgroup'></select>
               </td>
             </tr>
-            <tr height=5 bgcolor='#ffeadc'>
+            <tr height=5 class="bg-light align-middle">
               <td colspan=3></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td align=right>
-                <font face=tahoma size=2 color=black><b> Username </b></font>
+            <tr height=25 class="bg-light align-middle">
+              <td class="text-end">
+                <span class="text-dark"><b> Username </b></span>
               </td>
-              <td align=center>
-                <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+              <td class="text-center">
+                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
               </td>
-              <td align=left>
+              <td class="text-start">
                 <input type='text' size=15 name='add_user' id='master-add-user' placeholder='&nbsp;Username' value='' required>
-                <font face=tahoma size=2 color=brown>* 8-20 Characters long</font>
+                <span class="text-warning">* 8-20 Characters long</span>
               </td>
             </tr>
-            <tr height=5 bgcolor='#ffeadc'>
+            <tr height=5 class="bg-light align-middle">
               <td colspan=3></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td align=right>
-                <font face=tahoma size=2 color=black><b> Password </b></font>
+            <tr height=25 class="bg-light align-middle">
+              <td class="text-end">
+                <span class="text-dark"><b> Password </b></span>
               </td>
-              <td align=center>
-                <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+              <td class="text-center">
+                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
               </td>
-              <td align=left>
+              <td class="text-start">
                 <input type='password' size=15 name='add_pass' id='master-add-pass' placeholder='&nbsp;Password' required>
-                <font face=tahoma size=2 color=brown>* 8-20 Characters long</font>
+                <span class="text-warning">* 8-20 Characters long</span>
               </td>
             </tr>
-            <tr height=5 bgcolor='#ffeadc'>
+            <tr height=5 class="bg-light align-middle">
               <td colspan=3></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td align=right>
-                <font face=tahoma size=2 color=black><b> Re - Password </b></font>
+            <tr height=25 class="bg-light align-middle">
+              <td class="text-end">
+                <span class="text-dark"><b> Re - Password </b></span>
               </td>
-              <td align=center>
-                <font face=tahoma size=2 color=black><b>&nbsp;:&nbsp;</b></font>
+              <td class="text-center">
+                <span class="text-dark"><b>&nbsp;:&nbsp;</b></span>
               </td>
-              <td align=left>
+              <td class="text-start">
                 <input type='password' size=15 name='add_re' id='master-add-re' placeholder='&nbsp;Re - Password' required>
-                <font face=tahoma size=2 color=brown>* Same as Password</font>
+                <span class="text-warning">* Same as Password</span>
               </td>
             </tr>
-            <tr height=10 bgcolor='#ffeadc'>
+            <tr height=10 class="bg-light align-middle">
               <td colspan=3></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td align=left colspan=3>
-                <font face=tahoma size=2 color=blue>
+            <tr height=25 class="bg-light align-middle">
+              <td colspan=3 class="text-start">
+                <span class="text-primary">
                   &nbsp; * Please use "a-z" , "A-Z" , "0-9" , "-" , "_" , "@" or "." <br>
                   &nbsp;&nbsp;&nbsp;&nbsp; to create Username and Password <br>
                   &nbsp; * You can create Username as abcde_01 - abcde_10 ,<br>
                   &nbsp;&nbsp;&nbsp;&nbsp; abcde01 - abcde10 or abcde-01 - abcde-10<br>
                   &nbsp; * You can't duplicate usernames <br>
-                </font>
+                </span>
               </td>
             </tr>
-            <tr height=10 bgcolor='#ffeadc'>
+            <tr height=10 class="bg-light align-middle">
               <td colspan=3></td>
             </tr>
-            <tr height=25 bgcolor='#ffeadc'>
-              <td align=right>
-                <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+            <tr height=25 class="bg-light align-middle">
+              <td class="text-end">
+                <span class="text-dark"><b>&nbsp;</b></span>
               </td>
-              <td align=center width=60>
-                <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+              <td width=60 class="text-center">
+                <span class="text-dark"><b>&nbsp;</b></span>
               </td>
-              <td align=left>
-                <input type=button size=20 value='&nbsp; Add  &nbsp;' style='margin-left:60px;' class='btn-add-member' id='master-add-member-btn'>&nbsp;
-              </td>
-            </tr>
-            <tr height=22 bgcolor='#ffeadc'>
-              <td align=center colspan=3>
-                <font face=tahoma size=2 color=black><b>&nbsp;</b></font>
+              <td class="text-start">
+                <input type=button size=20 value='&nbsp; Add  &nbsp;' class='btn-add-member' id='master-add-member-btn'>&nbsp;
               </td>
             </tr>
-            <tr height=20>
+            <tr height=22 class="bg-light align-middle">
+              <td colspan=3 class="text-center">
+                <span class="text-dark"><b>&nbsp;</b></span>
+              </td>
+            </tr>
+            <tr height=20 class="align-middle">
               <td colspan=3></td>
             </tr>
           </table>
@@ -278,7 +278,7 @@
       </tr>
     </table><br>&nbsp;
   </div>
-  <div id='master-no-add-section' style='display:none;'>
+  <div id='master-no-add-section'>
     <br>&nbsp;
   </div>
 
@@ -287,52 +287,52 @@
   </template>
 
   <template id="master-member-row-template">
-    <tr height=28 class='line_hover'>
-      <td bgcolor='#FAAC58' align=center>
+    <tr height=28 class='line_hover align-middle'>
+      <td class="text-center bg-light">
         <input type='checkbox' name='' value='' title='' class='master-member-check'>
       </td>
-      <td bgcolor='' align=left data-role="name-cell"></td>
-      <td bgcolor='' align=center data-role="user-cell"></td>
-      <td bgcolor='' align=center data-role="pass-cell"></td>
-      <td bgcolor='' align=center data-role="operating-cell"></td>
-      <td bgcolor='white' align=center data-role="actions-cell">
-        <img src='' border=0 style='width:7%;cursor:pointer;margin-right:15px;' title='' class='master-status-btn'>
-        <a target=_blank href='' title='View Personal Report' data-role="report-link"><img src='/assets/images/icon/report.png' border=0 style='width:8%; margin-right:15px;'></a>
-        <img src='/assets/images/icon/move.png' border=0 style='width:7%;cursor:pointer;margin-right:15px;' title='Move current group' class='master-left-btn'>
-        <button class='modalInput master-edit-btn' rel='#prompt2' type='button' style='width:20px;background:none; border:none;margin-right:20px;'>
-          <img src='/assets/images/icon/edit.png' border=0 style='width:20px;cursor:pointer;margin-right:15px;' title='Edit Username and Password'>
+      <td data-role="name-cell" class="text-start bg-light"></td>
+      <td data-role="user-cell" class="text-center bg-light"></td>
+      <td data-role="pass-cell" class="text-center bg-light"></td>
+      <td data-role="operating-cell" class="text-center bg-light"></td>
+      <td data-role="actions-cell" class="text-center bg-light">
+        <img src='' title='' class='master-status-btn'>
+        <a target=_blank href='' title='View Personal Report' data-role="report-link"><img src='/assets/images/icon/report.png'></a>
+        <img src='/assets/images/icon/move.png' title='Move current group' class='master-left-btn'>
+        <button class='modalInput master-edit-btn' rel='#prompt2' type='button'>
+          <img src='/assets/images/icon/edit.png' title='Edit Username and Password'>
         </button>
-        <img src='/assets/images/icon/bin.png' border=0 style='width:7%;cursor:pointer;' title='Delete this Sub Account from this Corporate Card' class='master-delete-btn'>
+        <img src='/assets/images/icon/bin.png' title='Delete this Sub Account from this Corporate Card' class='master-delete-btn'>
       </td>
     </tr>
   </template>
 
   <template id="master-member-name-table-template">
-    <table align=center width=100% cellpadding=0 cellspacing=0 border=0>
+    <table width=100% class="text-center table table-sm">
       <tr class='line_name'>
-        <td align=left width=50% data-role="fname">&nbsp;</td>
-        <td align=left width=50% data-role="lname">&nbsp;</td>
+        <td width=50% data-role="fname" class="text-start">&nbsp;</td>
+        <td width=50% data-role="lname" class="text-start">&nbsp;</td>
       </tr>
     </table>
   </template>
 
   <template id="master-member-name-empty-template">
-    <div align=center>
-      <font color=red face=tahoma size=2> - </font>
+    <div class="text-center">
+      <span class="text-danger"> - </span>
     </div>
   </template>
 
   <template id="master-member-user-template">
-    <font size=2 face=tahoma id=""><b data-role="text"></b></font>
+    <span><b data-role="text"></b></span>
   </template>
 
   <template id="master-member-pass-template">
-    <font size=2 face=tahoma><b data-role="text"></b></font>
+    <span><b data-role="text"></b></span>
   </template>
 
   <template id="master-pagination-link-template">
     <a href='#' class='master-page-link'>
-      <font size=2 face=tahoma></font>
+      <span></span>
     </a>
   </template>
 
@@ -340,13 +340,13 @@
   <div class='modal1' id='prompt1'>
     <h2> Rename Group</h2>
     <form id='rename-group-form' onsubmit='event.preventDefault();'>
-      <input type="text" name="rename" id="rename" style="width:220px; height:25px; border:1px solid #666; padding-left:5px;">
-      <input type="text" name="idrename" id="idrename" readonly style="border:none;color:#fff;" class="txt_rename">
+      <input type="text" name="rename" id="rename">
+      <input type="text" name="idrename" id="idrename" readonly class="txt_rename">
       <br><br>
-      <font id="txt_alert" style="color:red;display:none;"> ไม่สามารถเปลี่ยนชื่อ None Group ได้ </font>
+      <span> ไม่สามารถเปลี่ยนชื่อ None Group ได้ </span>
       <br>
-      <input type="submit" id="btn_rename" value="Save" class="btntest btn-save" style="cursor:pointer;" />
-      <input type="button" value="Cancel" class="close btntest btn-cancel" style="cursor:pointer;margin-left:10px;" />
+      <input type="submit" id="btn_rename" value="Save" class="btntest btn-save" />
+      <input type="button" value="Cancel" class="close btntest btn-cancel" />
     </form>
   </div>
 
@@ -354,14 +354,14 @@
   <div class='modal1' id='prompt2'>
     <h2> Edit Sub Account</h2>
     <form id='edit-sub-form' onsubmit='event.preventDefault();'>
-      <b>New Username :</b> <input type="text" name="rename-subAcc" id="rename-subAcc" style="width:195px; height:25px; border:1px solid #666;margin-left:16px;padding-left:5px;">
-      <input type="text" name="idre-sub" id="idre-sub" readonly style="border:none;color:#fff;width:70px;" class="txt_rename"><br><br>
-      <b>New Password :</b><input type="password" name="pass" id="pass" style="width:200px; height:25px; border:1px  solid #666;margin-left:22px;"><br><br>
-      <b>Re-New password :</b><input type="password" name="re-pass" id="re-pass" style="width:200px; height:25px; border:1px  solid #666;"><br><br><br>
-      <div id="imgload" style="display:none; margin-top:10px; margin-left:130px;"> <img src="/assets/images/image2/eol system/loading2.gif" /></div>
-      <div id="editerror" style="margin-top:-20px;float:right;height:30px;width:250px;"></div>
-      <input type="submit" id="btn_rename_sub" value="Save" class="btntest btn-save" style="cursor:pointer;margin-left:130px;" />
-      <input type="button" value="Cancel" class="close btntest btn-cancel" style="cursor:pointer;margin-left:30px;" />
+      <b>New Username :</b> <input type="text" name="rename-subAcc" id="rename-subAcc">
+      <input type="text" name="idre-sub" id="idre-sub" readonly class="txt_rename"><br><br>
+      <b>New Password :</b><input type="password" name="pass" id="pass"><br><br>
+      <b>Re-New password :</b><input type="password" name="re-pass" id="re-pass"><br><br><br>
+      <div id="imgload"> <img src="/assets/images/image2/eol system/loading2.gif" /></div>
+      <div id="editerror"></div>
+      <input type="submit" id="btn_rename_sub" value="Save" class="btntest btn-save" />
+      <input type="button" value="Cancel" class="close btntest btn-cancel" />
     </form>
   </div>
 </div>

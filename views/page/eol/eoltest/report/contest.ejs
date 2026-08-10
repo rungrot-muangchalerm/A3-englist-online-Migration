@@ -2,19 +2,19 @@
     <div id="report-app">
         <div id="report-focus-bar" class="report-focus-bar">
             <template id="report-focus-bar-template">
-                <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:5px">
-                    <tr height="30">
-                        <td align="right" width="15%">
-                            <font size="2" face="tahoma" color="brown"><b>Focus On &nbsp; : &nbsp; </b></font>
+                <table width="90%" class="text-center bg-light table table-sm">
+                    <tr height="30" class="align-middle">
+                        <td width="15%" class="text-end">
+                            <span class="text-warning"><b>Focus On &nbsp; : &nbsp; </b></span>
                         </td>
-                        <td align="left" width="85%">
-                            <font size="2" face="tahoma" color="brown"><b class="focus-name"></b></font>
+                        <td width="85%" class="text-start">
+                            <span class="text-warning"><b class="focus-name"></b></span>
                         </td>
                     </tr>
                 </table><br>
                 <div class="report-section-back-wrap">
                     <a class="back-link" href="/eol/eoltest/report<%= memberIdQuery %>">
-                        <font size="2" face="tahoma" color="blue"><b>&laquo; Back to Report Menu</b></font>
+                        <span class="text-primary"><b>&laquo; Back to Report Menu</b></span>
                     </a>
                 </div>
             </template>
@@ -24,102 +24,102 @@
             <map name="MapContest" id="MapContest">
                 <area shape="rect" coords="720,292,979,379" class="back-area" href="/eol/eoltest/report<%= memberIdQuery %>" target="_self" />
             </map>
-            <img src="/assets/images/image2/eol system/Report/report-contest.png" width="100%" usemap="#MapContest" style="border-radius:15px;">
-            <table align="center" width="60%" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" border="0" style="border-radius:15px;">
-                <tr height="50" valign="middle">
-                    <td align="right" width="13%">
-                        <font size="2" face="tahoma" color="black"><b>From &nbsp; : &nbsp;</b></font>
+            <img src="/assets/images/image2/eol system/Report/report-contest.png" width="100%" usemap="#MapContest">
+            <table width="60%" class="text-center bg-light table table-sm">
+                <tr height="50" class="align-middle">
+                    <td width="13%" class="text-end">
+                        <span class="text-dark"><b>From &nbsp; : &nbsp;</b></span>
                     </td>
-                    <td align="left" width="27%">&nbsp;<input id="popup_container_contest_a" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae"></td>
-                    <td align="right" width="13%">
-                        <font size="2" face="tahoma" color="black"><b>Until &nbsp; : &nbsp;</b></font>
+                    <td width="27%" class="text-start">&nbsp;<input id="popup_container_contest_a" type="text" value="" size="16"></td>
+                    <td width="13%" class="text-end">
+                        <span class="text-dark"><b>Until &nbsp; : &nbsp;</b></span>
                     </td>
-                    <td align="left" width="27%">&nbsp;<input id="popup_container_contest_b" type="text" value="" size="16" style="height:22px;border-radius:8px;border:1px solid #bbb2ae"></td>
-                    <td align="left" width="15%"><button type="button" class="btn-view btn-view-contest">&nbsp; View &nbsp;</button></td>
+                    <td width="27%" class="text-start">&nbsp;<input id="popup_container_contest_b" type="text" value="" size="16"></td>
+                    <td width="15%" class="text-start"><button type="button" class="btn-view btn-view-contest">&nbsp; View &nbsp;</button></td>
                 </tr>
-                <tr height="25">
-                    <td align="center" colspan="5">
-                        <font size="2" face="tahoma" color="red"><b>Format Date : Ex. 2010-12-31 </b></font>
+                <tr height="25" class="align-middle">
+                    <td colspan="5" class="text-center">
+                        <span class="text-danger"><b>Format Date : Ex. 2010-12-31 </b></span>
                     </td>
                 </tr>
             </table>
             <br><br>
             <div id="contest-items-wrap">
                 <template id="report-contest-empty-template">
-                    <table width="80%" align="center" cellpadding="5" cellspacing="0" border="0" style="background:#f0f0f0; border-radius:10px;">
-                        <tr height="50">
-                            <td align="center">
-                                <font size="2" face="tahoma" color="red"><b> - Didn't find any result - </b></font>
+                    <table width="80%" class="text-center table table-sm">
+                        <tr height="50" class="align-middle">
+                            <td class="text-center">
+                                <span class="text-danger"><b> - Didn't find any result - </b></span>
                             </td>
                         </tr>
                     </table><br><br>&nbsp;
                 </template>
                 <template id="report-contest-table-template">
-                    <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="tb-list-score-contest">
-                        <tr bgcolor="#f0f0f0"></tr>
+                    <table width="100%" class="tb-list-score-contest text-center table table-sm">
+                        <tr class="bg-light"></tr>
                     </table>
                 </template>
                 <template id="report-contest-row-template">
-                    <tr style="height:50px;">
-                        <td align="center"></td>
-                        <td style="min-width:100px;text-align:center;">
-                            <a class="contest-link" target="_blank" href="#" style="font-size:14px;" title=""></a>
+                    <tr>
+                        <td class="text-center"></td>
+                        <td>
+                            <a class="contest-link" target="_blank" href="#" title=""></a>
                         </td>
-                        <td style="min-width:100px;text-align:center;font-size:14px;">คะแนนที่ได้ : <br><b class="contest-percent"></b></td>
-                        <td style="width:70%;"><img src="/assets/2010/temp_images/icon_bar/bar_01.png" style="border-radius:5px; width:0%" height="25" class="contest-bar" title=""></td>
+                        <td>คะแนนที่ได้ : <br><b class="contest-percent"></b></td>
+                        <td><img src="/assets/2010/temp_images/icon_bar/bar_01.png" height="25" class="contest-bar" title=""></td>
                     </tr>
                 </template>
             </div>
         </div>
 
-        <div id="report-contest-detail" class="report-section" style="display:none;">
+        <div id="report-contest-detail" class="report-section">
             <div id="contest-detail-header">
                 <template id="report-detail-header-template">
-                    <table align="center" width="90%" cellpadding="5" cellspacing="0" border="0" bgcolor="#fff" style="border-radius:10px">
-                        <tr height="25">
-                            <td width="11%" rowspan="4" bgcolor="#e7e7e7" align="center"><img class="detail-avatar" src="" height="" onerror="this.onerror=null;this.src='/assets/2010/member_images/icon_user_01.jpg'"></td>
-                            <td width="22%" align="right">
-                                <font size="2" face="tahoma" color="black"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></font>
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr height="25" class="align-middle">
+                            <td width="11%" rowspan="4" class="text-center bg-light"><img class="detail-avatar" src="" height="" onerror="this.onerror=null;this.src='/assets/2010/member_images/icon_user_01.jpg'"></td>
+                            <td width="22%" class="text-end">
+                                <span class="text-dark"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp; </b></span>
                             </td>
-                            <td width="50%" align="left">
-                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-fname"></span> &nbsp; &nbsp; <span class="detail-lname"></span> </b></font>
+                            <td width="50%" class="text-start">
+                                <span class="text-dark"><b>&nbsp; <span class="detail-fname"></span> &nbsp; &nbsp; <span class="detail-lname"></span> </b></span>
                             </td>
                             <td width="17%" rowspan="4"></td>
                         </tr>
-                        <tr height="25">
-                            <td align="right">
-                                <font size="2" face="tahoma" color="black"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></font>
+                        <tr height="25" class="align-middle">
+                            <td class="text-end">
+                                <span class="text-dark"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp; </b></span>
                             </td>
-                            <td align="left">
-                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-date"></span> </b></font>
-                            </td>
-                        </tr>
-                        <tr height="25">
-                            <td align="right">
-                                <font size="2" face="tahoma" color="black"><b>ประเภทการทดสอบ &nbsp; : &nbsp; </b></font>
-                            </td>
-                            <td align="left">
-                                <font size="2" face="tahoma" color="black"><b> <span class="detail-section"></span> </b></font>
+                            <td class="text-start">
+                                <span class="text-dark"><b>&nbsp; <span class="detail-date"></span> </b></span>
                             </td>
                         </tr>
-                        <tr height="25">
-                            <td align="right">
-                                <font size="2" face="tahoma" color="black"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></font>
+                        <tr height="25" class="align-middle">
+                            <td class="text-end">
+                                <span class="text-dark"><b>ประเภทการทดสอบ &nbsp; : &nbsp; </b></span>
                             </td>
-                            <td align="left">
-                                <font size="2" face="tahoma" color="black"><b>&nbsp; <span class="detail-amount"></span> / <span class="detail-total"></span> &nbsp; คะแนน &nbsp;&nbsp;&nbsp; คิดเป็น &nbsp; <span class="detail-percent"></span> %</b></font>
+                            <td class="text-start">
+                                <span class="text-dark"><b> <span class="detail-section"></span> </b></span>
+                            </td>
+                        </tr>
+                        <tr height="25" class="align-middle">
+                            <td class="text-end">
+                                <span class="text-dark"><b>คะแนนที่ได้ &nbsp; : &nbsp; </b></span>
+                            </td>
+                            <td class="text-start">
+                                <span class="text-dark"><b>&nbsp; <span class="detail-amount"></span> / <span class="detail-total"></span> &nbsp; คะแนน &nbsp;&nbsp;&nbsp; คิดเป็น &nbsp; <span class="detail-percent"></span> %</b></span>
                             </td>
                         </tr>
                     </table><br>
                 </template>
 
                 <template id="report-type-tabs-template">
-                    <table align="center" width="90%" cellpadding="2" cellspacing="0" border="0">
-                        <tr height="30">
-                            <td width="15%" align="center"><a class="tab-link-1" href="#"><img src="/assets/images/icon/summary-01.png" border="0"></a></td>
-                            <td width="15%" align="center"><a class="tab-link-2" href="#"><img src="/assets/images/icon/check your answer-01.png" border="0"></a></td>
-                            <td width="15%" align="center"><a class="tab-link-3" href="#"><img src="/assets/images/icon/ranking-01.png" border="0"></a></td>
-                            <td width="70%" align="left" colspan="2">&nbsp;</td>
+                    <table width="90%" class="text-center table table-sm">
+                        <tr height="30" class="align-middle">
+                            <td width="15%" class="text-center"><a class="tab-link-1" href="#"><img src="/assets/images/icon/summary-01.png"></a></td>
+                            <td width="15%" class="text-center"><a class="tab-link-2" href="#"><img src="/assets/images/icon/check your answer-01.png"></a></td>
+                            <td width="15%" class="text-center"><a class="tab-link-3" href="#"><img src="/assets/images/icon/ranking-01.png"></a></td>
+                            <td width="70%" colspan="2" class="text-start">&nbsp;</td>
                         </tr>
                     </table><br>
                 </template>
@@ -127,22 +127,22 @@
 
             <div id="contest-detail-content">
                 <template id="report-contest-custom-question-template">
-                    <table width="90%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBDBDB" style="border-radius:10px;padding:10px;">
-                        <tr valign="top" height="25">
-                            <td width="2%" align="center">
-                                <font size="2" face="Verdana"><b class="q-no"></b></font>
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr height="25" class="align-middle">
+                            <td width="2%" class="text-center">
+                                <span><b class="q-no"></b></span>
                             </td>
                             <td width="98%">
-                                <font size="2" face="Verdana" class="q-text"></font>
+                                <span></span>
                             </td>
                         </tr>
                         <tbody class="answers-body"></tbody>
-                        <tr height="15"></tr>
+                        <tr height="15" class="align-middle"></tr>
                         <tr>
                             <td width="2%"></td>
                             <td width="98%" class="msg-cell"></td>
                         </tr>
-                        <tr height="10"></tr>
+                        <tr height="10" class="align-middle"></tr>
                         <tr>
                             <td class="icon-cell"></td>
                         </tr>
@@ -152,7 +152,7 @@
                     <tr>
                         <td width="2%"></td>
                         <td width="98%">
-                            <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <table width="100%" class="text-center table table-sm">
                                 <tr>
                                     <td width="75%"><input type="radio" class="answer-radio"> <span class="answer-text"></span></td>
                                 </tr>
@@ -161,80 +161,80 @@
                     </tr>
                 </template>
                 <template id="report-contest-msg-template">
-                    <font size="2" color="" class="msg-text"></font>
+                    <span></span>
                 </template>
                 <template id="report-contest-icon-template">
-                    <img src="" border="0" style="border-radius:10px;margin-left:35px;">
+                    <img src="">
                 </template>
 
                 <template id="report-test-question-template">
-                    <table width="90%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#DBDBDB" style="border-radius: 10px;">
-                        <tr height="10">
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr height="10" class="align-middle">
                             <td rowspan="6">&nbsp;&nbsp;</td>
                             <td colspan="2"></td>
                             <td rowspan="5">&nbsp;&nbsp;</td>
                         </tr>
-                        <tr class="relate-row" style="display:none;">
-                            <td width="100%" colspan="2" align="left" class="relate-cell"></td>
+                        <tr class="relate-row">
+                            <td width="100%" colspan="2" class="relate-cell text-start"></td>
                         </tr>
-                        <tr valign="top" height="25">
-                            <td width="5%" rowspan="3" align="center">
-                                <font size="2" face="Verdana"><b class="q-no"></b></font>
+                        <tr height="25" class="align-middle">
+                            <td width="5%" rowspan="3" class="text-center">
+                                <span><b class="q-no"></b></span>
                             </td>
                             <td width="95%">
-                                <font size="2" face="Verdana" class="q-text"></font>
+                                <span></span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <table width="100%" class="text-center table table-sm">
                                     <tr>
                                         <td width="75%">
-                                            <font size="2" face="Verdana">
+                                            <span>
                                                 <div class="answers"></div>
                                                 <br><b>
-                                                    <font color="blue" size="2" class="msg-a"></font>&nbsp;<span class="msg-b"></span>
+                                                    <span class="text-primary"></span>&nbsp;<span class="msg-b"></span>
                                                 </b>
-                                            </font>
+                                            </span>
                                         </td>
-                                        <td width="25%" align="center" class="icon-cell"></td>
+                                        <td width="25%" class="icon-cell text-center"></td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left">
-                                <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <td class="text-start">
+                                <table width="100%" class="text-center table table-sm">
                                     <tr>
-                                        <td align="left" width="80%">
-                                            <font face="Verdana" color="brown" size="2"><b>Tip : <span class="reason-name"></span></font></b>
+                                        <td width="80%" class="text-start">
+                                            <span class="text-warning"><b>Tip : <span class="reason-name"></span></span></b>
                                         </td>
-                                        <td align="center" width="20%">
+                                        <td width="20%" class="text-center">
                                             <a class="lesson-link" target="_blank" href="#">
                                                 <b>
-                                                    <font face="verdana" color="green" size="2">&raquo; Go to Lessons &laquo;</font>
+                                                    <span class="text-success">&raquo; Go to Lessons &laquo;</span>
                                                 </b>
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr class="description-row" style="display:none;">
-                                        <td align="left" width="80%">
-                                            <font face="Verdana" color="#e400e0" size="2"><b>Description : </font></b>
+                                    <tr class="description-row">
+                                        <td width="80%" class="text-start">
+                                            <span><b>Description : </span></b>
                                         </td>
-                                        <td align="right" width="20%">&nbsp;</td>
+                                        <td width="20%" class="text-end">&nbsp;</td>
                                     </tr>
-                                    <tr class="description-row" style="display:none;">
+                                    <tr class="description-row">
                                         <td colspan="2" width="100%">
-                                            <font size="2" face="tahoma" color="#e400e0" class="description-text"></font>
+                                            <span></span>
                                         </td>
                                     </tr>
-                                    <tr height="25">
-                                        <td colspan="2" align="center"></td>
+                                    <tr height="25" class="align-middle">
+                                        <td colspan="2" class="text-center"></td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
-                        <tr height="10">
+                        <tr height="10" class="align-middle">
                             <td></td>
                         </tr>
                     </table><br>
@@ -243,7 +243,7 @@
                     <span class="relate-text"></span><br>&nbsp;
                 </template>
                 <template id="report-test-relate-image-template">
-                    <img src="" width="300" border="5" style="border-color:eeeeee"><br>&nbsp;
+                    <img src="" width="300"><br>&nbsp;
                 </template>
                 <template id="report-test-relate-audio-template">
                     <audio controls="controls" preload="none">
@@ -251,47 +251,47 @@
                     </audio><br>&nbsp;
                 </template>
                 <template id="report-test-answer-template">
-                    <font size="2" face="Verdana" class="answer-text"></font><br>
+                    <span></span><br>
                 </template>
                 <template id="report-test-icon-template">
-                    <img src="" border="0" style="border-radius:10px;margin-left:35px;">
+                    <img src="">
                 </template>
                 <template id="report-test-msg-template">
-                    <font size="2" color="" class="msg-text"></font>
+                    <span></span>
                 </template>
 
                 <template id="report-chart-bar-row-template">
-                    <table align="center" width="90%" cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
-                        <tr height="40" valign="middle">
-                            <td width="20%" align="right">
-                                <font size="2" face="tahoma"><b><span class="bar-skill"></span></b></font>
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr height="40" class="align-middle">
+                            <td width="20%" class="text-end">
+                                <span><b><span class="bar-skill"></span></b></span>
                             </td>
-                            <td width="1%" align="center">
-                                <font size="2" face="tahoma">&nbsp;:&nbsp;</font>
+                            <td width="1%" class="text-center">
+                                <span>&nbsp;:&nbsp;</span>
                             </td>
-                            <td width="15%" align="right" bgcolor="eeeeee">
-                                <font size="2" face="tahoma">&nbsp; <span class="bar-percent"></span>% [<span class="bar-correct"></span>/<span class="bar-total"></span>]&nbsp;</font>
+                            <td width="15%" class="text-end bg-light">
+                                <span>&nbsp; <span class="bar-percent"></span>% [<span class="bar-correct"></span>/<span class="bar-total"></span>]&nbsp;</span>
                             </td>
-                            <td width="64%" align="left" bgcolor="eeeeee">
-                                <img src="" class="bar-image" height="25" width="" style="border-radius:5px;">
+                            <td width="64%" class="text-start bg-light">
+                                <img src="" class="bar-image" height="25" width="">
                             </td>
                         </tr>
                     </table>
                 </template>
                 <template id="report-chart-bar-avg-template">
-                    <table align="center" width="90%" cellpadding="0" cellspacing="1" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
-                        <tr height="40" valign="middle">
-                            <td width="20%" align="right">
-                                <font size="2" face="tahoma"><b>Average</b></font>
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr height="40" class="align-middle">
+                            <td width="20%" class="text-end">
+                                <span><b>Average</b></span>
                             </td>
-                            <td width="1%" align="center">
-                                <font size="2" face="tahoma">&nbsp;:&nbsp;</font>
+                            <td width="1%" class="text-center">
+                                <span>&nbsp;:&nbsp;</span>
                             </td>
-                            <td width="15%" align="right" bgcolor="eeeeee">
-                                <font size="2" face="tahoma"><b>&nbsp; <span class="avg-percent"></span>% [<span class="avg-correct"></span>/<span class="avg-total"></span>]&nbsp;</font>
+                            <td width="15%" class="text-end bg-light">
+                                <span><b>&nbsp; <span class="avg-percent"></span>% [<span class="avg-correct"></span>/<span class="avg-total"></span>]&nbsp;</span>
                             </td>
-                            <td width="64%" align="left" bgcolor="eeeeee">
-                                <img src="/assets/2010/temp_images/icon_bar/bar_08.png" height="25" class="avg-bar" width="" style="border-radius:5px">
+                            <td width="64%" class="text-start bg-light">
+                                <img src="/assets/2010/temp_images/icon_bar/bar_08.png" height="25" class="avg-bar" width="">
                             </td>
                         </tr>
                     </table>
@@ -300,19 +300,19 @@
                     <div class="weak-point-skills"></div>
                 </template>
                 <template id="report-weak-point-skill-template">
-                    <table align="center" name="tb_topic_test" width="90%" height="25" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                    <table name="tb_topic_test" width="90%" height="25" class="text-center bg-light table table-sm">
                         <tr>
                             <td><br>
-                                <font size="2" face="tahoma" color="gray"><b>&nbsp;The Following Skills are recommended for your future practice</b></font><br>&nbsp;
+                                <span class="text-secondary"><b>&nbsp;The Following Skills are recommended for your future practice</b></span><br>&nbsp;
                             </td>
                         </tr>
                     </table>
                 </template>
                 <template id="report-weak-point-skill-group-template">
-                    <table align="center" width="90%" height="25" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+                    <table width="90%" height="25" class="text-center bg-light table table-sm">
                         <tr>
                             <td>
-                                <font size="2" face="tahoma">&nbsp;<b class="skill-name"></b></font>
+                                <span>&nbsp;<b class="skill-name"></b></span>
                             </td>
                         </tr>
                     </table>
@@ -320,16 +320,16 @@
                     <br>
                 </template>
                 <template id="report-weak-point-item-template">
-                    <table align="center" width="90%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-bottom-right-radius:5px;border-bottom-left-radius:5px">
-                        <tr valign="top">
-                            <td align="left" width="30%">&nbsp;<font size="2" color="gray" face="tahoma"><b class="sskill-name"></b></font>
+                    <table width="90%" class="text-center bg-light table table-sm">
+                        <tr>
+                            <td width="30%" class="text-start">&nbsp;<span class="text-secondary"><b class="sskill-name"></b></span>
                             </td>
-                            <td align="center">
-                                <font size="2" color="gray" face="tahoma"><b>&nbsp;:&nbsp;&nbsp;</b></font>
+                            <td class="text-center">
+                                <span class="text-secondary"><b>&nbsp;:&nbsp;&nbsp;</b></span>
                             </td>
-                            <td align="left" width="70%">
+                            <td width="70%" class="text-start">
                                 <a class="detail-link" target="_blank" href="#">
-                                    <font size="2" color="red" face="tahoma"><b class="detail-name"></b></font>
+                                    <span class="text-danger"><b class="detail-name"></b></span>
                                 </a>
                             </td>
                         </tr>
@@ -337,113 +337,113 @@
                 </template>
 
                 <template id="report-view-group-empty-template">
-                    <table width="80%" align="center" cellpadding="5" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-radius:5px">
+                    <table width="80%" class="text-center bg-light table table-sm">
                         <tr>
-                            <td align="center"><br>
-                                <font size="2" face="tahoma" color="red"><b>&nbsp;- No Data -</b></font><br>&nbsp;
+                            <td class="text-center"><br>
+                                <span class="text-danger"><b>&nbsp;- No Data -</b></span><br>&nbsp;
                             </td>
                         </tr>
                     </table>
                 </template>
                 <template id="report-view-group-template">
-                    <table align="center" width="80%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:10px">
-                        <tr height="30">
-                            <td align="center" colspan="6">
-                                <font size="2" face="tahoma" color="brown"><b> View Group </b></font>
+                    <table width="80%" class="text-center bg-light table table-sm">
+                        <tr height="30" class="align-middle">
+                            <td colspan="6" class="text-center">
+                                <span class="text-warning"><b> View Group </b></span>
                             </td>
                         </tr>
-                        <tr height="30">
-                            <td align="right" width="15%">
-                                <font size="2" face="tahoma" color="blue"><b>Total&nbsp;:&nbsp;</b></font>
+                        <tr height="30" class="align-middle">
+                            <td width="15%" class="text-end">
+                                <span class="text-primary"><b>Total&nbsp;:&nbsp;</b></span>
                             </td>
-                            <td align="left" width="18%">
-                                <font size="2" face="tahoma" color="blue"><b class="vg-total"></b></font>
+                            <td width="18%" class="text-start">
+                                <span class="text-primary"><b class="vg-total"></b></span>
                             </td>
-                            <td align="right" width="15%">
-                                <font size="2" face="tahoma" color="red"><b>Min&nbsp;:&nbsp;</b></font>
+                            <td width="15%" class="text-end">
+                                <span class="text-danger"><b>Min&nbsp;:&nbsp;</b></span>
                             </td>
-                            <td align="left" width="18%">
-                                <font size="2" face="tahoma" color="red"><b class="vg-min"></b></font>
+                            <td width="18%" class="text-start">
+                                <span class="text-danger"><b class="vg-min"></b></span>
                             </td>
-                            <td align="right" width="15%">
-                                <font size="2" face="tahoma" color="green"><b>Max&nbsp;:&nbsp;</b></font>
+                            <td width="15%" class="text-end">
+                                <span class="text-success"><b>Max&nbsp;:&nbsp;</b></span>
                             </td>
-                            <td align="left" width="19%">
-                                <font size="2" face="tahoma" color="green"><b class="vg-max"></b></font>
+                            <td width="19%" class="text-start">
+                                <span class="text-success"><b class="vg-max"></b></span>
                             </td>
                         </tr>
-                        <tr height="30">
-                            <td align="right" colspan="2">
-                                <font size="2" face="tahoma" color="black"><b> Average&nbsp;:&nbsp; </b></font>
+                        <tr height="30" class="align-middle">
+                            <td colspan="2" class="text-end">
+                                <span class="text-dark"><b> Average&nbsp;:&nbsp; </b></span>
                             </td>
-                            <td align="left" colspan="4">
-                                <font size="2" face="tahoma" color="black"><b class="vg-average"></b></font>
+                            <td colspan="4" class="text-start">
+                                <span class="text-dark"><b class="vg-average"></b></span>
                             </td>
                         </tr>
                     </table><br>
-                    <table align="center" width="80%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:10px">
+                    <table width="80%" class="text-center bg-light table table-sm">
                         <tr>
                             <td>
-                                <table align="center" width="100%" cellpadding="5" cellspacing="1" border="0" class="distribution-table"></table>
+                                <table width="100%" class="distribution-table text-center table table-sm"></table>
                             </td>
                         </tr>
                     </table><br>
-                    <table align="center" width="80%" cellpadding="5" cellspacing="0" border="0" bgcolor="#f0f0f0" style="border-radius:10px">
-                        <tr height="30">
-                            <td align="center" colspan="5">
-                                <font size="2" face="tahoma" color="brown"><b> Ranking </b></font>
+                    <table width="80%" class="text-center bg-light table table-sm">
+                        <tr height="30" class="align-middle">
+                            <td colspan="5" class="text-center">
+                                <span class="text-warning"><b> Ranking </b></span>
                             </td>
                         </tr>
-                        <tr height="25" bgcolor="#aaaaaa">
-                            <td align="center" width="10%">
-                                <font size="2" face="tahoma" color="#ffffff"><b> No. </b></font>
+                        <tr height="25" class="bg-secondary text-white align-middle">
+                            <td width="10%" class="text-center">
+                                <span><b> No. </b></span>
                             </td>
-                            <td align="center" width="30%">
-                                <font size="2" face="tahoma" color="#ffffff"><b> First Name </b></font>
+                            <td width="30%" class="text-center">
+                                <span><b> First Name </b></span>
                             </td>
-                            <td align="center" width="30%">
-                                <font size="2" face="tahoma" color="#ffffff"><b> Last Name </b></font>
+                            <td width="30%" class="text-center">
+                                <span><b> Last Name </b></span>
                             </td>
-                            <td align="center" width="15%">
-                                <font size="2" face="tahoma" color="#ffffff"><b> Highest % </b></font>
+                            <td width="15%" class="text-center">
+                                <span><b> Highest % </b></span>
                             </td>
-                            <td align="center" width="15%">
-                                <font size="2" face="tahoma" color="#ffffff"><b> Amount </b></font>
+                            <td width="15%" class="text-center">
+                                <span><b> Amount </b></span>
                             </td>
                         </tr>
                         <tbody class="ranking-table"></tbody>
                     </table><br>
                 </template>
                 <template id="report-view-group-distribution-template">
-                    <tr height="30">
-                        <td align="left" width="20%">
-                            <font size="2" face="tahoma"><b class="dist-label"></b></font>
+                    <tr height="30" class="align-middle">
+                        <td width="20%" class="text-start">
+                            <span><b class="dist-label"></b></span>
                         </td>
-                        <td align="left" width="10%">
-                            <font size="2" face="tahoma"><b class="dist-amount"></b></font>
+                        <td width="10%" class="text-start">
+                            <span><b class="dist-amount"></b></span>
                         </td>
-                        <td align="left" width="60%">
-                            <img src="" class="dist-bar" height="25" style="border-radius:5px;">
+                        <td width="60%" class="text-start">
+                            <img src="" class="dist-bar" height="25">
                         </td>
-                        <td align="right" width="10%">
-                            <font size="2" face="tahoma"><b class="dist-ratio"></b></font>
+                        <td width="10%" class="text-end">
+                            <span><b class="dist-ratio"></b></span>
                         </td>
                     </tr>
                 </template>
                 <template id="report-view-group-ranking-template">
-                    <tr height="25" class="rank-row">
-                        <td align="center">
-                            <font size="2" face="tahoma" color="black"><b class="rank-order"></b></font>
+                    <tr height="25" class="rank-row align-middle">
+                        <td class="text-center">
+                            <span class="text-dark"><b class="rank-order"></b></span>
                         </td>
-                        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="2" face="tahoma" color="black"><b class="rank-fname"></b></font>
+                        <td class="text-start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-dark"><b class="rank-fname"></b></span>
                         </td>
-                        <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="2" face="tahoma" color="black"><b class="rank-lname"></b></font>
+                        <td class="text-start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-dark"><b class="rank-lname"></b></span>
                         </td>
-                        <td align="right">
-                            <font size="2" face="tahoma" color="black"><b class="rank-highest"></b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="text-end">
+                            <span class="text-dark"><b class="rank-highest"></b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </td>
-                        <td align="center">
-                            <font size="2" face="tahoma" color="black"><b class="rank-amount"></b></font>
+                        <td class="text-center">
+                            <span class="text-dark"><b class="rank-amount"></b></span>
                         </td>
                     </tr>
                 </template>

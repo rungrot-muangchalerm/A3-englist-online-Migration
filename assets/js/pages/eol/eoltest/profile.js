@@ -4,17 +4,17 @@
   }
   function showView(id) {
     const views = document.querySelectorAll('.eol-view');
-    views.forEach((v) => { v.style.display = 'none'; });
+    views.forEach((v) => { v.classList.add('d-none'); });
     const target = document.getElementById(id);
-    if (target) target.style.display = '';
+    if (target) target.classList.remove('d-none');
   }
   document.addEventListener('DOMContentLoaded', function () {
     const profileBtn = document.getElementById('reg_submit');
     const passMsg = document.getElementById('pass_msg');
     if (passMsg) {
       passMsg.addEventListener('click', () => {
-        document.getElementById('passForm').style.display = '';
-        document.getElementById('pass_msg').style.display = 'none';
+        document.getElementById('passForm').classList.remove('d-none');
+        document.getElementById('pass_msg').classList.add('d-none');
       });
     }
     if (profileBtn) {
@@ -24,8 +24,8 @@
         const row1 = document.getElementById('profileMsgRow');
         const row2 = document.getElementById('profileMsgRow2');
         msg.innerHTML = '';
-        row1.style.display = 'none';
-        row2.style.display = 'none';
+        row1.classList.add('d-none');
+        row2.classList.add('d-none');
         fetch('/api/eol/profile', {
           method: 'POST',
           credentials: 'include',
@@ -33,10 +33,10 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            row1.style.display = '';
-            row2.style.display = '';
+            row1.classList.remove('d-none');
+            row2.classList.remove('d-none');
             const message = data.data && data.data.message ? data.data.message : data.message;
-            msg.innerHTML = `<font size=2 face=tahoma color=${data.status === 200 ? 'green' : 'red'}>&nbsp;${htmlEscape(message).replace(/\n/g, '<br>&nbsp;')}</font>`;
+            msg.innerHTML = `<span>&nbsp;${htmlEscape(message).replace(/\n/g, '<br>&nbsp;')}</span>`;
             if (data.status === 200) {
               setTimeout(function () { window.location.reload(); }, 1200);
             }
@@ -53,8 +53,8 @@
         const spacer = document.getElementById('passwordMsgSpacer');
         const row = document.getElementById('passwordMsgRow');
         msg.innerHTML = '';
-        spacer.style.display = 'none';
-        row.style.display = 'none';
+        spacer.classList.add('d-none');
+        row.classList.add('d-none');
         fetch('/api/eol/password', {
           method: 'POST',
           credentials: 'include',
@@ -62,10 +62,10 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            spacer.style.display = '';
-            row.style.display = '';
+            spacer.classList.remove('d-none');
+            row.classList.remove('d-none');
             const message = data.data && data.data.message ? data.data.message : data.message;
-            msg.innerHTML = `<font size=2 face=tahoma color=${data.status === 200 ? 'green' : 'red'}><b>${htmlEscape(message)}</b></font>`;
+            msg.innerHTML = `<span><b>${htmlEscape(message)}</b></span>`;
             if (data.status === 200) {
               form.reset();
             }

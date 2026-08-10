@@ -1,6 +1,6 @@
 <div class="main-academic" id="admin-analyze-quiz-app">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -18,33 +18,33 @@
     <hr>
   </div>
 
-  <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-analyze-pages"></span>
+  <br><br>&nbsp;&nbsp; <span class="text-dark">Page : &nbsp;</span><span id="admin-analyze-pages"></span>
   <br><br>
 
   <div id="admin-analyze-list">
     <template id="admin-analyze-row-template">
-      <table align="center" cellpadding="0" cellspacing="0" width="100%" class="f-thai">
-        <tr height="25">
-          <td rowspan="2" width="10%" align="center" bgcolor="#aaaaaa">
-            <font size="2" color="white"><b data-role="no"></b></font>
+      <table width="100%" class="f-thai text-center table table-sm">
+        <tr height="25" class="align-middle">
+          <td rowspan="2" width="10%" class="text-center bg-secondary text-white">
+            <span class="text-white"><b data-role="no"></b></span>
           </td>
-          <td rowspan="2" width="10%" align="center" bgcolor="#f0f0f0">
-            <font size="2" color="blue">Quiz ID<br><br>[ <span data-role="question-id"></span> ]</font><br><br>
+          <td rowspan="2" width="10%" class="text-center bg-light">
+            <span class="text-primary">Quiz ID<br><br>[ <span data-role="question-id"></span> ]</span><br><br>
             <a data-role="detail-link" target="_blank"><button type="button" class="btn-set-relate">&nbsp;Details&nbsp;</button></a>
           </td>
-          <td width="80%" align="left" data-role="summary-cell">&nbsp;<font size="2" color="brown">[Answer Correct ID : <span data-role="correct-answer-id"></span>] - [All Answer : <span data-role="total-answers"></span>]</font>
+          <td width="80%" data-role="summary-cell" class="text-start">&nbsp;<span class="text-warning">[Answer Correct ID : <span data-role="correct-answer-id"></span>] - [All Answer : <span data-role="total-answers"></span>]</span>
           </td>
         </tr>
         <tr data-role="answer-panel">
           <td>
             <div data-role="answers"></div>
-            <table align="center" cellpadding="0" cellspacing="0" width="100%">
+            <table width="100%" class="text-center table table-sm">
               <tr>
-                <td width="30%" align="left">&nbsp;&nbsp;<font size="2" color="green">Unanswered</font>
+                <td width="30%" class="text-start">&nbsp;&nbsp;<span class="text-success">Unanswered</span>
                 </td>
-                <td width="30%" align="left">&nbsp;&nbsp;<font size="2" color="green">Amount : <span data-role="unanswered-amount"></span></font>
+                <td width="30%" class="text-start">&nbsp;&nbsp;<span class="text-success">Amount : <span data-role="unanswered-amount"></span></span>
                 </td>
-                <td width="40%" align="left">&nbsp;&nbsp;<font size="2" color="green">Percent : <span data-role="unanswered-percent"></span> %</font>
+                <td width="40%" class="text-start">&nbsp;&nbsp;<span class="text-success">Percent : <span data-role="unanswered-percent"></span> %</span>
                 </td>
               </tr>
             </table>
@@ -54,22 +54,22 @@
       <br>
     </template>
     <template id="admin-analyze-answer-template">
-      <table align="center" cellpadding="0" cellspacing="0" width="100%">
+      <table width="100%" class="text-center table table-sm">
         <tr>
-          <td width="30%" align="left">&nbsp;&nbsp;<font size="2" data-role="answer-id"></font>
+          <td width="30%" class="text-start">&nbsp;&nbsp;<span></span>
           </td>
-          <td width="30%" align="left">&nbsp;&nbsp;<font size="2" data-role="amount"></font>
+          <td width="30%" class="text-start">&nbsp;&nbsp;<span></span>
           </td>
-          <td width="40%" align="left">&nbsp;&nbsp;<font size="2" data-role="percent"></font>
+          <td width="40%" class="text-start">&nbsp;&nbsp;<span></span>
           </td>
         </tr>
       </table>
     </template>
   </div>
 
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <a href="#">
-      <font size="2" color="blue">Go to Top</font>
+      <span class="text-primary">Go to Top</span>
     </a>
   </div>
 </div>

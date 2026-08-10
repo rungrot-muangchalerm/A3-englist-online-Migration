@@ -1,90 +1,68 @@
-<style>
-  .text-red {
-    color: red;
-  }
-
-  .title_font_color {
-    color: #fb921d;
-    font-weight: bold;
-  }
-
-  #form_register div.row {
-    padding: 5px;
-    min-height: 45px;
-  }
-
-  .terms-box {
-    width: 100%;
-    height: 150px;
-    font-size: 14px;
-  }
-</style>
-
-<div class="container shadow_side" style="width:1150px !important;background:#ffffff;margin-top:15px;">
-  <div class="row kanit">
-    <div class="col-xs-12" style="padding:30px 50px;">
-      <center>
-        <div class="kanit" style="padding-top:20px;">
+<div class="container shadow">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center">
+        <div class="">
           <h2><strong>REGISTER</strong><br>
-            <span style="font-size:24px;color:#707070;">แบบฟอร์มสมาชิกใหม่</span>
+            <span>แบบฟอร์มสมาชิกใหม่</span>
           </h2>
-          <hr style="width:100px;border:2px solid #f7941d" />
+          <hr />
         </div>
-      </center>
+      </div>
 
-      <p class="text-red text-center bold" style="font-size:14px;">
+      <p class="text-danger text-center bold">
         Username และ Password จะต้องเป็น a-z, A-Z, 0-9 ความยาว 8-20 ตัวอักษรเท่านั้น<br>
         และต้องใส่ข้อมูลให้ครบในส่วนที่มีเครื่องหมาย *
       </p>
 
       <div class="row">
-        <div class="col-xs-12" id="form_register">
+        <div class="col-12" id="form_register">
           <form id="register-form" method="post" action="/api/auth/register">
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-6">
                 <div class="row">
-                  <div class="col-xs-4">Firstname<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="text" name="fname" class="form-control" placeholder="Firstname" required></div>
+                  <div class="col-4">Firstname<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="text" name="fname" class="form-control" placeholder="Firstname" required></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">Lastname<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="text" name="lname" class="form-control" placeholder="Lastname" required></div>
+                  <div class="col-4">Lastname<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="text" name="lname" class="form-control" placeholder="Lastname" required></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">Gender <b class="text-red"> *</b></div>
-                  <div class="col-xs-8">
-                    <input type="radio" name="gender" id="chkbox_male" value="1" checked /> <label for="chkbox_male" id="chkbox_male_text" style="cursor:pointer;font-weight:normal;">Male</label>
+                  <div class="col-4">Gender <b class="text-danger"> *</b></div>
+                  <div class="col-8">
+                    <input type="radio" name="gender" id="chkbox_male" value="1" checked /> <label for="chkbox_male" id="chkbox_male_text">Male</label>
                     &emsp;&emsp;&emsp;&emsp;
-                    <input type="radio" name="gender" id="chkbox_female" value="2" /> <label for="chkbox_female" id="chkbox_female_text" style="cursor:pointer;font-weight:normal;">Female</label>
+                    <input type="radio" name="gender" id="chkbox_female" value="2" /> <label for="chkbox_female" id="chkbox_female_text">Female</label>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">Phone<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="text" name="tel" class="form-control" required placeholder="Phone" maxlength="15"></div>
+                  <div class="col-4">Phone<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="text" name="tel" class="form-control" required placeholder="Phone" maxlength="15"></div>
                 </div>
               </div>
-              <div class="col-xs-6">
+              <div class="col-6">
                 <div class="row">
-                  <div class="col-xs-4">Username<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="text" name="user" class="form-control" maxlength="20" placeholder="Username" required></div>
+                  <div class="col-4">Username<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="text" name="user" class="form-control" maxlength="20" placeholder="Username" required></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">Password<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="password" name="pass" class="form-control" maxlength="20" placeholder="Password" required></div>
+                  <div class="col-4">Password<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="password" name="pass" class="form-control" maxlength="20" placeholder="Password" required></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">Date of Birth </div>
-                  <div class="col-xs-8"><input type="date" name="datebirth" class="form-control" required></div>
+                  <div class="col-4">Date of Birth </div>
+                  <div class="col-8"><input type="date" name="datebirth" class="form-control" required></div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-4">E-mail<b class="text-red"> *</b></div>
-                  <div class="col-xs-8"><input type="email" name="email" class="form-control" placeholder="email@example.com" required></div>
+                  <div class="col-4">E-mail<b class="text-danger"> *</b></div>
+                  <div class="col-8"><input type="email" name="email" class="form-control" placeholder="email@example.com" required></div>
                 </div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-12">
                 <br>ข้อกำหนดในการใช้งานระบบ<br>
                 <textarea class="terms-box form-control" readonly>
 1. การทดสอบในระบบ EOL System เป็นการทดสอบออนไลน์ จัดทำโดยบริษัทอิงลิชออนไลน์ จำกัด บริษัทจึงมีข้อตกลงเบื้องต้นขึ้น เพื่อท่านสมาชิกหรือท่านที่จะขอใช้บริการ โดยหลังจากที่อ่านจบแล้วให้ท่านกดปุ่ม "ยอมรับ" เพื่อเข้าสู่ขั้นตอนกรอกแบบฟอร์มสมาชิกใหม่ ขอให้ท่านอ่านและทำความเข้าใจโดยละเอียด เพื่อรักษาสิทธิประโยชน์ในการใช้บริการของส่วนรวม และส่วนตัวท่านเอง ในขั้นตอนการกรอกแบบฟอร์มใบสมัครนั้น สมาชิกจะต้องกรอกข้อมูลต่างๆ ตามความเป็นจริง
@@ -101,22 +79,22 @@
                 </textarea>
                 <br><br>
                 <input type="checkbox" id="check_accept" name="check_accept" />
-                <label for="check_accept" id="check_accept_text" style="cursor:pointer;font-weight:normal;">
-                  &emsp;<font style="color:red;">ข้าพเจ้ายอมรับเงื่อนไขในการใช้ระบบ (I accept the EOL terms of use)</font>
+                <label for="check_accept" id="check_accept_text">
+                  &emsp;<span>ข้าพเจ้ายอมรับเงื่อนไขในการใช้ระบบ (I accept the EOL terms of use)</span>
                 </label>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-12">
                 <div class="g-recaptcha" data-sitekey="<%= siteKey %>"></div>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-12 text-center">
+              <div class="col-12 text-center">
                 <br>
-                <button type="submit" id="btnregister" disabled class="btn btn-lg btn-info" style="border:0px; background:orange !important">Register</button>
+                <button type="submit" id="btnregister" disabled class="btn btn-lg btn-info">Register</button>
                 <br><br>
               </div>
             </div>

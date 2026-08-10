@@ -164,6 +164,15 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
+function colorClass(color) {
+  const value = String(color || '').toLowerCase();
+  if (value === 'red') return 'text-danger';
+  if (value === 'green') return 'text-success';
+  if (value === 'blue') return 'text-primary';
+  if (value === 'brown' || value === 'orange') return 'text-warning';
+  return 'text-dark';
+}
+
 function skillRows(row) {
   return row.skills.map(skill => `
     <tr>
@@ -172,15 +181,15 @@ function skillRows(row) {
       <td>${escapeHtml(skill.wrong)}</td>
       <td>${escapeHtml(skill.unanswered)}</td>
       <td>${escapeHtml(skill.score)} / ${escapeHtml(skill.total)}</td>
-      <td style="color:${escapeHtml(skill.level.color)}">${escapeHtml(skill.level.text)}</td>
-      <td style="color:${escapeHtml(skill.cefr.color)}">${escapeHtml(skill.cefr.text)}</td>
+      <td class="${colorClass(skill.level.color)}">${escapeHtml(skill.level.text)}</td>
+      <td class="${colorClass(skill.cefr.color)}">${escapeHtml(skill.cefr.text)}</td>
     </tr>`).join('');
 }
 
 function fullReportRows(rows) {
   return rows.map((row, index) => `
-    <table border="1" cellpadding="5" cellspacing="0">
-      <tr><th colspan="7">General English Proficiency Online Test</th></tr>
+    <table class="table table-bordered table-sm mb-3">
+      <tr><th colspan="7" class="bg-secondary text-white">General English Proficiency Online Test</th></tr>
       <tr><td>No.</td><td colspan="6">${escapeHtml(row.no || index + 1)}</td></tr>
       <tr><td>Member ID</td><td colspan="6">${escapeHtml(row.memberId)}</td></tr>
       <tr><td>Username</td><td colspan="6">${escapeHtml(row.username)}</td></tr>
@@ -204,20 +213,20 @@ function fullReportRows(rows) {
 
 function summaryReportRows(rows) {
   return `
-    <table border="1" cellpadding="5" cellspacing="0">
+    <table class="table table-bordered table-sm">
       <tr>
-        <th>No.</th>
-        <th>Member ID</th>
-        <th>Username</th>
-        <th>ผู้ทำแบบทดสอบ</th>
-        <th>วันที่ทำการทดสอบ</th>
-        <th>ตอบถูก</th>
-        <th>ตอบผิด</th>
-        <th>ไม่ได้ตอบ</th>
-        <th>Percent</th>
-        <th>Listening CEFR</th>
-        <th>Reading CEFR</th>
-        <th>Grammar CEFR</th>
+        <th class="bg-secondary text-white">No.</th>
+        <th class="bg-secondary text-white">Member ID</th>
+        <th class="bg-secondary text-white">Username</th>
+        <th class="bg-secondary text-white">ผู้ทำแบบทดสอบ</th>
+        <th class="bg-secondary text-white">วันที่ทำการทดสอบ</th>
+        <th class="bg-secondary text-white">ตอบถูก</th>
+        <th class="bg-secondary text-white">ตอบผิด</th>
+        <th class="bg-secondary text-white">ไม่ได้ตอบ</th>
+        <th class="bg-secondary text-white">Percent</th>
+        <th class="bg-secondary text-white">Listening CEFR</th>
+        <th class="bg-secondary text-white">Reading CEFR</th>
+        <th class="bg-secondary text-white">Grammar CEFR</th>
       </tr>
       ${rows.map((row, index) => `
         <tr>
@@ -248,12 +257,7 @@ async function buildExcelExport(kind, params) {
 <html>
 <head>
   <meta charset="utf-8">
-  <style>
-    body { font-family: Tahoma, Arial, sans-serif; font-size: 12px; }
-    table { border-collapse: collapse; margin-bottom: 14px; }
-    th { background: #aaaaaa; color: #ffffff; font-weight: bold; }
-    td, th { mso-number-format:"\\@"; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <h3>${escapeHtml(title)}</h3>
@@ -272,66 +276,54 @@ async function buildPdfExport(params) {
 <head>
   <meta charset="utf-8">
   <title>GEPOT PDF Report</title>
-  <style>
-    body { font-family: Tahoma, Arial, sans-serif; font-size: 12px; color: #000; }
-    table { border-collapse: collapse; margin: 0 auto 12px; width: 90%; }
-    td, th { padding: 5px; }
-    .summary { background: #f7f7f7; }
-    .head { background: #aaaaaa; color: #ffffff; font-weight: bold; text-align: center; }
-    .skill-cell { background: #e0e0e0; text-align: center; }
-    .page-break { page-break-after: always; }
-    @media print {
-      button { display: none; }
-      body { margin: 0; }
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div align="center"><button onclick="window.print()">Export To PDF</button></div><br>
+  <div class="text-center d-print-none"><button class="btn btn-primary" onclick="window.print()">Export To PDF</button></div><br>
   ${report.rows.map((row, index) => `
-    <table class="summary">
+    <table class="table table-sm table-light w-100">
       <tr>
-        <td width="5%" align="right"><b>${escapeHtml(row.no || index + 1)}</b></td>
-        <td width="20%" align="right"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp;</b></td>
-        <td width="75%" align="left"><b>&nbsp; ${escapeHtml(row.fullName)}</b></td>
+        <td width="5%" class="text-end"><b>${escapeHtml(row.no || index + 1)}</b></td>
+        <td width="20%" class="text-end"><b>ผู้ทำแบบทดสอบ &nbsp; : &nbsp;</b></td>
+        <td width="75%" class="text-start"><b>&nbsp; ${escapeHtml(row.fullName)}</b></td>
       </tr>
       <tr>
         <td></td>
-        <td align="right"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp;</b></td>
-        <td align="left"><b>&nbsp; ${escapeHtml(row.date)}</b></td>
+        <td class="text-end"><b>วันที่ทำการทดสอบ &nbsp; : &nbsp;</b></td>
+        <td class="text-start"><b>&nbsp; ${escapeHtml(row.date)}</b></td>
       </tr>
       <tr>
         <td></td>
-        <td align="right"><b>ประเภทการทดสอบ &nbsp; : &nbsp;</b></td>
-        <td align="left"><b>&nbsp; ${escapeHtml(row.testType)}</b></td>
+        <td class="text-end"><b>ประเภทการทดสอบ &nbsp; : &nbsp;</b></td>
+        <td class="text-start"><b>&nbsp; ${escapeHtml(row.testType)}</b></td>
       </tr>
       <tr>
         <td></td>
-        <td align="right"><b>คะแนนที่ได้ &nbsp; : &nbsp;</b></td>
-        <td align="left"><b>&nbsp; ตอบถูก ${escapeHtml(row.correct)} ข้อ &nbsp; &nbsp; ตอบผิด ${escapeHtml(row.wrong)} ข้อ &nbsp; &nbsp; ไม่ได้ตอบ ${escapeHtml(row.unanswered)} ข้อ &nbsp; &nbsp; คิดเป็น ${escapeHtml(row.percent)} %</b></td>
+        <td class="text-end"><b>คะแนนที่ได้ &nbsp; : &nbsp;</b></td>
+        <td class="text-start"><b>&nbsp; ตอบถูก ${escapeHtml(row.correct)} ข้อ &nbsp; &nbsp; ตอบผิด ${escapeHtml(row.wrong)} ข้อ &nbsp; &nbsp; ไม่ได้ตอบ ${escapeHtml(row.unanswered)} ข้อ &nbsp; &nbsp; คิดเป็น ${escapeHtml(row.percent)} %</b></td>
       </tr>
     </table>
-    <table>
+    <table class="table table-bordered table-sm w-100">
       <tr>
-        <td class="head" width="20%">ทักษะ ( Skill )</td>
-        <td class="head" colspan="3" width="45%">คะแนน ( Score )</td>
-        <td class="head">ระดับความสามารถ ( Level )</td>
-        <td class="head">CEFR</td>
+        <td class="bg-secondary text-white text-center fw-bold" width="20%">ทักษะ ( Skill )</td>
+        <td class="bg-secondary text-white text-center fw-bold" colspan="3" width="45%">คะแนน ( Score )</td>
+        <td class="bg-secondary text-white text-center fw-bold">ระดับความสามารถ ( Level )</td>
+        <td class="bg-secondary text-white text-center fw-bold">CEFR</td>
       </tr>
       ${row.skills.map(skill => `
         <tr>
-          <td class="skill-cell" rowspan="2"><b>${escapeHtml(skill.name)}</b></td>
-          <td class="skill-cell">ตอบถูก ${escapeHtml(skill.correct)} ข้อ</td>
-          <td class="skill-cell">ตอบผิด ${escapeHtml(skill.wrong)} ข้อ</td>
-          <td class="skill-cell">ไม่ได้ตอบ ${escapeHtml(skill.unanswered)} ข้อ</td>
-          <td class="skill-cell" rowspan="2" style="color:${escapeHtml(skill.level.color)}">${escapeHtml(skill.level.text)}</td>
-          <td class="skill-cell" rowspan="2" style="color:${escapeHtml(skill.cefr.color)}">${escapeHtml(skill.cefr.text)}</td>
+          <td class="bg-secondary-subtle text-center" rowspan="2"><b>${escapeHtml(skill.name)}</b></td>
+          <td class="bg-secondary-subtle text-center">ตอบถูก ${escapeHtml(skill.correct)} ข้อ</td>
+          <td class="bg-secondary-subtle text-center">ตอบผิด ${escapeHtml(skill.wrong)} ข้อ</td>
+          <td class="bg-secondary-subtle text-center">ไม่ได้ตอบ ${escapeHtml(skill.unanswered)} ข้อ</td>
+          <td class="bg-secondary-subtle text-center ${colorClass(skill.level.color)}" rowspan="2">${escapeHtml(skill.level.text)}</td>
+          <td class="bg-secondary-subtle text-center ${colorClass(skill.cefr.color)}" rowspan="2">${escapeHtml(skill.cefr.text)}</td>
         </tr>
         <tr>
-          <td class="skill-cell" colspan="3"><b>คิดเป็น ${escapeHtml(skill.score)} / ${escapeHtml(skill.total)} คะแนน</b></td>
+          <td class="bg-secondary-subtle text-center" colspan="3"><b>คิดเป็น ${escapeHtml(skill.score)} / ${escapeHtml(skill.total)} คะแนน</b></td>
         </tr>`).join('')}
     </table>
-    ${index + 1 < report.rows.length ? '<div class="page-break"></div>' : ''}`).join('')}
+    ${index + 1 < report.rows.length ? '<div class="d-print-block"></div>' : ''}`).join('')}
   <script>window.addEventListener('load', function () { window.print(); });</script>
 </body>
 </html>`,

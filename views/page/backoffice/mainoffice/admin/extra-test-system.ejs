@@ -1,6 +1,6 @@
 <div class="main-academic" id="admin-extra-test-app" data-page-mode="<%= pageMode %>" data-test-id="<%= typeof testId !== 'undefined' ? testId : '' %>">
   <br><br>
-  <div align="center" class="f-thai">
+  <div class="f-thai text-center">
     <br><br>
     <a href="/backoffice/mainoffice/admin/check-question-amount">[Check Question Amount]</a>&nbsp;&nbsp;
     <a href="/backoffice/mainoffice/admin/check-reason-index-details">[Check Reason Index and Details]</a>&nbsp;&nbsp;
@@ -19,193 +19,193 @@
   </div>
 
   <div id="admin-extra-test-list-panel">
-    <br><br>&nbsp;&nbsp; <font color="black" size="2" class="f-thai">Page : &nbsp;</font><span id="admin-extra-test-pages"></span><br>
+    <br><br>&nbsp;&nbsp; <span class="text-dark">Page : &nbsp;</span><span id="admin-extra-test-pages"></span><br>
     <br><br>
-    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#aaaaaa" class="f-thai">
-      <tr height="65">
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Extra ID</b></font>
+    <table width="100%" class="f-thai text-center bg-secondary text-white table table-sm">
+      <tr height="65" class="align-middle">
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Extra ID</b></span>
         </td>
-        <td width="30%" align="center">
-          <font size="2" color="white"><b>Name</b></font>
+        <td width="30%" class="text-center">
+          <span class="text-white"><b>Name</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Is Free</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Is Free</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Status</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Status</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Is EST</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Is EST</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Time(min)</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Time(min)</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>Quiz Amount</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>Quiz Amount</b></span>
         </td>
-        <td width="10%" align="center">
-          <font size="2" color="white"><b>&nbsp;</b></font>
+        <td width="10%" class="text-center">
+          <span class="text-white"><b>&nbsp;</b></span>
         </td>
       </tr>
     </table>
     <div id="admin-extra-test-list">
       <template id="admin-extra-test-row-template">
-        <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#f7f7f7" class="f-thai">
-          <tr height="20">
-            <td width="10%" align="center">
-              <font size="2" color="black" data-role="test-id"></font>
+        <table width="100%" class="f-thai text-center table-light table table-sm">
+          <tr height="20" class="align-middle">
+            <td width="10%" class="text-center">
+              <span class="text-dark"></span>
             </td>
-            <td width="30%" align="left"><a href="#" data-role="detail-link">
-                <font size="2" color="blue" data-role="name"></font>
+            <td width="30%" class="text-start"><a href="#" data-role="detail-link">
+                <span class="text-primary"></span>
               </a></td>
-            <td width="10%" align="center"><b data-role="free"></b></td>
-            <td width="10%" align="center"><b data-role="active"></b></td>
-            <td width="10%" align="center"><b data-role="est"></b></td>
-            <td width="10%" align="center">
-              <font size="2" color="black" data-role="time"></font>
+            <td width="10%" class="text-center"><b data-role="free"></b></td>
+            <td width="10%" class="text-center"><b data-role="active"></b></td>
+            <td width="10%" class="text-center"><b data-role="est"></b></td>
+            <td width="10%" class="text-center">
+              <span class="text-dark"></span>
             </td>
-            <td width="10%" align="center">
-              <font size="2" color="black" data-role="quiz-amount"></font>
+            <td width="10%" class="text-center">
+              <span class="text-dark"></span>
             </td>
-            <td width="10%" align="center">
-              <font size="2" color="red"><b>Delete</b></font>
+            <td width="10%" class="text-center">
+              <span class="text-danger"><b>Delete</b></span>
             </td>
           </tr>
         </table>
       </template>
     </div>
-    <div id="admin-extra-test-empty" align="center" class="f-thai" style="display:none;"><br><br><br>
-      <font size="2" color="red"> - Can't Found Extra Test List - </font><br><br><br>
+    <div id="admin-extra-test-empty" class="f-thai text-center"><br><br><br>
+      <span class="text-danger"> - Can't Found Extra Test List - </span><br><br><br>
     </div>
     <br>
-    <table align="center" width="50%" height="65" bgcolor="#f0f0f0" cellpadding="0" cellspacing="0" border="0" class="f-thai">
-      <tr height="50">
-        <td align="right">
-          <font size="2"><b>Name</b></font>
+    <table width="50%" height="65" class="f-thai text-center bg-light table table-sm">
+      <tr height="50" class="align-middle">
+        <td class="text-end">
+          <span><b>Name</b></span>
         </td>
-        <td align="center">
-          <font size="2"><b>&nbsp;:&nbsp;</b></font>
+        <td class="text-center">
+          <span><b>&nbsp;:&nbsp;</b></span>
         </td>
-        <td align="left"><input type="text" size="40" disabled></td>
-        <td align="center"><input type="button" value="&nbsp;Add etest&nbsp;" class="btn-add" disabled></td>
+        <td class="text-start"><input type="text" size="40" disabled></td>
+        <td class="text-center"><input type="button" value="&nbsp;Add etest&nbsp;" class="btn-add" disabled></td>
       </tr>
     </table>
   </div>
 
-  <div id="admin-extra-test-detail-panel" style="display:none;">
+  <div id="admin-extra-test-detail-panel">
     <br>
-    <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
-      <tr height="25">
-        <td align="left">&nbsp;&nbsp; <b><a href="/backoffice/mainoffice/admin/extra-test-system">
-              <font size="2">Extra Test List</font>
+    <table width="100%" class="f-thai text-center bg-light table table-sm">
+      <tr height="25" class="align-middle">
+        <td class="text-start">&nbsp;&nbsp; <b><a href="/backoffice/mainoffice/admin/extra-test-system">
+              <span>Extra Test List</span>
             </a>
-            <font size="2">&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</font>
-            <font size="2" id="admin-extra-test-detail-name"></font>
+            <span>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;</span>
+            <span></span>
           </b></td>
       </tr>
     </table>
     <br>
-    <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f0f0f0" class="f-thai">
-      <tr height="15">
+    <table width="100%" class="f-thai text-center bg-light table table-sm">
+      <tr height="15" class="align-middle">
         <td></td>
       </tr>
-      <tr height="25">
-        <td width="20%" align="right">
-          <font size="2"><b> Extra Test ID </b></font>
+      <tr height="25" class="align-middle">
+        <td width="20%" class="text-end">
+          <span><b> Extra Test ID </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td width="20%" align="left">
-          <font size="2" id="admin-extra-test-detail-id"></font>
+        <td width="20%" class="text-start">
+          <span></span>
         </td>
-        <td width="15%" align="right">
-          <font size="2"><b> Name </b></font>
+        <td width="15%" class="text-end">
+          <span><b> Name </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td align="left" colspan="4"><input type="text" size="40" id="admin-extra-test-name-input" disabled></td>
+        <td colspan="4" class="text-start"><input type="text" size="40" id="admin-extra-test-name-input" disabled></td>
       </tr>
-      <tr height="25">
-        <td width="15%" align="right">
-          <font size="2"><b> Time(Min) </b></font>
+      <tr height="25" class="align-middle">
+        <td width="15%" class="text-end">
+          <span><b> Time(Min) </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td width="20%" align="left"><input type="number" size="4" id="admin-extra-test-time-input" disabled></td>
-        <td width="15%" align="right">
-          <font size="2"><b> Test Amount </b></font>
+        <td width="20%" class="text-start"><input type="number" size="4" id="admin-extra-test-time-input" disabled></td>
+        <td width="15%" class="text-end">
+          <span><b> Test Amount </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td align="left"><input type="number" id="admin-extra-test-retest-input" size="4" disabled>
-          <font size="2"> &nbsp; [100 = infinity & Open All Times] </font>
+        <td class="text-start"><input type="number" id="admin-extra-test-retest-input" size="4" disabled>
+          <span> &nbsp; [100 = infinity & Open All Times] </span>
         </td>
-        <td align="right">
-          <font size="2"><b>Quiz Amount</b></font>
+        <td class="text-end">
+          <span><b>Quiz Amount</b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> : </b></font>
+        <td class="text-center">
+          <span><b> : </b></span>
         </td>
-        <td align="left">
-          <font size="2" id="admin-extra-test-quiz-amount"></font>
+        <td class="text-start">
+          <span></span>
         </td>
       </tr>
-      <tr height="25">
-        <td width="15%" align="right">
-          <font size="2"><b> Start </b></font>
+      <tr height="25" class="align-middle">
+        <td width="15%" class="text-end">
+          <span><b> Start </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td width="20%" align="left"><input type="datetime-local" size="20" id="admin-extra-test-start-input" disabled></td>
-        <td width="15%" align="right">
-          <font size="2"><b> Stop </b></font>
+        <td width="20%" class="text-start"><input type="datetime-local" size="20" id="admin-extra-test-start-input" disabled></td>
+        <td width="15%" class="text-end">
+          <span><b> Stop </b></span>
         </td>
-        <td align="center">
-          <font size="2"><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></font>
+        <td class="text-center">
+          <span><b> &nbsp;&nbsp;:&nbsp;&nbsp; </b></span>
         </td>
-        <td align="left" colspan="4"><input type="datetime-local" id="admin-extra-test-stop-input" size="20" disabled></td>
+        <td colspan="4" class="text-start"><input type="datetime-local" id="admin-extra-test-stop-input" size="20" disabled></td>
       </tr>
-      <tr height="15">
+      <tr height="15" class="align-middle">
         <td></td>
       </tr>
     </table>
     <br>
     <div id="admin-extra-test-question-list">
       <template id="admin-extra-test-question-template">
-        <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%" class="f-thai">
+        <table width="100%" class="f-thai text-center table table-sm">
           <tr>
             <td>
               <br>
-              <table align="center" width="100%" border="1" class="f-thai">
-                <tr align="middle">
-                  <td colspan="2" align="left">
-                    <font size="2" color="brown">&nbsp;&nbsp;<span data-role="path"></span></font>
+              <table width="100%" class="f-thai text-center table table-sm">
+                <tr class="text-center">
+                  <td colspan="2" class="text-start">
+                    <span class="text-warning">&nbsp;&nbsp;<span data-role="path"></span></span>
                   </td>
                 </tr>
-                <tr valign="top">
-                  <td align="center" rowspan="3" width="11%">
+                <tr>
+                  <td rowspan="3" width="11%" class="text-center">
                     <span data-role="question-id"></span>
                     <br><br><br>
-                    <font size="2" color="red"> [Cut Off] </font>
+                    <span class="text-danger"> [Cut Off] </span>
                     <br><br><b data-role="no"></b>
                   </td>
-                  <td align="left" width="90%">
-                    <font color="green">None Relate File or Passage</font>
+                  <td width="90%" class="text-start">
+                    <span class="text-success">None Relate File or Passage</span>
                   </td>
                 </tr>
                 <tr>
-                  <td align="left" width="100%" bgcolor="#dddddd">
-                    <font size="2" data-role="question-text"></font>
+                  <td width="100%" class="text-start bg-light">
+                    <span></span>
                   </td>
                 </tr>
                 <tr>
-                  <td align="left" width="90%"><br>
+                  <td width="90%" class="text-start"><br>
                     <div data-role="answers"></div>
                   </td>
                 </tr>

@@ -9,9 +9,9 @@
 
   function showView(id) {
     const views = document.querySelectorAll('.eol-view');
-    views.forEach((v) => { v.style.display = 'none'; });
+    views.forEach((v) => { v.classList.add('d-none'); });
     const target = document.getElementById(id);
-    if (target) target.style.display = '';
+    if (target) target.classList.remove('d-none');
   }
 
   function reloadCurrent(extra) {
@@ -147,7 +147,7 @@
         e.preventDefault();
         const imgLoad = document.getElementById('imgload');
         const editError = document.getElementById('editerror');
-        imgLoad.style.display = '';
+        imgLoad.classList.remove('d-none');
         editError.innerHTML = '';
         fetch('/api/eol/master/member/edit', {
           method: 'POST',
@@ -162,7 +162,7 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            imgLoad.style.display = 'none';
+            imgLoad.classList.add('d-none');
             if (data.status === 200) {
               window.location.reload();
             } else {
@@ -170,7 +170,7 @@
             }
           })
           .catch((err) => {
-            imgLoad.style.display = 'none';
+            imgLoad.classList.add('d-none');
             editError.innerHTML = htmlEscape(err.message || 'Network error');
           });
       });
@@ -268,9 +268,9 @@
               window.location.reload();
             } else {
               const message = data.data && data.data.message ? data.data.message : data.message;
-              document.getElementById('master-action-error-row').style.display = '';
-              document.getElementById('master-action-error-msg').style.display = '';
-              document.getElementById('master-action-error-end').style.display = '';
+              document.getElementById('master-action-error-row').classList.remove('d-none');
+              document.getElementById('master-action-error-msg').classList.remove('d-none');
+              document.getElementById('master-action-error-end').classList.remove('d-none');
               document.getElementById('master-action-error-text').textContent = message || 'Error';
             }
           });
@@ -311,10 +311,10 @@
           renameInput.value = name[0].trim();
           idrenameInput.value = idname;
           btnRename.disabled = false;
-          txtAlert.style.display = 'none';
+          txtAlert.classList.add('d-none');
         } else {
           btnRename.disabled = true;
-          txtAlert.style.display = '';
+          txtAlert.classList.remove('d-none');
         }
       });
     }
@@ -371,11 +371,11 @@
             while (rowsContainer.firstChild) rowsContainer.removeChild(rowsContainer.firstChild);
 
             if (!masterData.subMembers || masterData.subMembers.length === 0) {
-              emptyDiv.style.display = '';
-              listWrap.style.display = 'none';
+              emptyDiv.classList.remove('d-none');
+              listWrap.classList.add('d-none');
             } else {
-              emptyDiv.style.display = 'none';
-              listWrap.style.display = '';
+              emptyDiv.classList.add('d-none');
+              listWrap.classList.remove('d-none');
               const rowTemplate = document.getElementById('master-member-row-template');
               const nameTableTemplate = document.getElementById('master-member-name-table-template');
               const nameEmptyTemplate = document.getElementById('master-member-name-empty-template');
@@ -466,30 +466,30 @@
             }
 
             if (masterData.allowAdd) {
-              document.getElementById('master-add-section').style.display = '';
-              document.getElementById('master-no-add-section').style.display = 'none';
+              document.getElementById('master-add-section').classList.remove('d-none');
+              document.getElementById('master-no-add-section').classList.add('d-none');
             } else {
-              document.getElementById('master-add-section').style.display = 'none';
-              document.getElementById('master-no-add-section').style.display = '';
+              document.getElementById('master-add-section').classList.add('d-none');
+              document.getElementById('master-no-add-section').classList.remove('d-none');
             }
 
             const actionError = params.get('action_error');
             const addUser = params.get('add_user') || '';
             if (actionError) {
-              document.getElementById('master-action-error-row').style.display = '';
-              document.getElementById('master-action-error-msg').style.display = '';
-              document.getElementById('master-action-error-end').style.display = '';
+              document.getElementById('master-action-error-row').classList.remove('d-none');
+              document.getElementById('master-action-error-msg').classList.remove('d-none');
+              document.getElementById('master-action-error-end').classList.remove('d-none');
               document.getElementById('master-action-error-text').textContent = decodeURIComponent(actionError);
               document.getElementById('master-add-user').value = addUser;
             } else {
-              document.getElementById('master-action-error-row').style.display = 'none';
-              document.getElementById('master-action-error-msg').style.display = 'none';
-              document.getElementById('master-action-error-end').style.display = 'none';
+              document.getElementById('master-action-error-row').classList.add('d-none');
+              document.getElementById('master-action-error-msg').classList.add('d-none');
+              document.getElementById('master-action-error-end').classList.add('d-none');
             }
           } else if (account.type === 'personal' && account.usable) {
             showView('view-personal');
             if (account.corporate) {
-              document.getElementById('coporate').style.display = '';
+              document.getElementById('coporate').classList.remove('d-none');
             }
           } else {
             showView('view-expired');

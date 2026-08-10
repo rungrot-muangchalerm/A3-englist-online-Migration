@@ -9,15 +9,15 @@
     7: {
       titleEn: 'VIDEO LESSONS',
       titleTh: 'หัวข้อบทเรียนไฟล์วิดีโอ',
-      bg: '#e6916c',
-      border: '#027EA0',
+      bgClass: 'bg-warning',
+      borderClass: 'bg-info',
       icon: '/assets/images/icon/icon_video_lesson.png',
     },
     8: {
       titleEn: 'EOL LESSONS',
       titleTh: 'หัวข้อเนื้อหาบทเรียน',
-      bg: '#027EA0',
-      border: '#e6916c',
+      bgClass: 'bg-info',
+      borderClass: 'bg-warning',
       icon: '/assets/images/icon/icon_content_lesson.png',
     },
   };
@@ -40,12 +40,12 @@
 
   function show(id) {
     const el = document.getElementById(id);
-    if (el) el.style.display = '';
+    if (el) el.classList.remove('d-none');
   }
 
   function hide(id) {
     const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
+    if (el) el.classList.add('d-none');
   }
 
   function showLimited() {
@@ -59,7 +59,10 @@
     const cfg = CONFIG[skill];
     if (!cfg) return;
     const banner = document.getElementById(`${prefix}-banner`);
-    if (banner) banner.style.background = cfg.bg;
+    if (banner) {
+      banner.classList.remove('bg-warning', 'bg-info');
+      banner.classList.add(cfg.bgClass);
+    }
     const icon = document.getElementById(`${prefix}-icon`);
     if (icon) icon.src = cfg.icon;
     const titleEn = document.getElementById(`${prefix}-title-en`);
@@ -67,7 +70,10 @@
     const titleTh = document.getElementById(`${prefix}-title-th`);
     if (titleTh) titleTh.textContent = cfg.titleTh;
     const border = document.getElementById(`${prefix}-border`);
-    if (border) border.style.background = cfg.border;
+    if (border) {
+      border.classList.remove('bg-warning', 'bg-info');
+      border.classList.add(cfg.borderClass);
+    }
     const headerTitle = document.getElementById(`${prefix}-header-title`);
     if (headerTitle) headerTitle.textContent = cfg.titleEn;
   }
@@ -77,22 +83,22 @@
     container.innerHTML = '';
 
     if (!items || items.length === 0) {
-      container.innerHTML = '<p align="center"><font size="2" face="tahoma" color="red"><b>- No Data -</b></font></p>';
+      container.innerHTML = '<p class="text-center"><span class="text-danger"><b>- No Data -</b></span></p>';
       return;
     }
 
-    const html = ['<table class="topic-table" cellpadding="0" cellspacing="0" border="0">'];
+    const html = ['<table class="table table-sm topic-table">'];
     items.forEach((item, idx) => {
       const num = idx + 1;
       const name = skill === 8 ? item.lessonName : item.topicName;
       const id = skill === 8 ? item.lessonId : item.topicId;
       const link = `/corporate/ecop?skill_id=${skill}&level_id=${levelId || 2}&topic_id=${id}`;
       html.push(`
-        <tr valign="top" height="25" style="line-height:30px;">
-          <td align="center" width="5%"><font size="3" face="tahoma" color="black"><b>${num}</b></font></td>
-          <td align="left" width="80%">
+        <tr class="align-top">
+          <td width="5%" class="text-center"><span class="text-dark"><b>${num}</b></span></td>
+          <td width="80%" class="text-start">
             <a href="${link}" title="${escapeHtml(name)}">
-              <font size="3" face="tahoma" color="black"><b>${escapeHtml(name)}</b></font>
+              <span class="text-dark"><b>${escapeHtml(name)}</b></span>
             </a>
           </td>
         </tr>
@@ -149,7 +155,7 @@
     api(path)
       .then((data) => {
         if (data.status !== 200) {
-          document.getElementById('topic-detail-content').innerHTML = '<p align="center"><font size="2" face="tahoma" color="red"><b>- Data not found -</b></font></p>';
+          document.getElementById('topic-detail-content').innerHTML = '<p class="text-center"><span class="text-danger"><b>- Data not found -</b></span></p>';
           return;
         }
         const d = data.data;
@@ -157,12 +163,14 @@
         const content = skillId === 8 ? d.lessonContent : d.topicDetail;
         document.getElementById('topic-detail-content').innerHTML = `
           <div class="topic-detail-title"><b>${escapeHtml(title)}</b></div>
-          <div style="background:#f4b083; border-radius:5px; height:4px; margin-bottom:10px;"></div>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-warning w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
           <div>${content || ''}</div>
         `;
       })
       .catch(() => {
-        document.getElementById('topic-detail-content').innerHTML = '<p align="center"><font size="2" face="tahoma" color="red"><b>- Error loading data -</b></font></p>';
+        document.getElementById('topic-detail-content').innerHTML = '<p class="text-center"><span class="text-danger"><b>- Error loading data -</b></span></p>';
       });
   }
 

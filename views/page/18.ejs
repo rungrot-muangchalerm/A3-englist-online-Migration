@@ -1,98 +1,23 @@
-<style>
-  .teoc-header {
-    background-color: #f7941d;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-  }
-
-  .round-panel {
-    border: 2px solid #f7941d;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-
-  .round-panel>.panel-heading {
-    background-color: #f7941d;
-    color: #ffffff;
-    text-align: center;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .badge-rank-1 {
-    background-color: #ffd700 !important;
-    color: #000000 !important;
-  }
-
-  .badge-rank-2 {
-    background-color: #c0c0c0 !important;
-    color: #000000 !important;
-  }
-
-  .badge-rank-3 {
-    background-color: #cd7f32 !important;
-    color: #ffffff !important;
-  }
-
-  .province-card {
-    border: 1px solid #dddddd;
-    border-radius: 6px;
-    padding: 12px;
-    text-align: center;
-    margin-bottom: 15px;
-    transition: transform 0.2s;
-  }
-
-  .province-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .province-unknown {
-    border-color: #f0ad4e;
-    background-color: #fcf8e3;
-  }
-
-  .province-count {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f7941d;
-  }
-
-  .stats-badge {
-    background-color: #6c757d;
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-  }
-
-  .round-highlight {
-    box-shadow: 0 0 0 4px rgba(247, 148, 29, 0.5);
-  }
-</style>
-
-<div class="container" style="width:1150px !important; margin-top:15px; padding-bottom:20px;">
+<div class="container">
 
   <!-- Header -->
   <div class="row">
-    <div class="col-xs-12 teoc-header text-center">
-      <h2 class="kanit" style="margin-top:0;">
+    <div class="col-12 teoc-header text-center">
+      <h2>
         <i class="fa fa-trophy"></i>
         ผู้ผ่านขั้นกลางของระบบ EOL System (Intermediate) หรือผ่าน 18 อรหันต์
       </h2>
-      <p class="lead mb-0" style="margin-bottom:0;">Thailand English Online Contest 2025</p>
+      <p class="lead mb-0">Thailand English Online Contest 2025</p>
     </div>
   </div>
 
   <!-- App container -->
-  <div id="teoc-app" class="kanit">กำลังโหลด...</div>
+  <div id="teoc-app">กำลังโหลด...</div>
 
   <!-- Info box -->
-  <div class="alert alert-warning" style="margin-top:20px;">
+  <div class="alert alert-warning">
     <h4><i class="fa fa-info-circle"></i> ข้อมูลและเกณฑ์การแข่งขัน</h4>
-    <hr style="border-top-color:#f0ad4e;">
+    <hr>
     <ul class="mb-0">
       <li>รายชื่อผู้ผ่านด่านระดับ <strong>Intermediate</strong> (Level 3 ขึ้นไป)</li>
       <li>คะแนนผ่านเกณฑ์: <strong>50%</strong> ขึ้นไป</li>
@@ -109,20 +34,20 @@
 </div>
 
 <template id="teoc-round-template">
-  <div class="panel panel-warning round-panel" id="">
-    <div class="panel-heading">
-      <h3 class="panel-title" style="margin:0;">
+  <div class="card border-warning round-panel" id="">
+    <div class="card-header">
+      <h3 class="card-title">
         <i class="round-icon fa"></i> <span class="round-name"></span>
       </h3>
       <small class="round-subtitle"></small>
     </div>
-    <div class="panel-body round-body"></div>
+    <div class="card-body round-body"></div>
   </div>
 </template>
 
 <template id="teoc-empty-template">
-  <div class="alert alert-secondary text-center" style="padding:30px;">
-    <i class="fa fa-inbox fa-4x" style="opacity:0.5;"></i>
+  <div class="alert alert-secondary text-center">
+    <i class="fa fa-inbox fa-4x"></i>
     <h5>ยังไม่มีผู้ผ่านด่านในรอบนี้</h5>
     <p class="mb-0">รอติดตามผลการแข่งขันในรอบนี้</p>
   </div>
@@ -130,19 +55,19 @@
 
 <template id="teoc-content-template">
   <div class="text-center mb-4">
-    <span class="badge" style="background-color:#337ab7; font-size:18px; padding:10px 16px;">
+    <span class="badge">
       <i class="fa fa-users"></i>
-      ผู้ผ่านด่านทั้งหมด: <strong style="font-size:24px;" class="round-total"></strong> คน
+      ผู้ผ่านด่านทั้งหมด: <strong class="round-total"></strong> คน
     </span>
   </div>
 
-  <div class="panel panel-default" style="border-color:#f0ad4e;">
-    <div class="panel-body">
+  <div class="card border-secondary">
+    <div class="card-body">
       <form method="GET" action="/18" class="round-search-form">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="input-group input-group-lg">
-              <span class="input-group-addon" style="background-color:#337ab7; color:#ffffff;">
+              <span class="input-group-addon">
                 <i class="fa fa-search"></i>
               </span>
               <input type="text" name="search" class="form-control search-input" placeholder="ค้นหาชื่อ-นามสกุล หรือ รหัสสมาชิก..." value="">
@@ -154,7 +79,7 @@
                 <span class="clear-button-container"></span>
               </span>
             </div>
-            <div class="mt-2 text-center text-muted" style="margin-top:8px;">
+            <div class="mt-2 text-center text-muted">
               <small><i class="fa fa-info-circle"></i> พิมพ์แล้วกด Enter หรือกดปุ่ม "ค้นหา" เพื่อค้นหาในรอบนี้</small>
             </div>
             <div class="search-alert-container"></div>
@@ -165,35 +90,35 @@
   </div>
 
   <div class="province-summary-container">
-    <h5 class="text-center fw-bold mb-3 province-summary-title" style="display:none;">
+    <h5 class="text-center fw-bold mb-3 province-summary-title">
       <i class="fa fa-bar-chart"></i> สรุปจำนวนผู้ผ่านด่านแยกตามจังหวัด
     </h5>
-    <div class="row province-summary-row" style="display:none;"></div>
+    <div class="row province-summary-row"></div>
   </div>
 
   <h5 class="text-center fw-bold mb-3 mt-4">
     <i class="fa fa-list-ul"></i> รายชื่อผู้ผ่านด่านทั้งหมด
   </h5>
   <div class="table-responsive">
-    <table class="table table-striped table-hover table-bordered round-results-table">
+    <table class="table table-striped table-hover table-bordered round-results-table table-sm">
       <thead class="thead-inverse">
         <tr class="text-center">
-          <th style="width:10%;">อันดับ</th>
-          <th style="width:15%;">รหัสสมาชิก</th>
-          <th style="width:25%;">ชื่อ-นามสกุล</th>
-          <th style="width:15%;">จังหวัด</th>
-          <th style="width:15%;">คะแนน</th>
-          <th style="width:20%;">วันที่สอบ</th>
+          <th>อันดับ</th>
+          <th>รหัสสมาชิก</th>
+          <th>ชื่อ-นามสกุล</th>
+          <th>จังหวัด</th>
+          <th>คะแนน</th>
+          <th>วันที่สอบ</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
-    <p class="text-muted mt-2 tie-note" style="font-size:12px; display:none;">
+    <p class="text-muted mt-2 tie-note">
       <i class="fa fa-info-circle"></i> * หมายถึง อันดับร่วม (คะแนนเท่ากัน)
     </p>
   </div>
 
-  <div class="text-end" style="margin-top:15px; text-align:right;">
+  <div class="text-end">
     <span class="stats-badge">
       <i class="fa fa-users"></i>
       จำนวนผู้ผ่านด่าน: <span class="round-total-bottom"></span> คน
@@ -204,10 +129,10 @@
 <template id="teoc-province-card-template">
   <div class="col-md-3 col-sm-6">
     <div class="province-card">
-      <h6 class="province-title" style="margin-top:0;">
+      <h6 class="province-title">
         <i class="fa province-icon"></i> <span class="province-name"></span>
       </h6>
-      <p style="margin-bottom:0;">
+      <p>
         <span class="province-count-value"></span> <small>คน</small>
       </p>
     </div>
@@ -217,17 +142,17 @@
 <template id="teoc-result-row-template">
   <tr>
     <td class="text-center align-middle">
-      <span class="badge rank-badge" style="font-size:14px; padding:8px; border-radius:50%;"></span>
+      <span class="badge rank-badge"></span>
     </td>
     <td class="text-center align-middle">
-      <span class="badge member-id-badge" style="background-color:#5bc0de; color:#000000;"></span>
+      <span class="badge member-id-badge"></span>
     </td>
     <td class="align-middle"><strong class="member-name"></strong></td>
     <td class="text-center align-middle">
       <i class="fa fa-map-marker text-danger"></i> <span class="member-province"></span>
     </td>
     <td class="text-center align-middle">
-      <span class="badge score-badge" style="background-color:#5cb85c; font-size:14px;"></span>
+      <span class="badge score-badge"></span>
     </td>
     <td class="text-center align-middle text-muted">
       <i class="fa fa-calendar"></i> <span class="exam-date"></span>
@@ -236,18 +161,18 @@
 </template>
 
 <template id="teoc-search-alert-success-template">
-  <div class="alert alert-success mt-3" style="margin-bottom:0;">
-    <h5 style="margin-top:0;">
+  <div class="alert alert-success mt-3">
+    <h5>
       <i class="fa fa-check-circle"></i> พบผลการค้นหา:
-      <strong style="font-size:24px;" class="found-count"></strong> คน
+      <strong class="found-count"></strong> คน
     </h5>
     <small>คำค้นหา: "<strong class="search-term"></strong>" (จากทั้งหมด <span class="total-count"></span> คน)</small>
   </div>
 </template>
 
 <template id="teoc-search-alert-warning-template">
-  <div class="alert alert-warning mt-3" style="margin-bottom:0;">
-    <h5 style="margin-top:0;">
+  <div class="alert alert-warning mt-3">
+    <h5>
       <i class="fa fa-exclamation-triangle"></i> ไม่พบผลการค้นหา
     </h5>
     <small>ไม่พบข้อมูลที่ตรงกับ "<strong class="search-term"></strong>" ในรอบนี้</small>
@@ -255,5 +180,5 @@
 </template>
 
 <template id="teoc-clear-button-template">
-  <a href="/18" class="btn btn-default"><i class="fa fa-times"></i> ล้าง</a>
+  <a href="/18" class="btn btn-secondary"><i class="fa fa-times"></i> ล้าง</a>
 </template>

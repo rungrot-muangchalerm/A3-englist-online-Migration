@@ -4,162 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><%= typeof title !== 'undefined' ? title : 'หลักสูตรเรียนภาษาอังกฤษออนไลน์ 1 ปี' %></title>
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/1year/1 year icon.ico">
-  <link rel="stylesheet" href="/assets/bootstrap/css/1yearcontent.css">
-  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/LateralOnScrollSliding/css/demo.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/bootstrap/LateralOnScrollSliding/css/style.css" />
-  <style type="text/css">
-    html {
-      overflow-x: hidden;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= typeof title !=='undefined' ? title : 'หลักสูตรเรียนภาษาอังกฤษออนไลน์ 1 ปี' %>
+  </title>
 
-    body {
-      width: 100% !important;
-      margin: 0 auto !important;
-      box-sizing: border-box;
-    }
-
-    .fontsub {
-      font-size: 18px;
-    }
-
-    .fontsub a {
-      font-size: 18px;
-    }
-
-    ul.st_navigation {
-      position: absolute;
-      width: 100%;
-      top: 140px;
-      left: -300px;
-      list-style: none;
-    }
-
-    ul.st_navigation li {
-      float: left;
-      clear: both;
-      margin-bottom: 8px;
-      position: relative;
-      width: 100%;
-    }
-
-    ul.st_navigation li span.st_link {
-      background-color: #000;
-      float: left;
-      position: relative;
-      line-height: 50px;
-      padding: 0px 20px;
-      -moz-box-shadow: 0px 0px 2px #000;
-      -webkit-box-shadow: 0px 0px 2px #000;
-      box-shadow: 0px 0px 2px #000;
-    }
-
-    ul.st_navigation li span.st_arrow_down,
-    ul.st_navigation li span.st_arrow_up {
-      position: absolute;
-      margin-left: 15px;
-      width: 40px;
-      height: 50px;
-      cursor: pointer;
-      -moz-box-shadow: 0px 0px 2px #000;
-      -webkit-box-shadow: 0px 0px 2px #000;
-      box-shadow: 0px 0px 2px #000;
-    }
-
-    .st_wrapper {
-      position: absolute;
-      width: 100%;
-      height: 126px;
-      overflow-y: hidden;
-      top: 90px;
-      left: 0px;
-    }
-
-    .st_thumbs {
-      height: 60px;
-      margin: 0;
-      position: fixed;
-      left: 55px;
-      top: 86%;
-      width: 93%;
-      z-index: 100;
-    }
-
-    .st_thumbs img {
-      float: left;
-      margin: 3px 3px 0px 0px;
-      cursor: pointer;
-      -moz-box-shadow: 1px 1px 5px #000;
-      -webkit-box-shadow: 1px 1px 5px #000;
-      box-shadow: 1px 1px 5px #000;
-      opacity: 0.7;
-      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
-    }
-
-    .st_thumbs a {
-      background: rgba(0, 0, 0, 0.2);
-      font-size: 16px;
-      font-weight: bold;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      margin: 5px;
-      float: left;
-      border-radius: 50%;
-      display: block;
-      text-align: center;
-      -webkit-transition: background 0.2s linear;
-      -moz-transition: background 0.2s linear;
-      -o-transition: background 0.2s linear;
-      -ms-transition: background 0.2s linear;
-      transition: background 0.2s linear;
-    }
-
-    .st_thumbs a:hover {
-      margin-top: -5px;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      font-size: 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.9);
-      color: #fff;
-    }
-
-    .container {
-      overflow: hidden;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="shortcut icon" type="image/x-icon" href="/assets/images/image2/1year/1 year icon.ico">
 </head>
 
 <body>
   <img src="/assets/images/image2/1year/lessons(bg)-01.jpg" class="bg">
 
-  <div class="header" style="position:relative; text-align:center;">
+  <div class="header">
     <a href="/1yc" title="Home">
-      <img src="/assets/images/image2/1year/button/home-08.png" width="50" height="50"
-        style="position:absolute; z-index:250; left:50%; margin-left:350px; top:5px;">
+      <img src="/assets/images/image2/1year/button/home-08.png" width="50" height="50">
     </a>
     <a id="yc-logout-link" href="#" title="logout">
-      <img src="/assets/images/image2/1year/button/log-out.png" width="50" height="50"
-        style="position:absolute; z-index:250; left:50%; margin-left:420px; top:5px;">
+      <img src="/assets/images/image2/1year/button/log-out.png" width="50" height="50">
     </a>
-    <center>
+    <div class="text-center">
       <img src="/assets/images/image2/1year/bg-1-year-head.jpg">
-    </center>
+    </div>
   </div>
 
   <div class="container">
     <div class="header">
-      <center>
+      <div class="text-center">
         <img src="/assets/images/image2/1year/bg-1-year-head.jpg">
-      </center>
+      </div>
     </div>
 
-    <center>
-      <img src="/assets/images/image2/1year/name-head.jpg"
-        style="border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;">
+    <div class="text-center">
+      <img src="/assets/images/image2/1year/name-head.jpg">
 
       <ul id="st_nav" class="st_navigation">
         <li class="album">
@@ -170,15 +47,15 @@
           </div>
         </li>
       </ul>
-    </center>
+    </div>
 
     <%- body %>
   </div>
 
   <div>
-    <center style="margin-bottom:10px; margin-top:-3px;">
+    <div class="text-center">
       <b>Copyright © 2024 By English Online Co.,Ltd. All rights reserved.</b>
-    </center>
+    </div>
   </div>
 
   <script src="/assets/bootstrap/LateralOnScrollSliding/js/modernizr.custom.js"></script>
@@ -413,9 +290,10 @@
       window.initYcTimeline();
     });
   </script>
-  <% if (typeof script !== 'undefined' && script) { %>
+  <% if (typeof script !=='undefined' && script) { %>
     <script src="<%= script %>"></script>
-  <% } %>
+    <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

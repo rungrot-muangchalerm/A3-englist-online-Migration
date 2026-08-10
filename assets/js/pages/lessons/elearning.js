@@ -56,7 +56,7 @@
   function showView(id) {
     ['view-main', 'view-list', 'view-detail'].forEach((viewId) => {
       const el = document.getElementById(viewId);
-      if (el) el.style.display = viewId === id ? '' : 'none';
+      if (el) if (viewId === id ) el.classList.remove('d-none'); else el.classList.add('d-none');
     });
   }
 
@@ -91,7 +91,7 @@
       pagination.innerHTML = '';
 
       if (data.status !== 200) {
-        if (empty) empty.style.display = '';
+        if (empty) empty.classList.remove('d-none');
         return;
       }
 
@@ -101,10 +101,10 @@
       const startIndex = ((currentPage - 1) * (data.data.perPage || 20)) + 1;
 
       if (topics.length === 0) {
-        if (empty) empty.style.display = '';
+        if (empty) empty.classList.remove('d-none');
         return;
       }
-      if (empty) empty.style.display = 'none';
+      if (empty) empty.classList.add('d-none');
 
       const template = document.getElementById('topic-row-template');
       topics.forEach((topic, index) => {
@@ -154,15 +154,15 @@
       related.innerHTML = '';
 
       if (data.status !== 200) {
-        privilegeMsg.style.display = '';
+        privilegeMsg.classList.remove('d-none');
         return;
       }
 
       if (!data.data.allow) {
-        privilegeMsg.style.display = '';
+        privilegeMsg.classList.remove('d-none');
         return;
       }
-      privilegeMsg.style.display = 'none';
+      privilegeMsg.classList.add('d-none');
 
       content.innerHTML = data.data.topic.topicDetail || '';
 
@@ -175,7 +175,7 @@
         wrapper.setAttribute('cellspacing', '0');
         wrapper.setAttribute('border', '0');
         wrapper.setAttribute('bgcolor', 'f0f0f0');
-        wrapper.innerHTML = '<tr height="30"><td align="left" width="100%" colspan="2"><font size="2" face="tahoma"><b> &nbsp; Relate Topic </b></font></td></tr><tr><td width="5%" align="center">&nbsp;</td><td width="95%" align="center"></td></tr><tr height="10"><td align="left" width="100%" colspan="2"></td></tr>';
+        wrapper.innerHTML = '<tr height="30" class="align-middle"><td width="100%" colspan="2" class="text-start"><span><b> &nbsp; Relate Topic </b></span></td></tr><tr><td width="5%" class="text-center">&nbsp;</td><td width="95%" class="text-center"></td></tr><tr height="10" class="align-middle"><td width="100%" colspan="2" class="text-start"></td></tr>';
         const cell = wrapper.rows[1].cells[1];
         const template = document.getElementById('related-topic-template');
         relatedTopics.forEach((topic) => {

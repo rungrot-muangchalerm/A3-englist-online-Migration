@@ -1,124 +1,4 @@
 <div id="eolcontest-app" class="f-thai">
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Oswald');
-    @import url('https://fonts.googleapis.com/css?family=Kanit');
-
-    #eolcontest-app {
-      font-family: 'IBM Plex Sans Thai', tahoma, sans-serif;
-      text-align: center;
-    }
-
-    #eolcontest-app .oswald {
-      font-family: 'Oswald', sans-serif !important;
-    }
-
-    #eolcontest-app .kanit {
-      font-family: 'Kanit', sans-serif !important;
-    }
-
-    #eolcontest-app .ecop-header {
-      background: #545454;
-      height: 80px;
-      position: relative;
-      text-align: left;
-    }
-
-    #eolcontest-app .ecop-header img {
-      position: absolute;
-      top: 10px;
-      left: 100px;
-      width: 65px;
-    }
-
-    #eolcontest-app .ecop-header-title {
-      position: absolute;
-      left: 180px;
-      font-size: 32px;
-      color: #fff;
-      line-height: 80px;
-    }
-
-    #eolcontest-app .contest-list-wrap {
-      background: #fff;
-      min-height: 200px;
-      padding: 20px;
-    }
-
-    #eolcontest-app .exam-table {
-      width: 90%;
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    #eolcontest-app .exam-table th {
-      background: #545454;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    #eolcontest-app .exam-table td {
-      padding: 10px;
-      border-bottom: 1px solid #e0e0e0;
-      text-align: center;
-    }
-
-    #eolcontest-app .exam-table tr:nth-child(even) {
-      background: #f7f7f7;
-    }
-
-    #eolcontest-app .exam-table td:first-child {
-      text-align: left;
-      font-weight: bold;
-    }
-
-    #eolcontest-app .btn-test {
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 4px;
-      background: #1685DB;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    #eolcontest-app .btn-test:disabled {
-      background: #aaa;
-      cursor: not-allowed;
-    }
-
-    #eolcontest-app .btn-test.gray {
-      background: #aaa;
-    }
-
-    #eolcontest-app .back-wrap {
-      text-align: right;
-      padding: 10px 50px;
-      background: #555555;
-    }
-
-    #eolcontest-app .back-wrap img {
-      height: 40px;
-    }
-
-    #eolcontest-app .contest-banner {
-      padding: 20px;
-      text-align: center;
-    }
-
-    #eolcontest-app .contest-banner img {
-      max-width: 100%;
-    }
-
-    #eolcontest-app .limited-msg {
-      padding: 80px 20px;
-      color: red;
-    }
-  </style>
-
   <div class="ecop-header">
     <img src="/assets/images/icon/icon_corporate.png">
     <div class="ecop-header-title oswald">CORPORATE MEMBER'S USE</div>
@@ -128,7 +8,7 @@
     <div class="contest-banner">
       <img src="/assets/images/image2/eol system/ecop/eol_contest.jpg" alt="EOL Contest">
     </div>
-    <table class="exam-table">
+    <table class="exam-table table table-sm">
       <thead>
         <tr>
           <th width="51%">ชุดข้อสอบ</th>
@@ -140,7 +20,7 @@
       <tbody id="eolcontest-list-body">
         <tr>
           <td colspan="4">
-            <font size="2" face="tahoma" color="gray">Loading...</font>
+            <span class="text-secondary">Loading...</span>
           </td>
         </tr>
       </tbody>
